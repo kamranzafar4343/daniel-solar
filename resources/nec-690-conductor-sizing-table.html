@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>NEC 690 Solar Conductor Sizing Reference Table | Complete Ampacity Chart</title>
+<meta name="description" content="Complete NEC 690 solar conductor sizing reference table. DC circuit ampacity, temperature correction factors, conduit fill derating, and wire gauge selection for residential and commercial solar PV."/>
+<link rel="canonical" href="https://www.danielsolared.com/resources/nec-690-conductor-sizing-table.html"/>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Jost:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../styles.css?v=f50c70f639be"/>
+<style>
+.ref-hero{background:linear-gradient(135deg,#1B1712,#2C2318);color:#fff;padding:72px 0 52px;text-align:center;}
+.ref-hero h1{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,40px);margin:12px 0;}
+.ref-wrapper{max-width:1040px;margin:48px auto;padding:0 24px;}
+.ref-section{margin-bottom:52px;}
+.ref-section h2{font-family:'Playfair Display',serif;font-size:24px;color:#1B1712;border-left:4px solid #D4A843;padding-left:16px;margin-bottom:20px;}
+.ref-table{width:100%;border-collapse:collapse;font-size:14px;margin-bottom:12px;}
+.ref-table th{background:#1B1712;color:#D4A843;padding:11px 14px;text-align:left;font-family:'Jost',sans-serif;font-weight:600;}
+.ref-table td{padding:10px 14px;border-bottom:1px solid #ece7df;font-family:'Space Mono',monospace;font-size:13px;}
+.ref-table tr:nth-child(even){background:#f9f6f2;}
+.ref-table td:first-child{font-weight:700;color:#1B1712;font-family:'Jost',sans-serif;}
+.formula-block{background:#1B1712;color:#D4A843;border-radius:6px;padding:18px 22px;font-family:'Space Mono',monospace;font-size:13px;margin-bottom:12px;line-height:1.8;}
+.note{font-size:13px;color:#666;background:#f9f6f2;border-left:3px solid #D4A843;padding:12px 16px;border-radius:0 4px 4px 0;margin-bottom:20px;}
+</style>
+</head>
+<body>
+<header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="../index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="../logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="../services.html" class="dropdown-trigger" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="../services/design.html">PV System Design</a>
+                            <a href="../services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="../services/review.html">Structural &amp; Electrical Review</a>
+                            <a href="../services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="../services/ev.html">EV Charging Design &amp; Engineering</a>
+                            <a href="../services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="../services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="../services/net-metering.html">Net Metering</a>
+                            <a href="../services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="../tools.html" class="active">Tools &amp; Calculators</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../locations.html">Service Areas</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="../contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+<main>
+  <div class="ref-hero">
+    <div class="wrap">
+      <span class="eyebrow" style="color:#D4A843;">FREE ENGINEERING REFERENCE</span>
+      <h1>NEC 690 Solar Conductor Sizing<br/>Complete Reference Tables</h1>
+      <p>DC circuit ampacity, temperature correction factors, conduit fill derating, and NEC 705 busbar rule tables for solar PV design. Bookmark this page.</p>
+    </div>
+  </div>
+
+  <div class="ref-wrapper">
+
+    <!-- TABLE 1: CONDUCTOR AMPACITY -->
+    <div class="ref-section">
+      <h2>📊 Table 1 — Copper Conductor Ampacity at 75°C (NEC Table 310.15)</h2>
+      <div class="note">These are base ampacity values at 75°C (167°F) terminal rating. Apply temperature correction and conduit fill derating factors from Tables 2 and 3 before final selection.</div>
+      <table class="ref-table">
+        <thead><tr><th>AWG / kcmil</th><th>THWN-2 (75°C) — Ampacity</th><th>USE-2 / PV Wire (90°C) — Ampacity</th><th>Typical Solar Use</th></tr></thead>
+        <tbody>
+          <tr><td>#14 AWG</td><td>15 A</td><td>25 A</td><td>Low-power microinverter AC circuits</td></tr>
+          <tr><td>#12 AWG</td><td>20 A</td><td>30 A</td><td>Small string circuits, AC combiner</td></tr>
+          <tr><td>#10 AWG</td><td>30 A</td><td>40 A</td><td>Standard residential DC home-run runs</td></tr>
+          <tr><td>#8 AWG</td><td>50 A</td><td>55 A</td><td>Residential 2-string parallel combiner</td></tr>
+          <tr><td>#6 AWG</td><td>65 A</td><td>75 A</td><td>Commercial small array DC main</td></tr>
+          <tr><td>#4 AWG</td><td>85 A</td><td>95 A</td><td>Commercial mid-size DC combiner runs</td></tr>
+          <tr><td>#2 AWG</td><td>115 A</td><td>130 A</td><td>Commercial large array DC main</td></tr>
+          <tr><td>#1 AWG</td><td>130 A</td><td>145 A</td><td>Commercial high-current DC runs</td></tr>
+          <tr><td>#1/0 AWG</td><td>150 A</td><td>170 A</td><td>Commercial/utility scale DC main</td></tr>
+          <tr><td>#2/0 AWG</td><td>175 A</td><td>195 A</td><td>Large commercial DC main runs</td></tr>
+          <tr><td>#3/0 AWG</td><td>200 A</td><td>225 A</td><td>Utility-scale DC collection circuits</td></tr>
+          <tr><td>#4/0 AWG</td><td>230 A</td><td>260 A</td><td>Utility-scale DC collection circuits</td></tr>
+          <tr><td>250 kcmil</td><td>255 A</td><td>290 A</td><td>Utility-scale DC main feeders</td></tr>
+          <tr><td>350 kcmil</td><td>310 A</td><td>350 A</td><td>Utility-scale DC collection feeders</td></tr>
+          <tr><td>500 kcmil</td><td>380 A</td><td>430 A</td><td>Utility-scale DC main feeders</td></tr>
+        </tbody>
+      </table>
+      <div class="formula-block">
+        NEC 690.8 DC Conductor Sizing Formula:
+        I_required = Isc × strings × 1.5625
+        
+        Selected conductor ampacity ≥ I_required
+        (After applying temperature &amp; fill derating factors)
+      </div>
+    </div>
+
+    <!-- TABLE 2: TEMPERATURE CORRECTION -->
+    <div class="ref-section">
+      <h2>🌡️ Table 2 — Temperature Correction Factors (NEC Table 310.15(B)(1))</h2>
+      <div class="note">Multiply conductor ampacity by the correction factor for the ambient temperature at the conductor location (e.g. attic, rooftop conduit, direct burial).</div>
+      <table class="ref-table">
+        <thead><tr><th>Ambient Temp (°C)</th><th>Ambient Temp (°F)</th><th>60°C Rated Wire</th><th>75°C Rated Wire</th><th>90°C Rated Wire</th></tr></thead>
+        <tbody>
+          <tr><td>10°C</td><td>50°F</td><td>1.29</td><td>1.20</td><td>1.15</td></tr>
+          <tr><td>15°C</td><td>59°F</td><td>1.22</td><td>1.15</td><td>1.12</td></tr>
+          <tr><td>20°C</td><td>68°F</td><td>1.15</td><td>1.11</td><td>1.08</td></tr>
+          <tr><td>25°C</td><td>77°F</td><td>1.00</td><td>1.00</td><td>1.00</td></tr>
+          <tr><td>30°C</td><td>86°F</td><td>0.91</td><td>0.94</td><td>0.96</td></tr>
+          <tr><td>35°C</td><td>95°F</td><td>0.82</td><td>0.88</td><td>0.91</td></tr>
+          <tr><td>40°C</td><td>104°F</td><td>0.71</td><td>0.82</td><td>0.87</td></tr>
+          <tr><td>45°C</td><td>113°F</td><td>0.58</td><td>0.75</td><td>0.82</td></tr>
+          <tr><td>50°C</td><td>122°F</td><td>0.41</td><td>0.67</td><td>0.77</td></tr>
+          <tr><td>55°C</td><td>131°F</td><td>—</td><td>0.58</td><td>0.71</td></tr>
+          <tr><td>60°C</td><td>140°F</td><td>—</td><td>0.47</td><td>0.65</td></tr>
+          <tr><td>70°C</td><td>158°F</td><td>—</td><td>—</td><td>0.50</td></tr>
+        </tbody>
+      </table>
+      <div class="note">⚠️ Rooftop conduit in direct sun can reach 60-70°C ambient. Always use 90°C rated USE-2 or PV Wire for solar DC circuits on rooftops.</div>
+    </div>
+
+    <!-- TABLE 3: CONDUIT FILL DERATING -->
+    <div class="ref-section">
+      <h2>🔌 Table 3 — Conduit Fill Derating Factors (NEC Table 310.15(C)(1))</h2>
+      <table class="ref-table">
+        <thead><tr><th>Conductors in Same Conduit</th><th>Derating Factor</th><th>Common Scenario</th></tr></thead>
+        <tbody>
+          <tr><td>1–3 Current-Carrying Conductors</td><td>1.00 (No Derating)</td><td>Standard 2-wire DC circuit</td></tr>
+          <tr><td>4–6 Current-Carrying Conductors</td><td>0.80 (80%)</td><td>Multiple string homeruns in one conduit</td></tr>
+          <tr><td>7–9 Current-Carrying Conductors</td><td>0.70 (70%)</td><td>Combiner-to-inverter trunk conduit</td></tr>
+          <tr><td>10–20 Current-Carrying Conductors</td><td>0.50 (50%)</td><td>Large commercial combiner conduit</td></tr>
+          <tr><td>21–30 Current-Carrying Conductors</td><td>0.45 (45%)</td><td>Utility-scale collection conduit</td></tr>
+          <tr><td>31–40 Current-Carrying Conductors</td><td>0.40 (40%)</td><td>Utility-scale collection conduit</td></tr>
+          <tr><td>41+ Current-Carrying Conductors</td><td>0.35 (35%)</td><td>Utility-scale multi-circuit conduit</td></tr>
+        </tbody>
+      </table>
+      <div class="note">💡 Note: Equipment grounding conductors (EGC) and grounded conductors (neutral) are NOT counted as current-carrying conductors for fill derating purposes.</div>
+    </div>
+
+    <!-- TABLE 4: 120% BUSBAR RULE -->
+    <div class="ref-section">
+      <h2>⚡ Table 4 — 120% Busbar Rule Quick Reference (NEC 705.12)</h2>
+      <table class="ref-table">
+        <thead><tr><th>Panel Bus Rating</th><th>Main Breaker</th><th>Max Solar Backfeed Breaker</th><th>Result</th></tr></thead>
+        <tbody>
+          <tr><td>100A Bus</td><td>100A Main</td><td>(100×1.2)−100 = 20A max</td><td>Very limited — small system only</td></tr>
+          <tr><td>125A Bus</td><td>100A Main</td><td>(125×1.2)−100 = 50A max</td><td>Suitable for ~10kW system</td></tr>
+          <tr><td>150A Bus</td><td>150A Main</td><td>(150×1.2)−150 = 30A max</td><td>Limited — MPU often needed</td></tr>
+          <tr><td>200A Bus</td><td>200A Main</td><td>(200×1.2)−200 = 40A max</td><td>Standard residential — up to ~8-10kW</td></tr>
+          <tr><td>225A Bus</td><td>200A Main</td><td>(225×1.2)−200 = 70A max</td><td>Good capacity — up to ~14kW</td></tr>
+          <tr><td>200A Bus</td><td>150A Main</td><td>(200×1.2)−150 = 90A max</td><td>Excellent — large residential systems</td></tr>
+          <tr><td>400A Bus</td><td>400A Main</td><td>(400×1.2)−400 = 80A max</td><td>Commercial — up to ~20kW AC</td></tr>
+        </tbody>
+      </table>
+      <div class="formula-block">
+        Max Solar Breaker = (Bus Rating × 1.20) − Main Breaker Size
+        
+        If result is negative or too small → Main Panel Upgrade (MPU) Required
+        per NEC 705.12(B)(2)(3)(b)
+      </div>
+    </div>
+
+    <div style="background:#1B1712;color:#fff;padding:40px;border-radius:8px;text-align:center;margin-top:40px;">
+      <h2 style="font-family:'Playfair Display',serif;margin-bottom:12px;">Need These Calculations P.E. Stamped?</h2>
+      <p style="opacity:.8;margin-bottom:24px;">Our electrical engineers handle conductor sizing, SLDs, NEC 690 calculations, and 120% busbar rule compliance for your plan set — stamped and ready in 24-48 hours.</p>
+      <a href="../contact.html" style="display:inline-block;background:#D4A843;color:#1B1712;font-weight:700;padding:14px 32px;border-radius:4px;text-decoration:none;">Get a P.E.-Stamped Plan Set →</a>
+    </div>
+    <p style="margin-top:32px;color:#888;font-size:13px;">Related: <a href="solar-string-sizing-calculator.html">String Sizing Calculator</a> · <a href="../blog/solar-single-line-diagram-sld-requirements.html">SLD Requirements Guide</a> · <a href="solar-permit-checklist.html">47-Point Permit Checklist</a></p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="brand">
+          <div class="logo-ring-footer"><img class="logo-img-footer" src="../logo_ecard.png" alt="Daniel Solar Logo"/></div>
+          <span>Daniel's Solar Engineering and Design</span>
+        </a>
+        <p>P.E.-stamped solar permit plan sets across all 50 U.S. states.</p>
+      </div>
+      <div class="footer-col"><h4>Tools</h4><ul><li><a href="solar-permit-checklist.html">AHJ Permit Checklist</a></li><li><a href="solar-string-sizing-calculator.html">String Sizing Calculator</a></li><li><a href="nec-690-conductor-sizing-table.html">NEC 690 Tables</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="../services/permitting.html">Permit Plan Sets</a></li><li><a href="../services/electrical-design.html">Electrical Design</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Daniel's Solar Engineering and Design. All rights reserved.</span></div>
+  </div>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>

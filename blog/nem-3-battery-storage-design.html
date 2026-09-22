@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NEM 3.0 Solar &amp; Battery Storage System Engineering Design Guide</title>
+    <meta name="description" content="Technical guide for California NEM 3.0 net billing tariff, battery storage sizing, load backup engineering, and utility plan check requirements." />
+    <link rel="canonical" href="https://www.danielsolared.com/blog/nem-3-battery-storage-design.html" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <meta name="theme-color" content="#1B1712" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Daniel Solar Engineering and Design" />
+    <meta property="og:title" content="NEM 3.0 Solar &amp; Battery Storage System Engineering Design Guide" />
+    <meta property="og:description" content="Technical breakdown explaining how to size batteries, calculate continuous loads, and engineer utility-compliant plans under California's Net Billing Tariff." />
+    <meta property="og:image" content="https://www.danielsolared.com/meadow-ridge-residence.jpg" />
+    <meta property="og:url" content="https://www.danielsolared.com/blog/nem-3-battery-storage-design.html" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Engineering Solar &amp; Storage for California NEM 3.0" />
+    <meta name="twitter:description" content="Master peak shaving load shifting, microinverter wiring, and battery sizing under the new Net Billing Tariff guidelines." />
+    <meta name="twitter:image" content="https://www.danielsolared.com/meadow-ridge-residence.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Jost:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css?v=f50c70f639be" />
+
+    <!-- Structured Data JSON-LD Schemas -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://www.danielsolared.com/blog/nem-3-battery-storage-design.html#article",
+      "url": "https://www.danielsolared.com/blog/nem-3-battery-storage-design.html",
+      "headline": "NEM 3.0 Solar & Battery Storage System Engineering Design Guide",
+      "description": "Comprehensive engineering guide detailing battery storage sizing calculations, load backup engineering, and utility compliance under California's Net Billing Tariff (NEM 3.0).",
+      "inLanguage": "en-US",
+      "mainEntityOfPage": "https://www.danielsolared.com/blog/nem-3-battery-storage-design.html",
+      "datePublished": "2026-08-13",
+      "dateModified": "2026-08-13",
+      "author": {
+        "@type": "Person",
+        "name": "Daniel",
+        "jobTitle": "Principal Engineering Lead",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Daniel Solar Engineering and Design",
+          "url": "https://www.danielsolared.com/"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Daniel Solar Engineering and Design",
+        "url": "https://www.danielsolared.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.danielsolared.com/logo_ecard.png"
+        }
+      },
+      "image": "https://www.danielsolared.com/meadow-ridge-residence.jpg"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.danielsolared.com/blog/nem-3-battery-storage-design.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.danielsolared.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.danielsolared.com/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "NEM 3.0 Battery Storage Design",
+          "item": "https://www.danielsolared.com/blog/nem-3-battery-storage-design.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.danielsolared.com/blog/nem-3-battery-storage-design.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does NEM 3.0 impact solar battery payback in California?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Under California NEM 3.0 (Net Billing Tariff), export credit rates dropped by ~75%. Pairings with energy storage (e.g., Tesla Powerwall 3 or Enphase IQ Battery) allow homeowners to store excess daytime solar energy and export it during peak evening hours (4 PM - 9 PM) when grid credit rates spike up to $3.00/kWh."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What size battery storage is required for a 10 kW residential solar system under NEM 3.0?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For a typical 10 kW residential solar array in California, a 13.5 kWh to 27 kWh battery storage capacity (1 to 2 battery units) delivers optimal self-consumption arbitrage and full evening peak load offset under NEM 3.0 rules."
+          }
+        }
+      ]
+    }
+  ]
+}
+    </script>
+
+    <style>
+        .article-page {
+            padding: 64px 0 96px;
+            background: var(--paper);
+        }
+        .article-container {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .article-header {
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 32px;
+        }
+        .article-header h1 {
+            font-size: clamp(32px, 4.2vw, 50px);
+            line-height: 1.15;
+            color: var(--ink);
+            margin: 16px 0 20px;
+        }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--ink-70);
+            flex-wrap: wrap;
+        }
+        .author-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            color: var(--blue-deep);
+        }
+        .author-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--blue-tint);
+            border: 1px solid var(--blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--blue-deep);
+        }
+        .hero-banner-img {
+            width: 100%;
+            max-height: 440px;
+            object-fit: cover;
+            border: 1px solid var(--line);
+            margin-bottom: 40px;
+        }
+        .article-content {
+            font-size: 17px;
+            line-height: 1.85;
+            color: var(--ink-70);
+        }
+        .article-content p {
+            margin-bottom: 24px;
+        }
+        .article-content h2 {
+            font-size: 28px;
+            color: var(--ink);
+            margin: 48px 0 20px;
+            padding-top: 16px;
+            border-top: 1px solid var(--line-soft);
+            line-height: 1.25;
+        }
+        .article-content h3 {
+            font-size: 22px;
+            color: var(--ink);
+            margin: 32px 0 14px;
+        }
+        .article-content ul, .article-content ol {
+            margin: 0 0 28px 24px;
+            padding-left: 8px;
+        }
+        .article-content li {
+            margin-bottom: 12px;
+            line-height: 1.75;
+        }
+        .callout-box {
+            background: var(--blue-tint);
+            border-left: 4px solid var(--blue);
+            padding: 24px 28px;
+            margin: 32px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .callout-box h4 {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--blue-deep);
+            margin-bottom: 8px;
+        }
+        .callout-box p {
+            margin-bottom: 0;
+            font-size: 15.5px;
+            color: var(--ink);
+        }
+        .toc-box {
+            background: var(--white);
+            border: 1px solid var(--line);
+            padding: 28px 32px;
+            margin-bottom: 48px;
+            border-radius: 4px;
+        }
+        .toc-title {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--blue-deep);
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+        .toc-list {
+            list-style: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .toc-list li {
+            margin-bottom: 10px !important;
+            font-size: 15px;
+        }
+        .toc-list a {
+            color: var(--ink);
+            transition: color 0.15s ease;
+        }
+        .toc-list a:hover {
+            color: var(--blue);
+            text-decoration: underline;
+        }
+        .checklist-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 36px 0;
+            font-size: 14.5px;
+        }
+        .checklist-table th {
+            background: var(--ink);
+            color: var(--paper);
+            text-align: left;
+            padding: 14px 18px;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .checklist-table td {
+            padding: 14px 18px;
+            border-bottom: 1px solid var(--line);
+            background: var(--white);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SITE HEADER -->
+    <header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="../index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="../logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="../services.html" class="dropdown-trigger" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="../services/design.html">PV System Design</a>
+                            <a href="../services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="../services/review.html">Structural &amp; Electrical Review</a>
+                            <a href="../services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="../services/ev.html">EV Charging Design &amp; Engineering</a>
+                            <a href="../services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="../services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="../services/net-metering.html">Net Metering</a>
+                            <a href="../services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="../tools.html">Tools &amp; Calculators</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../locations.html">Service Areas</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="../contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+    <main>
+        <div class="article-page">
+            <div class="wrap">
+                <div class="article-container">
+                    
+                    <header class="article-header">
+                        <div class="article-meta">
+                            <span class="author-badge">
+                                <span class="author-avatar">D</span>
+                                By Daniel
+                            </span>
+                            <span>&bull;</span>
+                            <span>Published: August 13, 2026</span>
+                            <span>&bull;</span>
+                            <span>9 min read</span>
+                        </div>
+                        <h1>A Guide to NEM 3.0 Battery Storage Design and Load Calculations for California</h1>
+                    </header>
+
+                    <img src="../meadow-ridge-residence.jpg" alt="California NEM 3.0 battery storage installation" class="hero-banner-img" />
+
+                    <div class="toc-box">
+                        <div class="toc-title">Table of Contents</div>
+                        <ul class="toc-list">
+                            <li><a href="#understanding-nem3">1. Understanding California's Net Billing Tariff (NEM 3.0)</a></li>
+                            <li><a href="#battery-sizing">2. Battery Sizing: Tesla Powerwall 3 vs. Enphase 5P</a></li>
+                            <li><a href="#load-calcs">3. Sizing Backup Loads &amp; NEC Code Clearance Rules</a></li>
+                            <li><a href="#interconnect-rules">4. NEM 3.0 Interconnection Diagram Checklist</a></li>
+                            <li><a href="#engineering-support">5. Engineering Compliant Plan Sets</a></li>
+                        </ul>
+                    </div>
+
+                    <article class="article-content">
+                        
+                        <p>Under California's Net Billing Tariff (commonly known as NEM 3.0), the economics of solar power have changed significantly. Since April 2023, the value of exporting excess daytime solar electricity to the utility grid (PG&amp;E, SCE, or SDG&amp;E) has been reduced by approximately 75%. To achieve a viable return on investment, new solar installations must store their power in localized Battery Energy Storage Systems (BESS) for self-consumption during peak evening hours.</p>
+
+                        <p>In this guide, we dive deep into the engineering calculations, equipment selection, and safety code compliance required to design high-performance solar + storage permit plan sets under NEM 3.0.</p>
+
+                        <h2 id="understanding-nem3">1. Understanding California's Net Billing Tariff (NEM 3.0)</h2>
+                        <p>NEM 3.0 replaces traditional 1:1 net metering credits with variable "Avoided Cost Calculator" (ACC) export rates. During mid-day hours when the grid is flooded with solar energy, utility export credits drop as low as $0.02 - $0.05 per kWh. However, during evening peak hours (typically 4:00 PM to 9:00 PM), export rates skyrocket.</p>
+                        
+                        <p>To capture this value, systems must be programmed to run on <strong>"Self-Consumption Mode"</strong> or <strong>"Peak Shaving/Load Shifting Mode"</strong>. By discharging battery power to run the home during peak hours and storing solar generation during the day, clients avoid high utility rates and maximize their ROI.</p>
+
+                        <h2 id="battery-sizing">2. Battery Sizing: Tesla Powerwall 3 vs. Enphase 5P</h2>
+                        <p>Selecting the right battery technology dictates how plan sets are wired and engineered. Let's compare two industry leaders:</p>
+
+                        <table class="checklist-table">
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Tesla Powerwall 3</th>
+                                    <th>Enphase IQ Battery 5P</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Chemistry</strong></td>
+                                    <td>Lithium Iron Phosphate (LFP)</td>
+                                    <td>Lithium Iron Phosphate (LFP)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Usable Capacity</strong></td>
+                                    <td>13.5 kWh</td>
+                                    <td>5.0 kWh</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Inverter Architecture</strong></td>
+                                    <td>Hybrid Inverter (integrated solar &amp; battery connections).</td>
+                                    <td>AC-Coupled (pairs with microinverters via AC combiners).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Continuous Power Output</strong></td>
+                                    <td>Up to 11.5 kW (ideal for whole-home backup).</td>
+                                    <td>3.84 kW (modular, ideal for partial-home backups).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p><strong>Design Tip:</strong> For large residential projects with heavy electrical loads (AC units, pool pumps), the Tesla Powerwall 3 simplifies design by combining solar and battery inputs into a single chassis. For multi-inverter microinverter setups, the Enphase IQ Battery 5P provides excellent AC-coupled modular flexibility.</p>
+
+                        <h2 id="load-calcs">3. Sizing Backup Loads &amp; NEC Code Clearance Rules</h2>
+                        <p>When engineering backup energy systems, we must run continuous load calculations under <strong>NEC Article 220</strong> and observe clear spacing rules under <strong>NFPA 855</strong>:</p>
+
+                        <ul>
+                            <li><strong>NFPA 855 Clearance:</strong> Batteries must maintain at least 3 feet of horizontal spacing from windows, doors, and escape pathways, and at least 3 feet from other battery enclosures (unless certified for closer spacing).</li>
+                            <li><strong>Thermal Barrier:</strong> When installed on walls, batteries require a 5/8-inch Type X gypsum board backing to prevent fire spread to wooden frames.</li>
+                            <li><strong>Physical Protection:</strong> Installations in garages or driveways where vehicles travel require steel bollards (Schedule 40 pipe) to protect against bumper impacts.</li>
+                        </ul>
+
+                        <h2 id="interconnect-rules">4. NEM 3.0 Interconnection Diagram Checklist</h2>
+                        <p>To pass utility review for NEM 3.0 interconnection, your single-line diagram (SLD) must document:</p>
+                        <ol>
+                            <li>The exact point of interconnection: Sub-panel load breaker, supply-side tap, or backup gateway connection.</li>
+                            <li>Automatic Transfer Switch (ATS) or System Controller location to show how the system disconnects from the grid during utility outages (island mode).</li>
+                            <li>Proper placement and labeling of the utility AC disconnect switch (when required by the utility).</li>
+                        </ol>
+
+                        <h2 id="engineering-support">5. Engineering Compliant Plan Sets</h2>
+                        <p>At Daniel Solar Engineering and Design, we prepare complete CAD drawings and run technical battery calculation sheets to satisfy both local building departments and major utilities. We deliver permit-ready plan sets in <strong>24 to 48 hours</strong> with complete code compliance guaranteed.</p>
+
+                        <div class="callout-box" style="background:var(--paper-alt); border-color:var(--amber-deep);">
+                            <h4>NEED AN ENGINEERED SOLAR &amp; BATTERY PLAN SET?</h4>
+                            <p>Contact <strong>Daniel Solar Engineering and Design</strong>. Our team handles complete NEM 3.0 electrical sizing, main panel backfed load calculations, and structural layouts stamped by registered P.E.s.</p>
+                            <div style="margin-top:16px;">
+                                <a href="../contact.html" class="btn btn-amber btn-cad">Get Solar &amp; Battery Design Quote</a>
+                                <a href="tel:+18584226880" class="btn btn-outline" style="margin-left:10px;">Call +1 (858) 422-6880</a>
+                            </div>
+                        </div>
+
+                    </article>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="brand">
+                        <div class="logo-ring-footer"><img class="logo-img-footer" src="../logo_ecard.png" alt="Daniel's Solar Logo" /></div>
+                        <span>Daniel's Solar Engineering and Design</span>
+                    </a>
+                    <p>Jurisdiction-ready solar permit design and engineering services stamped by licensed P.E.s across all 50 U.S. states. We deliver code-compliant plan sets, structural attachments, and electrical diagrams tailored to local AHJ and NEC standards.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../projects.html">Projects</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="../e-card.html">Digital Card</a></li>
+                        <li><a href="../locations.html">Service Areas Directory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services/design.html">PV System Design</a></li>
+                        <li><a href="../services/permitting.html">Permit Plan Sets</a></li>
+                        <li><a href="../services/electrical-design.html">Electrical Design</a></li>
+                        <li><a href="../services/commercial.html">Commercial &amp; Utility-Scale</a></li>
+                        <li><a href="../services/ev.html">EV Charging Design</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@danielsolared.com">info@danielsolared.com</a></li>
+                        <li><a href="tel:+18584226880">+1 (858) 422-6880</a></li>
+                        <li><span style="font-size:14px;">Licensed across 40+ regions</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Daniel's Solar Engineering and Design. All rights reserved. &middot; Located in Irvine, CA</span>
+                <span>DWG NO. 2026-001 · REV D</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tawk.to Chat -->
+        <script type="text/javascript">
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"),
+                    s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = "https://embed.tawk.to/6aa881879117af34473db177/1k2h3juq0";
+                s1.charset = "UTF-8";
+                s1.setAttribute("crossorigin", "*");
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>
+<script src="../script.js"></script>
+</body>
+</html>

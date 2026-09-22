@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Daniel Solar Engineering and Design</title>
+    <meta name="description" content="Start your residential, commercial, or utility-scale solar engineering project with Daniel Solar Engineering and Design.">
+    <link rel="canonical" href="https://www.danielsolared.com/contact.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="theme-color" content="#1B1712">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Jost:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=f50c70f639be">
+    <style>
+        .contact-hero{position:relative;overflow:hidden;padding:92px 0 100px;background:#f5f0e7}
+        .contact-hero:before{content:"";position:absolute;inset:0;opacity:.3;pointer-events:none;background-image:linear-gradient(rgba(169,129,42,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(169,129,42,.16) 1px,transparent 1px);background-size:42px 42px}
+        .contact-hero .wrap{position:relative;z-index:1}.contact-heading{max-width:760px;margin-bottom:48px}.contact-heading .eyebrow{margin-bottom:18px}
+        .contact-heading h1{margin:0 0 18px;font-size:clamp(44px,6vw,76px);line-height:1.02}.contact-heading p{max-width:650px;margin:0;font-size:18px;line-height:1.75;color:#625b50}
+        .contact-layout{display:grid;grid-template-columns:.78fr 1.22fr;gap:28px;align-items:stretch}.contact-panel,.form-card{background:#fffdf8;border:1px solid rgba(169,129,42,.28);box-shadow:0 24px 60px rgba(45,35,20,.1)}
+        .contact-panel{padding:40px}.contact-panel h2,.form-card h2{margin:0 0 12px;font-size:30px}.contact-intro{margin:0 0 30px;color:#6e665a;line-height:1.7}
+        .contact-method{display:grid;grid-template-columns:48px 1fr;gap:15px;align-items:start;padding:21px 0;border-top:1px solid rgba(169,129,42,.2)}
+        .method-icon{width:48px;height:48px;display:grid;place-items:center;border:1px solid #a9812a;color:#a9812a;font:13px "Space Mono",monospace}
+        .contact-method small{display:block;margin-bottom:5px;color:#8b806e;font:10px "Space Mono",monospace;letter-spacing:.12em;text-transform:uppercase}.contact-method a,.contact-method strong{color:#1b1712;font-size:17px;font-weight:600;text-decoration:none}.contact-method a:hover{color:#a9812a}
+        .response-note{margin-top:26px;padding:18px 20px;border-left:3px solid #a9812a;background:#f6f0e4;color:#554d42;font-size:14px;line-height:1.65}.form-card{padding:42px}
+        .project-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:28px}.field{display:flex;flex-direction:column;gap:8px}.field.full{grid-column:1/-1}
+        .field label{color:#494135;font:700 11px "Space Mono",monospace;letter-spacing:.08em;text-transform:uppercase}.field input,.field select,.field textarea{width:100%;box-sizing:border-box;border:1px solid #d9d0c1;border-radius:0;background:#fff;padding:14px 15px;color:#1b1712;font:16px "Jost",sans-serif;outline:none;transition:.2s}
+        .field textarea{min-height:132px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:#a9812a;box-shadow:0 0 0 3px rgba(169,129,42,.12)}.form-help{margin:0;color:#817766;font-size:12px}
+        .submit-row{grid-column:1/-1;display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:4px}.submit-note{max-width:330px;color:#756c5e;font-size:12px;line-height:1.55}
+        .contact-trust{padding:70px 0;background:#1b1712;color:#fff}.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.14)}.trust-item{padding:32px;background:#1b1712}.trust-item span{display:block;margin-bottom:10px;color:#d4af37;font:11px "Space Mono",monospace;letter-spacing:.1em}.trust-item h3{margin:0 0 8px;color:#fff;font-size:22px}.trust-item p{margin:0;color:#b9b1a5;line-height:1.65;font-size:14px}
+        @media(max-width:900px){.contact-layout,.trust-grid{grid-template-columns:1fr}}@media(max-width:620px){.project-form{grid-template-columns:1fr}.field.full,.submit-row{grid-column:auto}}
+        /* Keep the contact form and direct contact details in one desktop viewport. */
+        .contact-hero{min-height:calc(100svh - 77px);scroll-margin-top:77px;display:flex;align-items:center;padding:18px 0}
+        .contact-hero .wrap{width:100%}
+        .contact-heading{max-width:none;margin-bottom:14px}
+        .contact-heading .eyebrow{margin-bottom:5px}
+        .contact-heading h1{margin-bottom:6px;font-size:clamp(30px,3.2vw,44px);line-height:1.1}
+        .contact-heading p{max-width:none;font-size:14px;line-height:1.4}
+        .contact-layout{grid-template-columns:.72fr 1.28fr;gap:14px}
+        .contact-panel,.form-card{padding:22px 24px;box-shadow:0 10px 30px rgba(45,35,20,.07)}
+        .contact-panel h2,.form-card h2{font-size:23px;margin-bottom:5px}
+        .contact-intro{margin-bottom:10px;font-size:13px;line-height:1.4}
+        .contact-method{grid-template-columns:32px 1fr;gap:10px;padding:8px 0;align-items:center}
+        .method-icon{width:32px;height:32px;font-size:10px}
+        .contact-method small{margin-bottom:1px;font-size:9px}
+        .contact-method a,.contact-method strong{font-size:14px}
+        .response-note{margin-top:10px;padding:8px 12px;font-size:11px;line-height:1.4}
+        .project-form{gap:8px 10px;margin-top:10px}
+        #project-form .field{gap:3px;margin-bottom:0}
+        #project-form .field label{margin:0;font-size:10px}
+        #project-form .field input,#project-form .field select,#project-form .field textarea{padding:8px 10px;font-size:14px;min-height:0}
+        #project-form .field textarea{height:64px;min-height:64px}
+        .submit-row{gap:10px;margin-top:0}
+        .submit-row .btn{padding:10px 16px;font-size:12px}
+        .submit-note{max-width:300px;font-size:10px;line-height:1.35}
+        @media(max-width:900px){.contact-hero{display:block;padding:28px 0}.contact-layout{grid-template-columns:1fr}.contact-heading h1{font-size:36px}}
+        @media(max-width:620px){.contact-hero{padding:20px 0}.contact-heading h1{font-size:30px}.contact-panel,.form-card{padding:18px}.project-form{grid-template-columns:1fr}.field.full,.submit-row{grid-column:auto}}
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="services.html" class="dropdown-trigger" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="services/design.html">PV System Design</a>
+                            <a href="services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="services/review.html">Structural &amp; Electrical Review</a>
+                            <a href="services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="services/ev.html">EV Charging Design &amp; Engineering</a>
+                            <a href="services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="services/net-metering.html">Net Metering</a>
+                            <a href="services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="tools.html">Tools &amp; Calculators</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="locations.html">Service Areas</a></li>
+                    <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <div class="wrap">
+                <div class="contact-heading"><div class="eyebrow">Project Intake &bull; Nationwide Support</div><h1>Let&rsquo;s Engineer Your Next Solar Project</h1><p>Share your project details and location. We&rsquo;ll reply with the engineering scope, timeline, and quote.</p></div>
+                <div class="contact-layout">
+                    <aside class="contact-panel">
+                        <h2>Contact Our Team</h2><p class="contact-intro">Questions before submitting? Reach us directly for projects nationwide.</p>
+                        <div class="contact-method"><div class="method-icon">01</div><div><small>Email</small><a href="mailto:info@danielsolared.com">info@danielsolared.com</a></div></div>
+                        <div class="contact-method"><div class="method-icon">02</div><div><small>Phone</small><a href="tel:+18584226880">+1 (858) 422-6880</a></div></div>
+                        <div class="contact-method"><div class="method-icon">03</div><div><small>Location</small><strong>Irvine, California</strong></div></div>
+                        <div class="contact-method"><div class="method-icon">04</div><div><small>Service Area</small><strong>All 50 U.S. States</strong></div></div>
+                        <div class="response-note"><strong>Fast response:</strong> Most inquiries receive a reply within one business day. Typical design turnaround is 24&ndash;48 hours.</div>
+                    </aside>
+                    <div class="form-card" id="project-form">
+                        <div class="eyebrow">Start a Project</div><h2>Tell Us What You&rsquo;re Building</h2><p class="contact-intro">Tell us the basics; we&rsquo;ll follow up for files.</p>
+                        <form class="project-form" action="https://api.web3forms.com/submit" method="post">
+                            <!-- Replace the value below with your Web3Forms access key -->
+                            <input type="hidden" name="access_key" value="f2f018f1-7852-46fd-9377-c4340ab19617">
+                            <input type="hidden" name="subject" value="New Solar Project Request - Daniel Solar Engineering">
+                            <input type="hidden" name="from_name" value="Daniel Solar Website">
+                            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+                            <div class="field"><label for="name">Full Name *</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+                            <div class="field"><label for="company">Company</label><input id="company" name="company" type="text" autocomplete="organization"></div>
+                            <div class="field"><label for="email">Email Address *</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+                            <div class="field"><label for="phone">Phone Number</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+                            <div class="field"><label for="project-type">Project Type *</label><select id="project-type" name="project_type" required><option value="">Select a project type</option><option value="residential">Residential Solar</option><option value="commercial">Commercial Solar</option><option value="utility">Utility-Scale Solar</option><option value="bess">Battery Storage (BESS)</option><option value="ev">EV Charging</option><option value="electrical">Electrical / MPU / ADU</option><option value="other">Other</option></select></div>
+                            <div class="field"><label for="state">Project State *</label><input id="state" name="state" type="text" placeholder="e.g. California" required></div>
+                            <div class="field full"><label for="address">Project Address</label><input id="address" name="project_address" type="text" autocomplete="street-address"></div>
+                            <div class="field full"><label for="message">Project Details *</label><textarea id="message" name="message" placeholder="System size, equipment, scope, AHJ, utility, required stamps, target date, and other useful details..." required></textarea></div>
+                            <div class="submit-row"><button class="btn btn-amber btn-cad" type="submit">Submit Project Request</button><span class="submit-note">By submitting, you agree that our team may contact you about this project.</span></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contact-trust"><div class="wrap"><div class="trust-grid"><div class="trust-item"><span>01 / SPEED</span><h3>24&ndash;48 Hour Turnaround</h3><p>Fast engineering support designed to keep permitting schedules moving.</p></div><div class="trust-item"><span>02 / COVERAGE</span><h3>Nationwide Service</h3><p>Permit-ready design and engineering support across all 50 states.</p></div><div class="trust-item"><span>03 / QUALITY</span><h3>PE-Licensed Review</h3><p>Code-conscious plans and engineering stamps when required by your AHJ.</p></div></div></div></section>
+    </main>
+
+    <footer class="site-footer"><div class="wrap"><div class="footer-grid">
+        <div class="footer-brand"><a href="index.html" class="brand"><div class="logo-ring-footer"><img class="logo-img-footer" src="logo_ecard.png" alt="Daniel's Solar Logo"></div><span>Daniel's Solar Engineering and Design</span></a><p>Jurisdiction-ready solar permit design and engineering services stamped by licensed P.E.s across all 50 U.S. states. We deliver code-compliant plan sets tailored to local AHJ and NEC standards.</p></div>
+        <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="projects.html">Projects</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li><li><a href="e-card.html">Digital Card</a></li><li><a href="locations.html">Service Areas Directory</a></li></ul></div>
+        <div class="footer-col"><h4>Services</h4><ul><li><a href="services/design.html">PV System Design</a></li><li><a href="services/permitting.html">Permit Plan Sets</a></li><li><a href="services/electrical-design.html">Electrical Design</a></li><li><a href="services/commercial.html">Commercial &amp; Utility-Scale</a></li><li><a href="services/ev.html">EV Charging Design</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:info@danielsolared.com">info@danielsolared.com</a></li><li><a href="tel:+18584226880">+1 (858) 422-6880</a></li><li><a href="https://www.google.com/search?q=Daniel%27s+Solar+Engineering+and+Design+Irvine+CA" target="_blank" rel="noopener">&#9733;&#9733;&#9733;&#9733;&#9733; 5.0 Google Rating</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Daniel%27s+Solar+Engineering+and+Design+Irvine+CA" target="_blank" rel="noopener">Located in Irvine, CA</a></li></ul></div>
+    </div><div class="footer-bottom"><span>&copy; 2026 Daniel's Solar Engineering and Design. All rights reserved. &middot; Located in Irvine, CA</span><span>CA CSLB B-LICENSE #1027903 &middot; DWG NO. 2026-001 &middot; REV E</span></div></div></footer>
+
+    <script>(function(){const p=new URLSearchParams(location.search),t=p.get('type'),s=p.get('state'),tf=document.getElementById('project-type'),sf=document.getElementById('state'),map={resi_bess:'bess',residential:'residential',commercial:'commercial',utility:'utility',ev:'ev',electrical:'electrical'};if(t&&tf)tf.value=map[t]||t;if(s&&sf)sf.value=s}());</script>
+
+    <!-- Tawk.to Chat -->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = "https://embed.tawk.to/6aa881879117af34473db177/1k2h3juq0";
+            s1.charset = "UTF-8";
+            s1.setAttribute("crossorigin", "*");
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+<script src="script.js"></script>
+</body>
+</html>

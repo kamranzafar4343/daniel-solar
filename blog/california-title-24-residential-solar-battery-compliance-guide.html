@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>California Title 24 Residential Solar & Battery Compliance Guide (2022/2025 Energy Code)</title>
+    <meta name="description" content="Technical guide for California Title 24 residential solar PV and energy storage system (ESS) mandates: Prescriptive sizing formulas (Equation 150.1-C), CF2R-PVB documentation, and AHJ submittals." />
+    <link rel="canonical" href="https://www.danielsolared.com/blog/california-title-24-residential-solar-battery-compliance-guide.html" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <meta name="theme-color" content="#1B1712" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Daniel Solar Engineering and Design" />
+    <meta property="og:title" content="California Title 24 Residential Solar & Battery Compliance Guide" />
+    <meta property="og:description" content="Master California Title 24 solar PV sizing formulas, battery storage compliance pathways, and CEC certified documentation." />
+    <meta property="og:image" content="https://www.danielsolared.com/og-image.jpg" />
+    <meta property="og:url" content="https://www.danielsolared.com/blog/california-title-24-residential-solar-battery-compliance-guide.html" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="California Title 24 Solar & Battery Compliance Guide" />
+    <meta name="twitter:description" content="Master 2022/2025 California Energy Code solar and energy storage requirements for residential new construction and additions." />
+    <meta name="twitter:image" content="https://www.danielsolared.com/og-image.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Jost:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css?v=f50c70f639be" />
+
+    <!-- Structured Data JSON-LD Schemas -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://www.danielsolared.com/blog/california-title-24-residential-solar-battery-compliance-guide.html#article",
+      "url": "https://www.danielsolared.com/blog/california-title-24-residential-solar-battery-compliance-guide.html",
+      "headline": "California Title 24 Residential Solar & Battery Compliance Guide (2022/2025 Energy Code)",
+      "description": "Comprehensive engineering guide for navigating California Title 24 Part 6 solar PV and battery storage requirements for single-family homes, ADUs, and multifamily residential buildings.",
+      "inLanguage": "en-US",
+      "datePublished": "2026-09-10",
+      "dateModified": "2026-09-10",
+      "author": {
+        "@type": "Person",
+        "name": "Daniel",
+        "jobTitle": "Principal Engineering Lead",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Daniel Solar Engineering and Design",
+          "url": "https://www.danielsolared.com/"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Daniel Solar Engineering and Design",
+        "url": "https://www.danielsolared.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.danielsolared.com/logo_ecard.png"
+        }
+      },
+      "image": "https://www.danielsolared.com/og-image.jpg"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.danielsolared.com/blog/california-title-24-residential-solar-battery-compliance-guide.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.danielsolared.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.danielsolared.com/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "California Title 24 Residential Solar & Battery Compliance Guide",
+          "item": "https://www.danielsolared.com/blog/california-title-24-residential-solar-battery-compliance-guide.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.danielsolared.com/blog/california-title-24-residential-solar-battery-compliance-guide.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the prescriptive formula for residential solar sizing under California Title 24 Section 150.1(c)14?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The required minimum DC PV system rating (kW_PV) is calculated using Equation 150.1-C: kW_PV = (CFA x A) / 1000 + (N_DU x B), where CFA is the conditioned floor area in square feet, N_DU is the number of dwelling units, and A and B are climate zone factors published in Title 24 Reference Appendices JA11."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are Accessory Dwelling Units (ADUs) required to install solar PV under Title 24?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, newly constructed detached ADUs must meet Title 24 solar PV requirements. However, attached ADUs, conversions of existing space (such as garage conversions), and additions are generally exempt from mandatory solar PV requirements under Section 150.1(c)14 Exception 1."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What compliance documentation must be submitted to the AHJ for Title 24 solar compliance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Permit submittals require the CF1R-PVB-01-E (Certificate of Compliance) generated from CEC-approved software (such as CBECC-Res or EnergyPro), followed post-installation by the CF2R-PVB-01-E (Certificate of Installation) and CF3R-PVB-01-E (HERS Certificate of Verification)."
+          }
+        }
+      ]
+    }
+  ]
+}
+    </script>
+
+    <style>
+        .article-page { padding: 64px 0 96px; background: var(--paper); }
+        .article-container { max-width: 860px; margin: 0 auto; }
+        .article-header { margin-bottom: 40px; text-align: center; }
+        .article-header h1 { font-family: var(--font-heading); font-size: clamp(28px, 4vw, 42px); color: var(--ink); line-height: 1.25; margin: 16px 0; }
+        .article-meta { font-family: var(--font-mono); font-size: 13px; color: var(--ink-60); text-transform: uppercase; letter-spacing: 0.05em; }
+        .article-body { font-size: 16.5px; line-height: 1.8; color: var(--ink); }
+        .article-body h2 { font-family: var(--font-heading); font-size: 26px; color: var(--ink); margin: 44px 0 18px; padding-bottom: 10px; border-bottom: 2px solid var(--gold); }
+        .article-body h3 { font-size: 20px; color: var(--ink); margin: 28px 0 12px; }
+        .article-body p { margin-bottom: 20px; }
+        .article-body ul, .article-body ol { margin-bottom: 24px; padding-left: 24px; }
+        .article-body li { margin-bottom: 8px; }
+        .callout-box { background: #FAF8F5; border-left: 4px solid var(--gold); padding: 24px 28px; margin: 32px 0; border-radius: 4px; border: 1px solid var(--line); }
+        .callout-box h4 { font-size: 17px; margin-bottom: 8px; color: var(--ink); }
+        .callout-box p { margin-bottom: 0; font-size: 15px; color: var(--ink-70); }
+        .calc-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14.5px; }
+        .calc-table th, .calc-table td { border: 1px solid var(--line); padding: 12px 16px; text-align: left; }
+        .calc-table th { background: #F5EEDA; color: var(--ink); font-family: var(--font-mono); font-weight: 700; }
+        .calc-table tr:nth-child(even) { background: #FAF8F5; }
+        .faq-section { margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--line); }
+        .faq-item { margin-bottom: 16px; border: 1px solid var(--line); border-radius: 6px; background: #FFF; overflow: hidden; }
+        .faq-item summary { padding: 18px 24px; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--ink); }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after { content: "+"; font-size: 20px; color: var(--gold); font-weight: bold; }
+        .faq-item[open] summary::after { content: "-"; }
+        .faq-item .faq-answer { padding: 0 24px 20px; color: var(--ink-70); font-size: 15px; line-height: 1.7; }
+    </style>
+</head>
+<body>
+
+    <!-- SITE HEADER -->
+    <header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="../index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="../logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="../services.html" class="dropdown-trigger" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="../services/design.html">PV System Design</a>
+                            <a href="../services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="../services/review.html">Structural &amp; Electrical Review</a>
+                            <a href="../services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="../services/ev.html">EV Charging Design &amp; Engineering</a>
+                            <a href="../services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="../services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="../services/net-metering.html">Net Metering</a>
+                            <a href="../services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="../tools.html">Tools &amp; Calculators</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../locations.html">Service Areas</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="../contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+    <main class="article-page">
+        <div class="wrap">
+            <div class="article-container">
+                <article>
+                    <div class="article-header">
+                        <div class="article-meta">California Code Standards â€¢ Title 24 Part 6 â€¢ CEC Approvals</div>
+                        <h1>California Title 24 Residential Solar &amp; Battery Compliance Guide</h1>
+                        <p style="color: var(--ink-60); font-size: 16px;">Navigating 2022 &amp; 2025 Energy Code requirements, prescriptive sizing equations, battery storage compliance, and HERS verification.</p>
+                    </div>
+
+                    <div class="article-body">
+                        <p>Under the <strong>California Building Energy Efficiency Standards (Title 24, Part 6)</strong>, newly constructed single-family homes, detached accessory dwelling units (ADUs), and multifamily residential buildings are legally mandated to incorporate on-site solar photovoltaic (PV) systems, with battery energy storage system (ESS) readiness and integration playing an increasingly pivotal role in compliance calculations under the 2022 and 2025 Energy Code cycles.</p>
+
+                        <p>For builders, solar contractors, and architectural engineers, meeting Title 24 requirements requires precise calculation of minimum PV system capacities, compliance software modeling, and accurate preparation of California Energy Commission (CEC) compliance certificates (CF1R/CF2R/CF3R). This engineering guide outlines the exact compliance pathways, sizing formulas, and permit submittal criteria.</p>
+
+                        <h2>1. Prescriptive PV Sizing: Equation 150.1-C Walkthrough</h2>
+                        <p>Under Section 150.1(c)14, the prescriptive minimum DC capacity for a residential solar PV system is determined by conditioned floor area and regional climate factors:</p>
+
+                        <div class="callout-box">
+                            <h4>Title 24 Equation 150.1-C Formula:</h4>
+                            <p><strong>kW_PV = (CFA &times; A) / 1000 + (N_DU &times; B)</strong><br /><br />
+                            Where:<br />
+                            &bull; <strong>CFA</strong> = Conditioned Floor Area of the dwelling in square feet.<br />
+                            &bull; <strong>A</strong> = PV Capacity factor based on California Climate Zone (CZ 1 to 16).<br />
+                            &bull; <strong>B</strong> = Dwelling unit scaling factor based on Climate Zone.<br />
+                            &bull; <strong>N_DU</strong> = Total number of dwelling units.</p>
+                        </div>
+
+                        <p>Consider a 2,500 sq. ft. single-family home located in <strong>Climate Zone 7 (San Diego)</strong>. From CEC Table 150.1-C, factor A is 0.61 and factor B is 1.25:</p>
+                        <ul>
+                            <li>kW_PV = (2,500 &times; 0.61) / 1000 + (1 &times; 1.25)</li>
+                            <li>kW_PV = 1.525 + 1.25 = <strong>2.775 kW DC Minimum PV System Size</strong></li>
+                        </ul>
+
+                        <h2>2. Prescriptive vs. Performance Compliance Pathways</h2>
+                        <p>Design teams can satisfy Title 24 energy mandates through one of two distinct compliance approaches:</p>
+
+                        <table class="calc-table">
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Prescriptive Pathway (&sect;150.1(c))</th>
+                                    <th>Performance Pathway (&sect;150.1(b))</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Methodology</strong></td>
+                                    <td>Direct formula calculation (Equation 150.1-C)</td>
+                                    <td>Computer energy simulation (CBECC-Res / EnergyPro)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Trade-Off Flexibility</strong></td>
+                                    <td>None: Must install exact calculated PV capacity</td>
+                                    <td>High: Battery storage, heat pumps, or higher insulation can trade off PV size</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Battery Integration</strong></td>
+                                    <td>Battery storage is optional but encouraged</td>
+                                    <td>Battery storage (ESS) earns significant Energy Design Rating (EDR) credits</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Required Output</strong></td>
+                                    <td>Standard CF1R-PVB-01-E form</td>
+                                    <td>Comprehensive CBECC-Res XML compliance package</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2>3. Battery Storage Readiness &amp; JA12 Mandatory Requirements</h2>
+                        <p>For all single-family new construction where battery storage is not installed at the time of construction, the 2022/2025 Energy Code mandates <strong>Energy Storage Ready</strong> infrastructure under Section 150.0(s):</p>
+                        <ol>
+                            <li><strong>Dedicated ESS Space:</strong> A reserved indoor or outdoor location measuring at least 3 ft &times; 5 ft with required structural support and NFPA 855 spatial clearances.</li>
+                            <li><strong>Subpanel or Busbar Reservation:</strong> A dedicated 225A busbar service panel or a reserved 4-space subpanel location adjacent to the main service panel.</li>
+                            <li><strong>Interconnecting Conduit:</strong> Minimum 1-inch continuous raceway between the main panel and the designated ESS location.</li>
+                        </ol>
+
+                        <h2>4. Title 24 Compliance Forms &amp; HERS Verification Workflow</h2>
+                        <p>Securing a Certificate of Occupancy from California municipal building departments requires a rigid three-stage documentation process:</p>
+                        <ul>
+                            <li><strong>CF1R-PVB-01-E (Design Phase):</strong> Generated by the design engineer and included on Sheet T24-01 of the permit plan set for plan-check approval.</li>
+                            <li><strong>CF2R-PVB-01-E (Installation Phase):</strong> Completed and signed by the licensed electrical contractor (C-10) certifying equipment matches approved drawings.</li>
+                            <li><strong>CF3R-PVB-01-E (Verification Phase):</strong> Independent on-site inspection and shading verification conducted by a certified HERS Rater (CHEERS / CalCERTS registry).</li>
+                        </ul>
+
+                        <div class="callout-box" style="border-left-color: var(--ink); background: #FAF8F5;">
+                            <h4>Need California Title 24 Solar &amp; Battery Engineering?</h4>
+                            <p>Daniel Solar Engineering specializes in California Title 24 residential and commercial compliance packages, CBECC modeling, and PE-stamped plan sets. <a href="../contact.html" style="color: var(--gold); font-weight: 700; text-decoration: underline;">Request a California Engineering Quote &rarr;</a></p>
+                        </div>
+
+                        <!-- FAQ SECTION -->
+                        <div class="faq-section faq-stack">
+                            <h2 style="border-bottom: none; margin-bottom: 24px;">Frequently Asked Questions (FAQ)</h2>
+
+                            <details class="faq-item">
+                                <summary>What is the prescriptive formula for residential solar sizing under California Title 24 Section 150.1(c)14?</summary>
+                                <div class="faq-answer">
+                                    <p>The required minimum DC PV system rating (kW_PV) is calculated using Equation 150.1-C: kW_PV = (CFA x A) / 1000 + (N_DU x B), where CFA is the conditioned floor area in square feet, N_DU is the number of dwelling units, and A and B are climate zone factors published in Title 24 Reference Appendices JA11.</p>
+                                </div>
+                            </details>
+
+                            <details class="faq-item">
+                                <summary>Are Accessory Dwelling Units (ADUs) required to install solar PV under Title 24?</summary>
+                                <div class="faq-answer">
+                                    <p>Yes, newly constructed detached ADUs must meet Title 24 solar PV requirements. However, attached ADUs, conversions of existing space (such as garage conversions), and additions are generally exempt from mandatory solar PV requirements under Section 150.1(c)14 Exception 1.</p>
+                                </div>
+                            </details>
+
+                            <details class="faq-item">
+                                <summary>What compliance documentation must be submitted to the AHJ for Title 24 solar compliance?</summary>
+                                <div class="faq-answer">
+                                    <p>Permit submittals require the CF1R-PVB-01-E (Certificate of Compliance) generated from CEC-approved software (such as CBECC-Res or EnergyPro), followed post-installation by the CF2R-PVB-01-E (Certificate of Installation) and CF3R-PVB-01-E (HERS Certificate of Verification).</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- SITE FOOTER -->
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="brand-footer">
+                        <div class="logo-ring-footer"><img class="logo-img-header" src="../logo_ecard.png" alt="Daniel Solar Logo" /></div>
+                        <span>Daniel's Solar <span class="name-sub">Engineering &amp; Design</span></span>
+                    </div>
+                    <p style="margin-top: 14px; font-size: 14px; color: var(--ink-60);">Nationwide permit-ready solar PV engineering, PE stamping, structural load analysis, and electrical design for residential and commercial contractors.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../services.html">Our Services</a></li>
+                        <li><a href="../tools.html">Engineering Tools</a></li>
+                        <li><a href="../projects.html">Featured Projects</a></li>
+                        <li><a href="../blog.html">Technical Blog</a></li>
+                        <li><a href="../contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <p style="font-size: 14px; line-height: 1.8; color: var(--ink-60);">
+                        <strong>Daniel Solar Engineering and Design</strong><br />
+                        San Diego, CA 92101<br />
+                        Phone: <a href="tel:+18584226880" style="color: var(--gold);">+1-858-422-6880</a><br />
+                        Email: <a href="mailto:info@danielsolared.com" style="color: var(--gold);">info@danielsolared.com</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Daniel Solar Engineering and Design LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <!-- Tawk.to Chat -->
+        <script type="text/javascript">
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"),
+                    s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = "https://embed.tawk.to/6aa881879117af34473db177/1k2h3juq0";
+                s1.charset = "UTF-8";
+                s1.setAttribute("crossorigin", "*");
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>
+</body>
+</html>

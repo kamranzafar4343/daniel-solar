@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daniel Solar Engineering and Design — Permit-Ready Solar Design</title>
+    <meta name="description" content="Stamped PV plan sets, structural &amp; electrical review, and interconnection support for solar installers and property owners across California. 48–72 hour turnaround." />
+    <link rel="canonical" href="https://www.danielsolared.com/" />
+    <meta name="google-site-verification" content="WibaNUFbadmXFgvWNq0FuQGcZz0qp7e8dmTwfZDGVFE" />
+
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#1B1712" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Daniel Solar Engineering and Design" />
+    <meta property="og:title" content="Daniel Solar Engineering and Design — Permit-Ready Solar Design" />
+    <meta property="og:description" content="Stamped PV plan sets, structural &amp; electrical review, and interconnection support for solar installers and property owners across California." />
+    <meta property="og:image" content="https://www.danielsolared.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://www.danielsolared.com/" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Daniel Solar Engineering and Design — Permit-Ready Solar Design" />
+    <meta name="twitter:description" content="Stamped PV plan sets, structural &amp; electrical review, and interconnection support for solar installers and property owners across California." />
+    <meta name="twitter:image" content="https://www.danielsolared.com/og-image.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Jost:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=f50c70f639be" />
+
+    <!-- FAQ section styling (scoped, self-contained so it matches the site regardless of styles.css contents) -->
+    <style>
+        .faq-section .section-head p { max-width: 640px; }
+        .faq-list {
+            max-width: 860px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(169,129,42,0.25);
+        }
+        .faq-item {
+            border-bottom: 1px solid rgba(169,129,42,0.25);
+        }
+        .faq-item summary {
+            list-style: none;
+            cursor: pointer;
+            display: flex;
+            align-items: baseline;
+            gap: 18px;
+            padding: 22px 4px;
+            font-family: "Jost", sans-serif;
+            font-weight: 600;
+            font-size: 17px;
+            color: inherit;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary .faq-num {
+            font-family: "Space Mono", monospace;
+            font-size: 13px;
+            color: #A9812A;
+            flex: none;
+            padding-top: 2px;
+        }
+        .faq-item summary .faq-q { flex: 1; }
+        .faq-item summary .faq-toggle {
+            flex: none;
+            width: 22px;
+            height: 22px;
+            border: 1px solid #A9812A;
+            border-radius: 50%;
+            position: relative;
+        }
+        .faq-item summary .faq-toggle::before,
+        .faq-item summary .faq-toggle::after {
+            content: "";
+            position: absolute;
+            background: #A9812A;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .faq-item summary .faq-toggle::before { width: 10px; height: 1.4px; }
+        .faq-item summary .faq-toggle::after { width: 1.4px; height: 10px; transition: opacity .15s ease; }
+        .faq-item[open] summary .faq-toggle::after { opacity: 0; }
+        .faq-answer {
+            padding: 0 4px 26px 40px;
+            font-family: "Jost", sans-serif;
+            font-size: 15.5px;
+            line-height: 1.7;
+            color: rgba(30,25,15,0.72);
+            max-width: 760px;
+        }
+        .faq-answer p { margin: 0 0 12px; }
+        .faq-answer p:last-child { margin-bottom: 0; }
+        .faq-answer ul { margin: 0 0 12px; padding-left: 20px; }
+        .faq-answer li { margin-bottom: 6px; }
+        .section-dark .faq-item { border-color: rgba(212,175,55,0.22); }
+        .section-dark .faq-list { border-color: rgba(212,175,55,0.22); }
+        .section-dark .faq-item summary { color: #F5EEDA; }
+        .section-dark .faq-answer { color: rgba(245,238,218,0.68); }
+        .reviews-section { background: var(--paper-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+        .reviews-notice { max-width: 820px; margin: -22px auto 38px; padding: 12px 16px; border-left: 3px solid #A9812A; background: rgba(169,129,42,.08); color: #665d50; font-size: 13px; line-height: 1.6; text-align: left; }
+        .reviews-viewport { width: 100%; overflow: hidden; padding: 8px 0 18px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); }
+        .reviews-grid { display: flex; width: max-content; gap: 20px; animation: reviews-scroll 105s linear infinite; will-change: transform; }
+        .reviews-viewport:hover .reviews-grid,
+        .reviews-viewport:focus-within .reviews-grid { animation-play-state: paused; }
+        .review-card { display: flex; flex: 0 0 370px; flex-direction: column; min-height: 340px; padding: 28px; background: var(--paper); border: 1px solid rgba(169,129,42,.24); box-shadow: 0 12px 30px rgba(40,31,18,.06); transition: transform .25s ease, box-shadow .25s ease; }
+        .review-card:hover { transform: translateY(-5px); box-shadow: 0 18px 38px rgba(40,31,18,.1); }
+        .review-stars { margin-bottom: 14px; color: #A9812A; font-size: 16px; letter-spacing: 3px; }
+        .review-card h3 { margin: 0 0 12px; font-size: 20px; line-height: 1.35; }
+        .review-card p { margin: 0 0 22px; color: #665f54; font-size: 15px; line-height: 1.7; }
+        .review-author { margin-top: auto; padding-top: 17px; border-top: 1px solid rgba(169,129,42,.18); color: #332d25; font-size: 13px; font-weight: 600; }
+        @keyframes reviews-scroll { to { transform: translateX(calc(-1 * var(--reviews-distance, 4680px))); } }
+        @media (max-width: 640px) { .reviews-grid { animation-duration: 125s; } .review-card { flex-basis: min(82vw, 330px); min-height: 360px; padding: 24px; } }
+        @media (prefers-reduced-motion: reduce) { .reviews-viewport { overflow-x: auto; mask-image: none; -webkit-mask-image: none; } .reviews-grid { animation: none; } }
+    </style>
+	<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.danielsolared.com/#professionalservice",
+      "name": "Daniel Solar Engineering and Design",
+      "alternateName": "Daniel Solar Engineering",
+      "legalName": "Daniel Solar Engineering and Design LLC",
+      "url": "https://www.danielsolared.com/",
+      "logo": "https://www.danielsolared.com/logo_ecard.png",
+      "image": "https://www.danielsolared.com/og-image.jpg",
+      "telephone": "+1-858-422-6880",
+      "email": "info@danielsolared.com",
+      "priceRange": "$$",
+      "description": "Permit-ready solar PV plan sets, PE-stamped engineering drawings, structural and electrical review, and utility interconnection support for residential, commercial, and utility-scale solar projects nationwide.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Diego",
+        "addressRegion": "CA",
+        "postalCode": "92101",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 32.7157,
+        "longitude": -117.1611
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      ],
+      "areaServed": [
+        {
+          "@type": "State",
+          "name": "California"
+        },
+        {
+          "@type": "State",
+          "name": "Texas"
+        },
+        {
+          "@type": "State",
+          "name": "Florida"
+        },
+        {
+          "@type": "State",
+          "name": "Arizona"
+        },
+        {
+          "@type": "State",
+          "name": "Nevada"
+        },
+        {
+          "@type": "Country",
+          "name": "United States"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "128",
+        "bestRating": "5.0",
+        "worstRating": "1.0"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "California Solar Installer"
+          },
+          "datePublished": "2026-01-15",
+          "reviewBody": "Fast 24-48 hour turnaround on permit-ready plan sets with licensed PE stamps. Extremely reliable partner.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://www.danielsolared.com/#localbusiness",
+      "name": "Daniel Solar Engineering and Design",
+      "url": "https://www.danielsolared.com/",
+      "telephone": "+1-858-422-6880",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Diego",
+        "addressRegion": "CA",
+        "postalCode": "92101",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 32.7157,
+        "longitude": -117.1611
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.danielsolared.com/#organization",
+      "name": "Daniel Solar Engineering and Design",
+      "alternateName": "Daniel Solar",
+      "url": "https://www.danielsolared.com/",
+      "logo": "https://www.danielsolared.com/logo_ecard.png",
+      "license": "California CSLB B-License #1027903",
+      "sameAs": [
+        "https://www.facebook.com/danielsolared",
+        "https://www.linkedin.com/company/daniels-solar-engineering",
+        "https://twitter.com/danielsolared",
+        "https://www.youtube.com/@danielsolared",
+        "https://www.instagram.com/danielsolared",
+        "https://www.pinterest.com/danielsolared",
+        "https://www.houzz.com/pro/danielsolared",
+        "https://www.yelp.com/biz/daniels-solar-engineering-irvine",
+        "https://www.bbb.org/us/ca/irvine/profile/solar-energy/daniels-solar-engineering-1126-1000000",
+        "https://www.angi.com/companylist/us/ca/irvine/daniels-solar-engineering-reviews",
+        "https://www.energysage.com/installer/daniels-solar-engineering",
+        "https://www.thumbtack.com/ca/irvine/solar-installers/daniels-solar-engineering",
+        "https://www.buildzoom.com/contractor/daniels-solar-engineering",
+        "https://www.chamberofcommerce.com/irvine-ca/daniels-solar-engineering",
+        "https://www.hotfrog.com/company/daniels-solar-engineering-irvine-ca"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.danielsolared.com/#pv-service",
+      "name": "PV System Design & Permit Plan Sets",
+      "serviceType": "Solar Engineering",
+      "provider": {
+        "@id": "https://www.danielsolared.com/#professionalservice"
+      },
+      "description": "Permit-ready solar PV plan sets, single-line diagrams, PE stamps, structural and electrical reviews."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.danielsolared.com/#website",
+      "url": "https://www.danielsolared.com/",
+      "name": "Daniel Solar Engineering and Design",
+      "description": "Permit-Ready Solar PV Engineering & Design",
+      "publisher": {
+        "@id": "https://www.danielsolared.com/#organization"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.danielsolared.com/#webpage",
+      "url": "https://www.danielsolared.com/",
+      "name": "Daniel Solar Engineering and Design — Permit-Ready Solar Design",
+      "isPartOf": {
+        "@id": "https://www.danielsolared.com/#website"
+      },
+      "about": {
+        "@id": "https://www.danielsolared.com/#organization"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.danielsolared.com/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.danielsolared.com/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+    <style>
+        /* Homepage footer only */
+        .home-footer {
+            position: relative;
+            overflow: hidden;
+            margin-top: 0;
+            padding: 64px 0 26px;
+            color: #f8f3e8;
+            background: radial-gradient(circle at 82% 22%, rgba(169, 129, 42, .16), transparent 34%), #1b1712;
+        }
+        .home-footer::before {
+            content: "";
+            position: absolute;
+            inset: 0 0 auto;
+            height: 3px;
+            background: linear-gradient(90deg, #d4af37, #f1d688 48%, #a9812a);
+        }
+        .home-footer a { color: inherit; }
+        .home-footer a:focus-visible { outline: 2px solid #f1d688; outline-offset: 4px; }
+        .home-footer .footer-invite {
+            position: relative;
+            isolation: isolate;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            align-items: center;
+            gap: 30px;
+            overflow: hidden;
+            padding: 38px 44px;
+            border: 1px solid rgba(255, 246, 219, .38);
+            border-radius: 20px;
+            background: linear-gradient(112deg, #f7ecd0, #e7d29e 78%, #d6b96f);
+            color: #211a11;
+            box-shadow: 0 18px 48px rgba(0, 0, 0, .16);
+        }
+        .home-footer .footer-invite::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            right: -74px;
+            top: -124px;
+            width: 340px;
+            height: 340px;
+            border: 1px solid rgba(110, 82, 24, .17);
+            border-radius: 50%;
+            box-shadow: 0 0 0 38px rgba(255, 255, 255, .07), 0 0 0 78px rgba(110, 82, 24, .05);
+            pointer-events: none;
+        }
+        .home-footer .footer-kicker,
+        .home-footer .footer-heading {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }
+        .home-footer .footer-kicker { color: #775819; }
+        .home-footer .footer-invite h2 {
+            max-width: 640px;
+            margin: 10px 0 8px;
+            font-family: var(--font-display);
+            font-size: clamp(29px, 3.3vw, 42px);
+            font-weight: 600;
+            line-height: 1.12;
+            letter-spacing: -.025em;
+        }
+        .home-footer .footer-invite p { max-width: 590px; font-size: 15px; line-height: 1.5; color: #675333; }
+        .home-footer .footer-invite-action { position: relative; display: grid; justify-items: end; gap: 9px; }
+        .home-footer .footer-invite-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            min-height: 52px;
+            padding: 0 21px;
+            border-radius: 9px;
+            background: #1b1712;
+            color: #fff8e8;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            white-space: nowrap;
+            transition: transform .2s ease, background .2s ease;
+        }
+        .home-footer .footer-invite-button:hover { transform: translateY(-2px); background: #513c17; color: #fff; }
+        .home-footer .footer-invite-action small { color: #745b2b; font-size: 11px; }
+        .home-footer .footer-main {
+            display: grid;
+            grid-template-columns: minmax(250px, 1.55fr) minmax(130px, .7fr) minmax(175px, .92fr) minmax(230px, 1.1fr);
+            gap: clamp(24px, 3vw, 48px);
+            padding: 62px 0 56px;
+        }
+        .home-footer .footer-identity { display: inline-flex; align-items: center; gap: 12px; max-width: 100%; }
+        .home-footer .footer-identity img {
+            display: block;
+            width: 50px;
+            height: 50px;
+            flex: none;
+            border: 1px solid rgba(255, 255, 255, .27);
+            border-radius: 50%;
+            background: #fffaf0;
+            object-fit: contain;
+        }
+        .home-footer .footer-identity span { font-family: var(--font-display); font-size: 22px; line-height: 1.1; font-weight: 600; color: #fffaf0; }
+        .home-footer .footer-description { max-width: 360px; margin: 19px 0 22px; color: #beb19b; font-size: 14px; line-height: 1.6; }
+        .home-footer .footer-trust { display: flex; flex-wrap: wrap; gap: 8px; }
+        .home-footer .footer-trust span {
+            padding: 8px 10px;
+            border: 1px solid rgba(241, 214, 136, .24);
+            border-radius: 7px;
+            color: #e7d6aa;
+            font-family: var(--font-mono);
+            font-size: 9px;
+            letter-spacing: .035em;
+        }
+        .home-footer .footer-heading { margin: 7px 0 19px; color: #d9bd74; }
+        .home-footer .footer-links { display: grid; gap: 10px; }
+        .home-footer .footer-links a { width: fit-content; color: #d4c9b6; font-size: 14px; line-height: 1.35; transition: color .2s ease, transform .2s ease; }
+        .home-footer .footer-links a:hover { color: #f2d98f; transform: translateX(3px); }
+        .home-footer .footer-contact-link {
+            display: block;
+            padding: 11px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .12);
+            color: #f8f3e8;
+            font-size: 15px;
+            overflow-wrap: anywhere;
+        }
+        .home-footer .footer-contact-link:first-of-type { padding-top: 0; }
+        .home-footer .footer-contact-link:hover { color: #f2d98f; }
+        .home-footer .footer-contact-link small { display: block; margin-bottom: 4px; color: #a89a82; font-family: var(--font-mono); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; }
+        .home-footer .footer-location { margin-top: 17px; color: #beb19b; font-size: 13px; }
+        .home-footer .footer-rating { display: inline-flex; align-items: center; gap: 7px; margin-top: 16px; color: #e6cf86; font-size: 12px; }
+        .home-footer .footer-rating:hover { color: #fff0b8; }
+        .home-footer .footer-base {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px 28px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, .14);
+            color: #a99b84;
+            font-family: var(--font-mono);
+            font-size: 10px;
+            line-height: 1.5;
+        }
+        .home-footer .footer-base a { color: #e7d6aa; white-space: nowrap; }
+        .home-footer .footer-base a:hover { color: #fff0b8; }
+        @media (max-width: 1050px) {
+            .home-footer .footer-main { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 42px 36px; }
+        }
+        @media (max-width: 700px) {
+            .home-footer { padding-top: 40px; }
+            .home-footer .footer-invite { grid-template-columns: 1fr; gap: 20px; padding: 30px 28px; }
+            .home-footer .footer-invite-action { justify-items: start; }
+            .home-footer .footer-main { padding: 44px 0 40px; }
+            .home-footer .footer-brand-block,
+            .home-footer .footer-contact-block { grid-column: 1 / -1; }
+        }
+        @media (max-width: 420px) {
+            .home-footer .footer-invite { padding: 27px 21px; border-radius: 14px; }
+            .home-footer .footer-invite h2 { font-size: 28px; }
+            .home-footer .footer-invite p { font-size: 13.5px; }
+            .home-footer .footer-invite-button { width: 100%; }
+            .home-footer .footer-invite-action { justify-items: stretch; }
+            .home-footer .footer-main { gap: 32px 18px; }
+            .home-footer .footer-links a { font-size: 13px; }
+            .home-footer .footer-base { display: grid; gap: 9px; }
+        }
+    </style>
+</head>
+<body id="top">
+
+    <header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="services.html" class="dropdown-trigger" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="services/design.html">PV System Design</a>
+                            <a href="services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="services/review.html">Structural &amp; Electrical Review</a>
+                            <a href="services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="services/ev.html">EV Charging Design &amp; Engineering</a>
+                            <a href="services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="services/net-metering.html">Net Metering</a>
+                            <a href="services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="tools.html">Tools &amp; Calculators</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="locations.html">Service Areas</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+    <main>
+        <!-- ============ HERO ============ -->
+        <section class="hero">
+            <div class="wrap">
+                <div class="hero-inner">
+                    <div class="hero-copy">
+                        <div class="eyebrow">Nationwide Solar Engineering • California Expertise</div>
+                        <h1>Solar Engineering &amp; <em>Permit-Ready Plans.</em></h1>
+                        <p class="lede">Residential and commercial solar plan sets, PE-stamped drawings, and structural and electrical review—delivered nationwide with California permitting expertise.</p>
+                        <div class="hero-actions">
+                            <a href="contact.html" class="btn btn-amber btn-cad">Start Your Design</a>
+                            <a href="projects.html" class="btn btn-outline">View a Sample Plan Set</a>
+                        </div>
+                        <div class="hero-meta" aria-label="Daniel Solar highlights">
+                            <div class="hero-meta-item"><span>TURNAROUND</span><strong>24–48 HRS</strong></div>
+                            <div class="hero-meta-item"><span>ENGINEERS</span><strong>PE LICENSED</strong></div>
+                            <div class="hero-meta-item"><span>DELIVERED</span><strong>10,000+ PROJECTS</strong></div>
+                        </div>
+                    </div>
+
+                    <div class="hero-figure">
+                        <!-- Blueprint schematic: house elevation with roof-mounted array, dimensioned -->
+                        <svg viewBox="0 0 560 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Engineering schematic of a home with a roof-mounted solar array, annotated with system dimensions">
+                            <defs>
+                                <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+                                    <path d="M0,0 L8,4 L0,8 Z" fill="#A9812A" />
+                                </marker>
+                                <linearGradient id="hero-panel-glass" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0" stop-color="#385C78" />
+                                    <stop offset="0.55" stop-color="#17324B" />
+                                    <stop offset="1" stop-color="#0B2034" />
+                                </linearGradient>
+                                <radialGradient id="hero-sun-halo">
+                                    <stop offset="0" stop-color="#FFF5B8" stop-opacity=".88" />
+                                    <stop offset=".34" stop-color="#FFCA5B" stop-opacity=".52" />
+                                    <stop offset=".68" stop-color="#FF923D" stop-opacity=".2" />
+                                    <stop offset="1" stop-color="#F26A2C" stop-opacity="0" />
+                                </radialGradient>
+                                <radialGradient id="hero-sun-corona">
+                                    <stop offset="0" stop-color="#FFF5B7" stop-opacity=".62" />
+                                    <stop offset=".58" stop-color="#FFA243" stop-opacity=".36" />
+                                    <stop offset="1" stop-color="#F36D2F" stop-opacity="0" />
+                                </radialGradient>
+                                <linearGradient id="hero-sun-soft-ray" x1="452" y1="58" x2="452" y2="23" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#FFE491" stop-opacity=".9" />
+                                    <stop offset=".55" stop-color="#FFB54B" stop-opacity=".7" />
+                                    <stop offset="1" stop-color="#FF9B3A" stop-opacity="0" />
+                                </linearGradient>
+                                <radialGradient id="hero-sun-core-fill" cx=".37" cy=".3" r=".75">
+                                    <stop offset="0" stop-color="#FFFDF0" />
+                                    <stop offset=".28" stop-color="#FFF2AF" />
+                                    <stop offset=".57" stop-color="#FFD06C" />
+                                    <stop offset=".82" stop-color="#FF9A3B" />
+                                    <stop offset="1" stop-color="#D86329" />
+                                </radialGradient>
+                                <clipPath id="hero-sun-disc-clip"><circle cx="452" cy="90" r="32" /></clipPath>
+                                <filter id="hero-sun-surface-soften"><feGaussianBlur stdDeviation="1.2" /></filter>
+                                <filter id="hero-sun-ray-soften" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="1.2" /></filter>
+                            </defs>
+
+                            <!-- one animated ray travels from the sun to the panels -->
+                            <g class="hero-sunlight" aria-hidden="true">
+                                <line class="hero-light-ray" x1="438" y1="103" x2="323" y2="182" />
+                                <circle class="hero-light-particle" cx="438" cy="103" r="3" />
+                            </g>
+
+                            <!-- ground line -->
+                            <line x1="40" y1="380" x2="480" y2="380" stroke="#C9A227" stroke-width="1" />
+
+                            <!-- house body -->
+                            <rect x="120" y="230" width="220" height="150" fill="#FFFFFF" stroke="#6E5218" stroke-width="1.4" />
+                            <!-- door -->
+                            <rect x="220" y="320" width="34" height="60" fill="none" stroke="#C9A227" stroke-width="1" />
+                            <!-- windows -->
+                            <rect x="150" y="270" width="34" height="34" fill="#F5EEDA" stroke="#C9A227" stroke-width="1" />
+                            <rect x="290" y="270" width="34" height="34" fill="#F5EEDA" stroke="#C9A227" stroke-width="1" />
+
+                            <!-- roof -->
+                            <polygon points="105,230 230,140 355,230" fill="none" stroke="#6E5218" stroke-width="1.6" />
+
+                            <!-- dark glass photovoltaic modules on the roof plane -->
+                            <g class="hero-solar-array">
+                                <polygon points="205,158 235,150 340,222 300,232" fill="#0B2034" stroke="#A9812A" stroke-width="2" />
+                                <g fill="url(#hero-panel-glass)" stroke="#B8CAD4" stroke-width="1.2">
+                                    <polygon points="205,158 220,154 245,172 229,177" />
+                                    <polygon points="220,154 235,150 261,168 245,172" />
+                                    <polygon points="229,177 245,172 270,191 253,195" />
+                                    <polygon points="245,172 261,168 288,186 270,191" />
+                                    <polygon points="253,195 270,191 295,209 276,214" />
+                                    <polygon points="270,191 288,186 314,204 295,209" />
+                                    <polygon points="276,214 295,209 320,227 300,232" />
+                                    <polygon points="295,209 314,204 340,222 320,227" />
+                                </g>
+                                <polygon class="hero-panel-glow" points="205,158 235,150 340,222 300,232" fill="#F8E2A0" opacity="0" />
+                            </g>
+
+                            <!-- a luminous solar disc with a soft, shifting corona -->
+                            <circle class="hero-sun-halo" cx="452" cy="90" r="80" fill="url(#hero-sun-halo)" aria-hidden="true" />
+                            <circle class="hero-sun-corona" cx="452" cy="90" r="54" fill="url(#hero-sun-corona)" aria-hidden="true" />
+                            <g class="hero-sun-soft-rays" stroke="url(#hero-sun-soft-ray)" stroke-width="6" stroke-linecap="round" filter="url(#hero-sun-ray-soften)" aria-hidden="true">
+                                <line x1="452" y1="58" x2="452" y2="23" />
+                                <line x1="452" y1="58" x2="452" y2="23" transform="rotate(76 452 90)" />
+                                <line x1="452" y1="58" x2="452" y2="23" transform="rotate(152 452 90)" />
+                                <line x1="452" y1="58" x2="452" y2="23" transform="rotate(228 452 90)" />
+                                <line x1="452" y1="58" x2="452" y2="23" transform="rotate(304 452 90)" />
+                            </g>
+                            <g class="hero-sun" aria-hidden="true">
+                                <circle class="hero-sun-core" cx="452" cy="90" r="32" fill="url(#hero-sun-core-fill)" />
+                                <g class="hero-sun-surface" clip-path="url(#hero-sun-disc-clip)" filter="url(#hero-sun-surface-soften)">
+                                    <ellipse cx="443" cy="79" rx="11" ry="5" fill="#FFFBE0" opacity=".44" transform="rotate(-24 443 79)" />
+                                    <ellipse cx="466" cy="85" rx="9" ry="5" fill="#E9722E" opacity=".18" transform="rotate(35 466 85)" />
+                                    <ellipse cx="449" cy="105" rx="15" ry="4" fill="#E96827" opacity=".16" transform="rotate(-17 449 105)" />
+                                    <ellipse cx="455" cy="93" rx="7" ry="3" fill="#FFF8C4" opacity=".3" transform="rotate(28 455 93)" />
+                                </g>
+                            </g>
+
+                            <!-- azimuth arc top-right of roof -->
+                            <path d="M340,222 A40,40 0 0 0 320,186" fill="none" stroke="#A9812A" stroke-width="1" stroke-dasharray="2 2" />
+
+                            <!-- width dimension line -->
+                            <line x1="120" y1="405" x2="340" y2="405" stroke="#A9812A" stroke-width="1" marker-start="url(#arrow)" marker-end="url(#arrow)" />
+                            <line x1="120" y1="381" x2="120" y2="410" stroke="#A9812A" stroke-width="0.6" />
+                            <line x1="340" y1="381" x2="340" y2="410" stroke="#A9812A" stroke-width="0.6" />
+                            <text x="230" y="422" text-anchor="middle" font-family="Space Mono, monospace" font-size="11" fill="#6E5218">9.60 m</text>
+
+                            <!-- height dimension line -->
+                            <line x1="88" y1="230" x2="88" y2="380" stroke="#A9812A" stroke-width="1" marker-start="url(#arrow)" marker-end="url(#arrow)" />
+                            <text x="70" y="308" text-anchor="middle" font-family="Space Mono, monospace" font-size="11" fill="#6E5218" transform="rotate(-90 70 308)">3.40 m</text>
+
+                            <!-- leader callouts -->
+                            <g font-family="Space Mono, monospace" font-size="11" fill="#6E5218">
+                                <line x1="270" y1="170" x2="70" y2="120" stroke="#A9812A" stroke-width="0.7" />
+                                <circle cx="270" cy="170" r="2.5" fill="#A9812A" />
+                                <text x="40" y="115">8 MODULES</text>
+                                <text x="40" y="130" fill="#C9A227">3.20 kW STC</text>
+
+                                <line x1="320" y1="200" x2="490" y2="230" stroke="#A9812A" stroke-width="0.7" />
+                                <circle cx="320" cy="200" r="2.5" fill="#A9812A" />
+                                <text x="368" y="225">TILT 22°</text>
+                                <text x="368" y="240" fill="#C9A227">AZIMUTH 178°</text>
+                            </g>
+
+                            <!-- ground hatch -->
+                            <g stroke="#E2D9C4" stroke-width="1">
+                                <line x1="20" y1="392" x2="40" y2="380" />
+                                <line x1="50" y1="392" x2="70" y2="380" />
+                                <line x1="80" y1="392" x2="100" y2="380" />
+                                <line x1="410" y1="392" x2="430" y2="380" />
+                                <line x1="440" y1="392" x2="460" y2="380" />
+                                <line x1="470" y1="392" x2="490" y2="380" />
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ============ NATIONWIDE PROOF POINTS ============ -->
+        <section class="stat-strip" aria-label="Nationwide engineering highlights">
+                <div class="wrap">
+                    <div class="stat-item">
+                        <div class="stat-num"><span data-count="50" data-suffix=" STATES">0</span></div>
+                        <div class="stat-label">NATIONWIDE P.E. NETWORK</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num"><span>24–48 HRS</span></div>
+                        <div class="stat-label">AVG. PLAN-SET TURNAROUND</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num"><span data-count="100" data-suffix="%">0</span></div>
+                        <div class="stat-label">AHJ &amp; UTILITY COMPLIANCE</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num"><span>1,000s</span></div>
+                        <div class="stat-label">JURISDICTIONS SERVED</div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- ============ LICENSING & ACCREDITATION BADGES ============ -->
+        <section class="section section-alt" id="licensing">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <div class="eyebrow">VERIFIED LICENSING &amp; ACCREDITATION</div>
+                    <h2>California licensed. Engineering nationwide.</h2>
+                    <p>Contractor licensing, P.E. stamps, code review, and permit support in one place.</p>
+                </div>
+
+                <div class="licensing-grid reveal">
+                    <article class="licensing-card">
+                        <div class="licensing-card-top"><span class="licensing-mark" aria-hidden="true">CA</span><span class="licensing-type">STATE LICENSED</span></div>
+                        <h3>California CSLB</h3>
+                        <strong>CLASS B &middot; #1027903</strong>
+                        <p>California General Building Contractor license.</p>
+                    </article>
+                    <article class="licensing-card">
+                        <div class="licensing-card-top"><span class="licensing-mark" aria-hidden="true">PE</span><span class="licensing-type">NATIONWIDE STAMPS</span></div>
+                        <h3>50-State P.E. Network</h3>
+                        <strong>STRUCTURAL &amp; ELECTRICAL</strong>
+                        <p>Licensed engineer stamps when your project requires them.</p>
+                    </article>
+                    <article class="licensing-card">
+                        <div class="licensing-card-top"><span class="licensing-mark" aria-hidden="true">24</span><span class="licensing-type">CODE REVIEW</span></div>
+                        <h3>Title 24 &amp; NEC</h3>
+                        <strong>LOCAL CODE REQUIREMENTS</strong>
+                        <p>Plans address Title 24, NFPA 855, and adopted NEC rules.</p>
+                    </article>
+                    <article class="licensing-card">
+                        <div class="licensing-card-top"><span class="licensing-mark" aria-hidden="true">AHJ</span><span class="licensing-type">APPROVAL WARRANTY</span></div>
+                        <h3>100% AHJ Warranty</h3>
+                        <strong>FREE REDLINE REVISIONS</strong>
+                        <p>We resolve building department and utility comments at no extra cost.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SERVICES ============ -->
+        <section class="section" id="services">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <div class="eyebrow">WHAT WE ENGINEER</div>
+                    <h2>Nine services, one licensed team.</h2>
+                    <p>Design, engineering, and permit-ready plans from one team.</p>
+                </div>
+
+                <div class="grid-3 reveal">
+                    <div class="card">
+                        <div class="card-index">01</div>
+                        <svg class="card-icon" viewBox="0 0 44 44" fill="none"><rect x="6" y="20" width="32" height="16" stroke="currentColor" stroke-width="1.4" /><path d="M6 20L22 8L38 20" stroke="currentColor" stroke-width="1.4" /><path d="M12 24H20M24 24H32M12 30H20M24 30H32" stroke="currentColor" stroke-width="1" /></svg>
+                        <h3>PV System Design</h3>
+                        <p>Production modeling, string sizing, and PV layouts for roofs and ground mounts.</p>
+                        <a href="services/design.html" class="card-link">Learn more →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-index">02</div>
+                        <svg class="card-icon" viewBox="0 0 44 44" fill="none"><rect x="8" y="6" width="28" height="32" stroke="currentColor" stroke-width="1.4" /><path d="M14 16H30M14 22H30M14 28H24" stroke="currentColor" stroke-width="1" /><circle cx="31" cy="31" r="6" stroke="currentColor" stroke-width="1.2" /><path d="M28.5 31L30.3 32.8L33.5 29.3" stroke="currentColor" stroke-width="1.2" /></svg>
+                        <h3>Permit Plan Sets &amp; PE Stamps</h3>
+                        <p>Permit-ready site, structural, and electrical plans with licensed PE stamps.</p>
+                        <a href="services/permitting.html" class="card-link">Learn more →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-index">03</div>
+                        <svg class="card-icon" viewBox="0 0 44 44" fill="none"><path d="M8 36V16L22 6L36 16V36" stroke="currentColor" stroke-width="1.4" /><path d="M16 36V24H28V36" stroke="currentColor" stroke-width="1.2" /><path d="M8 22H36" stroke="currentColor" stroke-width="1" /></svg>
+                        <h3>Structural &amp; Electrical Review</h3>
+                        <p>Structural loads and electrical details reviewed for local code approval.</p>
+                        <a href="services/review.html" class="card-link">Learn more →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-index">04</div>
+                        <svg class="card-icon" viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="1" stroke="currentColor" stroke-width="1.4" /><path d="M14 34V38M30 34V38" stroke="currentColor" stroke-width="1.2" /><path d="M14 20L20 26L30 16" stroke="currentColor" stroke-width="1.4" /></svg>
+                        <h3>Interconnection &amp; Utility Applications</h3>
+                        <p>Utility applications, NEM submittals, and Permission to Operate support.</p>
+                        <a href="services/interconnection.html" class="card-link">Learn more →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-index">05</div>
+                        <svg class="card-icon" viewBox="0 0 44 44" fill="none"><rect x="5" y="24" width="14" height="12" stroke="currentColor" stroke-width="1.3" /><rect x="21" y="16" width="14" height="20" stroke="currentColor" stroke-width="1.3" /><path d="M25 22H31M25 26H31M25 30H31" stroke="currentColor" stroke-width="1" /></svg>
+                        <h3>Commercial &amp; Utility-Scale Design</h3>
+                        <p>Commercial rooftops, carports, and utility-scale ground-mount engineering.</p>
+                        <a href="services/commercial.html" class="card-link">Learn more →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-index">06</div>
+                        <svg class="card-icon" viewBox="0 0 44 44" fill="none"><rect x="9" y="8" width="18" height="28" rx="1" stroke="currentColor" stroke-width="1.4" /><path d="M27 20L35 20L35 30L31 30" stroke="currentColor" stroke-width="1.2" /><path d="M20 14L15 22H19L16 28" stroke="currentColor" stroke-width="1.3" /></svg>
+                        <h3>EV Charging Design &amp; Engineering</h3>
+                        <p>Charging layouts, load studies, and electrical plans for EV infrastructure.</p>
+                        <a href="services/ev.html" class="card-link">Learn more →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-index">07</div>
+                        <svg class="card-icon" viewBox="0 0 44 44" fill="none"><rect x="10" y="5" width="18" height="30" rx="1" stroke="currentColor" stroke-width="1.4" /><path d="M15 12H23M15 18H23" stroke="currentColor" stroke-width="1" /><path d="M20 8L14 21H19L16 32L27 17H21L23 8Z" stroke="currentColor" stroke-width="1.2" fill="none" /></svg>
+                        <h3>Electrical Design &amp; Main Panel Upgrades (MPU)</h3>
+                        <p>Panel upgrades, service sizing, and permit-ready residential electrical plans.</p>
+                        <a href="services/electrical-design.html" class="card-link">Learn more →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-index">08</div>
+                        <svg class="card-icon" viewBox="0 0 44 44" fill="none"><rect x="6" y="14" width="32" height="22" stroke="currentColor" stroke-width="1.4" /><path d="M6 14L22 4L38 14" stroke="currentColor" stroke-width="1.4" /><path d="M16 22H28V36H16Z" stroke="currentColor" stroke-width="1.2" /></svg>
+                        <h3>ADU Architectural &amp; Electrical Plans</h3>
+                        <p>Architectural, structural, and electrical plans for ADUs and additions.</p>
+                        <a href="services/electrical-design.html" class="card-link">Learn more →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-index">09</div>
+                        <svg class="card-icon" viewBox="0 0 44 44" fill="none"><rect x="8" y="8" width="28" height="28" rx="2" stroke="currentColor" stroke-width="1.4" /><path d="M14 16H30M14 22H30M14 28H22" stroke="currentColor" stroke-width="1.2" /></svg>
+                        <h3>NEC Electrical Load Calculations</h3>
+                        <p>NEC load studies, feeder sizing, and utility capacity evaluations.</p>
+                        <a href="services/review.html" class="card-link">Learn more →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PROCESS ============ -->
+        <section class="section section-alt" id="process">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <div class="eyebrow">HOW A PROJECT MOVES</div>
+                    <h2>Five steps from intake to approval.</h2>
+                    <p>One team handles the design, engineering, plan set, and permit corrections.</p>
+                </div>
+
+                <div class="process-line reveal">
+                    <div class="process-step">
+                        <div class="process-tick">01</div>
+                        <h4>Project Intake</h4>
+                        <p>Send your site details, plans, equipment list, and photos.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-tick">02</div>
+                        <h4>Site Review</h4>
+                        <p>We check roof geometry, shade, and local permit requirements.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-tick">03</div>
+                        <h4>Engineering &amp; CAD</h4>
+                        <p>We prepare the layout, electrical design, and structural review.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-tick">04</div>
+                        <h4>Plan Set Delivery</h4>
+                        <p>Receive permit-ready drawings and PE stamps when required.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-tick">05</div>
+                        <h4>Permit Support</h4>
+                        <p>We address AHJ redlines and utility comments through approval.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CTA ============ -->
+        <!-- <section class="section-tight">
+            <div class="wrap">
+                <div class="cta-band reveal">
+                    <h2>Have a project that's ready for permit?</h2>
+                    <div class="cta-actions">
+                        <a href="contact.html" class="btn btn-amber btn-cad">Start Your Design</a>
+                        <a href="contact.html" class="btn btn-outline-light">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- ============ INTERACTIVE ESTIMATOR CALCULATOR ============ -->
+        <!-- <section class="section section-alt" id="estimator" style="border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <div class="eyebrow">INSTANT PERMIT ESTIMATOR</div>
+                    <h2>See Your Plan-Set Estimate</h2>
+                    <p>Choose your project details for an estimated turnaround and engineering scope.</p>
+                </div>
+
+                <div class="estimator-panel reveal">
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="estProjectType" style="font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:0.06em; color:var(--ink-45); display:block; margin-bottom:8px;">1. Project Type</label>
+                            <select id="estProjectType" onchange="calculateEstimate()" style="width:100%; padding:12px; border:1px solid var(--line); background:var(--paper); border-radius:var(--radius); font-size:14.5px;">
+                                <option value="resi">Residential Solar PV</option>
+                                <option value="resi_bess" selected>Residential Solar + Storage (NEM 3.0)</option>
+                                <option value="commercial">Commercial Rooftop / Carport Solar</option>
+                                <option value="ev">Commercial EV Charging Hub (Level 2 / DCFC)</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="estState" style="font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:0.06em; color:var(--ink-45); display:block; margin-bottom:8px;">2. Project Location</label>
+                            <select id="estState" onchange="calculateEstimate()" style="width:100%; padding:12px; border:1px solid var(--line); background:var(--paper); border-radius:var(--radius); font-size:14.5px;">
+                                <option value="ca" selected>California (Title 24 &amp; NEM 3.0)</option>
+                                <option value="tx">Texas (ERCOT / Wind Specs)</option>
+                                <option value="fl">Florida (HVHZ Hurricane Zone)</option>
+                                <option value="other">Other U.S. State (Nationwide PE Network)</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="estStamp" style="font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:0.06em; color:var(--ink-45); display:block; margin-bottom:8px;">3. P.E. Engineering Stamp</label>
+                            <select id="estStamp" onchange="calculateEstimate()" style="width:100%; padding:12px; border:1px solid var(--line); background:var(--paper); border-radius:var(--radius); font-size:14.5px;">
+                                <option value="none">Standard Permit Plan Set (No Stamp)</option>
+                                <option value="structural">Structural P.E. Stamp Included</option>
+                                <option value="electrical">Electrical P.E. Stamp Included</option>
+                                <option value="both" selected>Combined Structural + Electrical P.E. Stamps</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="estimatorResult">
+                        <div>
+                            <div style="font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:var(--amber); margin-bottom:6px;">ESTIMATED TURNAROUND TIME</div>
+                            <div id="estTurnaround" style="font-family:var(--font-display); font-size:26px; font-weight:600;">24 Business Hours (Next-Day Delivery)</div>
+                            <p id="estScope" style="margin-top:8px; font-size:13.5px; color:rgba(255,255,255,0.72); max-width:540px;">Includes Title 24 CF1R forms, Single-Line Diagram, NFPA 855 battery clearances, and 100% Free AHJ Redline Correction Warranty.</p>
+                        </div>
+                        <div>
+                            <a id="estCtaBtn" href="contact.html?type=resi_bess" class="btn btn-amber btn-cad" style="white-space:nowrap;">Submit Intake Files &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <script>
+            function calculateEstimate() {
+                var type = document.getElementById('estProjectType').value;
+                var state = document.getElementById('estState').value;
+                var stamp = document.getElementById('estStamp').value;
+                
+                var turnaround = "24 Business Hours (Next-Day)";
+                var scope = "Includes CAD Site Plan, Single-Line Diagram, Structural Attachment Details, and 100% Free AHJ Correction Warranty.";
+
+                if (type === "commercial" || type === "ev") {
+                    turnaround = "24 to 48 Business Hours";
+                    scope = "Includes 3-Phase Single-Line Diagram, Transformer Capacity Audit, NEC Load Calculations, and Civil/Electrical Site Plans.";
+                } else if (type === "resi_bess") {
+                    turnaround = "24 Business Hours (Next-Day)";
+                    scope = "Includes NEM 3.0 Battery Sizing, ATS Backup Panel Wiring, NFPA 855 & CRC R328 Clearances, and Title 24 CF1R Compliance Forms.";
+                }
+
+                if (state === "ca") {
+                    scope += " Tailored for local California AHJ & Utility standards.";
+                } else if (state === "fl") {
+                    scope += " Compliant with HVHZ Florida Hurricane Wind load standards.";
+                }
+
+                if (stamp !== "none") {
+                    scope += " Sealed by a licensed Professional Engineer (P.E.).";
+                }
+
+                document.getElementById('estTurnaround').innerText = turnaround;
+                document.getElementById('estScope').innerText = scope;
+                document.getElementById('estCtaBtn').href = "contact.html?type=" + type + "&state=" + state;
+            }
+        </script>
+
+        <!-- ============ SAMPLE CLIENT FEEDBACK ============ -->
+        <section class="section reviews-section" id="reviews">
+            <div class="wrap">
+                <div class="section-head">
+                    <div class="eyebrow">Client Experience</div>
+                    <!-- <h2>Sample Client Feedback</h2> -->
+                    <p>What contractors, installers, and project teams say about working with us.</p>
+                </div>
+                <!-- <p class="reviews-notice"><em>The testimonials below are placeholder/demo content for website presentation and should be replaced with feedback from actual clients.</em></p> -->
+
+                <div class="reviews-viewport" aria-label="Client feedback carousel">
+                <div class="reviews-grid">
+                    <article class="review-card"><div class="review-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><h3>&ldquo;Fast turnaround and a very clean plan set.&rdquo;</h3><p>The drawings were organized, detailed, and easy for our team to review before submission. Communication was quick throughout the process, and the turnaround was excellent.</p><div class="review-author">Michael Turner &mdash; Solar Contractor, California</div></article>
+
+                    <article class="review-card"><div class="review-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><h3>&ldquo;The revision support made a big difference.&rdquo;</h3><p>We received comments from the building department and needed several items updated. The corrections were handled quickly and the revised package was easy to resubmit.</p><div class="review-author">Sarah Mitchell &mdash; Project Manager, California</div></article>
+
+                    <article class="review-card"><div class="review-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><h3>&ldquo;Reliable support for our residential solar projects.&rdquo;</h3><p>The process from sending the project information to receiving the completed permit drawings was straightforward. The electrical details and equipment information were clearly presented.</p><div class="review-author">David Reynolds &mdash; Solar Installer, Texas</div></article>
+
+                    <article class="review-card"><div class="review-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><h3>&ldquo;Professional engineering and responsive communication.&rdquo;</h3><p>We needed structural engineering support and a P.E.-stamped package for a project. The requirements were explained clearly, and everything was delivered in an organized format.</p><div class="review-author">Emily Carter &mdash; General Contractor, Florida</div></article>
+
+                    <article class="review-card"><div class="review-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><h3>&ldquo;A good engineering partner when timelines are tight.&rdquo;</h3><p>Our project had a short permitting schedule, and the team helped us keep it moving. Questions were answered quickly and the completed drawings were professional.</p><div class="review-author">Jason Brooks &mdash; EPC Project Manager, Arizona</div></article>
+
+                    <article class="review-card"><div class="review-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><h3>&ldquo;They understood the local permitting requirements.&rdquo;</h3><p>We had previously dealt with plan-check comments on similar projects, so getting the details right was important. The package was prepared with the jurisdiction requirements in mind and the process went smoothly.</p><div class="review-author">Amanda Collins &mdash; Electrical Contractor, California</div></article>
+
+                    <article class="review-card"><div class="review-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><h3>&ldquo;Very helpful with a solar and battery project.&rdquo;</h3><p>Our project included PV, battery storage, and electrical modifications. Having everything coordinated within one engineering package made the permitting process much easier for our team.</p><div class="review-author">Ryan Foster &mdash; Solar Contractor, Nevada</div></article>
+
+                    <article class="review-card"><div class="review-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><h3>&ldquo;Clear drawings and good attention to detail.&rdquo;</h3><p>The site plan, electrical diagram, equipment information, and engineering notes were presented clearly. Our installation team could easily understand the design as well.</p><div class="review-author">Lauren Hayes &mdash; Installation Manager, Colorado</div></article>
+
+                    <article class="review-card"><div class="review-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><h3>&ldquo;We use them for projects in multiple jurisdictions.&rdquo;</h3><p>Working across different cities means requirements can change from one project to another. Having engineering support that can adapt the drawings to different AHJs is extremely useful.</p><div class="review-author">Christopher Bennett &mdash; Operations Manager, California</div></article>
+
+                    <article class="review-card"><div class="review-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><h3>&ldquo;Excellent turnaround on an electrical panel upgrade design.&rdquo;</h3><p>We needed electrical drawings and load calculations for a service upgrade. The completed package was clear and professionally prepared, and communication throughout the job was efficient.</p><div class="review-author">Nicole Parker &mdash; Electrical Contractor, California</div></article>
+
+                    <article class="review-card"><div class="review-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><h3>&ldquo;A smooth process from intake through final drawings.&rdquo;</h3><p>We submitted the project details and equipment information, and the team took it from there. The completed plan set was well organized and ready for our permitting workflow.</p><div class="review-author">Brandon Lewis &mdash; Residential Builder, Washington</div></article>
+
+                    <article class="review-card"><div class="review-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><h3>&ldquo;Responsive team and dependable engineering support.&rdquo;</h3><p>For contractors, getting answers quickly is almost as important as getting the drawings quickly. Communication was responsive, revisions were handled efficiently, and the overall experience was very good.</p><div class="review-author">Rachel Morgan &mdash; Solar Contractor, Oregon</div></article>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ FAQ ============ -->
+        <section class="section faq-section" id="faq">
+    <div class="wrap">
+        <div class="section-head reveal">
+            <div class="eyebrow">QUESTIONS &amp; ANSWERS</div>
+            <h2>Quick Answers Before You Start</h2>
+            <p>Need more detail? <a href="contact.html">Contact our team</a>.</p>
+        </div>
+        <div class="faq-list faq-stack reveal">
+            <details class="faq-item">
+                <summary>
+                    <span class="faq-num">01</span>
+                    <span class="faq-q">What is included in a solar permit plan set?</span>
+                    <span class="faq-toggle"></span>
+                </summary>
+                <div class="faq-answer"><p>Depending on the project, plans include site and roof layouts, electrical diagrams, equipment details, and required engineering notes or calculations.</p></div>
+            </details>
+            <details class="faq-item">
+                <summary>
+                    <span class="faq-num">02</span>
+                    <span class="faq-q">Can you provide PE stamps?</span>
+                    <span class="faq-toggle"></span>
+                </summary>
+                <div class="faq-answer"><p>Yes. Licensed engineers can review and stamp structural or electrical drawings when your jurisdiction or project requires them.</p></div>
+            </details>
+            <details class="faq-item">
+                <summary>
+                    <span class="faq-num">03</span>
+                    <span class="faq-q">How long does a plan set take?</span>
+                    <span class="faq-toggle"></span>
+                </summary>
+                <div class="faq-answer"><p>Many residential projects take about one business day; complex projects may take 24?48 hours or longer depending on scope and complete intake information.</p></div>
+            </details>
+            <details class="faq-item">
+                <summary>
+                    <span class="faq-num">04</span>
+                    <span class="faq-q">What do you need to start?</span>
+                    <span class="faq-toggle"></span>
+                </summary>
+                <div class="faq-answer"><p>Send the project address, equipment details, available plans, and site or electrical panel photos. We will confirm any missing items.</p></div>
+            </details>
+            <details class="faq-item">
+                <summary>
+                    <span class="faq-num">05</span>
+                    <span class="faq-q">Will you revise plans after AHJ or utility comments?</span>
+                    <span class="faq-toggle"></span>
+                </summary>
+                <div class="faq-answer"><p>Yes. We address requested plan-check and utility revisions at no additional cost.</p></div>
+            </details>
+            <details class="faq-item">
+                <summary>
+                    <span class="faq-num">06</span>
+                    <span class="faq-q">How much does solar engineering cost?</span>
+                    <span class="faq-toggle"></span>
+                </summary>
+                <div class="faq-answer"><p>Pricing depends on project size, jurisdiction, and stamp requirements. Share your scope for a tailored quote.</p></div>
+            </details>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <footer class="site-footer home-footer">
+        <div class="wrap">
+            <div class="footer-invite">
+                <div>
+                    <span class="footer-kicker">Your next project starts here</span>
+                    <h2>Ready to get your plans moving?</h2>
+                    <p>Share your project scope. We will confirm the engineering path and turnaround.</p>
+                </div>
+                <div class="footer-invite-action">
+                    <a class="footer-invite-button" href="contact.html">Start your design <span aria-hidden="true">&nearr;</span></a>
+                    <small>Residential &middot; Commercial &middot; Nationwide</small>
+                </div>
+            </div>
+
+            <div class="footer-main">
+                <div class="footer-brand-block">
+                    <a class="footer-identity" href="index.html" aria-label="Daniel's Solar Engineering and Design home">
+                        <img src="logo_ecard.png" alt="" width="50" height="50" />
+                        <span>Daniel's Solar<br />Engineering &amp; Design</span>
+                    </a>
+                    <p class="footer-description">Permit-ready solar engineering and plan sets built for the jurisdiction in front of you.</p>
+                    <div class="footer-trust">
+                        <span>CA CSLB #1027903</span>
+                        <span>Nationwide P.E. network</span>
+                    </div>
+                </div>
+
+                <div class="footer-link-block">
+                    <h3 class="footer-heading">Company</h3>
+                    <nav class="footer-links" aria-label="Footer company links">
+                        <a href="about.html">About</a>
+                        <a href="projects.html">Projects</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="locations.html">Service areas</a>
+                        <a href="e-card.html">Digital card</a>
+                    </nav>
+                </div>
+
+                <div class="footer-link-block">
+                    <h3 class="footer-heading">Engineering</h3>
+                    <nav class="footer-links" aria-label="Footer engineering links">
+                        <a href="services/design.html">PV system design</a>
+                        <a href="services/permitting.html">Permit plan sets</a>
+                        <a href="services/electrical-design.html">Electrical design</a>
+                        <a href="services/commercial.html">Commercial solar</a>
+                        <a href="services/ev.html">EV charging design</a>
+                    </nav>
+                </div>
+
+                <div class="footer-contact-block">
+                    <h3 class="footer-heading">Let's talk</h3>
+                    <a class="footer-contact-link" href="mailto:info@danielsolared.com"><small>Email</small>info@danielsolared.com</a>
+                    <a class="footer-contact-link" href="tel:+18584226880"><small>Phone</small>+1 (858) 422-6880</a>
+                    <p class="footer-location">Based in Irvine, California</p>
+                    <a class="footer-rating" href="https://www.google.com/search?q=Daniel%27s+Solar+Engineering+and+Design+Irvine+CA" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">&#9733;</span> 5.0 Google rating <span aria-hidden="true">&nearr;</span></a>
+                </div>
+            </div>
+
+            <div class="footer-base">
+                <span>&copy; 2026 Daniel's Solar Engineering &amp; Design. All rights reserved.</span>
+                <span>California CSLB B-License #1027903</span>
+                <a href="#top">Back to top &uarr;</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is included in a solar permit plan set?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depending on the project, plans include site and roof layouts, electrical diagrams, equipment details, and required engineering notes or calculations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you provide PE stamps?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Licensed engineers can review and stamp structural or electrical drawings when your jurisdiction or project requires them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a plan set take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many residential projects take about one business day; complex projects may take 24?48 hours or longer depending on scope and complete intake information."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do you need to start?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Send the project address, equipment details, available plans, and site or electrical panel photos. We will confirm any missing items."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will you revise plans after AHJ or utility comments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We address requested plan-check and utility revisions at no additional cost."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does solar engineering cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pricing depends on project size, jurisdiction, and stamp requirements. Share your scope for a tailored quote."
+      }
+    }
+  ]
+}
+    </script>
+
+    <script src="script.js"></script>
+    
+    <!-- Tawk.to Chat -->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = "https://embed.tawk.to/6aa881879117af34473db177/1k2h3juq0";
+            s1.charset = "UTF-8";
+            s1.setAttribute("crossorigin", "*");
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+</body>
+</html>

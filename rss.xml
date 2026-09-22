@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Daniel's Solar Engineering and Design - Official News &amp; Backlink Feed</title>
+  <link>https://www.danielsolared.com</link>
+  <description>Official RSS publication feed for Daniel's Solar Engineering P.E. stamped permit plan sets, NEM 3.0 battery designs, and commercial solar carport whitepapers.</description>
+  <language>en-us</language>
+  <atom:link href="https://www.danielsolared.com/rss.xml" rel="self" type="application/rss+xml" />
+
+  <item>
+    <title>Bifacial Solar Panel Albedo Calculations &amp; Rear-Side Yield Gain Guide</title>
+    <link>https://www.danielsolared.com/blog/bifacial-solar-panel-albedo-gain-calculations.html</link>
+    <description>Surface albedo reflection coefficients, ground clearance height (h/w), NEC 690.8 bifacial current boost, and string sizing math.</description>
+    <pubDate>Mon, 07 Sep 2026 00:00:00 GMT</pubDate>
+    <guid>https://www.danielsolared.com/blog/bifacial-solar-panel-albedo-gain-calculations.html</guid>
+  </item>
+
+  <item>
+    <title>Commercial EV Fleet Depot Infrastructure: 480V 3-Phase Transformer &amp; Solar Sizing</title>
+    <link>https://www.danielsolared.com/blog/commercial-ev-fleet-charging-infrastructure-design.html</link>
+    <description>Utility transformer sizing (kVA), 480V 3-phase switchgear layout, NEC 625.42 ALMS diversity factors, and solar carport canopy integration.</description>
+    <pubDate>Mon, 07 Sep 2026 00:00:00 GMT</pubDate>
+    <guid>https://www.danielsolared.com/blog/commercial-ev-fleet-charging-infrastructure-design.html</guid>
+  </item>
+
+  <item>
+    <title>Agricultural Solar Water Pumping System Design: VFD Inverters &amp; Dynamic Head Math</title>
+    <link>https://www.danielsolared.com/blog/agricultural-solar-water-pumping-system-design.html</link>
+    <description>Total Dynamic Head (TDH) formulas, solar VFD pump controllers, submersible motor sizing, and off-grid agricultural irrigation plan sets.</description>
+    <pubDate>Mon, 07 Sep 2026 00:00:00 GMT</pubDate>
+    <guid>https://www.danielsolared.com/blog/agricultural-solar-water-pumping-system-design.html</guid>
+  </item>
+
+  <item>
+    <title>Solar Microgrid Islanding &amp; Black-Start Engineering: IEEE 1547 &amp; UL 1741 CRD</title>
+    <link>https://www.danielsolared.com/blog/solar-microgrid-islanding-black-start-engineering.html</link>
+    <description>Grid-forming battery inverters, Microgrid Interconnection Devices (MID), frequency-watt droop control, and black-start restoration sequences.</description>
+    <pubDate>Mon, 07 Sep 2026 00:00:00 GMT</pubDate>
+    <guid>https://www.danielsolared.com/blog/solar-microgrid-islanding-black-start-engineering.html</guid>
+  </item>
+
+  <item>
+    <title>Ground-Mount Solar Foundations: Helical Piles vs. Driven Steel Piers</title>
+    <link>https://www.danielsolared.com/blog/ground-mount-helical-piles-vs-driven-piers-engineering.html</link>
+    <description>Geotechnical soil pullout load testing, ASCE 7-16 wind uplift resistance, galvanized corrosion rates, and structural foundation calculations.</description>
+    <pubDate>Mon, 07 Sep 2026 00:00:00 GMT</pubDate>
+    <guid>https://www.danielsolared.com/blog/ground-mount-helical-piles-vs-driven-piers-engineering.html</guid>
+  </item>
+
+  <item>
+    <title>Microinverter vs. String Inverter with DC Optimizers: Engineering &amp; Permitting Comparison</title>
+    <link>https://www.danielsolared.com/blog/microinverter-vs-string-inverter-commercial-residential.html</link>
+    <description>Detailed engineering breakdown of AC trunk cables, NEC 690.12 rapid shutdown compliance, shading economics, and permit plan sets.</description>
+    <pubDate>Mon, 17 Aug 2026 00:00:00 GMT</pubDate>
+    <guid>https://www.danielsolared.com/blog/microinverter-vs-string-inverter-commercial-residential.html</guid>
+  </item>
+
+  <item>
+    <title>Solar Grounding &amp; Bonding Guide: NEC 250 &amp; NEC 690 Equipment Grounding Rules</title>
+    <link>https://www.danielsolared.com/blog/solar-grounding-bonding-nec-250-690-guide.html</link>
+    <description>Equipment grounding conductors (EGC), GEC sizing tables, UL 2703 integrated racking bonding, and auxiliary ground rod code requirements.</description>
+    <pubDate>Mon, 17 Aug 2026 00:00:00 GMT</pubDate>
+    <guid>https://www.danielsolared.com/blog/solar-grounding-bonding-nec-250-690-guide.html</guid>
+  </item>
+
+  <item>
+    <title>Commercial Solar Interconnection Study Process: Feasibility, SIS &amp; Facility Studies</title>
+    <link>https://www.danielsolared.com/blog/commercial-solar-interconnection-study-process.html</link>
+    <description>Navigating utility Rule 21 and IEEE 1547 queues, screening rules, Direct Transfer Trip (DTT), and reverse power flow mitigations.</description>
+    <pubDate>Mon, 17 Aug 2026 00:00:00 GMT</pubDate>
+    <guid>https://www.danielsolared.com/blog/commercial-solar-interconnection-study-process.html</guid>
+  </item>
+
+  <item>
+    <title>Solar Battery Backup Load Calculation Guide: Critical Load Panel Sizing</title>
+    <link>https://www.danielsolared.com/blog/solar-battery-backup-load-calculation-worksheet.html</link>
+    <description>Sizing battery energy capacity (kWh) and continuous discharge (kW), motor inrush (LRA) math, and NFPA 855 code compliance.</description>
+    <pubDate>Mon, 17 Aug 2026 00:00:00 GMT</pubDate>
+    <guid>https://www.danielsolared.com/blog/solar-battery-backup-load-calculation-worksheet.html</guid>
+  </item>
+
+  <item>
+    <title>Solar Carport Foundation Engineering: Concrete Pier Sizing &amp; Soil Calculations</title>
+    <link>https://www.danielsolared.com/blog/solar-carport-foundation-engineering-soil-calculations.html</link>
+    <description>ASCE 7-16 wind overturning moments, IBC Table 1806 allowable lateral soil pressures, and drilled concrete pier embedment depth formulas.</description>
+    <pubDate>Mon, 17 Aug 2026 00:00:00 GMT</pubDate>
+    <guid>https://www.danielsolared.com/blog/solar-carport-foundation-engineering-soil-calculations.html</guid>
+  </item>
+
+  <item>
+    <title>Solar Structural Calculations Guide: ASCE 7-16 Wind, Snow &amp; Dead Load Analysis</title>
+    <link>https://www.danielsolared.com/blog/solar-structural-engineering-calculations-guide.html</link>
+    <description>An engineering deep-dive into rafter loading capacities, ASCE 7-16 wind uplift pressure formulas, and structural P.E. stamps.</description>
+    <pubDate>Sat, 15 Aug 2026 00:00:00 GMT</pubDate>
+    <guid>https://www.danielsolared.com/blog/solar-structural-engineering-calculations-guide.html</guid>
+  </item>
+
+  <item>
+    <title>Complete Guide to Solar Electrical Single Line Diagrams (SLD) &amp; NEC Rules</title>
+    <link>https://www.danielsolared.com/blog/solar-single-line-diagram-sld-requirements.html</link>
+    <description>Engineering breakdown of SLDs, NEC 690 conductor continuous rating formulas, NEC 705.12 120% busbar limits, and POI standards.</description>
+    <pubDate>Sat, 15 Aug 2026 00:00:00 GMT</pubDate>
+    <guid>https://www.danielsolared.com/blog/solar-single-line-diagram-sld-requirements.html</guid>
+  </item>
+
+  <item>
+    <title>Commercial EV Charging Station Permitting: Electrical Engineering &amp; Load Math</title>
+    <link>https://www.danielsolared.com/blog/ev-charging-station-permit-plan-sets.html</link>
+    <description>Complete technical guide for commercial EV charging hubs, Level 2 and Level 3 DC Fast Charger load math, NEC 625, and ADA access.</description>
+    <pubDate>Sat, 15 Aug 2026 00:00:00 GMT</pubDate>
+    <guid>https://www.danielsolared.com/blog/ev-charging-station-permit-plan-sets.html</guid>
+  </item>
+
+  <item>
+    <title>California Title 24 Solar &amp; Battery Storage Mandates: Builder Compliance Guide</title>
+    <link>https://www.danielsolared.com/blog/california-title-24-solar-battery-mandates.html</link>
+    <description>Engineering breakdown of California Energy Efficiency Standards (Title 24 Part 6) solar PV and storage (ESS) mandates for new construction.</description>
+    <pubDate>Sat, 15 Aug 2026 00:00:00 GMT</pubDate>
+    <guid>https://www.danielsolared.com/blog/california-title-24-solar-battery-mandates.html</guid>
+  </item>
+
+  <item>
+    <title>How to Calculate Solar DC-to-AC Ratio &amp; Inverter Clipping Losses</title>
+    <link>https://www.danielsolared.com/blog/how-to-calculate-dc-ac-derate-ratio.html</link>
+    <description>Advanced design guide analyzing DC-to-AC oversizing ratios (1.20x to 1.40x), inverter clipping loss economics, and yield optimization.</description>
+    <pubDate>Sat, 15 Aug 2026 00:00:00 GMT</pubDate>
+    <guid>https://www.danielsolared.com/blog/how-to-calculate-dc-ac-derate-ratio.html</guid>
+  </item>
+
+  <item>
+    <title>Official Press Release: Nationwide Expansion of P.E. Stamped Solar Permit Plan Sets</title>
+    <link>https://www.danielsolared.com/press/nationwide-pe-solar-engineering-expansion.html</link>
+    <description>Daniel's Solar Engineering announces 24-48 hour turnaround on P.E. stamped structural and electrical solar permit drawing packages across all 50 U.S. states.</description>
+    <pubDate>Fri, 14 Aug 2026 00:00:00 GMT</pubDate>
+    <guid>https://www.danielsolared.com/press/nationwide-pe-solar-engineering-expansion.html</guid>
+  </item>
+
+  <item>
+    <title>Solar Engineering &amp; P.E. Permitting Partner Directory</title>
+    <link>https://www.danielsolared.com/partners/solar-engineering-directory.html</link>
+    <description>Verified structural calculations, electrical single-line design guides, and solar permitting resources for contractors nationwide.</description>
+    <pubDate>Fri, 14 Aug 2026 00:00:00 GMT</pubDate>
+    <guid>https://www.danielsolared.com/partners/solar-engineering-directory.html</guid>
+  </item>
+
+  <item>
+    <title>Solar Engineering Technical Whitepapers &amp; Research Index</title>
+    <link>https://www.danielsolared.com/resources/solar-engineering-whitepapers.html</link>
+    <description>Technical whitepaper index covering ASCE 7-16 wind calculations, NEM 3.0 battery sizing formulas, and P.E. stamped permit plan set standards.</description>
+    <pubDate>Fri, 14 Aug 2026 00:00:00 GMT</pubDate>
+    <guid>https://www.danielsolared.com/resources/solar-engineering-whitepapers.html</guid>
+  </item>
+
+  <item>
+    <title>Commercial Solar Carport Permitting &amp; ASCE 7-16 Wind Math</title>
+    <link>https://www.danielsolared.com/blog/commercial-solar-carport-permits.html</link>
+    <description>Engineering considerations for foundation piers, cantilever steel frames, and wind uplift resistance for commercial solar canopies.</description>
+    <pubDate>Wed, 12 Aug 2026 00:00:00 GMT</pubDate>
+    <guid>https://www.danielsolared.com/blog/commercial-solar-carport-permits.html</guid>
+  </item>
+
+  <item>
+    <title>Understanding P.E. Stamps for Solar Permit Drawings</title>
+    <link>https://www.danielsolared.com/blog/what-is-solar-pe-stamp.html</link>
+    <description>Guide explaining state board regulations for wet and digital P.E. structural and electrical stamps on solar drawings.</description>
+    <pubDate>Wed, 12 Aug 2026 00:00:00 GMT</pubDate>
+    <guid>https://www.danielsolared.com/blog/what-is-solar-pe-stamp.html</guid>
+  </item>
+</channel>
+</rss>

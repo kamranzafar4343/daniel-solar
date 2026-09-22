@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solar Carport Foundation Engineering: Concrete Pier Sizing, Soil Classifications & Embedment Depth</title>
+    <meta name="description" content="Detailed structural engineering guide for solar carport foundation design. Learn drilled concrete pier sizing, ASCE 7-16 overturning moments, IBC Table 1806 soil allowable pressure, and Broms embedment depth calculations." />
+    <link rel="canonical" href="https://www.danielsolared.com/blog/solar-carport-foundation-engineering-soil-calculations.html" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <meta name="theme-color" content="#1B1712" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Daniel Solar Engineering and Design" />
+    <meta property="og:title" content="Solar Carport Foundation Engineering & Concrete Pier Sizing Guide" />
+    <meta property="og:description" content="Complete structural engineering guide covering solar parking canopy foundation calculations, concrete pier embedment, and soil mechanics." />
+    <meta property="og:image" content="https://www.danielsolared.com/kharan-solar-field.jpg" />
+    <meta property="og:url" content="https://www.danielsolared.com/blog/solar-carport-foundation-engineering-soil-calculations.html" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Jost:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css?v=f50c70f639be" />
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.danielsolared.com/blog/solar-carport-foundation-engineering-soil-calculations.html#article",
+      "url": "https://www.danielsolared.com/blog/solar-carport-foundation-engineering-soil-calculations.html",
+      "headline": "Solar Carport Foundation Engineering: Concrete Pier Sizing, Soil Classifications & Embedment Depth",
+      "description": "Comprehensive structural engineering guide for designing drilled concrete pier foundations for commercial solar carports and canopies.",
+      "datePublished": "2026-08-17",
+      "dateModified": "2026-08-17",
+      "author": {
+        "@type": "Organization",
+        "name": "Daniel Solar Engineering and Design",
+        "url": "https://www.danielsolared.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Daniel Solar Engineering and Design",
+        "url": "https://www.danielsolared.com/",
+        "logo": "https://www.danielsolared.com/logo_ecard.png"
+      }
+    }
+  ]
+}
+    </script>
+
+    <style>
+        .article-page { padding: 64px 0 96px; background: var(--paper); }
+        .article-container { max-width: 840px; margin: 0 auto; }
+        .article-header { border-bottom: 1px solid var(--line); padding-bottom: 32px; margin-bottom: 40px; }
+        .article-meta { font-family: var(--font-mono); font-size: 13px; color: var(--ink-70); margin-bottom: 12px; }
+        .article-header h1 { font-size: clamp(30px, 4vw, 46px); color: var(--ink); margin: 12px 0 18px; line-height: 1.2; }
+        .article-body { font-size: 17px; line-height: 1.85; color: var(--ink-70); }
+        .article-body p { margin-bottom: 24px; }
+        .article-body h2 { font-size: 26px; color: var(--ink); margin: 44px 0 18px; border-top: 1px solid var(--line-soft); padding-top: 24px; }
+        .article-body h3 { font-size: 20px; color: var(--ink); margin: 28px 0 12px; }
+        .tech-box { background: var(--paper-alt); border-left: 4px solid var(--blue); padding: 24px 28px; margin: 32px 0; border-radius: 0 6px 6px 0; }
+        .tech-box h4 { font-size: 17px; color: var(--ink); margin-bottom: 8px; font-weight: 700; }
+        .formula-box { background: var(--ink); color: var(--gold); padding: 20px 24px; border-radius: 6px; font-family: var(--font-mono); font-size: 14px; margin: 24px 0; line-height: 1.8; }
+        .cta-banner { background: var(--ink); color: var(--white); padding: 36px; border-radius: 8px; margin-top: 56px; text-align: center; }
+        .cta-banner h3 { color: var(--gold); font-size: 24px; margin-bottom: 12px; }
+        .cta-banner p { color: rgba(255,255,255,0.8); font-size: 15px; margin-bottom: 24px; }
+        .comp-table { width: 100%; border-collapse: collapse; margin: 28px 0; font-size: 15px; }
+        .comp-table th { background: var(--ink); color: var(--gold); padding: 12px 16px; text-align: left; font-family: var(--font-heading); }
+        .comp-table td { padding: 12px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+        .comp-table tr:nth-child(even) { background: rgba(0,0,0,0.02); }
+    </style>
+</head>
+<body>
+
+    <!-- SITE HEADER -->
+    <header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="../index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="../logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="../services.html" class="dropdown-trigger" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="../services/design.html">PV System Design</a>
+                            <a href="../services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="../services/review.html">Structural &amp; Electrical Review</a>
+                            <a href="../services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="../services/ev.html">EV Charging Design &amp; Engineering</a>
+                            <a href="../services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="../services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="../services/net-metering.html">Net Metering</a>
+                            <a href="../services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="../tools.html">Tools &amp; Calculators</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../locations.html">Service Areas</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="../contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+    <main>
+        <div class="article-page">
+            <div class="wrap">
+                <div class="article-container">
+                    
+                    <header class="article-header">
+                        <div class="article-meta">
+                            <span>STRUCTURAL ENGINEERING</span> &middot; <span>AUGUST 17, 2026</span> &middot; <span>9 MIN READ</span>
+                        </div>
+                        <h1>Solar Carport Foundation Engineering: Concrete Pier Sizing, Soil Classifications &amp; Embedment Depth</h1>
+                    </header>
+
+                    <article class="article-body">
+                        
+                        <p><strong>How do structural engineers calculate foundation embedment depth and concrete pier dimensions for commercial solar carports?</strong> Solar carport structures act as massive aerodynamic sails, exposing foundation columns to tremendous overturning moments and lateral shear forces under ASCE 7-16 wind loading. Engineers calculate cylindrical concrete pier diameter and depth using soil mechanics (IBC Section 1807.3 / Broms Method), geotechnical soil classification parameters, and concrete rebar reinforcement schedules.</p>
+
+                        <p>Unlike rooftop arrays where building dead weight absorbs uplift, a freestanding commercial cantilever or T-frame parking canopy relies 100% on the passive lateral soil pressure and concrete mass of its drilled shaft foundations.</p>
+
+                        <h2>1. Structural Forces Acting on a Solar Carport Column</h2>
+                        
+                        <div class="tech-box">
+                            <h4>Overturning Moment ($M$) &mdash; The Primary Sizing Factor</h4>
+                            <p>High wind velocities striking the elevated canopy create massive rotational moment at the base plate (often exceeding 50,000 to 150,000 ft-lbs per column). The foundation pier must transfer this rotational torque into the surrounding soil mass without undergoing excessive deflection (&lt;0.5 inches at ground surface).</p>
+                        </div>
+
+                        <div class="tech-box">
+                            <h4>Lateral Shear ($V$) &amp; Axial Uplift/Gravity ($P$)</h4>
+                            <p>Wind drag forces push the columns horizontally, while net uplift forces attempt to pull the concrete cylinder out of the ground. The skin friction between the rough concrete perimeter and soil borehole wall must exceed net uplift multiplied by a 1.5 safety factor.</p>
+                        </div>
+
+                        <h2>2. Soil Classifications &amp; Allowable Lateral Pressure (IBC Table 1806.2)</h2>
+                        <p>When geotechnical soil boring reports are unavailable, local building departments permit structural P.E. engineers to use presumptive soil values from IBC Table 1806.2:</p>
+
+                        <table class="comp-table">
+                            <thead>
+                                <tr>
+                                    <th>Soil Class / Material Description</th>
+                                    <th>Allowable Foundation Bearing Pressure</th>
+                                    <th>Lateral Bearing Pressure (psf/ft of depth)</th>
+                                    <th>Typical Pier Depth (T-Frame Canopy)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Class 1 &mdash; Crystalline Bedrock</td>
+                                    <td>12,000 psf</td>
+                                    <td>1,200 psf/ft</td>
+                                    <td>4 &ndash; 6 feet</td>
+                                </tr>
+                                <tr>
+                                    <td>Class 2 &mdash; Sedimentary / Foliated Rock</td>
+                                    <td>4,000 psf</td>
+                                    <td>400 psf/ft</td>
+                                    <td>6 &ndash; 8 feet</td>
+                                </tr>
+                                <tr>
+                                    <td>Class 3 &mdash; Sandy Gravel / Gravel (GW/GP)</td>
+                                    <td>3,000 psf</td>
+                                    <td>200 psf/ft</td>
+                                    <td>8 &ndash; 10 feet</td>
+                                </tr>
+                                <tr>
+                                    <td>Class 4 &mdash; Sand, Silty Sand, Clayey Sand (SW/SP)</td>
+                                    <td>2,000 psf</td>
+                                    <td>150 psf/ft</td>
+                                    <td>10 &ndash; 13 feet</td>
+                                </tr>
+                                <tr>
+                                    <td>Class 5 &mdash; Clay, Sandy Clay, Silt (CL/ML)</td>
+                                    <td>1,500 psf</td>
+                                    <td>100 psf/ft</td>
+                                    <td>12 &ndash; 16 feet</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2>3. Drilled Pier Embedment Depth Calculation (IBC 1807.3.2.1 Formula)</h2>
+                        <p>For non-constrained cylindrical poles and piers subjected to lateral load and overturning moment, building codes specify the following quadratic embedment formula:</p>
+
+                        <div class="formula-box">
+                            IBC Equation 18-1 (Non-Constrained Embedded Posts &amp; Piers):
+                            d = 0.5 &times; A &times; [ 1 + &radic;( 1 + ( 4.36 &times; h / A ) ) ]
+                            Where:
+                            A = 2.34 &times; P / ( S1 &times; b )
+                            P = Applied lateral force (lbs)
+                            h = Distance from ground surface to point of lateral force application (ft)
+                            b = Diameter of round concrete footing (ft, e.g., 2.5 ft or 3.0 ft)
+                            S1 = Allowable lateral soil pressure at depth of one-third embedment (psf)
+                        </div>
+
+                        <h2>4. Rebar Reinforcement Cage &amp; Anchor Bolt Pattern Design</h2>
+                        <p>Drilled shaft foundations are not plain concrete; they require heavy structural reinforcement to resist bending shear per ACI 318 standards:</p>
+                        <ul>
+                            <li><strong>Longitudinal Steel Rebar:</strong> Typically 8 to 12 vertical bars of #7 or #8 grade 60 rebar arranged symmetrically in a circular cage with 3 inches minimum concrete clear cover.</li>
+                            <li><strong>Transverse Spiral Ties:</strong> #4 rebar ties spaced at 4 to 6 inches on-center throughout the upper third of the pier depth to resist maximum shear stress.</li>
+                            <li><strong>High-Strength Anchor Rods:</strong> 4 to 8 ASTM F1554 Grade 55 or Grade 105 anchor rods (1-1/4" to 1-1/2" diameter) with heavy hex nuts and leveling plates embedded 36+ inches into the pier.</li>
+                        </ul>
+
+                        <div class="cta-banner">
+                            <h3>Need Structural P.E. Stamped Carport Foundation Calculations?</h3>
+                            <p>Our licensed civil and structural engineers provide full site-specific ASCE 7-16 wind calculations, drilled pier foundation schedules, base plate details, and P.E. wet/digital stamps across all 50 states.</p>
+                            <a href="../contact.html" class="btn btn-primary">Start a Commercial Carport Project &rarr;</a>
+                        </div>
+
+                    </article>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="brand">
+                        <div class="logo-ring-footer"><img class="logo-img-footer" src="../logo_ecard.png" alt="Daniel Solar Logo" /></div>
+                        <span>Daniel's Solar Engineering and Design</span>
+                    </a>
+                    <p>Jurisdiction-ready solar permit design and engineering services stamped by licensed P.E.s across all 50 U.S. states.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../projects.html">Projects</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services/design.html">PV System Design</a></li>
+                        <li><a href="../services/permitting.html">Permit Plan Sets</a></li>
+                        <li><a href="../services/electrical-design.html">Electrical Design</a></li>
+                        <li><a href="../services/commercial.html">Commercial &amp; Utility-Scale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@danielsolared.com">info@danielsolared.com</a></li>
+                        <li><a href="tel:+18584226880">+1 (858) 422-6880</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Daniel's Solar Engineering and Design. All rights reserved. &middot; Irvine, CA</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tawk.to Chat -->
+        <script type="text/javascript">
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"),
+                    s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = "https://embed.tawk.to/6aa881879117af34473db177/1k2h3juq0";
+                s1.charset = "UTF-8";
+                s1.setAttribute("crossorigin", "*");
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>
+<script src="../script.js"></script>
+</body>
+</html>

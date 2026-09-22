@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PV System Design — Daniel Solar Engineering and Design</title>
+<meta name="description" content="PV system design services: shading and irradiance modeling, string sizing, and roof or ground-mount module layout engineered to what actually gets built.">
+<link rel="canonical" href="https://danielsolared.com/services/design.html" target="_blank" rel="noopener">
+
+<!-- Favicons -->
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#1B1712">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Daniel Solar Engineering and Design">
+<meta property="og:title" content="PV System Design — Daniel Solar Engineering and Design">
+<meta property="og:description" content="PV system design services: shading and irradiance modeling, string sizing, and roof or ground-mount module layout engineered to what actually gets built.">
+<meta property="og:image" content="https://danielsolared.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://danielsolared.com/services/design.html">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PV System Design — Daniel Solar Engineering and Design">
+<meta name="twitter:description" content="PV system design services: shading and irradiance modeling, string sizing, and roof or ground-mount module layout engineered to what actually gets built.">
+<meta name="twitter:image" content="https://danielsolared.com/assets/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Jost:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css?v=f50c70f639be">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.danielsolared.com/services/design.html#webpage",
+      "url": "https://www.danielsolared.com/services/design.html",
+      "name": "PV System Design — Daniel Solar Engineering and Design",
+      "description": "PV system design services: shading and irradiance modeling, string sizing, and roof or ground-mount module layout engineered to what actually gets built."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.danielsolared.com/services/design.html#service",
+      "name": "PV System Design",
+      "serviceType": "Solar Energy System Engineering",
+      "provider": {
+        "@type": "Organization",
+        "name": "Daniel Solar Engineering and Design",
+        "url": "https://www.danielsolared.com/"
+      },
+      "description": "Comprehensive PV system design including production modeling, string sizing optimization, and high-yield engineering for residential and commercial systems.",
+      "areaServed": "United States"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.danielsolared.com/services/design.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.danielsolared.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.danielsolared.com/services.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "PV System Design",
+          "item": "https://www.danielsolared.com/services/design.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- FAQ section styling (scoped, self-contained so it matches the site regardless of styles.css contents) -->
+<style>
+    .faq-section .section-head p { max-width: 640px; }
+    .faq-list {
+        max-width: 860px;
+        margin: 0 auto;
+        border-top: 1px solid rgba(169,129,42,0.25);
+    }
+    .faq-item {
+        border-bottom: 1px solid rgba(169,129,42,0.25);
+    }
+    .faq-item summary {
+        list-style: none;
+        cursor: pointer;
+        display: flex;
+        align-items: baseline;
+        gap: 18px;
+        padding: 22px 4px;
+        font-family: "Jost", sans-serif;
+        font-weight: 600;
+        font-size: 17px;
+        color: inherit;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary .faq-num {
+        font-family: "Space Mono", monospace;
+        font-size: 13px;
+        color: #A9812A;
+        flex: none;
+        padding-top: 2px;
+    }
+    .faq-item summary .faq-q { flex: 1; }
+    .faq-item summary .faq-toggle {
+        flex: none;
+        width: 22px;
+        height: 22px;
+        border: 1px solid #A9812A;
+        border-radius: 50%;
+        position: relative;
+    }
+    .faq-item summary .faq-toggle::before,
+    .faq-item summary .faq-toggle::after {
+        content: "";
+        position: absolute;
+        background: #A9812A;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .faq-item summary .faq-toggle::before { width: 10px; height: 1.4px; }
+    .faq-item summary .faq-toggle::after { width: 1.4px; height: 10px; transition: opacity .15s ease; }
+    .faq-item[open] summary .faq-toggle::after { opacity: 0; }
+    .faq-answer {
+        padding: 0 4px 26px 40px;
+        font-family: "Jost", sans-serif;
+        font-size: 15.5px;
+        line-height: 1.7;
+        color: rgba(30,25,15,0.72);
+        max-width: 760px;
+    }
+    .faq-answer p { margin: 0 0 12px; }
+    .faq-answer p:last-child { margin-bottom: 0; }
+    .faq-answer ul { margin: 0 0 12px; padding-left: 20px; }
+    .faq-answer li { margin-bottom: 6px; }
+    .section-dark .faq-item { border-color: rgba(212,175,55,0.22); }
+    .section-dark .faq-list { border-color: rgba(212,175,55,0.22); }
+    .section-dark .faq-item summary { color: #F5EEDA; }
+    .section-dark .faq-answer { color: rgba(245,238,218,0.68); }
+</style>
+	<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "PV System Design",
+  "name": "PV System Design",
+  "description": "Comprehensive PV layouts including production modeling, string sizing optimization, and high-yield engineering for residential and commercial roof or ground-mount systems.",
+  "provider": { "@type": "ProfessionalService", "name": "Daniel Solar Engineering and Design", "url": "https://www.danielsolared.com/" },
+  "areaServed": { "@type": "Country", "name": "United States" },
+  "url": "https://www.danielsolared.com/services/design.html"
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="../index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="../logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="../services.html" class="dropdown-trigger active" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="../services/design.html" class="active" aria-current="page">PV System Design</a>
+                            <a href="../services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="../services/review.html">Structural &amp; Electrical Review</a>
+                            <a href="../services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="../services/ev.html">EV Charging Design &amp; Engineering</a>
+                            <a href="../services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="../services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="../services/net-metering.html">Net Metering</a>
+                            <a href="../services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="../tools.html">Tools &amp; Calculators</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../locations.html">Service Areas</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="../contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow">ENGINEERING & DESIGN</div>
+      <h1>PV System Design</h1>
+      <p>Daniel Solar Engineering provides residential, commercial, and utility-scale solar PV system design services across the United States. We deliver jurisdiction-ready drafting sets—including high-yield module stringing configurations, multi-MPPT inverter matching, and precise code-compliant layouts. Every design package is optimized to meet strict local AHJ regulations, NEC (2020/2023) standards, and mandatory IFC fire setback clearances.</p>
+      <div class="cta-actions" style="margin-top:28px;">
+        <a href="../contact.html" class="btn btn-amber btn-cad">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why choose us -->
+  <section class="section" id="design-why">
+    <div class="wrap">
+      <div class="eyebrow">WHY PV SYSTEM DESIGN MATTERS</div>
+      <h2 style="margin-top:16px; font-size:30px;">Get a design that delivers on performance, not just paper</h2>
+      <p style="margin-top:16px; color:var(--ink-70); font-size:15.5px; line-height:1.75; max-width:760px;">Our advanced solar drafting workflow ensures every array maximizes real-world energy yields, structural longevity, and rapid jurisdictional approval. We pair hands-on building department experience with sophisticated 3D simulation software to deliver buildable, engineering-grade AutoCAD layouts built precisely to your project requirements.</p>
+      <div class="grid-2" style="margin-top:32px; gap:32px;">
+        <div class="reveal" style="background:transparent;">
+          <ul style="list-style:none; padding:0;">
+            <li style="padding:12px 0; border-bottom:1px solid var(--border-light); display:flex; align-items:center; gap:12px;">
+              <span style="color:var(--gold); font-size:20px;">✓</span> <strong>Shading analysis</strong> – Accurate irradiance modeling and solar access percentages (SDR) utilizing native HelioScope and PVsyst simulation environments.
+            </li>
+            <li style="padding:12px 0; border-bottom:1px solid var(--border-light); display:flex; align-items:center; gap:12px;">
+              <span style="color:var(--gold); font-size:20px;">✓</span> <strong>String sizing</strong> – Optimized configuration precisely matched to inverter MPPT voltage windows and extreme local climate temperature coefficients.
+            </li>
+            <li style="padding:12px 0; border-bottom:1px solid var(--border-light); display:flex; align-items:center; gap:12px;">
+              <span style="color:var(--gold); font-size:20px;">✓</span> <strong>Code-compliant layouts</strong> – Strict integration of IFC fire setbacks, structural access pathways, and manufacturer racking constraints built natively into the design. 
+            </li>
+          </ul>
+        </div>
+        <div class="reveal" style="background:transparent;">
+          <ul style="list-style:none; padding:0;">
+            <li style="padding:12px 0; border-bottom:1px solid var(--border-light); display:flex; align-items:center; gap:12px;">
+              <span style="color:var(--gold); font-size:20px;">✓</span> <strong>Ground-mount & roof</strong> – Engineering for any application, including low-slope flat roofs, pitched residential profiles, complex solar carports, and terrain-adapted ground mounts.
+            </li>
+            <li style="padding:12px 0; border-bottom:1px solid var(--border-light); display:flex; align-items:center; gap:12px;">
+              <span style="color:var(--gold); font-size:20px;">✓</span> <strong>Yield optimization</strong> – Maximize annual kilowatt-hour (kWh) production and mitigate system degradation by optimizing pitch, orientation, and inter-row spacing.
+            </li>
+            <li style="padding:12px 0; border-bottom:1px solid var(--border-light); display:flex; align-items:center; gap:12px;">
+              <span style="color:var(--gold); font-size:20px;">✓</span> <strong>Turnkey deliverables</strong> – Complete digital asset packages including fully dimensioned site plans, electrical single-line/three-line diagrams, and comprehensive shading files.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hardware Compatibility -->
+  <section class="section" id="design-hardware">
+    <div class="wrap">
+      <div class="eyebrow">DELIVERABLES &amp; COMPATIBILITY</div>
+      <h2 style="margin-top:16px; font-size:30px; max-width:820px;">Core Engineering Deliverables &amp; Hardware Compatibility Ecosystem</h2>
+      <p style="margin-top:16px; color:var(--ink-70); font-size:15.5px; line-height:1.75; max-width:820px;">Our engineering team designs code-compliant electrical layouts natively adapted to the exact technical specifications, voltage curves, and configuration guidelines of leading tier-1 solar hardware manufacturers across the United States. By mapping our 3D AutoCAD design schematics directly to specific hardware engineering metrics, we ensure consistent system performance, seamless project estimation, and rapid local authority approval.</p>
+
+      <div class="grid-3" style="margin-top:36px; gap:24px; align-items:stretch;">
+
+        <div class="reveal" style="background:rgba(169,129,42,0.06); border:1px solid var(--border-light); padding:30px; display:flex; flex-direction:column;">
+          <div style="font-family:'Space Mono', monospace; font-size:13px; color:var(--gold); letter-spacing:1px;">01 &mdash; POWER ELECTRONICS</div>
+          <h3 style="margin-top:12px; font-size:19px; line-height:1.35;">Inverter &amp; Microinverter Systems Engineering</h3>
+          <p style="font-size:14px; color:var(--ink-70); line-height:1.7; margin-top:10px;">Single-line and three-line diagrams mapped directly to factory string configurations, internal fuse specifications, and exact voltage thresholds for reliable grid compliance.</p>
+          <ul style="list-style:none; padding:0; margin-top:18px; flex:1;">
+            <li style="padding:11px 0; border-top:1px solid var(--border-light); font-size:13.5px; line-height:1.6;"><strong>Enphase Energy</strong> — IQ8, IQ8 Plus &amp; IQ8 Micro microinverters, with Envoy communication gateway setups.</li>
+            <li style="padding:11px 0; border-top:1px solid var(--border-light); font-size:13.5px; line-height:1.6;"><strong>SolarEdge Technologies</strong> — Home Wave &amp; Home Hub string inverters with smart power optimizers and rapid shutdown controllers.</li>
+            <li style="padding:11px 0; border-top:1px solid var(--border-light); font-size:13.5px; line-height:1.6;"><strong>Tesla Storage Systems</strong> — Solar Inverter matched with Powerwall 2, Powerwall+ &amp; Powerwall 3 backup layouts.</li>
+            <li style="padding:11px 0; border-top:1px solid var(--border-light); font-size:13.5px; line-height:1.6;"><strong>Hybrid Platforms</strong> — Multi-source battery coupling for Sol-Ark (12k/15k), Fortress Power, Schneider Electric &amp; EG4.</li>
+            <li style="padding:11px 0; border-top:1px solid var(--border-light); font-size:13.5px; line-height:1.6;"><strong>Commercial &amp; Utility-Scale</strong> — Three-phase systems for CPS, SMA Sunny Highpower &amp; Yaskawa Solectria.</li>
+          </ul>
+        </div>
+
+        <div class="reveal" style="background:rgba(169,129,42,0.06); border:1px solid var(--border-light); padding:30px; display:flex; flex-direction:column;">
+          <div style="font-family:'Space Mono', monospace; font-size:13px; color:var(--gold); letter-spacing:1px;">02 &mdash; MODULE TECHNOLOGY</div>
+          <h3 style="margin-top:12px; font-size:19px; line-height:1.35;">Photovoltaic Module Technology Calibration</h3>
+          <p style="font-size:14px; color:var(--ink-70); line-height:1.7; margin-top:10px;">3D shading simulations and production models built around the thermal coefficients, degradation profiles, and electrical bounds of tier-1 module manufacturers.</p>
+          <ul style="list-style:none; padding:0; margin-top:18px; flex:1;">
+            <li style="padding:11px 0; border-top:1px solid var(--border-light); font-size:13.5px; line-height:1.6;"><strong>Hanwha Qcells</strong> — Layout modeling for Q.PEAK DUO residential &amp; commercial monocrystalline modules.</li>
+            <li style="padding:11px 0; border-top:1px solid var(--border-light); font-size:13.5px; line-height:1.6;"><strong>Premium Residential</strong> — Yield configurations for Maxeon, REC Alpha Series &amp; Panasonic EverVolt systems.</li>
+            <li style="padding:11px 0; border-top:1px solid var(--border-light); font-size:13.5px; line-height:1.6;"><strong>Utility &amp; Commercial</strong> — System planning for Canadian Solar, JinkoSolar, Trina Solar &amp; JA Solar arrays.</li>
+            <li style="padding:11px 0; border-top:1px solid var(--border-light); font-size:13.5px; line-height:1.6;"><strong>Bifacial Modules</strong> — Rear-surface irradiance tracking, albedo calculations &amp; elevation balancing in PVsyst/HelioScope.</li>
+            <li style="padding:11px 0; border-top:1px solid var(--border-light); font-size:13.5px; line-height:1.6;"><strong>Thin-Film Format</strong> — Structural &amp; grounding compliance maps for First Solar industrial arrays.</li>
+          </ul>
+        </div>
+
+        <div class="reveal" style="background:rgba(169,129,42,0.06); border:1px solid var(--border-light); padding:30px; display:flex; flex-direction:column;">
+          <div style="font-family:'Space Mono', monospace; font-size:13px; color:var(--gold); letter-spacing:1px;">03 &mdash; STRUCTURAL MOUNTING</div>
+          <h3 style="margin-top:12px; font-size:19px; line-height:1.35;">Racking Infrastructure &amp; Structural Attachments</h3>
+          <p style="font-size:14px; color:var(--ink-70); line-height:1.7; margin-top:10px;">Mechanical attachment points and structural layouts cross-referenced against manufacturer wind, snow, and seismic load calculation matrices.</p>
+          <ul style="list-style:none; padding:0; margin-top:18px; flex:1;">
+            <li style="padding:11px 0; border-top:1px solid var(--border-light); font-size:13.5px; line-height:1.6;"><strong>Pitched Roof Racking</strong> — Rail-based configurations using IronRidge (XR10/XR100/XR1000), Unirac SolarMount &amp; SnapNrack.</li>
+            <li style="padding:11px 0; border-top:1px solid var(--border-light); font-size:13.5px; line-height:1.6;"><strong>Rail-Less &amp; Shared-Rail</strong> — Low-profile setups using K2 Systems, QuickBOLT dual-mounting kits &amp; S-5! standing seam attachments.</li>
+            <li style="padding:11px 0; border-top:1px solid var(--border-light); font-size:13.5px; line-height:1.6;"><strong>Commercial Ballasted Arrays</strong> — Zero-penetration, low-tilt designs with PanelClaw ClawFR, Unirac RM10/RM5 &amp; Ecolibrium Solar bases.</li>
+            <li style="padding:11px 0; border-top:1px solid var(--border-light); font-size:13.5px; line-height:1.6;"><strong>Ground-Mount Infrastructure</strong> — IronRidge SGA structural anchors, MT Solar adjustable racking &amp; utility-scale Nextracker systems.</li>
+            <li style="padding:11px 0; border-top:1px solid var(--border-light); font-size:13.5px; line-height:1.6;"><strong>Custom Solar Carports</strong> — Civil engineering alignments and custom structural steel profiles for canopy and parking lot structures.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section section-alt" id="design-process">
+    <div class="wrap">
+      <div class="eyebrow">OUR DESIGN PROCESS</div>
+      <h2 style="margin-top:16px; font-size:30px;">From site data to stamped plans</h2>
+      <div class="process-line reveal" style="margin-top:32px;">
+        <div class="process-step">
+          <div class="process-tick">01</div>
+          <h4>Site assessment</h4>
+          <p>We aggregate high-resolution aerial imagery, regional GIS datasets, and LIDAR terrain data to remotely verify precise structural roof dimensions, localized tilt/azimuth angles, and physical shading obstacles.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-tick">02</div>
+          <h4>3D modeling</h4>
+          <p>Our team generates detailed 3D solar array models within PVsyst or HelioScope to simulate real-world irradiance patterns, analyze shading impacts, and optimize module placement for maximum annual kWh yield.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-tick">03</div>
+          <h4>String sizing</h4>
+          <p>We perform meticulous electrical calculations to configure optimal string configurations, precisely matching inverter MPPT voltage windows while accounting for extreme local ASHRAE climate temperature coefficients.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-tick">04</div>
+          <h4>Layout &amp; drawings</h4>
+          <p>We deliver a comprehensive AutoCAD submittal package featuring dimensioned site plans, structural attachment details, and complete electrical single-line or three-line diagrams ready for local AHJ permit submittal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq-section" id="design-faq">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">QUESTIONS &amp; ANSWERS</div>
+        <h2>Frequently Asked Questions About PV System Design</h2>
+        <p>Answers to what contractors, builders, and property owners most often ask about our PV system design service. Don't see what you need? <a href="../contact.html">Reach out directly</a>.</p>
+      </div>
+
+      <div class="faq-list faq-stack reveal">
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">01</span>
+            <span class="faq-q">What is included in your PV system design service?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Our full-service PV system design packages provide full-scale, submittal-ready layout files tailored to your project. Standard deliverables include:</p>
+            <ul>
+              <li><strong>Precision Site Plans:</strong> Comprehensive layouts featuring physical dimensions and roof orientations.</li>
+              <li><strong>PV Array Mapping:</strong> Module placement schematics optimized for solar access percentages.</li>
+              <li><strong>Electrical Engineering Drafts:</strong> Code-compliant single-line diagrams (SLD) or three-line diagrams.</li>
+              <li><strong>Equipment Specifications:</strong> Hard-coded location mapping for inverters, combiners, and disconnect switch placements.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">02</span>
+            <span class="faq-q">Do you design residential, commercial, and utility-scale solar systems?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Yes. Daniel Solar Engineering provides PV system design services for residential, commercial, and utility-scale solar projects throughout the United States. Whether you're designing a single-family home, commercial building, industrial facility, or large-scale solar installation, our engineering team develops accurate, code-compliant designs tailored to your project requirements.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">03</span>
+            <span class="faq-q">Can you design rooftop, ground-mounted, and solar carport systems?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Absolutely. We design rooftop solar systems, ground-mounted arrays, and solar carport systems for residential, commercial, and utility-scale applications. Every design is customized based on your site's dimensions, equipment, structural conditions, local code requirements, and long-term performance goals.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">04</span>
+            <span class="faq-q">What information do you need to start a PV system design?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>The information required depends on your project.</p>
+            <p>For new construction, we typically request:</p>
+            <ul>
+              <li>Construction plans</li>
+              <li>Roof plans</li>
+              <li>Structural information</li>
+              <li>Solar equipment specifications</li>
+            </ul>
+            <p>For existing buildings, we typically request:</p>
+            <ul>
+              <li>Property address</li>
+              <li>Electrical panel photos</li>
+              <li>Roof information (if available)</li>
+              <li>Solar panel specifications</li>
+              <li>Inverter specifications</li>
+              <li>Site photos, if available</li>
+            </ul>
+            <p>Providing complete project information allows our engineering team to create an accurate, efficient, and permit-ready PV system design.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">05</span>
+            <span class="faq-q">What software do you use for PV system design?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>All engineering design files and layout schematics are prepared natively within professional production environments. We utilize AutoCAD (.DWG/.DXF) for primary drafting, alongside HelioScope and PVsyst for running advanced 3D irradiance modeling, stringing optimizations, and detailed solar access shading analyses.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">06</span>
+            <span class="faq-q">How do you perform shading analysis and energy production modeling?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Our engineering team evaluates roof orientation, roof pitch, available installation area, surrounding obstructions, and site-specific conditions to optimize panel placement. By minimizing shading where possible and designing efficient layouts, we help maximize annual solar energy production while maintaining compliance with applicable codes and project requirements.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">07</span>
+            <span class="faq-q">How do you determine the correct string sizing for a solar system?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Our engineering team calculates exact string sizing configurations by mapping the module's electrical characteristics against the inverter's maximum and minimum MPPT voltage windows. These mathematical calculations strictly account for localized, extreme ASHRAE climate temperature coefficients to mitigate overvoltage risks and eliminate inverter clipping.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">08</span>
+            <span class="faq-q">Are your PV system designs compliant with NEC, local building codes, and utility requirements?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Yes. Every engineering layout undergoes strict quality control to match the active code cycles enforced by your local building department. Our design layouts strictly incorporate NEC 2017, NEC 2020, and NEC 2023 regulations—including precise conductor ampacity calculations, voltage drop sizing, and rapid shutdown system criteria.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">09</span>
+            <span class="faq-q">Do your PV system designs include fire setbacks, access pathways, and code-compliant layouts?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Absolutely. Every residential and commercial design is mapped to pass municipal fire marshal inspections on the first round. We explicitly integrate mandatory International Fire Code (IFC) and International Residential Code (IRC) fire setbacks, clear roof access pathways, and localized ridge ventilation clearances directly into the AutoCAD layout.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">10</span>
+            <span class="faq-q">Can your engineering team optimize my system for maximum annual energy production?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Yes. Our engineers optimize module placement, equipment selection, system orientation, and layout to maximize annual energy production whenever project conditions allow. Every design balances performance, constructability, and code compliance to deliver an efficient solar energy system.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">11</span>
+            <span class="faq-q">Do you provide permit-ready PV layouts and engineering documentation?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Yes. We provide permit-ready PV layouts along with the engineering documentation required for permitting. If the building department or utility requests revisions, we complete those updates promptly to help keep your project on schedule.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">12</span>
+            <span class="faq-q">Can you revise PV system designs if the building department or utility requests changes?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Absolutely. Revisions requested during the permitting process are included with your project. Our engineering team works directly with contractors and clients to address plan review comments efficiently, helping reduce delays and move projects toward approval.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">13</span>
+            <span class="faq-q">How long does it take to complete a PV system design?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Turnaround time depends on the project's size and complexity. Many residential PV system designs can be completed within one business day, while larger commercial or utility-scale projects are typically completed within 24 to 48 hours after receiving the required project information.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">14</span>
+            <span class="faq-q">Do you design systems using Enphase, SolarEdge, Tesla, and other manufacturers?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Yes. We design PV systems using equipment from many of the industry's leading manufacturers, including Enphase, SolarEdge, Tesla, and other major inverter and solar equipment providers. We design around the equipment selected for your project and its technical requirements.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">15</span>
+            <span class="faq-q">Can you design battery storage systems with my PV system?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Yes. We design battery energy storage systems that integrate with residential and commercial PV systems. Whether you're installing a new solar-plus-storage system or adding battery storage to an existing installation, our engineering team can develop a complete design tailored to your project.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">16</span>
+            <span class="faq-q">Do you provide structural and electrical engineering along with PV system design?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Yes. We also provide structural engineering and electrical engineering services for solar projects. These services are available when required and are quoted separately from standard PV system design, allowing clients to select the engineering support that best fits their project.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">17</span>
+            <span class="faq-q">Can you design solar systems for projects anywhere in the United States?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Yes. Daniel Solar Engineering provides nationwide PV system design services. Our team supports residential, commercial, and utility-scale projects across the United States while designing to meet local jurisdiction, building department, and utility requirements.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">18</span>
+            <span class="faq-q">Who do you typically work with?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>We work with a wide range of clients throughout the solar industry, including:</p>
+            <ul>
+              <li>Solar contractors</li>
+              <li>EPC companies</li>
+              <li>General contractors</li>
+              <li>Builders</li>
+              <li>Developers</li>
+              <li>Architects</li>
+              <li>Engineers</li>
+              <li>Commercial property owners</li>
+              <li>Homeowners</li>
+            </ul>
+            <p>Our goal is to provide dependable engineering support for projects of every size.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">19</span>
+            <span class="faq-q">What deliverables are included with a completed PV system design?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Depending on the project scope, deliverables may include:</p>
+            <ul>
+              <li>Permit-ready PV layout</li>
+              <li>Solar array layout</li>
+              <li>Single-line diagram</li>
+              <li>Equipment locations</li>
+              <li>Code-compliant design documentation</li>
+              <li>Permit review revisions</li>
+              <li>Engineering support during the permitting process</li>
+            </ul>
+            <p>Additional engineering services such as structural calculations or electrical engineering can also be provided when requested.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">20</span>
+            <span class="faq-q">Why should I choose Daniel Solar Engineering for PV system design?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Daniel Solar Engineering combines technical expertise, responsive customer service, and fast turnaround times to deliver high-quality, permit-ready PV system designs. Our team works closely with contractors, developers, builders, and property owners to produce accurate, code-compliant engineering packages that help simplify permitting, reduce revisions, and keep projects moving from design through approval.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Related Services -->
+  <section class="section section-alt" id="design-related">
+    <div class="wrap">
+      <div class="eyebrow">RELATED SERVICES</div>
+      <h2 style="margin-top:16px; font-size:26px;">Combine with other engineering services</h2>
+      <div class="grid-3" style="margin-top:32px; gap:24px;">
+        <div class="card" style="background:var(--bg-dark); border:1px solid var(--gold);">
+          <h3>Permit Plan Sets &amp; PE Stamps</h3>
+          <p>Take your design to permit-ready drawings stamped by a licensed engineer.</p>
+          <a href="permitting.html" class="card-link">Learn more →</a>
+        </div>
+        <div class="card" style="background:var(--bg-dark); border:1px solid var(--gold);">
+          <h3>Structural &amp; Electrical Review</h3>
+          <p>Get independent verification of your system's safety and code compliance.</p>
+          <a href="review.html" class="card-link">Learn more →</a>
+        </div>
+        <div class="card" style="background:var(--bg-dark); border:1px solid var(--gold);">
+          <h3>Commercial &amp; Utility-Scale Design</h3>
+          <p>Scale up to large arrays with financial modelling and integrated storage.</p>
+          <a href="commercial.html" class="card-link">Learn more →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section-tight">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <h2>Ready to start your PV design?</h2>
+        <p style="margin-top:8px;">Send us your site details and we'll deliver a preliminary layout within 24 hours.</p>
+        <div class="cta-actions">
+          <a href="../contact.html" class="btn btn-amber btn-cad">Get Started</a>
+          <a href="tel:+18584226880" class="btn btn-outline">+1 (858) 422-6880</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="brand">
+          <div class="logo-ring-footer"><img class="logo-img-footer" src="../logo_ecard.png" alt="Daniel's Solar Logo" /></div>
+          <span>Daniel's Solar Engineering and Design</span>
+        </a>
+        <p>Jurisdiction-ready solar permit design and engineering services stamped by licensed P.E.s across all 50 U.S. states. We deliver code-compliant plan sets, structural attachments, and electrical diagrams tailored to local AHJ and NEC standards.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../projects.html">Projects</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="../e-card.html">Digital Card</a></li>
+                        <li><a href="../locations.html">Service Areas Directory</a></li>
+                    </ul>
+                </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="design.html">PV System Design</a></li>
+          <li><a href="permitting.html">Permit Plan Sets</a></li>
+          <li><a href="commercial.html">Commercial &amp; Utility-Scale</a></li>
+          <li><a href="net-metering.html">Net Metering</a></li>
+          <li><a href="ev.html">EV Charging Design</a></li>
+          <li><a href="california-mandates.html">California Energy Mandates</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@danielsolared.com">info@danielsolared.com</a></li>
+          <li><a href="tel:+18584226880">+1 (858) 422-6880</a></li>
+          <li><span style="font-size:14px;">Licensed across 40+ regions</span></li>
+        </ul>
+      </div>
+    </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Daniel's Solar Engineering and Design. All rights reserved. &middot; Located in Irvine, CA</span>
+      <span>DWG NO. 2026-002 &middot; REV D</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+    <!-- Tawk.to Chat -->
+        <script type="text/javascript">
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"),
+                    s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = "https://embed.tawk.to/6aa881879117af34473db177/1k2h3juq0";
+                s1.charset = "UTF-8";
+                s1.setAttribute("crossorigin", "*");
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>
+</body>
+</html>

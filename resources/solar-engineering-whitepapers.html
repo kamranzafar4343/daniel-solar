@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solar Engineering & P.E. Permitting Technical Whitepapers & Backlink Index</title>
+    <meta name="description" content="Technical whitepaper index covering ASCE 7-16 wind calculations, NEM 3.0 battery sizing formulas, and P.E. stamped permit plan set standards for commercial and residential solar." />
+    <link rel="canonical" href="https://www.danielsolared.com/resources/solar-engineering-whitepapers.html" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Jost:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css?v=f50c70f639be" />
+
+    <style>
+        .resources-page { padding: 64px 0 96px; background: var(--paper); }
+        .resources-container { max-width: 960px; margin: 0 auto; }
+        .resources-header { text-align: center; margin-bottom: 56px; border-bottom: 1px solid var(--line); padding-bottom: 32px; }
+        .resources-header h1 { font-size: clamp(28px, 3.5vw, 42px); color: var(--ink); margin: 12px 0; }
+        .whitepaper-card { background: var(--white); border: 1px solid var(--line); border-radius: 6px; padding: 32px; margin-bottom: 32px; box-shadow: var(--shadow-sm); }
+        .whitepaper-card h2 { font-size: 22px; color: var(--ink); margin-bottom: 12px; }
+        .whitepaper-card p { font-size: 15px; color: var(--ink-70); line-height: 1.75; margin-bottom: 20px; }
+        .whitepaper-links { display: flex; flex-wrap: wrap; gap: 12px; }
+        .whitepaper-link-btn { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 12px; color: var(--blue-deep); background: var(--blue-tint); border: 1px solid rgba(13,82,160,0.2); padding: 8px 14px; border-radius: 4px; text-decoration: none; font-weight: 700; }
+        .whitepaper-link-btn:hover { background: var(--blue); color: var(--white); }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="../index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="../logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="../services.html" class="dropdown-trigger" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="../services/design.html">PV System Design</a>
+                            <a href="../services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="../services/review.html">Structural &amp; Electrical Review</a>
+                            <a href="../services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="../services/ev.html">EV Charging Design &amp; Engineering</a>
+                            <a href="../services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="../services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="../services/net-metering.html">Net Metering</a>
+                            <a href="../services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="../tools.html" class="active">Tools &amp; Calculators</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../locations.html">Service Areas</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="../contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+    <main>
+        <div class="resources-page">
+            <div class="wrap">
+                <div class="resources-container">
+                    
+                    <div class="resources-header">
+                        <span class="eyebrow">ENGINEERING WHITEPAPERS &amp; RESEARCH</span>
+                        <h1>Solar Engineering Whitepaper Index &amp; Reference Hub</h1>
+                        <p>Authoritative technical engineering documentation governing photovoltaic permit plan sets, structural wind uplift math, and battery storage design across all 50 states.</p>
+                    </div>
+
+                    <div class="whitepaper-card">
+                        <h2>1. Commercial Solar Carport Engineering &amp; ASCE 7-16 Calculations</h2>
+                        <p>Comprehensive research on structural canopy design over driving lanes. Details cast-in-place concrete foundation piers, lateral wind uplift moment connections, and parking lot drainage clearances.</p>
+                        <div class="whitepaper-links">
+                            <a href="../blog/commercial-solar-carport-permits.html" class="whitepaper-link-btn">Read Commercial Carport Guide →</a>
+                            <a href="../50kW-Carport-System.pdf" class="whitepaper-link-btn" download>Download 50kW Carport Plan Set PDF ↓</a>
+                            <a href="../200kW-Carport-System.pdf" class="whitepaper-link-btn" download>Download 200kW Carport Plan Set PDF ↓</a>
+                        </div>
+                    </div>
+
+                    <div class="whitepaper-card">
+                        <h2>2. Professional Engineer (P.E.) Stamp Requirements &amp; Digital Seals</h2>
+                        <p>Analysis of state licensing board rules regarding wet ink vs. digitally encrypted P.E. structural and electrical seals across California, Texas, Florida, Arizona, and Colorado.</p>
+                        <div class="whitepaper-links">
+                            <a href="../blog/what-is-solar-pe-stamp.html" class="whitepaper-link-btn">Read P.E. Stamp Guide →</a>
+                            <a href="../services/permitting.html" class="whitepaper-link-btn">Explore P.E. Permit Plan Sets →</a>
+                            <a href="../services/review.html" class="whitepaper-link-btn">Structural &amp; Electrical Review →</a>
+                        </div>
+                    </div>
+
+                    <div class="whitepaper-card">
+                        <h2>3. California NEM 3.0 Battery Storage Sizing &amp; Fire Safety</h2>
+                        <p>Engineering methodologies for optimizing energy storage ROI under the Net Billing Tariff. Covers continuous load calculation formulas, backfed main breaker limits, and NFPA 855 fire separation clearances.</p>
+                        <div class="whitepaper-links">
+                            <a href="../blog/nem-3-battery-storage-design.html" class="whitepaper-link-btn">Read NEM 3.0 Battery Guide →</a>
+                            <a href="../Tesla-Powerwall-3-SoCal.pdf" class="whitepaper-link-btn" download>Download Tesla Powerwall 3 Plan Set PDF ↓</a>
+                            <a href="../Enphase-IQ-Battery-10-SoCal.pdf" class="whitepaper-link-btn" download>Download Enphase Battery Plan Set PDF ↓</a>
+                        </div>
+                    </div>
+
+                    <div class="whitepaper-card">
+                        <h2>4. Municipal AHJ Plan Check Pre-Filing Checklist</h2>
+                        <p>Standard operating procedures for solar contractors to eliminate permit redlines. Addresses roof edge pathway setbacks (IFC 1205), continuous ampacity wire derating (NEC 310.15), and structural rafter attachment details.</p>
+                        <div class="whitepaper-links">
+                            <a href="../blog/how-to-avoid-solar-permit-rejections.html" class="whitepaper-link-btn">Read AHJ Checklist Guide →</a>
+                            <a href="../projects.html" class="whitepaper-link-btn">View Real Completed Projects →</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <p>&copy; 2026 Daniel's Solar Engineering and Design. Located in Irvine, CA. All rights reserved.</p>
+        </div>
+    </footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

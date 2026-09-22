@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Roof Type & Solar Mounting System Compatibility Guide | Racking Selection Tool</title>
+<meta name="description" content="Interactive guide matching roof type (composition shingle, tile, metal, TPO, flat) to correct solar mounting system, L-foot or standoff type, waterproofing, and structural requirements."/>
+<link rel="canonical" href="https://www.danielsolared.com/resources/roof-type-solar-mounting-guide.html"/>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../styles.css?v=f50c70f639be"/>
+<style>
+.mount-hero{background:linear-gradient(135deg,#1B1712,#2C2318);color:#fff;padding:72px 0 52px;text-align:center;}
+.mount-hero h1{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,40px);margin:12px 0;}
+.mount-wrapper{max-width:1000px;margin:48px auto;padding:0 24px;}
+.roof-selector{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-bottom:40px;}
+.roof-btn{border:2px solid #ddd;border-radius:8px;padding:20px 12px;text-align:center;cursor:pointer;transition:all .2s;background:#fff;font-family:'Jost',sans-serif;}
+.roof-btn:hover,.roof-btn.active{border-color:#D4A843;background:#fff8ec;}
+.roof-btn .icon{font-size:32px;display:block;margin-bottom:8px;}
+.roof-btn .label{font-weight:700;font-size:14px;color:#1B1712;}
+.result-panel{background:#fff;border:2px solid #D4A843;border-radius:8px;padding:32px;display:none;}
+.result-panel.visible{display:block;}
+.result-panel h2{font-family:'Playfair Display',serif;font-size:24px;color:#1B1712;margin-bottom:20px;}
+.spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px;}
+@media(max-width:600px){.spec-grid{grid-template-columns:1fr;}}
+.spec-item label{font-size:12px;font-weight:700;text-transform:uppercase;color:#D4A843;letter-spacing:.06em;display:block;margin-bottom:4px;}
+.spec-item p{font-size:15px;color:#1B1712;margin:0;font-weight:500;}
+.warning-box{background:#fff3e0;border-left:4px solid #ff9800;padding:14px 18px;border-radius:0 6px 6px 0;margin-top:20px;font-size:14px;color:#e65100;}
+.comp-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:40px;}
+.comp-table th{background:#1B1712;color:#D4A843;padding:11px 14px;text-align:left;}
+.comp-table td{padding:10px 14px;border-bottom:1px solid #ece7df;vertical-align:top;}
+.comp-table tr:nth-child(even){background:#f9f6f2;}
+.comp-table td:first-child{font-weight:700;color:#1B1712;}
+.pass{color:#2e7d32;font-weight:700;}
+.fail{color:#c62828;font-weight:700;}
+</style>
+</head>
+<body>
+<header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="../index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="../logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="../services.html" class="dropdown-trigger" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="../services/design.html">PV System Design</a>
+                            <a href="../services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="../services/review.html">Structural &amp; Electrical Review</a>
+                            <a href="../services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="../services/ev.html">EV Charging Design &amp; Engineering</a>
+                            <a href="../services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="../services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="../services/net-metering.html">Net Metering</a>
+                            <a href="../services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="../tools.html" class="active">Tools &amp; Calculators</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../locations.html">Service Areas</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="../contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+<main>
+  <div class="mount-hero">
+    <div class="wrap">
+      <span class="eyebrow" style="color:#D4A843;">FREE INTERACTIVE TOOL</span>
+      <h1>Roof Type vs. Solar Mounting<br/>Compatibility Guide</h1>
+      <p>Select your roof type below to instantly see the correct mounting system, attachment method, waterproofing standard, and structural requirements for P.E. plan set review.</p>
+    </div>
+  </div>
+
+  <div class="mount-wrapper">
+
+    <div class="roof-selector" id="roofSelector">
+      <div class="roof-btn" onclick="showRoof('shingle')"><span class="icon">🏠</span><span class="label">Composition Shingle</span></div>
+      <div class="roof-btn" onclick="showRoof('tile-concrete')"><span class="icon">🏛️</span><span class="label">Concrete/Clay Tile</span></div>
+      <div class="roof-btn" onclick="showRoof('metal-standing')"><span class="icon">🔩</span><span class="label">Standing Seam Metal</span></div>
+      <div class="roof-btn" onclick="showRoof('metal-exposed')"><span class="icon">🔧</span><span class="label">Exposed Fastener Metal</span></div>
+      <div class="roof-btn" onclick="showRoof('flat-tpo')"><span class="icon">🏗️</span><span class="label">Flat / TPO / EPDM</span></div>
+      <div class="roof-btn" onclick="showRoof('wood-shake')"><span class="icon">🌲</span><span class="label">Wood Shake / Shingle</span></div>
+    </div>
+
+    <div class="result-panel" id="resultPanel">
+      <h2 id="resTitle"></h2>
+      <div class="spec-grid" id="specGrid"></div>
+      <div class="warning-box" id="warningBox"></div>
+    </div>
+
+    <!-- FULL COMPARISON TABLE -->
+    <h2 style="font-family:'Playfair Display',serif;font-size:26px;color:#1B1712;border-left:4px solid #D4A843;padding-left:16px;margin:48px 0 20px;">Complete Roof Type Compatibility Matrix</h2>
+    <table class="comp-table">
+      <thead>
+        <tr><th>Roof Type</th><th>Mount System</th><th>Attachment</th><th>Waterproofing</th><th>Solar Compatible?</th><th>P.E. Calc Required?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Composition Shingle (3-tab / Architectural)</td><td>L-Foot + Rail</td><td>Lag bolt into rafter (2.5" min embedment)</td><td>Flashing kit + sealant (Quickbolt, SnapNrack)</td><td class="pass">✅ IDEAL</td><td>Yes — lag withdrawal</td></tr>
+        <tr><td>Concrete Flat Tile</td><td>Tile Hook + Rail or Flush Mount</td><td>Tile hook slides under tile; lags into rafter</td><td>No penetration through tile; hook design</td><td class="pass">✅ GOOD</td><td>Yes — tile hook rated load</td></tr>
+        <tr><td>Clay S-Tile (Spanish Tile)</td><td>Curved Tile Hook + Rail</td><td>Hook slides under tile belly; lag into rafter</td><td>Specialized curved hooks (SunModo, QuickBOLT)</td><td class="pass">✅ GOOD</td><td>Yes — hook load rating</td></tr>
+        <tr><td>Standing Seam Metal</td><td>Clamp-on Rail Mounts</td><td>S-5! or IronRidge clamps — NO penetrations</td><td>No roof penetrations required</td><td class="pass">✅ EXCELLENT</td><td>Yes — clamp pull-out</td></tr>
+        <tr><td>Exposed Fastener Metal (R-Panel)</td><td>L-Foot with Sealing Washer</td><td>Lag bolt at rib (NOT valley) with EPDM washer</td><td>EPDM washer seal at each attachment point</td><td class="pass">✅ GOOD</td><td>Yes — rafter calc</td></tr>
+        <tr><td>TPO / EPDM Membrane (Flat)</td><td>Ballasted Racking or Penetrating Standoff</td><td>Ballast blocks OR welded standoffs into deck</td><td>IRMA assembly or welded flashing if penetrating</td><td class="pass">✅ GOOD</td><td>Yes — ballast wind uplift</td></tr>
+        <tr><td>Modified Bitumen (Flat)</td><td>Penetrating Standoff + Base Plate</td><td>Through-roof bolts into structural deck; flashing boot</td><td>Pipe boot flashing welded into membrane</td><td class="pass">✅ ACCEPTABLE</td><td>Yes — deck pull-out</td></tr>
+        <tr><td>Wood Shake / Cedar Shingle</td><td>L-Foot (Replace Shakes)</td><td>Remove shake; install L-foot; replace surrounding</td><td>Flashing plates under adjacent shakes</td><td class="fail">⚠️ COMPLEX</td><td>Yes — fire rating check</td></tr>
+        <tr><td>Slate Tile</td><td>Slate Hooks (Specialty)</td><td>Diamond-shaped slate hooks under slate</td><td>Lead flashing or synthetic slate hook system</td><td class="fail">⚠️ VERY COMPLEX</td><td>Yes — specialized hook</td></tr>
+        <tr><td>Asbestos Tile</td><td>N/A</td><td>Cannot penetrate — hazmat regulations</td><td>N/A</td><td class="fail">❌ NOT ALLOWED</td><td>N/A — remediation first</td></tr>
+      </tbody>
+    </table>
+
+    <div style="background:#1B1712;color:#fff;padding:40px;border-radius:8px;text-align:center;margin-top:48px;">
+      <h2 style="font-family:'Playfair Display',serif;margin-bottom:12px;">Need a Roof-Specific P.E. Structural Plan Set?</h2>
+      <p style="opacity:.8;margin-bottom:24px;">Our structural engineers calculate roof rafter capacity, lag bolt withdrawal, and wind uplift for every roof type — PE stamped and AHJ-ready in 24-48 hours.</p>
+      <a href="../contact.html" style="display:inline-block;background:#D4A843;color:#1B1712;font-weight:700;padding:14px 32px;border-radius:4px;text-decoration:none;">Get a Structural Plan Set →</a>
+    </div>
+
+    <p style="margin-top:32px;color:#888;font-size:13px;">Related: <a href="../blog/solar-structural-engineering-calculations-guide.html">ASCE 7-16 Structural Calculations</a> · <a href="solar-permit-checklist.html">AHJ Permit Checklist</a> · <a href="../services/permitting.html">Permit Plan Sets</a></p>
+  </div>
+</main>
+
+<script>
+const roofData = {
+  shingle:{title:"Composition Shingle Roof",specs:[{l:"Recommended Mount System",v:"L-Foot & Rail (UniRac, IronRidge, SnapNrack)"},{l:"Attachment Method",v:"5/16\" × 3\" lag bolt into rafter (min. 2.5\" effective embedment)"},{l:"Waterproofing",v:"Pre-assembled flashing kit (Quickbolt, Lagan) + silicone sealant"},{l:"Rafter Spacing",v:"12\", 16\", or 24\" O.C. — L-foot placed at every other rafter minimum"},{l:"Max Attachment Spacing",v:"48\" on-center (verify with AHJ jurisdiction)"},{l:"P.E. Calculation Required",v:"Yes — lag withdrawal capacity vs. wind uplift per ASCE 7-16"}],warn:"⚠️ Verify shingle age: roofs older than 10-15 years may require re-roofing before solar installation. Note this on the plan set."},
+  'tile-concrete':{title:"Concrete or Clay Tile Roof",specs:[{l:"Recommended Mount System",v:"Tile Hook + Rail (QuickBOLT Tile, SunModo, Enteks)"},{l:"Attachment Method",v:"Tile hook slides under tile; lag bolt into rafter beneath"},{l:"Waterproofing",v:"No roof penetration through tile — hook slips under tile without cutting"},{l:"Rafter Access",v:"Remove minimum tiles to expose rafter; replace after hook installation"},{l:"P.E. Calculation Required",v:"Yes — tile hook manufacturer-rated pull-out load vs. ASCE 7-16 uplift"}],warn:"⚠️ Cracked or brittle tiles must be replaced before installation. Document replacement areas on the site plan."},
+  'metal-standing':{title:"Standing Seam Metal Roof",specs:[{l:"Recommended Mount System",v:"Seam Clamp (S-5! PVKIT, IronRidge UFO, OMG PowerGrip)"},{l:"Attachment Method",v:"Zero roof penetrations — clamps grip standing seam mechanically"},{l:"Waterproofing",v:"No waterproofing required — no roof penetrations at all"},{l:"Installation Advantage",v:"Fastest installation, lowest leak risk, best structural efficiency"},{l:"P.E. Calculation Required",v:"Yes — clamp pull-out vs. ASCE 7-16 uplift zones + seam metal gauge"}],warn:"✅ Standing seam metal is the BEST roof type for solar. No penetrations = no leak risk. Highest installer productivity."},
+  'metal-exposed':{title:"Exposed Fastener Metal Roof (R-Panel, PBR)",specs:[{l:"Recommended Mount System",v:"L-Foot at rib crest with EPDM sealing washer"},{l:"Attachment Method",v:"Lag bolt through rib top ONLY (never in valley) with EPDM washer"},{l:"Waterproofing",v:"EPDM bonded washer provides compression seal around lag"},{l:"Critical Rule",v:"Attach ONLY at rib crests, NEVER in panel valleys (water pooling)"},{l:"P.E. Calculation Required",v:"Yes — rafter calculation beneath rib attachment points"}],warn:"⚠️ Attach only at rib crests. Attachment in the flat valley will void the roofing warranty and cause guaranteed leaks."},
+  'flat-tpo':{title:"Flat Roof — TPO / EPDM / PVC Membrane",specs:[{l:"Recommended Mount System",v:"Ballasted racking (Unirac RM, Ecolibrium, Clenergy) or penetrating standoffs"},{l:"Attachment Method",v:"Ballast blocks (concrete pavers, 10-15 lbs/sqft typical) OR heat-welded standoffs"},{l:"Waterproofing",v:"Ballasted = no penetrations. Penetrating = welded pipe boot into membrane"},{l:"Wind Uplift Design",v:"Ballast quantity calculated from ASCE 7-16 wind uplift pressure at roof zones"},{l:"P.E. Calculation Required",v:"Yes — ballast quantity per ASCE zone, roof structural load capacity check"}],warn:"⚠️ Verify roof deck structural capacity for ballast load (10-15 psf). Old buildings may require structural retrofit before solar installation."},
+  'wood-shake':{title:"Wood Shake / Cedar Shingle Roof",specs:[{l:"Recommended Mount System",v:"L-Foot (remove individual shakes at attachment points)"},{l:"Attachment Method",v:"Remove shake, install L-foot on deck, reinstall surrounding shakes with flashing"},{l:"Waterproofing",v:"Lead or aluminum flashing plates woven under adjacent shake courses"},{l:"Fire Rating",v:"Wood shake is Class C fire rating — check AHJ for solar installation restrictions"},{l:"P.E. Calculation Required",v:"Yes — rafter capacity + fire code compliance verification"}],warn:"⚠️ Many California and high-fire-risk AHJs restrict or prohibit solar on Class C wood shake roofs. Re-roofing to Class A material before solar is often required."}
+};
+
+function showRoof(type){
+  document.querySelectorAll('.roof-btn').forEach(b=>b.classList.remove('active'));
+  event.target.closest('.roof-btn').classList.add('active');
+  const d=roofData[type];
+  document.getElementById('resTitle').textContent=d.title;
+  document.getElementById('specGrid').innerHTML=d.specs.map(s=>`<div class="spec-item"><label>${s.l}</label><p>${s.v}</p></div>`).join('');
+  document.getElementById('warningBox').textContent=d.warn;
+  document.getElementById('resultPanel').classList.add('visible');
+  document.getElementById('resultPanel').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+</script>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="brand">
+          <div class="logo-ring-footer"><img class="logo-img-footer" src="../logo_ecard.png" alt="Daniel Solar Logo"/></div>
+          <span>Daniel's Solar Engineering and Design</span>
+        </a>
+        <p>P.E.-stamped solar permit plan sets across all 50 U.S. states.</p>
+      </div>
+      <div class="footer-col"><h4>Resources</h4><ul><li><a href="solar-permit-checklist.html">AHJ Permit Checklist</a></li><li><a href="nec-690-conductor-sizing-table.html">NEC 690 Tables</a></li><li><a href="solar-engineering-glossary.html">Solar Glossary</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="../services/permitting.html">Permit Plan Sets</a></li><li><a href="../services/design.html">PV System Design</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Daniel's Solar Engineering and Design. All rights reserved.</span></div>
+  </div>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>

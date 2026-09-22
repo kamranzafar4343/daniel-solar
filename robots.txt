@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+
+# Fast crawling for major search engines and AI assistants
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Sitemaps and Syndication Feeds
+Sitemap: https://www.danielsolared.com/sitemap.xml
+Sitemap: https://www.danielsolared.com/sitemap.html

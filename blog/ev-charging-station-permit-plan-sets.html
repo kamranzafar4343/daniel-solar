@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Commercial EV Charging Station Permitting: Electrical Engineering & Load Math</title>
+    <meta name="description" content="Commercial EV charging station permitting guide. Learn Level 2 & Level 3 DC Fast Charger electrical engineering, NEC 625 calculations, transformer sizing, and ADA accessibility." />
+    <link rel="canonical" href="https://www.danielsolared.com/blog/ev-charging-station-permit-plan-sets.html" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <meta name="theme-color" content="#1B1712" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Daniel Solar Engineering and Design" />
+    <meta property="og:title" content="Commercial EV Charging Station Permitting: Electrical Engineering & Load Calculations" />
+    <meta property="og:description" content="Technical guide for commercial EV charging station permit plan sets, Level 2 and DC Fast Charger electrical load math, NEC 625 rules, and ADA parking layout." />
+    <meta property="og:image" content="https://www.danielsolared.com/sunport-mall-charging-hub.jpg" />
+    <meta property="og:url" content="https://www.danielsolared.com/blog/ev-charging-station-permit-plan-sets.html" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Jost:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css?v=f50c70f639be" />
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.danielsolared.com/blog/ev-charging-station-permit-plan-sets.html#article",
+      "url": "https://www.danielsolared.com/blog/ev-charging-station-permit-plan-sets.html",
+      "headline": "Commercial EV Charging Station Permitting: Electrical Engineering & Load Math",
+      "description": "Commercial EV charging station permitting guide covering Level 2 & Level 3 DC Fast Charger electrical engineering, NEC 625 calculations, and ADA rules.",
+      "datePublished": "2026-08-15",
+      "dateModified": "2026-08-15",
+      "author": {
+        "@type": "Organization",
+        "name": "Daniel Solar Engineering and Design",
+        "url": "https://www.danielsolared.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Daniel Solar Engineering and Design",
+        "url": "https://www.danielsolared.com/",
+        "logo": "https://www.danielsolared.com/logo_ecard.png"
+      }
+    }
+  ]
+}
+    </script>
+
+    <style>
+        .article-page { padding: 64px 0 96px; background: var(--paper); }
+        .article-container { max-width: 840px; margin: 0 auto; }
+        .article-header { border-bottom: 1px solid var(--line); padding-bottom: 32px; margin-bottom: 40px; }
+        .article-meta { font-family: var(--font-mono); font-size: 13px; color: var(--ink-70); margin-bottom: 12px; }
+        .article-header h1 { font-size: clamp(30px, 4vw, 46px); color: var(--ink); margin: 12px 0 18px; line-height: 1.2; }
+        .article-body { font-size: 17px; line-height: 1.85; color: var(--ink-70); }
+        .article-body p { margin-bottom: 24px; }
+        .article-body h2 { font-size: 26px; color: var(--ink); margin: 44px 0 18px; border-top: 1px solid var(--line-soft); padding-top: 24px; }
+        .article-body h3 { font-size: 20px; color: var(--ink); margin: 28px 0 12px; }
+        .tech-box { background: var(--paper-alt); border-left: 4px solid var(--blue); padding: 24px 28px; margin: 32px 0; border-radius: 0 6px 6px 0; }
+        .tech-box h4 { font-size: 17px; color: var(--ink); margin-bottom: 8px; font-weight: 700; }
+        .cta-banner { background: var(--ink); color: var(--white); padding: 36px; border-radius: 8px; margin-top: 56px; text-align: center; }
+        .cta-banner h3 { color: var(--gold); font-size: 24px; margin-bottom: 12px; }
+        .cta-banner p { color: rgba(255,255,255,0.8); font-size: 15px; margin-bottom: 24px; }
+    </style>
+</head>
+<body>
+
+    <!-- SITE HEADER -->
+    <header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="../index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="../logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="../services.html" class="dropdown-trigger" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="../services/design.html">PV System Design</a>
+                            <a href="../services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="../services/review.html">Structural &amp; Electrical Review</a>
+                            <a href="../services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="../services/ev.html">EV Charging Design &amp; Engineering</a>
+                            <a href="../services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="../services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="../services/net-metering.html">Net Metering</a>
+                            <a href="../services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="../tools.html">Tools &amp; Calculators</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../locations.html">Service Areas</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="../contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+    <main>
+        <div class="article-page">
+            <div class="wrap">
+                <div class="article-container">
+                    
+                    <header class="article-header">
+                        <div class="article-meta">EV CHARGING ENGINEERING &bull; AUGUST 15, 2026 &bull; 8 MIN READ</div>
+                        <h1>Commercial EV Charging Station Permitting: Electrical Engineering &amp; Load Math</h1>
+                        <p class="subtitle">A complete technical guide for commercial EV Charging Infrastructure permit plan sets, Level 2 and DC Fast Charger (DCFC) load calculations, NEC Article 625 compliance, and ADA accessibility design.</p>
+                    </header>
+
+                    <article class="article-body">
+                        <p>With corporate sustainability pledges, state EV mandates, and fleet electrification accelerating across the United States, commercial electric vehicle supply equipment (EVSE) installations have grown exponentially. However, deploying Level 2 charging banks or Level 3 DC Fast Chargers (DCFC) in retail centers, office parks, and industrial depots requires complex municipal permitting and utility engineering.</p>
+
+                        <p>Permit plan sets for commercial EV charging hubs must comply with <strong>NEC Article 625 (Electric Vehicle Power Transfer System)</strong>, state building energy codes (such as California CALGreen / Title 24), and local ADA accessibility rules. Below is an engineering overview of the required documentation.</p>
+
+                        <h2>1. Level 2 vs. Level 3 DC Fast Charger (DCFC) Power Sizing</h2>
+                        <p>Electrical engineers must first evaluate existing building transformer capacity and continuous load limits based on equipment specification:</p>
+
+                        <ul>
+                            <li><strong>Level 2 Chargers (208/240V AC):</strong> Typically output 7.2 kW to 19.2 kW per port (30A to 80A continuous current). A dual-port 48A charger requires a dedicated 60A 2-pole circuit breaker.</li>
+                            <li><strong>Level 3 DC Fast Chargers (480V 3-Phase AC):</strong> Output 50 kW to 350 kW+ per dispenser. A bank of four 150 kW DC fast chargers represents a 600 kW load addition—often requiring a dedicated utility pad-mounted transformer and 1200A or 2000A 480V service switchboard.</li>
+                        </ul>
+
+                        <h2>2. NEC Article 625 Continuous Load Calculations</h2>
+                        <p>Under <strong>NEC 625.41</strong>, electric vehicle charging equipment is classified as a <strong>continuous load</strong>. The branch circuit overcurrent protection device (OCPD) and feeder conductors must be sized at <strong>125% of the maximum load current</strong>.</p>
+
+                        <div class="tech-box">
+                            <h4>Formula: Sizing Feeders for Commercial EVSE Banks</h4>
+                            <p style="font-family:var(--font-mono); font-size:16px; color:var(--blue-deep); font-weight:700;">
+                            \text{Minimum Feeder Ampacity} = \sum (\text{Continuous EVSE Load Amps} \times 1.25)
+                            </p>
+                            <p>For automated Load Management Systems (ALMS) under NEC 625.42, engineers can specify energy management controllers to dynamically balance power across multiple ports, avoiding costly utility service upgrades.</p>
+                        </div>
+
+                        <h2>3. Site Plan &amp; ADA Accessibility Compliance</h2>
+                        <p>In addition to electrical single line diagrams, municipal plan checkers mandate detailed civil and architectural site plans detailing parking space dimensions and ADA accessibility:</p>
+
+                        <ul>
+                            <li><strong>ADA Van Accessible Stalls:</strong> Must feature an 11-foot wide parking space with an adjacent 5-foot access aisle, maximum 2% cross-slope, and bollards protecting equipment.</li>
+                            <li><strong>Operable Controls Height:</strong> Charging connectors, touchscreens, and credit card readers must be situated between 15 inches and 48 inches above finished grade (ICC A117.1).</li>
+                            <li><strong>Trenching &amp; Underground Conduit:</strong> Civil plans must detail underground trench burial depths (24 inches minimum for rigid conduit under vehicle traffic per NEC Table 300.5) and slurry backfill specs.</li>
+                        </ul>
+
+                        <h2>4. Required Plan Set Drawings for Municipal Approval</h2>
+                        <p>A jurisdiction-ready commercial EVSE permit submittal package engineered by our team includes:</p>
+
+                        <ul>
+                            <li><strong>Cover Sheet &amp; Code Summary:</strong> Scope of work, CALGreen EV spaces, equipment model specifications, and UL 2202 / UL 2594 listings.</li>
+                            <li><strong>Civil Site &amp; Striping Plan:</strong> Parking layout, ADA access routes, bollard details, and trenching paths.</li>
+                            <li><strong>Electrical Single Line Diagram (SLD):</strong> Service entrance, transformer specs, main switchboard, distribution panel, EVSE breakers, ALMS controls, and wire/conduit sizing.</li>
+                            <li><strong>Electrical Load Calculations:</strong> Existing building peak demand plus proposed EVSE continuous load per NEC Article 220.</li>
+                        </ul>
+
+                        <div class="cta-banner">
+                            <h3>Need Fast Commercial EV Charging Permit Plan Sets?</h3>
+                            <p>Daniel's Solar Engineering produces complete Level 2 and Level 3 DC Fast Charger permit plan sets stamped by licensed P.E.s across all 50 states.</p>
+                            <a href="../services/ev.html" class="btn btn-primary">Request EV Engineering Package &rarr;</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="brand">
+                        <div class="logo-ring-footer"><img class="logo-img-footer" src="../logo_ecard.png" alt="Daniel Solar Logo" /></div>
+                        <span>Daniel's Solar Engineering and Design</span>
+                    </a>
+                    <p>Jurisdiction-ready solar permit design and engineering services stamped by licensed P.E.s across all 50 U.S. states.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../projects.html">Projects</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="../locations.html">Service Areas Directory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services/design.html">PV System Design</a></li>
+                        <li><a href="../services/permitting.html">Permit Plan Sets</a></li>
+                        <li><a href="../services/electrical-design.html">Electrical Design</a></li>
+                        <li><a href="../services/commercial.html">Commercial &amp; Utility-Scale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@danielsolared.com">info@danielsolared.com</a></li>
+                        <li><a href="tel:+18584226880">+1 (858) 422-6880</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Daniel's Solar Engineering and Design. All rights reserved. &middot; Located in Irvine, CA</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tawk.to Chat -->
+        <script type="text/javascript">
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"),
+                    s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = "https://embed.tawk.to/6aa881879117af34473db177/1k2h3juq0";
+                s1.charset = "UTF-8";
+                s1.setAttribute("crossorigin", "*");
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>
+<script src="../script.js"></script>
+</body>
+</html>

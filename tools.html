@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Solar Engineering Calculators & Permitting Tools | Daniel's Solar Engineering</title>
+    <meta name="description" content="Explore our suite of free interactive solar engineering tools, voltage drop calculators, string sizing calculators, 47-point AHJ checklists, and 50-state permit guides." />
+    <link rel="canonical" href="https://www.danielsolared.com/tools.html" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#1B1712" />
+
+    <!-- Fonts & Stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Jost:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=f50c70f639be" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Solar Engineering Tools & Calculators Hub",
+      "description": "Comprehensive suite of free solar engineering design calculators, NEC code references, and permitting checklists.",
+      "url": "https://www.danielsolared.com/tools.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Daniel's Solar Engineering and Design",
+        "url": "https://www.danielsolared.com/",
+        "logo": "https://www.danielsolared.com/logo_ecard.png"
+      }
+    }
+    </script>
+
+    <style>
+        .tools-hero {
+            background: linear-gradient(135deg, #1B1712 0%, #2C2318 100%);
+            color: var(--white);
+            padding: 80px 0 64px;
+            text-align: center;
+        }
+        .tools-hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(32px, 4.2vw, 48px);
+            margin: 14px 0 18px;
+            line-height: 1.2;
+        }
+        .tools-hero p {
+            font-size: 18px;
+            opacity: 0.88;
+            max-width: 700px;
+            margin: 0 auto 32px;
+            line-height: 1.6;
+        }
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+        .filter-tab-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        .filter-tab-btn:hover, .filter-tab-btn.active {
+            background: var(--gold);
+            color: var(--ink);
+            border-color: var(--gold);
+        }
+
+        .tools-section {
+            padding: 72px 0 96px;
+            background: var(--paper);
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+        .tool-card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 32px 28px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+            border-color: var(--gold);
+        }
+        .tool-badge {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 4px;
+            background: #f4ede2;
+            color: var(--gold-deep);
+            margin-bottom: 16px;
+            letter-spacing: 0.05em;
+        }
+        .tool-card h3 {
+            font-family: var(--font-heading);
+            font-size: 22px;
+            color: var(--ink);
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        .tool-card p {
+            font-size: 15px;
+            color: var(--ink-70);
+            line-height: 1.65;
+            margin-bottom: 24px;
+        }
+        .tool-link-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--ink);
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s ease;
+        }
+        .tool-link-btn:hover {
+            background: var(--gold-deep);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SITE HEADER -->
+    <header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="services.html" class="dropdown-trigger" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="services/design.html">PV System Design</a>
+                            <a href="services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="services/review.html">Structural &amp; Electrical Review</a>
+                            <a href="services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="services/ev.html">EV Charging Design &amp; Engineering</a>
+                            <a href="services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="services/net-metering.html">Net Metering</a>
+                            <a href="services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="tools.html" class="active" aria-current="page">Tools &amp; Calculators</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="locations.html">Service Areas</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+    <main>
+        
+        <!-- HERO SECTION -->
+        <section class="tools-hero">
+            <div class="wrap">
+                <span class="eyebrow" style="color: var(--gold);">FREE ENGINEERING &amp; PERMITTING SUITE</span>
+                <h1>Solar Engineering Tools, Calculators &amp; Checklists</h1>
+                <p>Interactive, code-compliant electrical and financial tools engineered by licensed Professional Engineers (P.E.) for solar contractors, electricians, developers, and AHJ reviewers.</p>
+
+                <!-- FILTER TABS -->
+                <div class="filter-tabs">
+                    <button class="filter-tab-btn active" onclick="filterTools('all', this)">All Tools (9)</button>
+                    <button class="filter-tab-btn" onclick="filterTools('financial', this)">💰 Pricing &amp; Financial</button>
+                    <button class="filter-tab-btn" onclick="filterTools('electrical', this)">⚡ Electrical Calculators</button>
+                    <button class="filter-tab-btn" onclick="filterTools('permits', this)">📋 Permitting &amp; Codes</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOOLS GRID SECTION -->
+        <section class="tools-section">
+            <div class="wrap">
+                <div class="tools-grid" id="toolsGrid">
+                    
+                    <!-- Tool 0: Instant Plan Set Estimator -->
+                    <div class="tool-card" data-cat="financial permits" style="border: 2px solid var(--gold);">
+                        <div>
+                            <span class="tool-badge" style="background:var(--gold); color:var(--ink);">⭐ FEATURED &middot; INSTANT ESTIMATE</span>
+                            <h3>Solar Permit Plan Set Price &amp; Turnaround Estimator</h3>
+                            <p>Calculate instant turnkey pricing and guaranteed 24–48 hour turnaround times for P.E.-stamped residential and commercial solar permit drawing packages nationwide.</p>
+                        </div>
+                        <a href="resources/solar-permit-plan-set-pricing-calculator.html" class="tool-link-btn" style="background:var(--gold-deep); color:#fff;">
+                            <span>Estimate Price &amp; Turnaround</span>
+                            <span>&rarr;</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Tool 1: Voltage Drop -->
+                    <div class="tool-card" data-cat="electrical">
+                        <div>
+                            <span class="tool-badge">⚡ ELECTRICAL &middot; NEC 210.19</span>
+                            <h3>Solar Voltage Drop &amp; Conductor Loss Calculator</h3>
+                            <p>Calculate DC string and AC 1-Phase / 3-Phase voltage drop, wire resistance, power loss in Watts, and verify NEC 3% branch circuit limits.</p>
+                        </div>
+                        <a href="resources/solar-voltage-drop-calculator.html" class="tool-link-btn">
+                            <span>Open Calculator</span>
+                            <span>&rarr;</span>
+                        </a>
+                    </div>
+
+                    <!-- Tool 2: Commercial ROI -->
+                    <div class="tool-card" data-cat="financial">
+                        <div>
+                            <span class="tool-badge">🏢 FINANCIAL &middot; 30% ITC &amp; MACRS</span>
+                            <h3>Commercial Solar ROI &amp; Payback Calculator</h3>
+                            <p>Model commercial solar financial returns including 30%–50% Federal ITC tax credits, 5-year MACRS accelerated depreciation, and 10-year cash flow projections.</p>
+                        </div>
+                        <a href="resources/commercial-solar-roi-payback-calculator.html" class="tool-link-btn">
+                            <span>Open Calculator</span>
+                            <span>&rarr;</span>
+                        </a>
+                    </div>
+
+                    <!-- Tool 3: String Sizing -->
+                    <div class="tool-card" data-cat="electrical">
+                        <div>
+                            <span class="tool-badge">⚡ ELECTRICAL &middot; NEC 690.7</span>
+                            <h3>Solar String Sizing &amp; Busbar Rule Calculator</h3>
+                            <p>Calculate temperature-adjusted maximum system voltage ($V_{max}$), NEC 690.8 continuous ampacity, and test panel 120% Busbar Rule compliance.</p>
+                        </div>
+                        <a href="resources/solar-string-sizing-calculator.html" class="tool-link-btn">
+                            <span>Open Calculator</span>
+                            <span>&rarr;</span>
+                        </a>
+                    </div>
+
+                    <!-- Tool 4: 47-Point Checklist -->
+                    <div class="tool-card" data-cat="permits">
+                        <div>
+                            <span class="tool-badge">📋 PERMITTING &middot; AHJ PLAN CHECK</span>
+                            <h3>47-Point Solar Permit AHJ Inspection Checklist</h3>
+                            <p>The complete pre-submission checklist used by our P.E. engineers covering structural loading, NEC 690 electrical schedules, and fire roof access pathways.</p>
+                        </div>
+                        <a href="resources/solar-permit-checklist.html" class="tool-link-btn">
+                            <span>View Checklist</span>
+                            <span>&rarr;</span>
+                        </a>
+                    </div>
+
+                    <!-- Tool 5: 50 States Guide -->
+                    <div class="tool-card" data-cat="permits">
+                        <div>
+                            <span class="tool-badge">🗺️ JURISDICTION &middot; NATIONWIDE</span>
+                            <h3>All 50 States Solar Permit Requirements Guide</h3>
+                            <p>Filterable state-by-state reference directory detailing P.E. stamp mandates, adopted NEC code editions (2017/2020/2023), and utility interconnection rules.</p>
+                        </div>
+                        <a href="resources/solar-permits-by-state.html" class="tool-link-btn">
+                            <span>Explore 50 States</span>
+                            <span>&rarr;</span>
+                        </a>
+                    </div>
+
+                    <!-- Tool 6: NEC 690 Conductor Table -->
+                    <div class="tool-card" data-cat="electrical">
+                        <div>
+                            <span class="tool-badge">⚡ CODE TABLES &middot; NEC 310.15</span>
+                            <h3>NEC 690 Conductor Sizing Reference Tables</h3>
+                            <p>Complete base ampacity charts for copper/aluminum THWN-2 and PV Wire, rooftop ambient temperature deratings, and conduit fill reduction factors.</p>
+                        </div>
+                        <a href="resources/nec-690-conductor-sizing-table.html" class="tool-link-btn">
+                            <span>View Tables</span>
+                            <span>&rarr;</span>
+                        </a>
+                    </div>
+
+                    <!-- Tool 7: Roof Compatibility -->
+                    <div class="tool-card" data-cat="permits">
+                        <div>
+                            <span class="tool-badge">🏠 STRUCTURAL &middot; RACKING SELECTION</span>
+                            <h3>Roof Type vs. Solar Mounting Compatibility Guide</h3>
+                            <p>Interactive tool matching composition shingle, tile, standing seam metal, and flat membrane roofs to certified racking hardware and attachment methods.</p>
+                        </div>
+                        <a href="resources/roof-type-solar-mounting-guide.html" class="tool-link-btn">
+                            <span>Open Selector</span>
+                            <span>&rarr;</span>
+                        </a>
+                    </div>
+
+                    <!-- Tool 8: Engineering Glossary -->
+                    <div class="tool-card" data-cat="permits">
+                        <div>
+                            <span class="tool-badge">📖 KNOWLEDGE BASE &middot; 120+ TERMS</span>
+                            <h3>Solar Engineering Glossary &amp; Code Encyclopedia</h3>
+                            <p>Searchable reference dictionary explaining technical solar terminology, NEC code articles, IEEE standards, and structural equations in clear language.</p>
+                        </div>
+                        <a href="resources/solar-engineering-glossary.html" class="tool-link-btn">
+                            <span>Search Glossary</span>
+                            <span>&rarr;</span>
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- CTA BANNER -->
+                <div class="cta-band reveal" style="margin-top: 64px;">
+                    <h2>Need Your Calculations P.E. Stamped for Permitting?</h2>
+                    <p style="color: rgba(255,255,255,0.7); margin-top: 8px;">Our licensed Professional Engineers deliver jurisdiction-ready residential and commercial solar permit plan sets in 24 to 48 hours nationwide.</p>
+                    <div class="cta-actions" style="margin-top: 24px;">
+                        <a href="contact.html" class="btn btn-primary btn-cad">Get a Stamped Plan Set &rarr;</a>
+                        <a href="projects.html" class="btn btn-secondary">View Sample PDF Plan Sets</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+    function filterTools(category, btn) {
+        document.querySelectorAll('.filter-tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const cards = document.querySelectorAll('.tool-card');
+        cards.forEach(card => {
+            if (category === 'all') {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = card.dataset.cat === category ? 'flex' : 'none';
+            }
+        });
+    }
+    </script>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand">
+                        <div class="logo-ring-footer"><img class="logo-img-footer" src="logo_ecard.png" alt="Daniel Solar Logo" /></div>
+                        <span>Daniel's Solar Engineering and Design</span>
+                    </a>
+                    <p>Jurisdiction-ready solar permit design and engineering services stamped by licensed P.E.s across all 50 U.S. states.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="tools.html">Tools &amp; Calculators</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="sitemap.html">Sitemap</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Engineering Tools</h4>
+                    <ul>
+                        <li><a href="resources/solar-voltage-drop-calculator.html">Voltage Drop Calculator</a></li>
+                        <li><a href="resources/commercial-solar-roi-payback-calculator.html">Solar ROI Calculator</a></li>
+                        <li><a href="resources/solar-string-sizing-calculator.html">String Sizing Calculator</a></li>
+                        <li><a href="resources/solar-permit-checklist.html">AHJ Permit Checklist</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@danielsolared.com">info@danielsolared.com</a></li>
+                        <li><a href="tel:+18584226880">+1 (858) 422-6880</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Daniel's Solar Engineering and Design. All rights reserved. &middot; Irvine, CA</span>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Tawk.to Chat -->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = "https://embed.tawk.to/6aa881879117af34473db177/1k2h3juq0";
+            s1.charset = "UTF-8";
+            s1.setAttribute("crossorigin", "*");
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+<script src="script.js"></script>
+</body>
+</html>

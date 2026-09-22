@@ -1,0 +1,37 @@
+PASS CLI creates private SEO login
+PASS Unauthenticated page access blocked
+PASS Invalid CSRF rejected
+PASS Cross-origin login rejected
+PASS Invalid login stays on login screen
+PASS Dedicated restricted session cookie
+PASS Publishing locked before server probe
+PASS Header and footer collapsed by default
+PASS Compact and paragraph fields rendered
+PASS Text search finds paragraphs
+PASS Search exposes matching footer fields
+PASS Draft preview never writes public page
+PASS Preview includes original styles
+PASS Visible text published
+PASS Metadata saved
+PASS Published public preview returns new content
+PASS Conflict keeps unsaved draft
+PASS Conflict prevents overwrite
+PASS New-page preview does not publish
+PASS Create page UI publishes URL
+PASS New page escapes content and reuses site theme
+PASS Link flow preserves and appends links
+PASS Owner can reset the SEO password
+PASS Reauthentication preserves draft
+PASS GET cannot save
+PASS Path traversal rejected
+PASS Private application routes denied by development router
+PASS Protected storage cannot be fetched: config.json.php
+PASS Protected storage cannot be fetched: users.json.php
+PASS Protected storage cannot be fetched: publish.lock
+PASS Protected storage cannot be fetched: sessions/
+PASS Unsafe slug rejected over HTTP
+PASS Mobile dashboard has no horizontal overflow
+PASS Logout revokes authenticated access
+PASS Repeated login failures are rate limited
+PASS No dashboard JavaScript exceptions: []
+36 integration checks passed.

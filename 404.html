@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found (404) | Daniel's Solar Engineering</title>
+    <meta name="description" content="The page you are looking for does not exist. Explore our solar engineering services, permit plan sets, and technical blogs." />
+    <meta name="robots" content="noindex, follow" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#1B1712" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Jost:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css?v=f50c70f639be" />
+
+    <style>
+        .error-hero {
+            padding: 100px 0 120px;
+            text-align: center;
+            background: var(--paper);
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+        }
+        .error-container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .error-code {
+            font-family: 'Space Mono', monospace;
+            font-size: clamp(72px, 12vw, 120px);
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+        .error-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(28px, 4vw, 40px);
+            color: var(--ink);
+            margin-bottom: 16px;
+        }
+        .error-desc {
+            font-size: 17px;
+            color: var(--ink-light);
+            margin-bottom: 36px;
+            line-height: 1.6;
+        }
+        .error-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SITE HEADER -->
+    <header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="services.html" class="dropdown-trigger" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="services/design.html">PV System Design</a>
+                            <a href="services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="services/review.html">Structural &amp; Electrical Review</a>
+                            <a href="services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="services/ev.html">EV Charging Design &amp; Engineering</a>
+                            <a href="services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="services/net-metering.html">Net Metering</a>
+                            <a href="services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="tools.html">Tools &amp; Calculators</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="locations.html">Service Areas</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+    <main>
+        <div class="error-hero">
+            <div class="wrap">
+                <div class="error-container">
+                    <div class="error-code">404</div>
+                    <h1 class="error-title">Page Not Found</h1>
+                    <p class="error-desc">The page you were looking for might have been moved, renamed, or no longer exists. You can navigate back to our homepage or explore our core solar engineering resources.</p>
+                    <div class="error-actions">
+                        <a href="/index.html" class="btn btn-primary">Return to Homepage</a>
+                        <a href="/services.html" class="btn btn-secondary">Explore Services</a>
+                        <a href="/sitemap.html" class="btn btn-secondary">View Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-bottom">
+                <span>&copy; 2026 Daniel's Solar Engineering and Design. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+<script src="script.js"></script>
+</body>
+</html>

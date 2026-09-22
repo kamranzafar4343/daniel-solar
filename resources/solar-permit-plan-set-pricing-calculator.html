@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instant Solar Permit Plan Set Price & Turnaround Estimator | P.E. Engineering Calculator</title>
+    <meta name="description" content="Calculate instant pricing and turnaround time for P.E.-stamped residential and commercial solar permit plan sets, battery storage, and EV charging designs nationwide." />
+    <link rel="canonical" href="https://www.danielsolared.com/resources/solar-permit-plan-set-pricing-calculator.html" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <meta name="theme-color" content="#1B1712" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Jost:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css?v=f50c70f639be" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Solar Permit Plan Set Pricing & Turnaround Estimator",
+      "description": "Free interactive pricing and engineering turnaround estimator for P.E. stamped solar permit plan sets across all 50 US states.",
+      "url": "https://www.danielsolared.com/resources/solar-permit-plan-set-pricing-calculator.html",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": {
+        "@type": "Organization",
+        "name": "Daniel's Solar Engineering and Design",
+        "url": "https://www.danielsolared.com"
+      }
+    }
+    </script>
+
+    <style>
+        .calc-hero { background: linear-gradient(135deg, #1B1712 0%, #2C2318 100%); color: #fff; padding: 72px 0 52px; text-align: center; }
+        .calc-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3.5vw, 42px); margin: 12px 0; }
+        .calc-hero p { font-size: 17px; opacity: .85; max-width: 680px; margin: 0 auto; }
+        .calc-wrapper { max-width: 960px; margin: 48px auto; padding: 0 24px; }
+        .calc-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; }
+        @media(max-width: 760px){ .calc-grid { grid-template-columns: 1fr; } }
+        .calc-card { background: #fff; border: 1px solid #e8e0d4; border-radius: 8px; padding: 32px; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+        .calc-card h2 { font-family: 'Playfair Display', serif; font-size: 20px; color: #1B1712; margin-bottom: 20px; border-bottom: 2px solid #D4A843; padding-bottom: 10px; }
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; font-size: 13px; font-weight: 600; color: #555; margin-bottom: 6px; text-transform: uppercase; letter-spacing: .04em; }
+        .form-group input, .form-group select { width: 100%; padding: 11px 14px; border: 1.5px solid #ddd; border-radius: 4px; font-size: 15px; font-family: 'Jost', sans-serif; box-sizing: border-box; transition: border-color .2s; }
+        .form-group input:focus, .form-group select:focus { border-color: #D4A843; outline: none; }
+        .calc-btn { width: 100%; background: #D4A843; color: #1B1712; font-weight: 700; font-size: 16px; padding: 14px; border: none; border-radius: 4px; cursor: pointer; margin-top: 10px; font-family: 'Jost', sans-serif; transition: background .2s; }
+        .calc-btn:hover { background: #b8892e; }
+        .result-box { background: #f9f6f2; border: 1px solid #e8e0d4; border-radius: 8px; padding: 28px; }
+        .result-box h2 { font-family: 'Playfair Display', serif; font-size: 20px; color: #1B1712; margin-bottom: 20px; }
+        .result-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #e8e0d4; font-size: 15px; }
+        .result-row:last-child { border-bottom: none; }
+        .result-label { color: #666; font-weight: 500; }
+        .result-value { font-family: 'Space Mono', monospace; font-weight: 700; color: #1B1712; font-size: 16px; }
+        .result-value.highlight { color: #2e7d32; font-size: 20px; }
+        .badge-rush { background: #e65100; color: #fff; padding: 3px 8px; border-radius: 3px; font-size: 12px; font-weight: 700; }
+        .badge-std { background: #2e7d32; color: #fff; padding: 3px 8px; border-radius: 3px; font-size: 12px; font-weight: 700; }
+    </style>
+</head>
+<body>
+
+    <!-- SITE HEADER -->
+    <header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="../index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="../logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="../services.html" class="dropdown-trigger" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="../services/design.html">PV System Design</a>
+                            <a href="../services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="../services/review.html">Structural &amp; Electrical Review</a>
+                            <a href="../services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="../services/ev.html">EV Charging Design &amp; Engineering</a>
+                            <a href="../services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="../services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="../services/net-metering.html">Net Metering</a>
+                            <a href="../services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="../tools.html" class="active">Tools &amp; Calculators</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../locations.html">Service Areas</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="../contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+    <main>
+        <div class="calc-hero">
+            <div class="wrap">
+                <span class="eyebrow" style="color: #D4A843;">INSTANT ESTIMATOR &middot; ALL 50 STATES</span>
+                <h1>Solar Permit Plan Set Price &amp; Turnaround Estimator</h1>
+                <p>Get instant estimates for residential and commercial solar permit drawings, single line diagrams (SLD), structural roof attachments, and licensed P.E. stamps.</p>
+            </div>
+        </div>
+
+        <div class="calc-wrapper">
+            <div class="calc-grid">
+                
+                <!-- INPUT CARD -->
+                <div class="calc-card">
+                    <h2>📋 Select Project Parameters</h2>
+
+                    <div class="form-group">
+                        <label>Project Classification</label>
+                        <select id="projType" onchange="calculateEstimate()">
+                            <option value="res-pv">Residential Rooftop Solar PV (&le; 15 kW)</option>
+                            <option value="res-pv-ess">Residential Solar + Battery Storage (BESS)</option>
+                            <option value="res-ground">Residential Ground-Mount PV</option>
+                            <option value="comm-roof">Commercial Rooftop PV (&le; 100 kW)</option>
+                            <option value="comm-large">Commercial / Industrial PV (&gt; 100 kW)</option>
+                            <option value="comm-carport">Commercial Solar Carport Canopy</option>
+                            <option value="comm-ev">Commercial EV Fleet Charging Hub</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>System DC Capacity (kW)</label>
+                        <input type="number" id="sysKw" value="10" step="1" min="1" oninput="calculateEstimate()" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>P.E. Engineering Stamps Required</label>
+                        <select id="stampType" onchange="calculateEstimate()">
+                            <option value="full">Full Plan Set + Electrical &amp; Structural PE Stamps</option>
+                            <option value="elec-only">Electrical PE Stamp + Single Line Diagram Only</option>
+                            <option value="struct-only">Structural PE Stamp + Roof Attachment Calc Only</option>
+                            <option value="draft-only">CAD Drafted Plan Set (No PE Stamp Needed)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Turnaround Speed</label>
+                        <select id="turnaround" onchange="calculateEstimate()">
+                            <option value="std">Standard 48-Hour Delivery (Included)</option>
+                            <option value="rush">Rush 24-Hour Expedited Delivery</option>
+                        </select>
+                    </div>
+
+                    <button class="calc-btn" onclick="calculateEstimate()">⚡ Update Estimate</button>
+                </div>
+
+                <!-- RESULT CARD -->
+                <div class="result-box">
+                    <h2>📊 Estimated Engineering Package</h2>
+                    
+                    <div class="result-row">
+                        <span class="result-label">Scope of Engineering Work</span>
+                        <span class="result-value" id="res-scope" style="font-size:14px; text-align:right;">Residential PV Plan Set</span>
+                    </div>
+                    
+                    <div class="result-row">
+                        <span class="result-label">Guaranteed Turnaround Time</span>
+                        <span class="result-value" id="res-time"><span class="badge-std">48 HOURS</span></span>
+                    </div>
+
+                    <div class="result-row">
+                        <span class="result-label">Included Drawings &amp; Schedules</span>
+                        <span class="result-value" id="res-dwg" style="font-size:13px; text-align:right;">PV1, SLD, Roof, Placards</span>
+                    </div>
+
+                    <div class="result-row">
+                        <span class="result-label">AHJ Redline Revisions</span>
+                        <span class="result-value" style="color:#2e7d32;">100% Free &amp; Included</span>
+                    </div>
+
+                    <div class="result-row" style="margin-top:12px; padding-top:16px; border-top:2px solid #D4A843;">
+                        <span class="result-label" style="font-size:16px; font-weight:700;">Estimated Engineering Fee</span>
+                        <span class="result-value highlight" id="res-price">$350 &ndash; $450</span>
+                    </div>
+
+                    <div style="margin-top:24px;">
+                        <a href="../contact.html" class="calc-btn" style="display:block; text-align:center; text-decoration:none; background:#1B1712; color:#D4A843;">Submit Project for Immediate Start &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- WHAT IS INCLUDED SECTION -->
+            <div style="margin-top: 48px; background: #fff; border: 1px solid #e8e0d4; padding: 36px; border-radius: 8px;">
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #1B1712; border-left: 4px solid #D4A843; padding-left: 16px; margin-bottom: 20px;">What is Included in Every Daniel's Solar Plan Set?</h2>
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; font-size: 15px; color:#555; line-height: 1.6;">
+                    <div>
+                        <strong style="color:#1B1712;">📐 Title &amp; Plot Plan (PV1):</strong>
+                        <p>Site layout, aerial setbacks, property boundaries, utility disconnect locations, and Fire Department pathways per IFC 1205.</p>
+                    </div>
+                    <div>
+                        <strong style="color:#1B1712;">⚡ Single Line Diagram (SLD):</strong>
+                        <p>Full conductor schedules, conduit sizing, OCPD breaker ratings, inverter wiring, and NEC 690/705 120% busbar math.</p>
+                    </div>
+                    <div>
+                        <strong style="color:#1B1712;">🏠 Structural Attachment Details:</strong>
+                        <p>Rafter/truss span calculations, lag screw pullout resistance, dead/live wind loading per ASCE 7-16, and flashing details.</p>
+                    </div>
+                    <div>
+                        <strong style="color:#1B1712;">🏷️ Safety Placards &amp; NEC Labels:</strong>
+                        <p>Complete custom label schedule formatted to exact AHJ and utility inspection requirements.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA BANNER -->
+            <div style="margin-top: 48px; background: #1B1712; color: #fff; padding: 40px; border-radius: 8px; text-align: center;">
+                <h2 style="font-family: 'Playfair Display', serif; margin-bottom: 12px;">Need Custom Commercial or Multi-Site Volume Pricing?</h2>
+                <p style="opacity: .8; margin-bottom: 24px;">We partner with residential and commercial solar installers across the country offering dedicated account engineers and discounted volume plan set tiers.</p>
+                <a href="../contact.html" style="display: inline-block; background: #D4A843; color: #1B1712; font-weight: 700; padding: 14px 32px; border-radius: 4px; text-decoration: none;">Contact Our Engineering Team &rarr;</a>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+    function calculateEstimate() {
+        const type = document.getElementById('projType').value;
+        const kw = parseFloat(document.getElementById('sysKw').value) || 10;
+        const stamp = document.getElementById('stampType').value;
+        const rush = document.getElementById('turnaround').value === 'rush';
+
+        let scopeText = "Residential PV";
+        let dwgText = "Cover, PV1, SLD, Roof, Labels";
+        let baseMin = 250;
+        let baseMax = 350;
+
+        if (type === 'res-pv') {
+            scopeText = "Residential Rooftop PV";
+            dwgText = "Cover, PV1, SLD, Attachment, Labels";
+            baseMin = 250; baseMax = 350;
+        } else if (type === 'res-pv-ess') {
+            scopeText = "Residential Solar + ESS Battery";
+            dwgText = "PV1, SLD + ESS Backup Panel, Roof, Labels";
+            baseMin = 350; baseMax = 475;
+        } else if (type === 'res-ground') {
+            scopeText = "Residential Ground-Mount PV";
+            dwgText = "Plot Plan, Foundation Embedment, SLD, Trenching";
+            baseMin = 400; baseMax = 550;
+        } else if (type === 'comm-roof') {
+            scopeText = "Commercial Rooftop PV (" + kw + " kW)";
+            dwgText = "Full Commercial Set (6-10 Sheets) + 3-Phase SLD";
+            baseMin = 750 + Math.floor(kw * 3); baseMax = 950 + Math.floor(kw * 4);
+        } else if (type === 'comm-large') {
+            scopeText = "Large Commercial PV (" + kw + " kW)";
+            dwgText = "Commercial Set (10-15 Sheets), Switchgear, SIS Study";
+            baseMin = 1400 + Math.floor(kw * 2.5); baseMax = 1900 + Math.floor(kw * 3.5);
+        } else if (type === 'comm-carport') {
+            scopeText = "Commercial Solar Carport Canopy";
+            dwgText = "Structural Steel, Foundation Pier Calcs, 3-Phase SLD";
+            baseMin = 1800 + Math.floor(kw * 3); baseMax = 2500 + Math.floor(kw * 4);
+        } else if (type === 'comm-ev') {
+            scopeText = "Commercial EV Fleet Charging Depot";
+            dwgText = "480V Switchgear, ALMS Control, Civil/Electrical Set";
+            baseMin = 1600 + Math.floor(kw * 2.5); baseMax = 2200 + Math.floor(kw * 3.5);
+        }
+
+        if (stamp === 'elec-only' || stamp === 'struct-only') {
+            baseMin = Math.round(baseMin * 0.75);
+            baseMax = Math.round(baseMax * 0.75);
+        } else if (stamp === 'draft-only') {
+            baseMin = Math.round(baseMin * 0.60);
+            baseMax = Math.round(baseMax * 0.60);
+        }
+
+        if (rush) {
+            baseMin = Math.round(baseMin * 1.25);
+            baseMax = Math.round(baseMax * 1.25);
+            document.getElementById('res-time').innerHTML = '<span class="badge-rush">⚡ 24 HOURS RUSH</span>';
+        } else {
+            document.getElementById('res-time').innerHTML = '<span class="badge-std">✅ 48 HOURS STANDARD</span>';
+        }
+
+        document.getElementById('res-scope').textContent = scopeText;
+        document.getElementById('res-dwg').textContent = dwgText;
+        document.getElementById('res-price').textContent = '$' + baseMin.toLocaleString() + ' – $' + baseMax.toLocaleString();
+    }
+
+    document.addEventListener('DOMContentLoaded', calculateEstimate);
+    </script>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="brand">
+                        <div class="logo-ring-footer"><img class="logo-img-footer" src="../logo_ecard.png" alt="Daniel Solar Logo" /></div>
+                        <span>Daniel's Solar Engineering and Design</span>
+                    </a>
+                    <p>Jurisdiction-ready solar permit design and engineering services stamped by licensed P.E.s across all 50 U.S. states.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../projects.html">Projects</a></li>
+                        <li><a href="../tools.html">Tools &amp; Calculators</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Engineering Tools</h4>
+                    <ul>
+                        <li><a href="solar-permit-plan-set-pricing-calculator.html">Plan Set Price Estimator</a></li>
+                        <li><a href="solar-voltage-drop-calculator.html">Voltage Drop Calculator</a></li>
+                        <li><a href="commercial-solar-roi-payback-calculator.html">Solar ROI Calculator</a></li>
+                        <li><a href="solar-permit-checklist.html">AHJ Permit Checklist</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@danielsolared.com">info@danielsolared.com</a></li>
+                        <li><a href="tel:+18584226880">+1 (858) 422-6880</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Daniel's Solar Engineering and Design. All rights reserved. &middot; Irvine, CA</span>
+            </div>
+        </div>
+    </footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

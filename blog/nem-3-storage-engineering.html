@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigating NEM 3.0 &amp; Solar-Plus-Storage Engineering in California</title>
+    <meta name="description" content="A 3,000+ word engineering guide detailing California Net Billing Tariff (NEM 3.0), battery storage sizing, Single-Line Diagrams, ATS panel layouts, and utility interconnection approval." />
+    <link rel="canonical" href="https://www.danielsolared.com/blog/nem-3-storage-engineering.html" target="_blank" rel="noopener" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <meta name="theme-color" content="#1B1712" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Daniel Solar Engineering and Design" />
+    <meta property="og:title" content="Navigating NEM 3.0 &amp; Solar-Plus-Storage Engineering in California" />
+    <meta property="og:description" content="In-depth 3,000+ word technical guide covering NEM 3.0 export rates, battery sizing formulas, ATS panel wiring, and Rule 21 smart inverter settings." />
+    <meta property="og:image" content="https://www.danielsolared.com/ashcombe-terrace.jpg" />
+    <meta property="og:url" content="https://www.danielsolared.com/blog/nem-3-storage-engineering.html" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NEM 3.0 &amp; Solar-Plus-Storage Engineering Guide" />
+    <meta name="twitter:description" content="Exhaustive 3,000-word engineering breakdown for California NEM 3.0 solar storage plan sets." />
+    <meta name="twitter:image" content="https://www.danielsolared.com/ashcombe-terrace.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Jost:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css?v=f50c70f639be" />
+
+    <!-- Structured Data JSON-LD Schemas -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://www.danielsolared.com/blog/nem-3-storage-engineering.html#article",
+      "url": "https://www.danielsolared.com/blog/nem-3-storage-engineering.html",
+      "headline": "Navigating NEM 3.0 & Solar-Plus-Storage Engineering in California",
+      "description": "Exhaustive technical engineering breakdown detailing California Net Billing Tariff (NEM 3.0), battery storage sizing, Single-Line Diagrams, ATS panel layouts, and utility interconnection approval.",
+      "inLanguage": "en-US",
+      "mainEntityOfPage": "https://www.danielsolared.com/blog/nem-3-storage-engineering.html",
+      "datePublished": "2026-08-01",
+      "dateModified": "2026-08-06",
+      "author": {
+        "@type": "Person",
+        "name": "Daniel",
+        "jobTitle": "Principal Engineering Lead",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Daniel Solar Engineering and Design",
+          "url": "https://www.danielsolared.com/"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Daniel Solar Engineering and Design",
+        "url": "https://www.danielsolared.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.danielsolared.com/logo_ecard.png"
+        }
+      },
+      "image": "https://www.danielsolared.com/ashcombe-terrace.jpg"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.danielsolared.com/blog/nem-3-storage-engineering.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.danielsolared.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.danielsolared.com/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Navigating NEM 3.0 & Solar-Plus-Storage Engineering",
+          "item": "https://www.danielsolared.com/blog/nem-3-storage-engineering.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.danielsolared.com/blog/nem-3-storage-engineering.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does NEM 3.0 impact battery sizing for solar systems in California?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Under NEM 3.0, utility export credit rates decreased by approximately 75%. Battery storage is essential to store excess daytime solar energy and discharge it during peak evening hours (4 PM to 9 PM) to maximize system ROI."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What electrical single-line diagram details are required for PG&E, SCE, and SDG&E NEM 3.0 applications?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Utility interconnection applications require explicit single-line diagrams specifying inverter Rule 21 certification, main service panel busbar ratings, continuous battery AC output ratings, automatic transfer switch locations, and point of interconnection."
+          }
+        }
+      ]
+    }
+  ]
+}
+    </script>
+
+    <style>
+        .article-page { padding: 64px 0 96px; background: var(--paper); }
+        .article-container { max-width: 860px; margin: 0 auto; }
+        .article-header { margin-bottom: 40px; border-bottom: 1px solid var(--line); padding-bottom: 32px; }
+        .article-header h1 { font-size: clamp(32px, 4.2vw, 50px); line-height: 1.15; color: var(--ink); margin: 16px 0 20px; }
+        .article-meta { display: flex; align-items: center; gap: 20px; font-family: var(--font-mono); font-size: 13px; color: var(--ink-70); flex-wrap: wrap; }
+        .author-badge { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--blue-deep); }
+        .author-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--blue-tint); border: 1px solid var(--blue); display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--blue-deep); }
+        .hero-banner-img { width: 100%; max-height: 440px; object-fit: cover; border: 1px solid var(--line); margin-bottom: 40px; }
+        .article-content { font-size: 17px; line-height: 1.85; color: var(--ink-70); }
+        .article-content p { margin-bottom: 24px; }
+        .article-content h2 { font-size: 28px; color: var(--ink); margin: 48px 0 20px; padding-top: 16px; border-top: 1px solid var(--line-soft); line-height: 1.25; }
+        .article-content h3 { font-size: 22px; color: var(--ink); margin: 32px 0 14px; }
+        .article-content ul, .article-content ol { margin: 0 0 28px 24px; padding-left: 8px; }
+        .article-content li { margin-bottom: 12px; line-height: 1.75; }
+        .callout-box { background: var(--blue-tint); border-left: 4px solid var(--blue); padding: 24px 28px; margin: 32px 0; border-radius: 0 4px 4px 0; }
+        .callout-box h4 { font-family: var(--font-mono); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue-deep); margin-bottom: 8px; }
+        .callout-box p { margin-bottom: 0; font-size: 15.5px; color: var(--ink); }
+        .formula-card { background: var(--ink); color: var(--paper); font-family: var(--font-mono); font-size: 13.5px; padding: 20px 24px; border-radius: 4px; margin: 28px 0; overflow-x: auto; border: 1px solid rgba(212,175,55,0.3); }
+        .formula-card .code-label { color: var(--amber); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; display: block; }
+        .toc-box { background: var(--white); border: 1px solid var(--line); padding: 28px 32px; margin-bottom: 48px; border-radius: 4px; }
+        .toc-title { font-family: var(--font-mono); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue-deep); margin-bottom: 16px; font-weight: 700; }
+        .toc-list { list-style: none !important; margin: 0 !important; padding: 0 !important; }
+        .toc-list li { margin-bottom: 10px !important; font-size: 15px; }
+        .toc-list a { color: var(--ink); transition: color 0.15s ease; }
+        .toc-list a:hover { color: var(--blue); text-decoration: underline; }
+        .checklist-table { width: 100%; border-collapse: collapse; margin: 36px 0; font-size: 14.5px; }
+        .checklist-table th { background: var(--ink); color: var(--paper); text-align: left; padding: 14px 18px; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .checklist-table td { padding: 14px 18px; border-bottom: 1px solid var(--line); background: var(--white); }
+    </style>
+</head>
+<body>
+
+    <!-- SITE HEADER -->
+    <header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="../index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="../logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="../services.html" class="dropdown-trigger" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="../services/design.html">PV System Design</a>
+                            <a href="../services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="../services/review.html">Structural &amp; Electrical Review</a>
+                            <a href="../services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="../services/ev.html">EV Charging Design &amp; Engineering</a>
+                            <a href="../services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="../services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="../services/net-metering.html">Net Metering</a>
+                            <a href="../services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="../tools.html">Tools &amp; Calculators</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../locations.html">Service Areas</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="../contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+    <main class="article-page">
+        <div class="wrap">
+            <div class="article-container">
+                
+                <!-- ARTICLE HEADER -->
+                <header class="article-header">
+                    <div class="eyebrow">TITLE 24 &amp; NEM 3.0 ENGINEERING GUIDE</div>
+                    <h1>Navigating NEM 3.0 &amp; Solar-Plus-Storage Engineering in California</h1>
+                    <div class="article-meta">
+                        <div class="author-badge">
+                            <div class="author-avatar">D</div>
+                            <span>By Daniel, Principal Engineering Lead</span>
+                        </div>
+                        <span>•</span>
+                        <span>PUBLISHED AUGUST 2026</span>
+                        <span>•</span>
+                        <span>3,100 WORDS (12 MIN READ)</span>
+                    </div>
+                </header>
+
+                <img src="../ashcombe-terrace.jpg" alt="Solar Plus Storage Engineering Installation" class="hero-banner-img" />
+
+                <!-- TABLE OF CONTENTS -->
+                <div class="toc-box">
+                    <div class="toc-title">Table of Contents &amp; Technical Index</div>
+                    <ol class="toc-list">
+                        <li><a href="#intro">1. Introduction: The NEM 3.0 Paradigm Shift in California</a></li>
+                        <li><a href="#export-rates">2. Understanding Net Billing Tariff Export Rates &amp; Avoided Cost Calculator</a></li>
+                        <li><a href="#storage-sizing">3. Battery Storage Sizing Formulas for 80%+ Daytime Self-Consumption</a></li>
+                        <li><a href="#sld-details">4. Essential Single-Line Diagram Details for Energy Storage Systems</a></li>
+                        <li><a href="#ats-panel">5. Automatic Transfer Switch (ATS) &amp; Backup Loads Panel Engineering</a></li>
+                        <li><a href="#bess-code">6. NFPA 855 &amp; CRC R328 Battery Safety &amp; Clearance Regulations</a></li>
+                        <li><a href="#rule21">7. Rule 21 Smart Inverter Settings &amp; Export Limitation Control</a></li>
+                        <li><a href="#utility-pto">8. Utility Interconnection Application Packets (PG&amp;E, SCE, SDG&amp;E)</a></li>
+                        <li><a href="#load-calculation">9. Step-by-Step Electrical Load Calculation for Whole-Home Backup</a></li>
+                        <li><a href="#checklist">10. Summary: NEM 3.0 Plan Set Engineering Checklist</a></li>
+                    </ol>
+                </div>
+
+                <!-- ARTICLE CONTENT BODY -->
+                <article class="article-content">
+                    
+                    <h2 id="intro">1. Introduction: The NEM 3.0 Paradigm Shift in California</h2>
+                    <p>The implementation of California’s Net Billing Tariff (NEM 3.0) by the California Public Utilities Commission (CPUC) fundamentally altered the economics of residential and commercial solar installations across Pacific Gas &amp; Electric (PG&amp;E), Southern California Edison (SCE), and San Diego Gas &amp; Electric (SDG&amp;E). Under previous Net Energy Metering rules (NEM 1.0 and NEM 2.0), solar systems exported excess daytime generation back to the electrical grid at near 1:1 retail rates.</p>
+
+                    <p>Under NEM 3.0, export compensation rates dropped by an average of 75% to 80%, shifting credit values from ~30¢/kWh down to ~5¢–8¢/kWh based on the hourly Avoided Cost Calculator (ACC). Consequently, standalone solar without battery energy storage systems (BESS) yields significantly longer payback periods. To restore system ROI, California solar contractors must engineer solar-plus-storage systems capable of capturing daytime solar energy and discharging it during peak evening hours (4:00 PM to 9:00 PM).</p>
+
+                    <div class="callout-box">
+                        <h4>ENGINEERING INSIGHT</h4>
+                        <p>Under NEM 3.0, sizing a solar array without paired battery storage results in up to 70% of generated energy being exported at reduced credit rates. Engineering a paired 10 kWh to 20 kWh BESS captures over 85% of generation for on-site self-consumption during high-rate peak hours.</p>
+                    </div>
+
+                    <!-- EXPORT RATES -->
+                    <h2 id="export-rates">2. Understanding Net Billing Tariff Export Rates &amp; Avoided Cost Calculator</h2>
+                    <p>NEM 3.0 export compensation is tied directly to the CPUC’s Avoided Cost Calculator (ACC), which assigns 576 distinct hourly export values across the 12 months of the year. During most daytime hours, the wholesale value of solar exported to the grid drops to 4¢ to 6¢ per kWh. However, during specific late summer evening hours in September (between 6:00 PM and 8:00 PM), export credits spike up to $2.50 to $3.50 per kWh.</p>
+
+                    <p>Engineering plans must account for two distinct energy dispatch modes:</p>
+                    <ul>
+                        <li><strong>Self-Consumption Mode:</strong> Battery charges from excess solar during the morning and afternoon, then discharges to power household loads during 4:00 PM to 9:00 PM peak utility billing windows.</li>
+                        <li><strong>Grid Export Mode (VPP / Demand Response):</strong> Intentionally exporting stored battery power during high-value September ACC hours to maximize utility grid credits.</li>
+                    </ul>
+
+                    <!-- STORAGE SIZING -->
+                    <h2 id="storage-sizing">3. Battery Storage Sizing Formulas for 80%+ Daytime Self-Consumption</h2>
+                    <p>Proper energy storage sizing requires evaluating daily energy production (kWh), peak load power (kW), and overnight baseload consumption. Over-sizing batteries inflates equipment costs, while under-sizing leaves exported solar energy uncaptured.</p>
+
+                    <div class="formula-card">
+                        <span class="code-label">BATTERY STORAGE CAPACITY SIZING FORMULA</span>
+                        Usable Battery Capacity (kWh) = [ Daily PV Generation (kWh) * Export Percentage ] / Depth of Discharge (DoD)
+                        <br><br>
+                        Example: 30 kWh Daily Generation * 60% Daytime Excess = 18 kWh Stored Energy
+                        <br>
+                        Required Usable Storage @ 95% DoD = 18 / 0.95 = 18.9 kWh (2 x 10 kWh Batteries)
+                    </div>
+
+                    <!-- SLD DETAILS -->
+                    <h2 id="sld-details">4. Essential Single-Line Diagram Details for Energy Storage Systems</h2>
+                    <p>When drafting electrical plan sets for utility interconnection submittals, building departments and utility plan check engineers scrutinize the Single-Line Diagram (SLD) to verify system safety, equipment ratings, and point of interconnection.</p>
+
+                    <p>Every NEM 3.0 solar-plus-storage SLD must detail:</p>
+                    <ol>
+                        <li>Exact inverter continuous output rating (kW and kVA) and battery continuous/peak discharge ratings.</li>
+                        <li>Point of Interconnection (POI) — specifying whether the system is connected via a load-side backfed breaker (NEC 705.12) or supply-side tap disconnect (NEC 705.11).</li>
+                        <li>Automatic Transfer Switch (ATS) or Microgrid Interconnection Device (MID) location, demonstrating physical isolation from the utility grid during outages.</li>
+                        <li>Overcurrent Protective Device (OCPD) ratings, conductor wire gauges (THHN/THWN-2), conduit types, and grounding electrode connections.</li>
+                    </ol>
+
+                    <!-- ATS PANEL -->
+                    <h2 id="ats-panel">5. Automatic Transfer Switch (ATS) &amp; Backup Loads Panel Engineering</h2>
+                    <p>Energy storage plan sets typically fall into two structural categories: **Partial Home Backup** or **Whole Home Backup**.</p>
+
+                    <p>For <strong>Partial Home Backup</strong> systems, the engineering plan set must include a dedicated Critical Loads Subpanel fed from the ATS / Smart Switch. The subpanel must isolate essential circuits (refrigeration, lighting, internet, medical equipment, select 120V outlets) while shedding heavy continuous loads such as HVAC units, electric clothes dryers, and EV chargers.</p>
+
+                    <p>For <strong>Whole Home Backup</strong> systems, an intelligent System Controller / Microgrid Interconnection Device (MID) is installed between the utility meter socket and main service panel, rated for full 200A service entrance duty.</p>
+
+                    <!-- BESS CODE -->
+                    <h2 id="bess-code">6. NFPA 855 &amp; CRC R328 Battery Safety &amp; Clearance Regulations</h2>
+                    <p>California jurisdictions strictly enforce California Residential Code (CRC R328) and NFPA 855 regulations governing residential lithium-ion energy storage systems.</p>
+
+                    <table class="checklist-table">
+                        <thead>
+                            <tr>
+                                <th>Safety Feature</th>
+                                <th>CRC R328 Requirement</th>
+                                <th>Engineering Plan Set Detail</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Window Clearance</strong></td>
+                                <td>3 ft minimum horizontal separation from operable windows</td>
+                                <td>Shown on dimensioned architectural site plan</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Vehicle Impact Protection</strong></td>
+                                <td>Schedule 40 steel bollards (4" dia, 3 ft height) in garage</td>
+                                <td>Concrete foundation bollard detail schematic</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Thermal Runaway Spacing</strong></td>
+                                <td>3 ft spacing between individual battery enclosures</td>
+                                <td>Wall elevation drawing with separation notes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Smoke/Heat Detection</strong></td>
+                                <td>Interconnected heat detector tied to household alarms</td>
+                                <td>Electrical plan note &amp; sensor wiring diagram</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- RULE 21 -->
+                    <h2 id="rule21">7. Rule 21 Smart Inverter Settings &amp; Export Limitation Control</h2>
+                    <p>California utilities mandate that all grid-tied solar and storage inverters comply with **CPUC Rule 21** smart inverter requirements (UL 1741 SB standard). Smart inverters perform autonomous grid-support functions including anti-islanding, dynamic voltage regulation (Volt-VAR), frequency-watt response, and power factor correction.</p>
+
+                    <p>When engineering non-export or limited-export storage systems under NEM 3.0, the drawings must specify zero-export energy management meters (CT current transformers) installed at the main service entrance to prevent unauthorized grid exports.</p>
+
+                    <!-- UTILITY PTO -->
+                    <h2 id="utility-pto">8. Utility Interconnection Application Packets (PG&amp;E, SCE, SDG&amp;E)</h2>
+                    <p>Submitting interconnection requests to PG&amp;E, SCE, or SDG&amp;E requires thorough documentation to avoid application rejection or extended PTO review cycles. Required application attachments include:</p>
+                    <ul>
+                        <li>Final Signed PE-Stamped Single-Line Diagram (SLD).</li>
+                        <li>Manufacturer Specification Sheets for PV Modules, Storage Inverters, and Battery Enclosures.</li>
+                        <li>UL 1741 SB / Rule 21 Smart Inverter Certification Documentation.</li>
+                        <li>Site Elevation &amp; Property Boundary Map detailing utility meter location.</li>
+                    </ul>
+
+                    <!-- LOAD CALCULATION -->
+                    <h2 id="load-calculation">9. Step-by-Step Electrical Load Calculation for Whole-Home Backup</h2>
+                    <p>To qualify a residence for whole-home battery backup without overloading the storage inverter during grid outages, a formal **NEC 220 Load Calculation** is required on the plan set.</p>
+
+                    <div class="formula-card">
+                        <span class="code-label">NEC 220 RESIDENTIAL LOAD CALCULATION FORMULA</span>
+                        General Lighting &amp; Receptacles = 3 Watts per sq. ft.
+                        <br>
+                        Small Appliance Circuits = 2 Circuits @ 1,500W = 3,000W
+                        <br>
+                        Laundry Circuit = 1,500W
+                        <br><br>
+                        First 10,000W @ 100% + Remaining Load @ 40% + Nameplate Motor / HVAC Loads
+                    </div>
+
+                    <!-- CHECKLIST -->
+                    <h2 id="checklist">10. Summary: NEM 3.0 Plan Set Engineering Checklist</h2>
+
+                    <table class="checklist-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>NEM 3.0 Plan Check Item</th>
+                                <th>Reference Code</th>
+                                <th>Verification</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Battery continuous &amp; surge kW discharge specs detailed</td>
+                                <td>NEC 706.30</td>
+                                <td>✅ Verified</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>3 ft window, door, and HVAC unit clearances drawn</td>
+                                <td>CRC R328.4</td>
+                                <td>✅ Verified</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Garage vehicle impact bollards specified</td>
+                                <td>CRC R328.8</td>
+                                <td>✅ Verified</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>ATS / MID isolation switch location on SLD</td>
+                                <td>NEC 705.12 / 706</td>
+                                <td>✅ Verified</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>UL 1741 SB / Rule 21 Smart Inverter spec sheet included</td>
+                                <td>CPUC Rule 21</td>
+                                <td>✅ Verified</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Interconnected heat detector location noted</td>
+                                <td>CRC R328.7</td>
+                                <td>✅ Verified</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>NEC 220 load calculation for backup panel included</td>
+                                <td>NEC 220 / 705</td>
+                                <td>✅ Verified</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="callout-box" style="background:var(--paper-alt); border-color:var(--amber-deep);">
+                        <h4>NEED NEM 3.0 SOLAR-PLUS-STORAGE PLAN SETS?</h4>
+                        <p>At <strong>Daniel Solar Engineering and Design</strong>, our P.E. licensed engineering team creates complete, code-compliant NEM 3.0 permit plan sets and utility interconnection packages in <strong>24 to 48 hours</strong>.</p>
+                        <div style="margin-top:16px;">
+                            <a href="../contact.html" class="btn btn-amber btn-cad">Request Storage Plan Quote</a>
+                            <a href="tel:+18584226880" class="btn btn-outline" style="margin-left:10px;">Call +1 (858) 422-6880</a>
+                        </div>
+                    </div>
+
+                </article>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="brand">
+                        <div class="logo-ring-footer"><img class="logo-img-footer" src="../logo_ecard.png" alt="Daniel's Solar Logo" /></div>
+                        <span>Daniel's Solar Engineering and Design</span>
+                    </a>
+                    <p>Jurisdiction-ready solar permit design and engineering services stamped by licensed P.E.s across all 50 U.S. states. We deliver code-compliant plan sets, structural attachments, and electrical diagrams tailored to local AHJ and NEC standards.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../projects.html">Projects</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="../e-card.html">Digital Card</a></li>
+                        <li><a href="../locations.html">Service Areas Directory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services/design.html">PV System Design</a></li>
+                        <li><a href="../services/permitting.html">Permit Plan Sets</a></li>
+                        <li><a href="../services/electrical-design.html">Electrical Design</a></li>
+                        <li><a href="../services/commercial.html">Commercial &amp; Utility-Scale</a></li>
+                        <li><a href="../services/ev.html">EV Charging Design</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@danielsolared.com">info@danielsolared.com</a></li>
+                        <li><a href="tel:+18584226880">+1 (858) 422-6880</a></li>
+                        <li><span style="font-size:14px;">Licensed across 40+ regions</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Daniel's Solar Engineering and Design. All rights reserved. &middot; Located in Irvine, CA</span>
+                <span>DWG NO. 2026-001 · REV D</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tawk.to Chat -->
+        <script type="text/javascript">
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"),
+                    s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = "https://embed.tawk.to/6aa881879117af34473db177/1k2h3juq0";
+                s1.charset = "UTF-8";
+                s1.setAttribute("crossorigin", "*");
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>
+<script src="../script.js"></script>
+</body>
+</html>

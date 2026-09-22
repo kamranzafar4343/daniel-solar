@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>California Title 24 Solar & Battery Storage Mandates: Builder Compliance Guide</title>
+    <meta name="description" content="Complete guide to California Title 24 Part 6 solar PV and battery storage (ESS) mandates for new residential and commercial construction. CBECC compliance rules." />
+    <link rel="canonical" href="https://www.danielsolared.com/blog/california-title-24-solar-battery-mandates.html" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <meta name="theme-color" content="#1B1712" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Daniel Solar Engineering and Design" />
+    <meta property="og:title" content="California Title 24 Solar & Battery Storage Mandates: Builder Compliance Guide" />
+    <meta property="og:description" content="Technical guide for homebuilders and solar developers navigating California Title 24 Part 6 PV and energy storage requirements, sizing formulas, and CEC compliance." />
+    <meta property="og:image" content="https://www.danielsolared.com/ashcombe-terrace.jpg" />
+    <meta property="og:url" content="https://www.danielsolared.com/blog/california-title-24-solar-battery-mandates.html" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Jost:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css?v=f50c70f639be" />
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.danielsolared.com/blog/california-title-24-solar-battery-mandates.html#article",
+      "url": "https://www.danielsolared.com/blog/california-title-24-solar-battery-mandates.html",
+      "headline": "California Title 24 Solar & Battery Storage Mandates: Builder Compliance Guide",
+      "description": "Complete guide to California Title 24 Part 6 solar PV and battery storage (ESS) mandates for new residential and commercial construction.",
+      "datePublished": "2026-08-15",
+      "dateModified": "2026-08-15",
+      "author": {
+        "@type": "Organization",
+        "name": "Daniel Solar Engineering and Design",
+        "url": "https://www.danielsolared.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Daniel Solar Engineering and Design",
+        "url": "https://www.danielsolared.com/",
+        "logo": "https://www.danielsolared.com/logo_ecard.png"
+      }
+    }
+  ]
+}
+    </script>
+
+    <style>
+        .article-page { padding: 64px 0 96px; background: var(--paper); }
+        .article-container { max-width: 840px; margin: 0 auto; }
+        .article-header { border-bottom: 1px solid var(--line); padding-bottom: 32px; margin-bottom: 40px; }
+        .article-meta { font-family: var(--font-mono); font-size: 13px; color: var(--ink-70); margin-bottom: 12px; }
+        .article-header h1 { font-size: clamp(30px, 4vw, 46px); color: var(--ink); margin: 12px 0 18px; line-height: 1.2; }
+        .article-body { font-size: 17px; line-height: 1.85; color: var(--ink-70); }
+        .article-body p { margin-bottom: 24px; }
+        .article-body h2 { font-size: 26px; color: var(--ink); margin: 44px 0 18px; border-top: 1px solid var(--line-soft); padding-top: 24px; }
+        .article-body h3 { font-size: 20px; color: var(--ink); margin: 28px 0 12px; }
+        .tech-box { background: var(--paper-alt); border-left: 4px solid var(--blue); padding: 24px 28px; margin: 32px 0; border-radius: 0 6px 6px 0; }
+        .tech-box h4 { font-size: 17px; color: var(--ink); margin-bottom: 8px; font-weight: 700; }
+        .cta-banner { background: var(--ink); color: var(--white); padding: 36px; border-radius: 8px; margin-top: 56px; text-align: center; }
+        .cta-banner h3 { color: var(--gold); font-size: 24px; margin-bottom: 12px; }
+        .cta-banner p { color: rgba(255,255,255,0.8); font-size: 15px; margin-bottom: 24px; }
+    </style>
+</head>
+<body>
+
+    <!-- SITE HEADER -->
+    <header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="../index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="../logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="../services.html" class="dropdown-trigger" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="../services/design.html">PV System Design</a>
+                            <a href="../services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="../services/review.html">Structural &amp; Electrical Review</a>
+                            <a href="../services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="../services/ev.html">EV Charging Design &amp; Engineering</a>
+                            <a href="../services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="../services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="../services/net-metering.html">Net Metering</a>
+                            <a href="../services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="../tools.html">Tools &amp; Calculators</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../locations.html">Service Areas</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="../contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+    <main>
+        <div class="article-page">
+            <div class="wrap">
+                <div class="article-container">
+                    
+                    <header class="article-header">
+                        <div class="article-meta">CALIFORNIA CODES &bull; AUGUST 15, 2026 &bull; 9 MIN READ</div>
+                        <h1>California Title 24 Solar &amp; Battery Storage Mandates: Builder Compliance Guide</h1>
+                        <p class="subtitle">A detailed engineering breakdown of California Building Energy Efficiency Standards (Title 24 Part 6) photovoltaic and Energy Storage System (ESS) requirements for new residential and commercial developments.</p>
+                    </header>
+
+                    <article class="article-body">
+                        <p>Under the California Energy Commission (CEC) Energy Code, California led the nation as the first state to mandate solar photovoltaic (PV) systems on all newly constructed single-family homes and multi-family residential buildings up to three stories. Expanded updates under <strong>Title 24 Part 6</strong> extended solar and energy storage mandates to commercial occupancy types, including retail stores, offices, schools, and warehouses.</p>
+
+                        <p>For homebuilders, commercial developers, and solar contractors operating in California, compliance requires certified <strong>CBECC-Res or CBECC-Com</strong> energy compliance modeling and P.E. stamped electrical and structural plan submittals. Below is a detailed breakdown of current Title 24 requirements.</p>
+
+                        <h2>1. Residential Solar Sizing Formulas ($kW_{PV}$)</h2>
+                        <p>Under Title 24 Section 150.1(c)14, the minimum mandated solar PV system size ($kW_{PV}$) for single-family homes is calculated based on floor area ($CFA$) and climate zone ($CZ$):</p>
+
+                        <p style="font-family:var(--font-mono); font-size:18px; color:var(--blue-deep); font-weight:700;">kW_{PV} = (CFA &times; A) + B</p>
+
+                        <p>Where:</p>
+                        <ul>
+                            <li><strong>CFA:</strong> Conditioned Floor Area in square feet.</li>
+                            <li><strong>A:</strong> PV size factor for the specific California Climate Zone (Zones 1 through 16).</li>
+                            <li><strong>B:</strong> Dwelling unit adjustment factor.</li>
+                        </ul>
+
+                        <div class="tech-box">
+                            <h4>Solar Solar Access Ratio (SAR) Exceptions</h4>
+                            <p>If a roof experiences heavy shading from adjacent structures or trees such that the Solar Access Ratio (SAR) is below 80%, Title 24 allows a proportional reduction in system capacity or reliance on community solar programs certified by the CEC.</p>
+                        </div>
+
+                        <h2>2. Commercial Building Energy Storage System (ESS) Mandates</h2>
+                        <p>For new commercial building developments, Title 24 mandates paired solar PV and Energy Storage Systems (ESS) for major building categories:</p>
+
+                        <ul>
+                            <li><strong>Commercial Buildings Included:</strong> Grocery stores, high-rise residential, office spaces, retail stores, financial institutions, and assembly auditoriums.</li>
+                            <li><strong>Minimum Battery Capacity:</strong> Energy storage must be sized to store at least 15% of the total rated PV system power for a minimum 2-hour discharge duration (or calculated via CEC performance modeling).</li>
+                            <li><strong>Smart Inverter Requirements:</strong> All solar and ESS inverters must comply with Rule 21 smart inverter standards, supporting autonomous frequency and voltage regulation.</li>
+                        </ul>
+
+                        <h2>3. Integration with NEM 3.0 Storage Economics</h2>
+                        <p>California's Net Billing Tariff (NEM 3.0) reduced solar export credit values by ~75%. Consequently, pairing Title 24 solar systems with battery storage (such as Tesla Powerwall 3 or Enphase IQ 5P) is critical not only for building code compliance but also for financial viability.</p>
+
+                        <p>Our engineering team designs system configurations that store daytime solar energy to offset peak evening TOU (Time-Of-Use) utility rates between 4 PM and 9 PM, while maintaining full compliance with Title 24 energy storage control algorithms (Time-of-Use Control vs. Advanced Demand Response).</p>
+
+                        <p>For technical details on sizing battery storage under NEM 3.0, explore our dedicated <a href="nem-3-battery-storage-design.html">NEM 3.0 Battery Storage Design Guide</a>.</p>
+
+                        <h2>4. Required Plan Set Documentation for Building Departments</h2>
+                        <p>To clear municipal plan checks in California AHJs (such as LADBS, San Diego DSD, or San Jose Building Dept), permit plan sets must include:</p>
+
+                        <ul>
+                            <li><strong>Form CF1R-PRF-01-E:</strong> Official CEC Certificate of Compliance generated via CBECC-Res software.</li>
+                            <li><strong>Solar PV &amp; ESS Single Line Diagram:</strong> Compliant with NEC 690, NEC 705, and CEC Title 24.</li>
+                            <li><strong>Structural Attachment Details:</strong> Rafter span checks and ASCE 7-16 wind uplift calculations stamped by a California licensed P.E.</li>
+                        </ul>
+
+                        <div class="cta-banner">
+                            <h3>Building New Construction in California?</h3>
+                            <p>Daniel's Solar Engineering provides CEC Title 24 compliance modeling, permit plan sets, and California P.E. stamps for builders and installers statewide.</p>
+                            <a href="../services/california-mandates.html" class="btn btn-primary">Explore California Mandate Services &rarr;</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="brand">
+                        <div class="logo-ring-footer"><img class="logo-img-footer" src="../logo_ecard.png" alt="Daniel Solar Logo" /></div>
+                        <span>Daniel's Solar Engineering and Design</span>
+                    </a>
+                    <p>Jurisdiction-ready solar permit design and engineering services stamped by licensed P.E.s across all 50 U.S. states.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../projects.html">Projects</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="../locations.html">Service Areas Directory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services/design.html">PV System Design</a></li>
+                        <li><a href="../services/permitting.html">Permit Plan Sets</a></li>
+                        <li><a href="../services/electrical-design.html">Electrical Design</a></li>
+                        <li><a href="../services/commercial.html">Commercial &amp; Utility-Scale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@danielsolared.com">info@danielsolared.com</a></li>
+                        <li><a href="tel:+18584226880">+1 (858) 422-6880</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Daniel's Solar Engineering and Design. All rights reserved. &middot; Located in Irvine, CA</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tawk.to Chat -->
+        <script type="text/javascript">
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"),
+                    s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = "https://embed.tawk.to/6aa881879117af34473db177/1k2h3juq0";
+                s1.charset = "UTF-8";
+                s1.setAttribute("crossorigin", "*");
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>
+<script src="../script.js"></script>
+</body>
+</html>

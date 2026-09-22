@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solar Voltage Drop & Conductor Loss Calculator | NEC 210.19 & NEC 690 Tool</title>
+    <meta name="description" content="Free interactive solar voltage drop calculator. Calculate DC string and AC 1-phase/3-phase voltage drop, wire power loss, and NEC 3% limit compliance." />
+    <link rel="canonical" href="https://www.danielsolared.com/resources/solar-voltage-drop-calculator.html" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <meta name="theme-color" content="#1B1712" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Jost:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css?v=f50c70f639be" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Solar Voltage Drop & Conductor Loss Calculator",
+      "description": "Free engineering calculator for DC and AC solar voltage drop, power loss in watts, and NEC 210.19/690 3% branch circuit compliance.",
+      "url": "https://www.danielsolared.com/resources/solar-voltage-drop-calculator.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": {
+        "@type": "Organization",
+        "name": "Daniel's Solar Engineering and Design",
+        "url": "https://www.danielsolared.com"
+      }
+    }
+    </script>
+
+    <style>
+        .calc-hero { background: linear-gradient(135deg, #1B1712 0%, #2C2318 100%); color: #fff; padding: 72px 0 52px; text-align: center; }
+        .calc-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3.5vw, 42px); margin: 12px 0; }
+        .calc-hero p { font-size: 17px; opacity: .85; max-width: 640px; margin: 0 auto; }
+        .calc-wrapper { max-width: 940px; margin: 48px auto; padding: 0 24px; }
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        @media(max-width: 720px){ .calc-grid { grid-template-columns: 1fr; } }
+        .calc-card { background: #fff; border: 1px solid #e8e0d4; border-radius: 8px; padding: 32px; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+        .calc-card h2 { font-family: 'Playfair Display', serif; font-size: 20px; color: #1B1712; margin-bottom: 20px; border-bottom: 2px solid #D4A843; padding-bottom: 10px; }
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; font-size: 13px; font-weight: 600; color: #555; margin-bottom: 6px; text-transform: uppercase; letter-spacing: .04em; }
+        .form-group input, .form-group select { width: 100%; padding: 10px 14px; border: 1.5px solid #ddd; border-radius: 4px; font-size: 15px; font-family: 'Jost', sans-serif; box-sizing: border-box; transition: border-color .2s; }
+        .form-group input:focus, .form-group select:focus { border-color: #D4A843; outline: none; }
+        .calc-btn { width: 100%; background: #D4A843; color: #1B1712; font-weight: 700; font-size: 16px; padding: 14px; border: none; border-radius: 4px; cursor: pointer; margin-top: 8px; font-family: 'Jost', sans-serif; transition: background .2s; }
+        .calc-btn:hover { background: #b8892e; }
+        .result-box { background: #f9f6f2; border: 1px solid #e8e0d4; border-radius: 8px; padding: 28px; }
+        .result-box h2 { font-family: 'Playfair Display', serif; font-size: 20px; color: #1B1712; margin-bottom: 20px; }
+        .result-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #e8e0d4; font-size: 15px; }
+        .result-row:last-child { border-bottom: none; }
+        .result-label { color: #666; font-weight: 500; }
+        .result-value { font-family: 'Space Mono', monospace; font-weight: 700; color: #1B1712; font-size: 16px; }
+        .result-value.pass { color: #2e7d32; }
+        .result-value.fail { color: #c62828; }
+        .result-value.warn { color: #e65100; }
+        .formula-section { margin-top: 48px; }
+        .formula-section h2 { font-family: 'Playfair Display', serif; font-size: 24px; color: #1B1712; margin-bottom: 20px; border-left: 4px solid #D4A843; padding-left: 16px; }
+        .formula-block { background: #1B1712; color: #D4A843; border-radius: 6px; padding: 20px 24px; font-family: 'Space Mono', monospace; font-size: 14px; margin-bottom: 16px; line-height: 1.8; }
+    </style>
+</head>
+<body>
+
+    <!-- SITE HEADER -->
+    <header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="../index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="../logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="../services.html" class="dropdown-trigger" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="../services/design.html">PV System Design</a>
+                            <a href="../services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="../services/review.html">Structural &amp; Electrical Review</a>
+                            <a href="../services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="../services/ev.html">EV Charging Design &amp; Engineering</a>
+                            <a href="../services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="../services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="../services/net-metering.html">Net Metering</a>
+                            <a href="../services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="../tools.html" class="active">Tools &amp; Calculators</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../locations.html">Service Areas</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="../contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+    <main>
+        <div class="calc-hero">
+            <div class="wrap">
+                <span class="eyebrow" style="color: #D4A843;">FREE ENGINEERING CALCULATOR</span>
+                <h1>Solar Voltage Drop &amp; Conductor Loss Calculator</h1>
+                <p>Calculate DC string &amp; AC voltage drop, power loss in Watts, and verify NEC 210.19 / NEC 690 3% maximum drop limits for residential &amp; commercial solar permit sets.</p>
+            </div>
+        </div>
+
+        <div class="calc-wrapper">
+            <div class="calc-grid">
+                
+                <!-- INPUT CARD -->
+                <div class="calc-card">
+                    <h2>📥 Circuit Parameters</h2>
+
+                    <div class="form-group">
+                        <label>Circuit System Type</label>
+                        <select id="sysType">
+                            <option value="dc">DC Solar String Circuit (2-Wire)</option>
+                            <option value="ac-1p">AC Single-Phase 240V (2-Wire)</option>
+                            <option value="ac-1p-120">AC Single-Phase 120V (2-Wire)</option>
+                            <option value="ac-3p-208">AC 3-Phase 208V (3-Wire)</option>
+                            <option value="ac-3p-480">AC 3-Phase 480V (3-Wire)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Nominal Circuit Voltage (Volts)</label>
+                        <input type="number" id="voltage" placeholder="e.g. 400 for DC or 240 for AC" value="240" step="1" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Circuit Operating Current (Amps)</label>
+                        <input type="number" id="current" placeholder="e.g. 15.5" value="16" step="0.1" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>One-Way Conductor Length (Feet)</label>
+                        <input type="number" id="length" placeholder="e.g. 75" value="75" step="1" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Conductor Material</label>
+                        <select id="material">
+                            <option value="cu">Copper (Cu — K = 12.9 ohms-cmil/ft)</option>
+                            <option value="al">Aluminum (Al — K = 21.2 ohms-cmil/ft)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Wire Size (AWG / kcmil)</label>
+                        <select id="wireSize">
+                            <option value="4110">#14 AWG (4,110 cmil)</option>
+                            <option value="6530">#12 AWG (6,530 cmil)</option>
+                            <option value="10380" selected>#10 AWG (10,380 cmil)</option>
+                            <option value="16510">#8 AWG (16,510 cmil)</option>
+                            <option value="26240">#6 AWG (26,240 cmil)</option>
+                            <option value="41740">#4 AWG (41,740 cmil)</option>
+                            <option value="66360">#2 AWG (66,360 cmil)</option>
+                            <option value="105600">#1/0 AWG (105,600 cmil)</option>
+                            <option value="133100">#2/0 AWG (133,100 cmil)</option>
+                            <option value="167800">#3/0 AWG (167,800 cmil)</option>
+                            <option value="211600">#4/0 AWG (211,600 cmil)</option>
+                            <option value="250000">250 kcmil (250,000 cmil)</option>
+                            <option value="350000">350 kcmil (350,000 cmil)</option>
+                            <option value="500000">500 kcmil (500,000 cmil)</option>
+                        </select>
+                    </div>
+
+                    <button class="calc-btn" onclick="calculateVoltageDrop()">⚡ Calculate Voltage Drop</button>
+                </div>
+
+                <!-- RESULT CARD -->
+                <div class="result-box">
+                    <h2>📊 Engineering Results</h2>
+                    <div class="result-row">
+                        <span class="result-label">Voltage Drop (Volts)</span>
+                        <span class="result-value" id="res-vdrop">—</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label">Voltage Drop Percentage</span>
+                        <span class="result-value" id="res-pct">—</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label">End-of-Run Voltage</span>
+                        <span class="result-value" id="res-endV">—</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label">Conductor Power Loss</span>
+                        <span class="result-value" id="res-lossW">—</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label">NEC 210.19 Compliance (&lt; 3%)</span>
+                        <span class="result-value" id="res-status">—</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label">Conductor Resistance (R)</span>
+                        <span class="result-value" id="res-resis">—</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label">Annual Energy Loss Est. (5 hrs/day)</span>
+                        <span class="result-value" id="res-kwhLoss">—</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- FORMULAS -->
+            <div class="formula-section">
+                <h2>Engineering Calculation Formulas</h2>
+
+                <div class="formula-block">
+                    Single-Phase / DC Circuits:
+                    V_drop = (2 &times; K &times; I &times; L) / Circular_Mils
+                    
+                    Three-Phase Circuits:
+                    V_drop = (&radic;3 &times; K &times; I &times; L) / Circular_Mils
+                </div>
+                <p style="color: #666; font-size: 14px; margin-bottom: 24px;">Where: <strong>K</strong> = 12.9 for Copper, 21.2 for Aluminum; <strong>I</strong> = circuit current in Amps; <strong>L</strong> = one-way length in feet; <strong>Circular Mils</strong> = conductor area per NEC Chapter 9, Table 8.</p>
+
+                <div class="formula-block">
+                    Conductor Power Loss:
+                    P_loss (Watts) = I&sup2; &times; R_conductor = V_drop &times; I
+                    
+                    Voltage Drop Percentage:
+                    % Drop = (V_drop / V_nominal) &times; 100
+                </div>
+                <p style="color: #666; font-size: 14px;"><strong>NEC Code Rule:</strong> The National Electrical Code (NEC 210.19(A) Informational Note 4 &amp; NEC 690) recommends that voltage drop on branch circuits does not exceed <strong>2% for solar PV</strong> (to prevent inverter overvoltage trips on 240V/480V lines) and a maximum of <strong>3% for branch circuits / 5% overall</strong>.</p>
+            </div>
+
+            <!-- CTA BANNER -->
+            <div style="margin-top: 48px; background: #1B1712; color: #fff; padding: 40px; border-radius: 8px; text-align: center;">
+                <h2 style="font-family: 'Playfair Display', serif; margin-bottom: 12px;">Need a P.E.-Stamped Single Line Diagram with Voltage Drop Schedules?</h2>
+                <p style="opacity: .8; margin-bottom: 24px;">Our licensed electrical engineers provide full conductor schedules, conduit fill deratings, voltage drop calculations, and P.E. stamps in 24–48 hours.</p>
+                <a href="../contact.html" style="display: inline-block; background: #D4A843; color: #1B1712; font-weight: 700; padding: 14px 32px; border-radius: 4px; text-decoration: none;">Get a Stamped Plan Set &rarr;</a>
+            </div>
+
+            <p style="margin-top: 32px; color: #888; font-size: 13px;">Related Tools: <a href="solar-string-sizing-calculator.html">String Sizing Calculator</a> &middot; <a href="nec-690-conductor-sizing-table.html">NEC 690 Conductor Tables</a> &middot; <a href="solar-permit-checklist.html">AHJ Permit Checklist</a></p>
+
+        </div>
+    </main>
+
+    <script>
+    function calculateVoltageDrop() {
+        const sysType = document.getElementById('sysType').value;
+        const vNom = parseFloat(document.getElementById('voltage').value);
+        const current = parseFloat(document.getElementById('current').value);
+        const length = parseFloat(document.getElementById('length').value);
+        const mat = document.getElementById('material').value;
+        const cmil = parseFloat(document.getElementById('wireSize').value);
+
+        if (isNaN(vNom) || isNaN(current) || isNaN(length) || isNaN(cmil) || vNom <= 0 || current <= 0 || length <= 0) {
+            alert('Please enter valid positive numbers for voltage, current, and length.');
+            return;
+        }
+
+        const K = mat === 'cu' ? 12.9 : 21.2;
+        const is3P = sysType.startsWith('ac-3p');
+        const multiplier = is3P ? 1.73205 : 2.0;
+
+        const vDrop = (multiplier * K * current * length) / cmil;
+        const pctDrop = (vDrop / vNom) * 100;
+        const endV = Math.max(0, vNom - vDrop);
+        const powerLoss = is3P ? (1.73205 * vDrop * current) : (vDrop * current);
+        const resistance = (multiplier * K * length) / cmil;
+        const annualKwh = (powerLoss * 5 * 365) / 1000;
+
+        let statusText = '';
+        let statusClass = '';
+
+        if (pctDrop <= 2.0) {
+            statusText = '✅ EXCELLENT (< 2.0% Solar Ideal)';
+            statusClass = 'pass';
+        } else if (pctDrop <= 3.0) {
+            statusText = '✅ PASS (< 3.0% NEC Limit)';
+            statusClass = 'pass';
+        } else if (pctDrop <= 5.0) {
+            statusText = '⚠️ WARNING (3% - 5% Drop)';
+            statusClass = 'warn';
+        } else {
+            statusText = '❌ FAIL (> 5% — Upsize Wire Gauge)';
+            statusClass = 'fail';
+        }
+
+        document.getElementById('res-vdrop').textContent = vDrop.toFixed(2) + ' V';
+        document.getElementById('res-pct').textContent = pctDrop.toFixed(2) + ' %';
+        document.getElementById('res-pct').className = 'result-value ' + statusClass;
+        document.getElementById('res-endV').textContent = endV.toFixed(1) + ' V';
+        document.getElementById('res-lossW').textContent = powerLoss.toFixed(1) + ' W';
+        document.getElementById('res-status').textContent = statusText;
+        document.getElementById('res-status').className = 'result-value ' + statusClass;
+        document.getElementById('res-resis').textContent = resistance.toFixed(3) + ' Ω';
+        document.getElementById('res-kwhLoss').textContent = annualKwh.toFixed(1) + ' kWh/year';
+    }
+
+    // Auto calculate on page load
+    document.addEventListener('DOMContentLoaded', calculateVoltageDrop);
+    </script>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="brand">
+                        <div class="logo-ring-footer"><img class="logo-img-footer" src="../logo_ecard.png" alt="Daniel Solar Logo" /></div>
+                        <span>Daniel's Solar Engineering and Design</span>
+                    </a>
+                    <p>P.E.-stamped solar permit plan sets across all 50 U.S. states.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Engineering Tools</h4>
+                    <ul>
+                        <li><a href="solar-voltage-drop-calculator.html">Voltage Drop Calculator</a></li>
+                        <li><a href="solar-string-sizing-calculator.html">String Sizing Calculator</a></li>
+                        <li><a href="solar-permit-checklist.html">AHJ Permit Checklist</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services/design.html">PV System Design</a></li>
+                        <li><a href="../services/permitting.html">Permit Plan Sets</a></li>
+                        <li><a href="../services/electrical-design.html">Electrical Design</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Daniel's Solar Engineering and Design. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

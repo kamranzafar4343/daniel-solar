@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Net Metering — How It Works & What Varies — Daniel Solar Engineering and Design</title>
+<meta name="description" content="Understand net metering before you size the system: how it works, why it matters for design, and what varies by state and utility.">
+<link rel="canonical" href="https://danielsolared.com/services/net-metering.html" target="_blank" rel="noopener">
+
+<!-- Favicons -->
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#1B1712">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Daniel Solar Engineering and Design">
+<meta property="og:title" content="Net Metering — How It Works & What Varies — Daniel Solar Engineering and Design">
+<meta property="og:description" content="Understand net metering before you size the system: how it works, why it matters for design, and what varies by state and utility.">
+<meta property="og:image" content="https://danielsolared.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://danielsolared.com/services/net-metering.html">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Net Metering — How It Works & What Varies — Daniel Solar Engineering and Design">
+<meta name="twitter:description" content="Understand net metering before you size the system: how it works, why it matters for design, and what varies by state and utility.">
+<meta name="twitter:image" content="https://danielsolared.com/assets/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Jost:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css?v=f50c70f639be">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.danielsolared.com/services/net-metering.html#webpage",
+      "url": "https://www.danielsolared.com/services/net-metering.html",
+      "name": "Net Metering Engineering Guidance — Daniel Solar",
+      "description": "Understand net metering before you size the system: how it works, why it matters for design, and what varies by state and utility."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.danielsolared.com/services/net-metering.html#service",
+      "name": "Net Metering",
+      "serviceType": "Net Energy Metering (NEM) Advisory & Engineering",
+      "provider": {
+        "@type": "Organization",
+        "name": "Daniel Solar Engineering and Design",
+        "url": "https://www.danielsolared.com/"
+      },
+      "description": "Net energy metering guidance and utility compliance optimization for residential and commercial solar arrays.",
+      "areaServed": "United States"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.danielsolared.com/services/net-metering.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.danielsolared.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.danielsolared.com/services.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Net Metering",
+          "item": "https://www.danielsolared.com/services/net-metering.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- FAQ section styling (scoped, self-contained so it matches the site regardless of styles.css contents) -->
+<style>
+    .faq-section .section-head p { max-width: 640px; }
+    .faq-list {
+        max-width: 860px;
+        margin: 0 auto;
+        border-top: 1px solid rgba(169,129,42,0.25);
+    }
+    .faq-item {
+        border-bottom: 1px solid rgba(169,129,42,0.25);
+    }
+    .faq-item summary {
+        list-style: none;
+        cursor: pointer;
+        display: flex;
+        align-items: baseline;
+        gap: 18px;
+        padding: 22px 4px;
+        font-family: "Jost", sans-serif;
+        font-weight: 600;
+        font-size: 17px;
+        color: inherit;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary .faq-num {
+        font-family: "Space Mono", monospace;
+        font-size: 13px;
+        color: #A9812A;
+        flex: none;
+        padding-top: 2px;
+    }
+    .faq-item summary .faq-q { flex: 1; }
+    .faq-item summary .faq-toggle {
+        flex: none;
+        width: 22px;
+        height: 22px;
+        border: 1px solid #A9812A;
+        border-radius: 50%;
+        position: relative;
+    }
+    .faq-item summary .faq-toggle::before,
+    .faq-item summary .faq-toggle::after {
+        content: "";
+        position: absolute;
+        background: #A9812A;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .faq-item summary .faq-toggle::before { width: 10px; height: 1.4px; }
+    .faq-item summary .faq-toggle::after { width: 1.4px; height: 10px; transition: opacity .15s ease; }
+    .faq-item[open] summary .faq-toggle::after { opacity: 0; }
+    .faq-answer {
+        padding: 0 4px 26px 40px;
+        font-family: "Jost", sans-serif;
+        font-size: 15.5px;
+        line-height: 1.7;
+        color: rgba(30,25,15,0.72);
+        max-width: 760px;
+    }
+    .faq-answer p { margin: 0 0 12px; }
+    .faq-answer p:last-child { margin-bottom: 0; }
+    .faq-answer ul { margin: 0 0 12px; padding-left: 20px; }
+    .faq-answer li { margin-bottom: 6px; }
+    .section-dark .faq-item { border-color: rgba(212,175,55,0.22); }
+    .section-dark .faq-list { border-color: rgba(212,175,55,0.22); }
+    .section-dark .faq-item summary { color: #F5EEDA; }
+    .section-dark .faq-answer { color: rgba(245,238,218,0.68); }
+</style>
+	<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Net Metering",
+  "name": "Net Metering",
+  "description": "Net energy metering (NEM) engineering and documentation support to help solar projects qualify for utility net metering programs.",
+  "provider": { "@type": "ProfessionalService", "name": "Daniel Solar Engineering and Design", "url": "https://www.danielsolared.com/" },
+  "areaServed": { "@type": "State", "name": "California" },
+  "url": "https://www.danielsolared.com/services/net-metering.html"
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="../index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="../logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="../services.html" class="dropdown-trigger active" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="../services/design.html">PV System Design</a>
+                            <a href="../services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="../services/review.html">Structural &amp; Electrical Review</a>
+                            <a href="../services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="../services/ev.html">EV Charging Design &amp; Engineering</a>
+                            <a href="../services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="../services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="../services/net-metering.html" class="active" aria-current="page">Net Metering</a>
+                            <a href="../services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="../tools.html">Tools &amp; Calculators</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../locations.html">Service Areas</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="../contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow">NET METERING</div>
+      <h1>Understand net metering before you size the system.</h1>
+      <p>Net metering can be the difference between a solar array that pays for itself in a few years and one that quietly underdelivers. Here's how it actually works, and what to check before you assume it applies to your project.</p>
+      <div class="cta-actions" style="margin-top:28px;">
+        <a href="../contact.html" class="btn btn-amber btn-cad">Ask About Your Utility</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="nm-why">
+    <div class="wrap">
+      <div class="eyebrow">WHY NET METERING MATTERS FOR DESIGN</div>
+      <h2 style="margin-top:16px; font-size:30px;">The policy shapes the system</h2>
+      <p style="margin-top:16px; color:var(--ink-70); font-size:15.5px; line-height:1.75; max-width:760px;">Net metering policies vary widely – some utilities offer full retail credit for exported energy, others pay a wholesale rate, and some have time-of-use structures. These differences directly affect system sizing, storage integration, and financial payback. We check your utility's policy before we finalize any design.</p>
+      <div class="grid-2" style="margin-top:32px; gap:32px;">
+        <div class="reveal" style="background:transparent;">
+          <ul style="list-style:none; padding:0;">
+            <li style="padding:12px 0; border-bottom:1px solid var(--border-light); display:flex; align-items:center; gap:12px;">
+              <span style="color:var(--gold); font-size:20px;">✓</span> <strong>Full net metering</strong> – Design for annual production; grid acts as your battery.
+            </li>
+            <li style="padding:12px 0; border-bottom:1px solid var(--border-light); display:flex; align-items:center; gap:12px;">
+              <span style="color:var(--gold); font-size:20px;">✓</span> <strong>Reduced credit</strong> – Design to maximize self-consumption; consider battery storage.
+            </li>
+          </ul>
+        </div>
+        <div class="reveal" style="background:transparent;">
+          <ul style="list-style:none; padding:0;">
+            <li style="padding:12px 0; border-bottom:1px solid var(--border-light); display:flex; align-items:center; gap:12px;">
+              <span style="color:var(--gold); font-size:20px;">✓</span> <strong>Time-of-use</strong> – Optimize array orientation and storage to export during peak hours.
+            </li>
+            <li style="padding:12px 0; border-bottom:1px solid var(--border-light); display:flex; align-items:center; gap:12px;">
+              <span style="color:var(--gold); font-size:20px;">✓</span> <strong>No net metering</strong> – Self‑consumption and off‑grid solutions become primary design drivers.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="nm-policy">
+    <div class="wrap">
+      <div class="eyebrow">POLICY VARIES BY UTILITY</div>
+      <h2 style="margin-top:16px; font-size:30px;">What to check for your specific utility</h2>
+      <p style="margin-top:16px; color:var(--ink-70); font-size:15.5px; line-height:1.75; max-width:760px;">Net metering rules differ by state, utility, and even by rate class. We verify these key parameters for every project:</p>
+      <div class="grid-2" style="margin-top:32px; gap:32px;">
+        <div class="reveal" style="background:transparent;">
+          <table class="spec-table">
+            <tr><th>Credit rate</th><td>Retail, wholesale, or a blend?</td></tr>
+            <tr><th>System size cap</th><td>kW limit for eligibility</td></tr>
+            <tr><th>Rollover</th><td>Monthly or annual credit expiration?</td></tr>
+          </table>
+        </div>
+        <div class="reveal" style="background:transparent;">
+          <table class="spec-table">
+            <tr><th>Time‑of‑use</th><td>Does the credit vary by hour?</td></tr>
+            <tr><th>Interconnection fee</th><td>Upfront costs and timeline</td></tr>
+            <tr><th>Program cap</th><td>Is the utility's net‑metering program full?</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq-section" id="nm-faq">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">QUESTIONS &amp; ANSWERS</div>
+        <h2>Frequently Asked Questions About Net Metering</h2>
+        <p>Answers to what homeowners and property owners most often ask about net metering. Don't see what you need? <a href="../contact.html">Reach out directly</a>.</p>
+      </div>
+
+      <div class="faq-list faq-stack reveal">
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">01</span>
+            <span class="faq-q">What is net metering, and how does it work?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Net metering is a billing program that allows solar panel owners to receive credit for excess electricity their system sends to the electric grid. When your solar panels produce more electricity than your home uses, the extra energy is exported to the utility. Later, when your system isn't producing enough electricity, such as at night, you can use those credits to offset electricity purchased from the grid. Net metering policies vary by utility and state, so compensation rates and program rules may differ.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">02</span>
+            <span class="faq-q">How does net metering reduce my electricity bill?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Net metering lowers your electric bill by giving you credit for excess solar energy produced during the day. Instead of wasting unused electricity, your utility records the exported energy and applies credits to future electricity usage. Depending on your utility's policy, these credits can significantly reduce monthly energy costs and improve the long-term return on investment of your solar system.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">03</span>
+            <span class="faq-q">Is net metering available in every state?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>No. Net metering is not available everywhere, and the rules vary by state, utility company, and local regulations. Some utilities offer full retail credit, while others use reduced compensation or net billing programs. Before designing a solar system, it's important to verify your utility's current solar compensation policy.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">04</span>
+            <span class="faq-q">How do I know if my utility company offers net metering?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>The easiest way to determine if your utility offers net metering is by reviewing its solar interconnection program or contacting a qualified solar professional. During the design process, we verify your utility's net metering policy, application requirements, export compensation, and system eligibility before finalizing your solar design.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">05</span>
+            <span class="faq-q">Does net metering affect the size of my solar system?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Yes. Net metering directly influences how a solar system should be sized. Utilities with generous export credits often allow homeowners to size systems closer to annual electricity consumption, while reduced compensation programs typically favor systems designed around daytime self-consumption and battery storage.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">06</span>
+            <span class="faq-q">Can I still benefit from solar if my utility has reduced net-metering credits?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Yes. Even if your utility provides lower compensation for exported electricity, solar can still generate significant savings. Many homeowners increase their savings by pairing solar panels with battery storage, shifting energy usage to daylight hours, and optimizing system design based on their utility's rate structure.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">07</span>
+            <span class="faq-q">What happens if my solar panels produce more electricity than I use?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>When your solar panels generate more electricity than your home consumes, the excess energy is exported to the electric grid. Depending on your utility's policy, you'll receive energy credits, financial compensation, or bill reductions that can offset future electricity usage.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">08</span>
+            <span class="faq-q">Do unused net-metering credits roll over each month or expire?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>It depends on your utility. Some utilities allow credits to roll over month to month and settle annually, while others expire monthly or compensate remaining credits at a lower wholesale rate. Understanding your utility's rollover policy helps maximize the financial value of your solar system.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">09</span>
+            <span class="faq-q">Can I install a battery with a net-metered solar system?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Yes. Battery storage can be installed with most net-metered solar systems. Batteries store excess solar energy produced during the day and supply electricity during the evening, outages, or periods of high utility rates. Many homeowners install batteries to improve energy independence and maximize solar savings.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">10</span>
+            <span class="faq-q">What's the difference between net metering and net billing?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Net metering typically provides energy credits based on electricity exported to the grid, often at or near retail value. Net billing compensates exported electricity at a lower rate while charging the homeowner the full retail price for electricity consumed from the grid. This difference often increases the value of battery storage and self-consumption.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">11</span>
+            <span class="faq-q">How does time-of-use (TOU) billing affect net metering?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Time-of-use rates charge different electricity prices depending on the time of day. During high-demand periods, electricity costs more. Solar systems and batteries can reduce costs by generating or storing electricity before expensive peak-rate hours, improving the financial performance of the system.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">12</span>
+            <span class="faq-q">Can net metering eliminate my electric bill completely?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>In some cases, yes. A properly sized solar system under favorable net metering policies can offset most or all annual electricity usage. However, many utilities still charge minimum service fees, grid connection fees, or non-bypassable charges that remain on your monthly bill.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">13</span>
+            <span class="faq-q">Can I add more solar panels to my system later?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Usually, yes. Many solar systems can be expanded later if your electrical equipment, roof space, utility program, and inverter capacity allow. Future additions may require updated utility approval or changes to your existing interconnection agreement.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">14</span>
+            <span class="faq-q">How long does the net-metering approval process take?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Approval times vary by utility but typically range from several days to several weeks after all required documents are submitted. The timeline depends on the utility's review process, permit approvals, inspections, and interconnection requirements.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">15</span>
+            <span class="faq-q">Who submits the net-metering application to the utility company?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Most homeowners have their solar contractor or design company complete and submit the interconnection and net-metering application. This helps ensure all technical documents, electrical plans, permits, and utility requirements are completed accurately.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">16</span>
+            <span class="faq-q">Can my utility deny my net-metering application?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Yes, although denials are uncommon when the system meets all utility requirements. Applications may be delayed or rejected if documentation is incomplete, equipment doesn't meet utility standards, or the proposed system exceeds local program limitations.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">17</span>
+            <span class="faq-q">Does net metering work during a power outage?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>No. Standard grid-connected solar systems automatically shut down during utility outages for safety reasons. To continue powering your home during an outage, you'll typically need a battery backup system or another approved backup power solution.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">18</span>
+            <span class="faq-q">Should I install a battery if my utility offers net metering?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>It depends on your utility's compensation policy, electricity rates, and personal energy goals. Batteries are especially valuable where export credits are low, electricity prices vary throughout the day, or homeowners want backup power during outages.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">19</span>
+            <span class="faq-q">How do I choose the right solar system size for my home?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>The ideal system size depends on your annual electricity usage, roof space, future energy needs, utility policies, and whether you plan to install battery storage or electric vehicles. A professional solar design includes production modeling and utility analysis to determine the optimal system size.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-num">20</span>
+            <span class="faq-q">Is solar still worth it if my utility no longer offers full net metering?</span>
+            <span class="faq-toggle"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Yes. Solar remains a smart investment for many homeowners, even under reduced export compensation programs. Modern solar designs focus on maximizing self-consumption, integrating battery storage, and reducing dependence on rising utility electricity rates. Proper system sizing and utility-specific design are key to achieving the best financial results.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="nm-related">
+    <div class="wrap">
+      <div class="eyebrow">RELATED SERVICES</div>
+      <h2 style="margin-top:16px; font-size:26px;">Pair with other services</h2>
+      <div class="grid-3" style="margin-top:32px; gap:24px;">
+        <div class="card" style="background:var(--bg-dark); border:1px solid var(--gold);">
+          <h3>PV System Design</h3>
+          <p>We'll size your system according to your net‑metering policy.</p>
+          <a href="design.html" class="card-link">Learn more →</a>
+        </div>
+        <div class="card" style="background:var(--bg-dark); border:1px solid var(--gold);">
+          <h3>Interconnection</h3>
+          <p>We handle the full application and follow‑up with your utility.</p>
+          <a href="interconnection.html" class="card-link">Learn more →</a>
+        </div>
+        <div class="card" style="background:var(--bg-dark); border:1px solid var(--gold);">
+          <h3>Commercial Design</h3>
+          <p>For businesses, net‑metering policy is a critical part of the financial model.</p>
+          <a href="commercial.html" class="card-link">Learn more →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <h2>Not sure what your utility offers?</h2>
+        <p style="margin-top:8px;">Tell us the property address and utility – we'll confirm the policy and factor it into your design.</p>
+        <div class="cta-actions">
+          <a href="../contact.html" class="btn btn-amber btn-cad">Get Started</a>
+          <a href="tel:+18584226880" class="btn btn-outline">+1 (858) 422-6880</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <!-- same footer -->
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="brand">
+          <div class="logo-ring-footer"><img class="logo-img-footer" src="../logo_ecard.png" alt="Daniel's Solar Logo" /></div>
+          <span>Daniel's Solar Engineering and Design</span>
+        </a>
+        <p>Jurisdiction-ready solar permit design and engineering services stamped by licensed P.E.s across all 50 U.S. states. We deliver code-compliant plan sets, structural attachments, and electrical diagrams tailored to local AHJ and NEC standards.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../projects.html">Projects</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="../e-card.html">Digital Card</a></li>
+                        <li><a href="../locations.html">Service Areas Directory</a></li>
+                    </ul>
+                </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="design.html">PV System Design</a></li>
+          <li><a href="permitting.html">Permit Plan Sets</a></li>
+          <li><a href="commercial.html">Commercial &amp; Utility-Scale</a></li>
+          <li><a href="net-metering.html">Net Metering</a></li>
+          <li><a href="ev.html">EV Charging Design</a></li>
+          <li><a href="california-mandates.html">California Energy Mandates</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@danielsolared.com">info@danielsolared.com</a></li>
+          <li><a href="tel:+18584226880">+1 (858) 422-6880</a></li>
+          <li><span style="font-size:14px;">Licensed across 40+ regions</span></li>
+        </ul>
+      </div>
+    </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Daniel's Solar Engineering and Design. All rights reserved. &middot; Located in Irvine, CA</span>
+      <span>DWG NO. 2026-002 &middot; REV D</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+    <!-- Tawk.to Chat -->
+        <script type="text/javascript">
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"),
+                    s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = "https://embed.tawk.to/6aa881879117af34473db177/1k2h3juq0";
+                s1.charset = "UTF-8";
+                s1.setAttribute("crossorigin", "*");
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>
+</body>
+</html>

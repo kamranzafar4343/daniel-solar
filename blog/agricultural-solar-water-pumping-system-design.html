@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agricultural Solar Water Pumping System Design: VFD Inverters & Total Dynamic Head Math</title>
+    <meta name="description" content="Complete engineering guide for agricultural solar water pumping systems. Learn Total Dynamic Head (TDH) calculations, Variable Frequency Drive (VFD) controller sizing, and deep well irrigation design." />
+    <link rel="canonical" href="https://www.danielsolared.com/blog/agricultural-solar-water-pumping-system-design.html" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <meta name="theme-color" content="#1B1712" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Daniel Solar Engineering and Design" />
+    <meta property="og:title" content="Agricultural Solar Water Pumping System Design Guide" />
+    <meta property="og:description" content="Master solar irrigation engineering: Total Dynamic Head (TDH), VFD pump inverters, submersible motors, and agricultural permit plan sets." />
+    <meta property="og:image" content="https://www.danielsolared.com/kharan-solar-field.jpg" />
+    <meta property="og:url" content="https://www.danielsolared.com/blog/agricultural-solar-water-pumping-system-design.html" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Jost:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css?v=f50c70f639be" />
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.danielsolared.com/blog/agricultural-solar-water-pumping-system-design.html#article",
+      "url": "https://www.danielsolared.com/blog/agricultural-solar-water-pumping-system-design.html",
+      "headline": "Agricultural Solar Water Pumping System Design: VFD Inverters & Total Dynamic Head Math",
+      "description": "Comprehensive engineering guide covering deep-well submersible pump sizing, VFD solar drive selection, dynamic head calculations, and off-grid irrigation permit drawings.",
+      "datePublished": "2026-09-07",
+      "dateModified": "2026-09-07",
+      "author": {
+        "@type": "Organization",
+        "name": "Daniel Solar Engineering and Design",
+        "url": "https://www.danielsolared.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Daniel Solar Engineering and Design",
+        "url": "https://www.danielsolared.com/",
+        "logo": "https://www.danielsolared.com/logo_ecard.png"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.danielsolared.com/blog/agricultural-solar-water-pumping-system-design.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is Total Dynamic Head (TDH) calculated for solar agricultural pumps?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "TDH equals static water lift plus discharge elevation plus pipe friction losses plus irrigation operating pressure (PSI x 2.31 ft/PSI)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why use a Variable Frequency Drive (VFD) with a solar water pump?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A solar VFD modulates pump motor RPM based on fluctuating solar irradiance, keeping water flowing during cloudy periods while eliminating motor inrush startup current surges."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much should a solar array be oversized for an off-grid agricultural pump?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Engineers typically oversize the solar DC array by 1.30x to 1.50x the pump horsepower rating to ensure adequate water pumping in early morning and late afternoon hours."
+          }
+        }
+      ]
+    }
+  ]
+}
+    </script>
+
+    <style>
+        .article-page { padding: 64px 0 96px; background: var(--paper); }
+        .article-container { max-width: 840px; margin: 0 auto; }
+        .article-header { border-bottom: 1px solid var(--line); padding-bottom: 32px; margin-bottom: 40px; }
+        .article-meta { font-family: var(--font-mono); font-size: 13px; color: var(--ink-70); margin-bottom: 12px; }
+        .article-header h1 { font-size: clamp(30px, 4vw, 46px); color: var(--ink); margin: 12px 0 18px; line-height: 1.2; }
+        .article-body { font-size: 17px; line-height: 1.85; color: var(--ink-70); }
+        .article-body p { margin-bottom: 24px; }
+        .article-body h2 { font-size: 26px; color: var(--ink); margin: 44px 0 18px; border-top: 1px solid var(--line-soft); padding-top: 24px; }
+        .article-body h3 { font-size: 20px; color: var(--ink); margin: 28px 0 12px; }
+        .tech-box { background: var(--paper-alt); border-left: 4px solid var(--blue); padding: 24px 28px; margin: 32px 0; border-radius: 0 6px 6px 0; }
+        .tech-box h4 { font-size: 17px; color: var(--ink); margin-bottom: 8px; font-weight: 700; }
+        .formula-box { background: var(--ink); color: var(--gold); padding: 20px 24px; border-radius: 6px; font-family: var(--font-mono); font-size: 14px; margin: 24px 0; line-height: 1.8; }
+        .cta-banner { background: var(--ink); color: var(--white); padding: 36px; border-radius: 8px; margin-top: 56px; text-align: center; }
+        .cta-banner h3 { color: var(--gold); font-size: 24px; margin-bottom: 12px; }
+        .cta-banner p { color: rgba(255,255,255,0.8); font-size: 15px; margin-bottom: 24px; }
+        .comp-table { width: 100%; border-collapse: collapse; margin: 28px 0; font-size: 15px; }
+        .comp-table th { background: var(--ink); color: var(--gold); padding: 12px 16px; text-align: left; font-family: var(--font-heading); }
+        .comp-table td { padding: 12px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+        .comp-table tr:nth-child(even) { background: rgba(0,0,0,0.02); }
+    </style>
+</head>
+<body>
+
+    <!-- SITE HEADER -->
+    <header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="../index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="../logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="../services.html" class="dropdown-trigger" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="../services/design.html">PV System Design</a>
+                            <a href="../services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="../services/review.html">Structural &amp; Electrical Review</a>
+                            <a href="../services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="../services/ev.html">EV Charging Design &amp; Engineering</a>
+                            <a href="../services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="../services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="../services/net-metering.html">Net Metering</a>
+                            <a href="../services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="../tools.html">Tools &amp; Calculators</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../locations.html">Service Areas</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="../contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+    <main>
+        <div class="article-page">
+            <div class="wrap">
+                <div class="article-container">
+                    
+                    <header class="article-header">
+                        <div class="article-meta">
+                            <span>AGRICULTURAL SOLAR &middot; VFD PUMPING</span> &middot; <span>SEPTEMBER 7, 2026</span> &middot; <span>9 MIN READ</span>
+                        </div>
+                        <h1>Agricultural Solar Water Pumping System Design: VFD Inverters &amp; Total Dynamic Head Math</h1>
+                    </header>
+
+                    <article class="article-body">
+                        
+                        <p><strong>How do electrical and hydraulic engineers design solar-powered agricultural water pumping systems for farms and ranches?</strong> Agricultural solar pumping systems eliminate expensive utility line extensions and diesel generator fuel costs by coupling ground-mounted PV arrays with solar <strong>Variable Frequency Drive (VFD) pump controllers</strong>. Engineering a reliable system requires calculating <strong>Total Dynamic Head (TDH)</strong>, daily water volume demands (Gallons Per Day, GPD), peak pump flow rate (Gallons Per Minute, GPM), and PV array power oversizing to ensure steady water delivery during low-irradiance morning and afternoon hours.</p>
+
+                        <h2>1. Total Dynamic Head (TDH) Hydraulic Engineering Formula</h2>
+                        <p>Total Dynamic Head represents the total equivalent height the pump must lift water against gravity, friction, and pressure:</p>
+                        
+                        <div class="formula-box">
+                            TDH Formula:
+                            TDH (Feet) = Static Water Lift (ft) + Discharge Elevation (ft) + Pipe Friction Losses (ft) + Operating Pressure (PSI &times; 2.31)
+                            
+                            Required Pump Hydraulic Horsepower (WHP):
+                            WHP = [ Flow Rate (GPM) &times; TDH (Feet) ] / 3,960
+                            
+                            Required Motor Input Horsepower (BHP):
+                            BHP = WHP / Pump_Efficiency (typically 0.60 &ndash; 0.75)
+                        </div>
+
+                        <h2>2. Solar Variable Frequency Drive (VFD) Pump Inverter Topologies</h2>
+                        <p>Standard 3-phase AC submersible pumps (such as Grundfos, Franklin Electric, or Goulds) cannot run directly on fluctuating solar DC. A <strong>Solar VFD Inverter</strong> (e.g. Schneider Altivar, ABB ACQ580, or INVT Solar Drive) performs two critical functions:</p>
+
+                        <div class="tech-box">
+                            <h4>1. Maximum Power Point Tracking (MPPT) Speed Modulation</h4>
+                            <p>As solar irradiance changes throughout the day, the VFD adjusts pump motor frequency (from 30 Hz to 60 Hz). During partly cloudy conditions, instead of shutting down, the pump simply slows down its rotational speed, continuing to pump water at reduced GPM.</p>
+                        </div>
+
+                        <div class="tech-box">
+                            <h4>2. Soft-Starting Elimination of Inrush Current</h4>
+                            <p>Standard AC induction motors draw a massive 500%–600% starting current surge (Locked Rotor Amps). The VFD gradually ramps motor frequency from 0 Hz over 5–10 seconds, completely eliminating mechanical water hammer in irrigation pipes and electrical surges on the solar array.</p>
+                        </div>
+
+                        <h2>3. PV Array Sizing vs. Seasonal Solar Insolation</h2>
+                        <p>To ensure adequate daily water volume, our engineering team sizes the solar array with a <strong>1.30x to 1.50x DC-to-Pump power ratio</strong>:</p>
+
+                        <table class="comp-table">
+                            <thead>
+                                <tr>
+                                    <th>Pump Motor Size (HP / kW)</th>
+                                    <th>Daily Water Output @ 200 ft TDH</th>
+                                    <th>Recommended Solar Array Capacity</th>
+                                    <th>Standard DC Operating Voltage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>3 HP (2.2 kW) 230V 3&Phi;</strong></td>
+                                    <td>12,000 &ndash; 18,000 Gallons / Day</td>
+                                    <td>3.5 kW &ndash; 4.0 kW DC Array</td>
+                                    <td>350V &ndash; 450V DC MPPT Window</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>7.5 HP (5.5 kW) 480V 3&Phi;</strong></td>
+                                    <td>35,000 &ndash; 50,000 Gallons / Day</td>
+                                    <td>8.5 kW &ndash; 10.0 kW DC Array</td>
+                                    <td>550V &ndash; 700V DC MPPT Window</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>25 HP (18.5 kW) 480V 3&Phi;</strong></td>
+                                    <td>120,000 &ndash; 170,000 Gallons / Day</td>
+                                    <td>28.0 kW &ndash; 32.0 kW DC Array</td>
+                                    <td>600V &ndash; 800V DC MPPT Window</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2>4. Permitting &amp; Electrical Safety Requirements (NEC 690 &amp; 705)</h2>
+                        <p>Agricultural solar pump plan sets must incorporate:</p>
+                        <ul>
+                            <li><strong>DC Disconnect &amp; Surge Protective Devices (SPD):</strong> Rated for 1000V DC lightning protection in open agricultural field environments.</li>
+                            <li><strong>Dry-Run &amp; Storage Tank Level Sensors:</strong> Well water probes wired to VFD digital inputs to shut down the pump before dry-suction cavitation destroys motor bearings.</li>
+                            <li><strong>Grounding &amp; Bonding per NEC 250:</strong> Heavy-duty ground rods bonded to ground-mount racking and well casing.</li>
+                        </ul>
+
+                        <h2>Frequently Asked Questions (FAQ)</h2>
+                        <div class="faq-stack">
+                            <details class="faq-item">
+                                <summary>How is Total Dynamic Head (TDH) calculated for solar agricultural pumps?</summary>
+                                <p class="faq-answer">TDH equals static water lift plus discharge elevation plus pipe friction losses plus irrigation operating pressure (PSI x 2.31 ft/PSI).</p>
+                            </details>
+
+                            <details class="faq-item">
+                                <summary>Why use a Variable Frequency Drive (VFD) with a solar water pump?</summary>
+                                <p class="faq-answer">A solar VFD modulates pump motor RPM based on fluctuating solar irradiance, keeping water flowing during cloudy periods while eliminating motor inrush startup current surges.</p>
+                            </details>
+
+                            <details class="faq-item">
+                                <summary>How much should a solar array be oversized for an off-grid agricultural pump?</summary>
+                                <p class="faq-answer">Engineers typically oversize the solar DC array by 1.30x to 1.50x the pump horsepower rating to ensure adequate water pumping in early morning and late afternoon hours.</p>
+                            </details>
+                        </div>
+
+                        <div class="cta-banner">
+                            <h3>Need Agricultural Solar Water Pumping P.E. Stamped Drawings?</h3>
+                            <p>Our licensed electrical engineers provide full hydraulic pump sizing, VFD single-line diagrams, ground-mount racking calculations, and P.E. stamps across all 50 states in 24–48 hours.</p>
+                            <a href="../contact.html" class="btn btn-primary">Request an Agricultural Solar Plan Set &rarr;</a>
+                        </div>
+
+                    </article>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="brand">
+                        <div class="logo-ring-footer"><img class="logo-img-footer" src="../logo_ecard.png" alt="Daniel Solar Logo" /></div>
+                        <span>Daniel's Solar Engineering and Design</span>
+                    </a>
+                    <p>Jurisdiction-ready solar permit design and engineering services stamped by licensed P.E.s across all 50 U.S. states.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../projects.html">Projects</a></li>
+                        <li><a href="../tools.html">Tools &amp; Calculators</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Engineering Tools</h4>
+                    <ul>
+                        <li><a href="../resources/solar-voltage-drop-calculator.html">Voltage Drop Calculator</a></li>
+                        <li><a href="../resources/commercial-solar-roi-payback-calculator.html">Solar ROI Calculator</a></li>
+                        <li><a href="../resources/solar-string-sizing-calculator.html">String Sizing Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@danielsolared.com">info@danielsolared.com</a></li>
+                        <li><a href="tel:+18584226880">+1 (858) 422-6880</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Daniel's Solar Engineering and Design. All rights reserved. &middot; Irvine, CA</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tawk.to Chat -->
+        <script type="text/javascript">
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"),
+                    s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = "https://embed.tawk.to/6aa881879117af34473db177/1k2h3juq0";
+                s1.charset = "UTF-8";
+                s1.setAttribute("crossorigin", "*");
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>
+<script src="../script.js"></script>
+</body>
+</html>

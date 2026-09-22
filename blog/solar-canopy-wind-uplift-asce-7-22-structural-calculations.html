@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solar Canopy & Carport Wind Uplift Calculations under ASCE 7-22 (PE Stamped Guide)</title>
+    <meta name="description" content="Structural engineering guide for commercial solar canopies & carports: ASCE 7-22 wind velocity pressures (qz), net pressure coefficients (CN), torsional moments, foundation embedment, and PE stamping." />
+    <link rel="canonical" href="https://www.danielsolared.com/blog/solar-canopy-wind-uplift-asce-7-22-structural-calculations.html" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <meta name="theme-color" content="#1B1712" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Daniel Solar Engineering and Design" />
+    <meta property="og:title" content="Solar Canopy Wind Uplift Calculations under ASCE 7-22" />
+    <meta property="og:description" content="Master ASCE 7-22 open canopy wind pressures, torsional overturning moments, and PE-stamped carport structural designs." />
+    <meta property="og:image" content="https://www.danielsolared.com/og-image.jpg" />
+    <meta property="og:url" content="https://www.danielsolared.com/blog/solar-canopy-wind-uplift-asce-7-22-structural-calculations.html" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Solar Canopy Wind Uplift ASCE 7-22 Guide" />
+    <meta name="twitter:description" content="Master ASCE 7-22 open building wind load engineering, moment frame reactions, and foundation design." />
+    <meta name="twitter:image" content="https://www.danielsolared.com/og-image.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Jost:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css?v=f50c70f639be" />
+
+    <!-- Structured Data JSON-LD Schemas -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://www.danielsolared.com/blog/solar-canopy-wind-uplift-asce-7-22-structural-calculations.html#article",
+      "url": "https://www.danielsolared.com/blog/solar-canopy-wind-uplift-asce-7-22-structural-calculations.html",
+      "headline": "Solar Canopy & Carport Wind Uplift Calculations under ASCE 7-22 (PE Stamped Guide)",
+      "description": "Comprehensive structural engineering guide detailing wind load modeling for commercial solar carports and canopies under ASCE 7-22 Chapter 27/30, including net pressure coefficients, torsional moments, and drilled pier foundation design.",
+      "inLanguage": "en-US",
+      "datePublished": "2026-09-10",
+      "dateModified": "2026-09-10",
+      "author": {
+        "@type": "Person",
+        "name": "Daniel",
+        "jobTitle": "Principal Engineering Lead",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Daniel Solar Engineering and Design",
+          "url": "https://www.danielsolared.com/"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Daniel Solar Engineering and Design",
+        "url": "https://www.danielsolared.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.danielsolared.com/logo_ecard.png"
+        }
+      },
+      "image": "https://www.danielsolared.com/og-image.jpg"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.danielsolared.com/blog/solar-canopy-wind-uplift-asce-7-22-structural-calculations.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.danielsolared.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.danielsolared.com/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Solar Canopy Wind Uplift ASCE 7-22 Guide",
+          "item": "https://www.danielsolared.com/blog/solar-canopy-wind-uplift-asce-7-22-structural-calculations.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.danielsolared.com/blog/solar-canopy-wind-uplift-asce-7-22-structural-calculations.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why are solar canopies classified as 'Open Buildings' under ASCE 7-22?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Solar carports and canopies have no solid enclosing walls (each wall opening exceeds 80%), qualifying them as Open Buildings under ASCE 7-22 Chapter 27 and Chapter 30. This requires using Figure 27.3-4 to calculate net pressure coefficients (C_N) acting simultaneously on top and bottom surfaces."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is torsional wind moment accounted for on single-cantilever solar carports?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ASCE 7-22 requires applying an eccentric load case where full design wind pressure acts on one side of the canopy centerline and 50% pressure acts on the other side. This creates significant torsional shear and twisting moments at the column-to-base plate connection."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What geotechnical formula determines drilled pier foundation depth for solar canopies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Drilled pier embedment depths are calculated using the 2024 International Building Code (IBC) Section 1807.3 non-constrained pole formula: d = 0.5A[1 + sqrt(1 + (4.36h / A))], where A = 2.34P / (S_1 * b) and S_1 is the allowable lateral soil bearing pressure."
+          }
+        }
+      ]
+    }
+  ]
+}
+    </script>
+
+    <style>
+        .article-page { padding: 64px 0 96px; background: var(--paper); }
+        .article-container { max-width: 860px; margin: 0 auto; }
+        .article-header { margin-bottom: 40px; text-align: center; }
+        .article-header h1 { font-family: var(--font-heading); font-size: clamp(28px, 4vw, 42px); color: var(--ink); line-height: 1.25; margin: 16px 0; }
+        .article-meta { font-family: var(--font-mono); font-size: 13px; color: var(--ink-60); text-transform: uppercase; letter-spacing: 0.05em; }
+        .article-body { font-size: 16.5px; line-height: 1.8; color: var(--ink); }
+        .article-body h2 { font-family: var(--font-heading); font-size: 26px; color: var(--ink); margin: 44px 0 18px; padding-bottom: 10px; border-bottom: 2px solid var(--gold); }
+        .article-body h3 { font-size: 20px; color: var(--ink); margin: 28px 0 12px; }
+        .article-body p { margin-bottom: 20px; }
+        .article-body ul, .article-body ol { margin-bottom: 24px; padding-left: 24px; }
+        .article-body li { margin-bottom: 8px; }
+        .callout-box { background: #FAF8F5; border-left: 4px solid var(--gold); padding: 24px 28px; margin: 32px 0; border-radius: 4px; border: 1px solid var(--line); }
+        .callout-box h4 { font-size: 17px; margin-bottom: 8px; color: var(--ink); }
+        .callout-box p { margin-bottom: 0; font-size: 15px; color: var(--ink-70); }
+        .calc-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14.5px; }
+        .calc-table th, .calc-table td { border: 1px solid var(--line); padding: 12px 16px; text-align: left; }
+        .calc-table th { background: #F5EEDA; color: var(--ink); font-family: var(--font-mono); font-weight: 700; }
+        .calc-table tr:nth-child(even) { background: #FAF8F5; }
+        .faq-section { margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--line); }
+        .faq-item { margin-bottom: 16px; border: 1px solid var(--line); border-radius: 6px; background: #FFF; overflow: hidden; }
+        .faq-item summary { padding: 18px 24px; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--ink); }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after { content: "+"; font-size: 20px; color: var(--gold); font-weight: bold; }
+        .faq-item[open] summary::after { content: "-"; }
+        .faq-item .faq-answer { padding: 0 24px 20px; color: var(--ink-70); font-size: 15px; line-height: 1.7; }
+    </style>
+</head>
+<body>
+
+    <!-- SITE HEADER -->
+    <header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="../index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="../logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="../services.html" class="dropdown-trigger" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="../services/design.html">PV System Design</a>
+                            <a href="../services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="../services/review.html">Structural &amp; Electrical Review</a>
+                            <a href="../services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="../services/ev.html">EV Charging Design &amp; Engineering</a>
+                            <a href="../services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="../services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="../services/net-metering.html">Net Metering</a>
+                            <a href="../services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="../tools.html">Tools &amp; Calculators</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../locations.html">Service Areas</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="../contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+    <main class="article-page">
+        <div class="wrap">
+            <div class="article-container">
+                <article>
+                    <div class="article-header">
+                        <div class="article-meta">Structural Engineering â€¢ ASCE 7-22 Standards â€¢ Carport Design</div>
+                        <h1>Solar Canopy &amp; Carport Wind Uplift Calculations under ASCE 7-22</h1>
+                        <p style="color: var(--ink-60); font-size: 16px;">Calculating velocity pressure, net pressure coefficients (C_N), eccentric torsional loads, and drilled pier foundation embedment.</p>
+                    </div>
+
+                    <div class="article-body">
+                        <p>Commercial parking lot solar carports and elevated canopies represent significant structural investments that face severe atmospheric exposure. Unlike rooftop solar installations protected by building boundary layers, open solar canopies are fully exposed to wind streams flowing both above and below the solar module plane, generating intense <strong>aerodynamic lift forces (wind uplift)</strong> and severe <strong>torsional overturning moments</strong> on moment frame columns and concrete foundations.</p>
+
+                        <p>Under the <strong>ASCE 7-22 (Minimum Design Loads and Associated Criteria for Buildings and Other Structures)</strong> code cycle, wind load modeling provisions for open buildings with monoslope, pitched, or troughed roofs require structural engineers to account for multi-directional wind angles and eccentric pressure distributions. This technical guide walks through the complete ASCE 7-22 wind uplift calculation methodology and foundation design principles.</p>
+
+                        <h2>1. ASCE 7-22 Velocity Pressure Equation (q_z)</h2>
+                        <p>The baseline wind velocity pressure acting at mean roof height (h) is calculated using ASCE 7-22 Equation 26.10-1:</p>
+
+                        <div class="callout-box">
+                            <h4>Velocity Pressure Formula (q_z):</h4>
+                            <p><strong>q_z = 0.00256 &times; K_z &times; K_zt &times; K_d &times; K_e &times; V&sup2; (psf)</strong><br /><br />
+                            Where:<br />
+                            &bull; <strong>V</strong> = Basic Wind Speed (mph) from ASCE 7-22 Wind Hazard Maps for Risk Category II (e.g., 110 mph).<br />
+                            &bull; <strong>K_z</strong> = Velocity pressure exposure coefficient (Exposure Category C at 15 ft height = 0.85).<br />
+                            &bull; <strong>K_zt</strong> = Topographic factor (1.0 for flat terrain).<br />
+                            &bull; <strong>K_d</strong> = Wind directionality factor (0.85 for open canopies).<br />
+                            &bull; <strong>K_e</strong> = Ground elevation factor (1.0 at sea level).</p>
+                        </div>
+
+                        <p>Plugging in values for a typical commercial canopy at 110 mph basic wind speed:</p>
+                        <ul>
+                            <li>q_z = 0.00256 &times; 0.85 &times; 1.0 &times; 0.85 &times; 1.0 &times; (110)&sup2; = <strong>22.37 psf</strong></li>
+                        </ul>
+
+                        <h2>2. Design Wind Pressures for Open Canopies (p)</h2>
+                        <p>Under ASCE 7-22 Section 27.3.2, design net wind pressure (p) on Main Windforce Resisting Systems (MWFRS) is determined by:</p>
+                        <p><strong>p = q_h &times; G &times; C_N</strong></p>
+                        <p>Where <strong>G</strong> is the gust effect factor (0.85 for rigid structures) and <strong>C_N</strong> is the net pressure coefficient obtained from ASCE 7-22 Figure 27.3-4. For an open monoslope canopy with a 5&deg; tilt angle:</p>
+
+                        <table class="calc-table">
+                            <thead>
+                                <tr>
+                                    <th>Load Case</th>
+                                    <th>Wind Angle (&theta;)</th>
+                                    <th>Net Coefficient (C_N)</th>
+                                    <th>Net Design Pressure (p)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Maximum Uplift (Suction)</strong></td>
+                                    <td>0&deg; (Windward Flow)</td>
+                                    <td>-1.2 (Clear Flow) / -1.6 (Obstructed)</td>
+                                    <td><strong>-22.8 psf to -30.4 psf (Uplift)</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Maximum Downward (Pressure)</strong></td>
+                                    <td>180&deg; (Leeward Flow)</td>
+                                    <td>+0.8 (Clear Flow)</td>
+                                    <td><strong>+15.2 psf (Downward)</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Torsional Unbalanced Case</strong></td>
+                                    <td>Transverse Wind</td>
+                                    <td>Full pressure on half-span, 50% on other half</td>
+                                    <td><strong>Generates high column twisting moment</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2>3. Drilled Concrete Pier Foundation Design (IBC 1807.3)</h2>
+                        <p>To resist massive overturning moments (M_OT) and vertical uplift forces without pulling out of the ground or tilting in parking lot soils, single-cantilever (T-frame or L-frame) canopies utilize deep cylindrical drilled concrete piers (typically 30" to 42" in diameter):</p>
+
+                        <div class="callout-box">
+                            <h4>IBC Section 1807.3.2.1 Non-Constrained Pier Depth:</h4>
+                            <p><strong>d = 0.5 &times; A &times; [1 + &radic;(1 + (4.36 &times; h / A))]</strong><br /><br />
+                            Where:<br />
+                            &bull; <strong>P</strong> = Lateral shear force applied at height h (lbs).<br />
+                            &bull; <strong>b</strong> = Pier diameter in feet (e.g., 3.0 ft).<br />
+                            &bull; <strong>S_1</strong> = Allowable lateral soil bearing pressure (e.g., 200 psf/ft of depth for Class 4 soils).<br />
+                            &bull; <strong>A</strong> = 2.34 &times; P / (S_1 &times; b).</p>
+                        </div>
+
+                        <h2>4. PE Stamping &amp; AHJ Structural Submittal Checklist</h2>
+                        <ul>
+                            <li><strong>STAAD.Pro / RISA-3D Structural Calculations:</strong> Member stress ratios for wide-flange beams (W-sections) and structural tubing (HSS) with maximum unity check &lt; 0.90.</li>
+                            <li><strong>Base Plate &amp; Anchor Bolt Engineering:</strong> High-strength A36 base plates with A449/F1554 Grade 55 anchor rods checked for combined shear and tension interaction under ACI 318 Chapter 17.</li>
+                            <li><strong>Geotechnical Soil Report Integration:</strong> Site-specific soil bearing capacity, skin friction, and groundwater depth incorporated into foundation calcs.</li>
+                        </ul>
+
+                        <div class="callout-box" style="border-left-color: var(--ink); background: #FAF8F5;">
+                            <h4>Need PE-Stamped Solar Carport &amp; Canopy Calculations?</h4>
+                            <p>Daniel Solar Engineering provides complete structural design, 3D moment frame modeling, and licensed Professional Engineer (PE) stamps in all 50 states within 24â€“48 hours. <a href="../contact.html" style="color: var(--gold); font-weight: 700; text-decoration: underline;">Request a Structural Project Quote &rarr;</a></p>
+                        </div>
+
+                        <!-- FAQ SECTION -->
+                        <div class="faq-section faq-stack">
+                            <h2 style="border-bottom: none; margin-bottom: 24px;">Frequently Asked Questions (FAQ)</h2>
+
+                            <details class="faq-item">
+                                <summary>Why are solar canopies classified as 'Open Buildings' under ASCE 7-22?</summary>
+                                <div class="faq-answer">
+                                    <p>Solar carports and canopies have no solid enclosing walls (each wall opening exceeds 80%), qualifying them as Open Buildings under ASCE 7-22 Chapter 27 and Chapter 30. This requires using Figure 27.3-4 to calculate net pressure coefficients (C_N) acting simultaneously on top and bottom surfaces.</p>
+                                </div>
+                            </details>
+
+                            <details class="faq-item">
+                                <summary>How is torsional wind moment accounted for on single-cantilever solar carports?</summary>
+                                <div class="faq-answer">
+                                    <p>ASCE 7-22 requires applying an eccentric load case where full design wind pressure acts on one side of the canopy centerline and 50% pressure acts on the other side. This creates significant torsional shear and twisting moments at the column-to-base plate connection.</p>
+                                </div>
+                            </details>
+
+                            <details class="faq-item">
+                                <summary>What geotechnical formula determines drilled pier foundation depth for solar canopies?</summary>
+                                <div class="faq-answer">
+                                    <p>Drilled pier embedment depths are calculated using the 2024 International Building Code (IBC) Section 1807.3 non-constrained pole formula: d = 0.5A[1 + sqrt(1 + (4.36h / A))], where A = 2.34P / (S_1 * b) and S_1 is the allowable lateral soil bearing pressure.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- SITE FOOTER -->
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="brand-footer">
+                        <div class="logo-ring-footer"><img class="logo-img-header" src="../logo_ecard.png" alt="Daniel Solar Logo" /></div>
+                        <span>Daniel's Solar <span class="name-sub">Engineering &amp; Design</span></span>
+                    </div>
+                    <p style="margin-top: 14px; font-size: 14px; color: var(--ink-60);">Nationwide permit-ready solar PV engineering, PE stamping, structural load analysis, and electrical design for residential and commercial contractors.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../services.html">Our Services</a></li>
+                        <li><a href="../tools.html">Engineering Tools</a></li>
+                        <li><a href="../projects.html">Featured Projects</a></li>
+                        <li><a href="../blog.html">Technical Blog</a></li>
+                        <li><a href="../contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <p style="font-size: 14px; line-height: 1.8; color: var(--ink-60);">
+                        <strong>Daniel Solar Engineering and Design</strong><br />
+                        San Diego, CA 92101<br />
+                        Phone: <a href="tel:+18584226880" style="color: var(--gold);">+1-858-422-6880</a><br />
+                        Email: <a href="mailto:info@danielsolared.com" style="color: var(--gold);">info@danielsolared.com</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Daniel Solar Engineering and Design LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <!-- Tawk.to Chat -->
+        <script type="text/javascript">
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"),
+                    s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = "https://embed.tawk.to/6aa881879117af34473db177/1k2h3juq0";
+                s1.charset = "UTF-8";
+                s1.setAttribute("crossorigin", "*");
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>
+</body>
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ground-Mount vs. Rooftop Solar: Engineering &amp; Permitting Differences</title>
+    <meta name="description" content="An engineering comparison of ground-mount vs rooftop solar systems, structural foundations, setbacks, and interconnection requirements." />
+    <link rel="canonical" href="https://www.danielsolared.com/blog/ground-mount-vs-rooftop-solar-permitting.html" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <meta name="theme-color" content="#1B1712" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Daniel Solar Engineering and Design" />
+    <meta property="og:title" content="Ground-Mount vs. Rooftop Solar: Engineering &amp; Permitting Differences" />
+    <meta property="og:description" content="An engineering breakdown comparing soil reports, structural concrete pier foundations, trenching voltage drop, and AHJ code rules." />
+    <meta property="og:image" content="https://www.danielsolared.com/clifton-beach-house.jpg" />
+    <meta property="og:url" content="https://www.danielsolared.com/blog/ground-mount-vs-rooftop-solar-permitting.html" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ground-Mount vs. Rooftop Solar: Permitting &amp; Engineering Guide" />
+    <meta name="twitter:description" content="Discover the key structural concrete engineering and electrical voltage drop rules for ground arrays." />
+    <meta name="twitter:image" content="https://www.danielsolared.com/clifton-beach-house.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Jost:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css?v=f50c70f639be" />
+
+    <!-- Structured Data JSON-LD Schemas -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://www.danielsolared.com/blog/ground-mount-vs-rooftop-solar-permitting.html#article",
+      "url": "https://www.danielsolared.com/blog/ground-mount-vs-rooftop-solar-permitting.html",
+      "headline": "Ground-Mount vs. Rooftop Solar: Engineering & Permitting Differences",
+      "description": "Comprehensive engineering analysis comparing structural foundations, soil classifications, trenching depth, and permitting setbacks between ground arrays and roof mounts.",
+      "inLanguage": "en-US",
+      "mainEntityOfPage": "https://www.danielsolared.com/blog/ground-mount-vs-rooftop-solar-permitting.html",
+      "datePublished": "2026-08-13",
+      "dateModified": "2026-08-13",
+      "author": {
+        "@type": "Person",
+        "name": "Daniel",
+        "jobTitle": "Principal Engineering Lead",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Daniel Solar Engineering and Design",
+          "url": "https://www.danielsolared.com/"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Daniel Solar Engineering and Design",
+        "url": "https://www.danielsolared.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.danielsolared.com/logo_ecard.png"
+        }
+      },
+      "image": "https://www.danielsolared.com/clifton-beach-house.jpg"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.danielsolared.com/blog/ground-mount-vs-rooftop-solar-permitting.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.danielsolared.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.danielsolared.com/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Ground-Mount vs Rooftop Solar",
+          "item": "https://www.danielsolared.com/blog/ground-mount-vs-rooftop-solar-permitting.html"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+
+    <style>
+        .article-page {
+            padding: 64px 0 96px;
+            background: var(--paper);
+        }
+        .article-container {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .article-header {
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 32px;
+        }
+        .article-header h1 {
+            font-size: clamp(32px, 4.2vw, 50px);
+            line-height: 1.15;
+            color: var(--ink);
+            margin: 16px 0 20px;
+        }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--ink-70);
+            flex-wrap: wrap;
+        }
+        .author-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            color: var(--blue-deep);
+        }
+        .author-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--blue-tint);
+            border: 1px solid var(--blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--blue-deep);
+        }
+        .hero-banner-img {
+            width: 100%;
+            max-height: 440px;
+            object-fit: cover;
+            border: 1px solid var(--line);
+            margin-bottom: 40px;
+        }
+        .article-content {
+            font-size: 17px;
+            line-height: 1.85;
+            color: var(--ink-70);
+        }
+        .article-content p {
+            margin-bottom: 24px;
+        }
+        .article-content h2 {
+            font-size: 28px;
+            color: var(--ink);
+            margin: 48px 0 20px;
+            padding-top: 16px;
+            border-top: 1px solid var(--line-soft);
+            line-height: 1.25;
+        }
+        .article-content h3 {
+            font-size: 22px;
+            color: var(--ink);
+            margin: 32px 0 14px;
+        }
+        .article-content ul, .article-content ol {
+            margin: 0 0 28px 24px;
+            padding-left: 8px;
+        }
+        .article-content li {
+            margin-bottom: 12px;
+            line-height: 1.75;
+        }
+        .callout-box {
+            background: var(--blue-tint);
+            border-left: 4px solid var(--blue);
+            padding: 24px 28px;
+            margin: 32px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .callout-box h4 {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--blue-deep);
+            margin-bottom: 8px;
+        }
+        .callout-box p {
+            margin-bottom: 0;
+            font-size: 15.5px;
+            color: var(--ink);
+        }
+        .toc-box {
+            background: var(--white);
+            border: 1px solid var(--line);
+            padding: 28px 32px;
+            margin-bottom: 48px;
+            border-radius: 4px;
+        }
+        .toc-title {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--blue-deep);
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+        .toc-list {
+            list-style: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .toc-list li {
+            margin-bottom: 10px !important;
+            font-size: 15px;
+        }
+        .toc-list a {
+            color: var(--ink);
+            transition: color 0.15s ease;
+        }
+        .toc-list a:hover {
+            color: var(--blue);
+            text-decoration: underline;
+        }
+        .checklist-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 36px 0;
+            font-size: 14.5px;
+        }
+        .checklist-table th {
+            background: var(--ink);
+            color: var(--paper);
+            text-align: left;
+            padding: 14px 18px;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .checklist-table td {
+            padding: 14px 18px;
+            border-bottom: 1px solid var(--line);
+            background: var(--white);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SITE HEADER -->
+    <header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="../index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="../logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="../services.html" class="dropdown-trigger" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="../services/design.html">PV System Design</a>
+                            <a href="../services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="../services/review.html">Structural &amp; Electrical Review</a>
+                            <a href="../services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="../services/ev.html">EV Charging Design &amp; Engineering</a>
+                            <a href="../services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="../services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="../services/net-metering.html">Net Metering</a>
+                            <a href="../services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="../tools.html">Tools &amp; Calculators</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../locations.html">Service Areas</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="../contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+    <main>
+        <div class="article-page">
+            <div class="wrap">
+                <div class="article-container">
+                    
+                    <header class="article-header">
+                        <div class="article-meta">
+                            <span class="author-badge">
+                                <span class="author-avatar">D</span>
+                                By Daniel
+                            </span>
+                            <span>&bull;</span>
+                            <span>Published: August 13, 2026</span>
+                            <span>&bull;</span>
+                            <span>9 min read</span>
+                        </div>
+                        <h1>Ground-Mount vs. Rooftop Solar: Engineering &amp; Permitting Differences</h1>
+                    </header>
+
+                    <img src="../clifton-beach-house.jpg" alt="Ground-mount solar system engineering" class="hero-banner-img" />
+
+                    <div class="toc-box">
+                        <div class="toc-title">Table of Contents</div>
+                        <ul class="toc-list">
+                            <li><a href="#comparison">1. The Structural Split: Roof vs. Ground</a></li>
+                            <li><a href="#ground-foundations">2. Ground Mount Foundations &amp; Soil Classifications</a></li>
+                            <li><a href="#electrical-run">3. Long Trench Runs &amp; DC Voltage Drop Sizing</a></li>
+                            <li><a href="#zoning-setbacks">4. Zoning Setbacks &amp; Property Boundary Clearances</a></li>
+                            <li><a href="#engineering-decision">5. Picking the Right System Design</a></li>
+                        </ul>
+                    </div>
+
+                    <article class="article-content">
+                        
+                        <p>When planning a solar installation, the first decision is choosing where to mount the panels. While rooftop arrays represent the vast majority of residential installations due to convenience, properties with large yards or complex roofs often benefit from ground-mount solar arrays.</p>
+
+                        <p>However, from a structural and electrical engineering perspective, these two system types are completely different. Ground-mount projects face more stringent zoning rules, trenching requirements, and soil-specific calculations that require licensed engineering support.</p>
+
+                        <h2 id="comparison">1. The Structural Split: Roof vs. Ground</h2>
+                        <p>Rooftop systems rely on an existing building structure. The engineer's primary job is verifying that the pre-built rafters can support the additional weight (dead load) and uplift forces. Ground-mount arrays, on the other hand, are freestanding structural buildings. They require custom steel or aluminum racking frames anchored directly into the earth, which triggers full foundation design requirements.</p>
+
+                        <h2 id="ground-foundations">2. Ground Mount Foundations &amp; Soil Classifications</h2>
+                        <p>Ground-mount arrays must resist wind uplift trying to pull the structure out of the ground, and gravity loads pushing it down. The foundation design is governed by the property's soil class:</p>
+                        
+                        <table class="checklist-table">
+                            <thead>
+                                <tr>
+                                    <th>Foundation Option</th>
+                                    <th>Design Details</th>
+                                    <th>Soil Condition Compatibility</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Concrete Piers (Post-in-Concrete)</strong></td>
+                                    <td>Steel posts cast inside deep, vertical drilled shafts (typically 5 to 10 feet deep).</td>
+                                    <td>Most common; ideal for clay, silt, and cohesive soils.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Helical Screws (Ground Screws)</strong></td>
+                                    <td>Threaded metal posts screwed directly into the ground using heavy machinery.</td>
+                                    <td>Ideal for rocky soils where drilling deep piers is difficult.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ballasted Trays</strong></td>
+                                    <td>Heavy concrete blocks sitting in trays on the surface of the ground.</td>
+                                    <td>Used on landfills or brownfields where breaking ground is prohibited.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p>To secure a ground-mount permit, your plan set must include structural calculation sheets specifying concrete volume, rebar sizing, and steel post thickness stamped by a registered structural P.E.</p>
+
+                        <h2 id="electrical-run">3. Long Trench Runs &amp; DC Voltage Drop Sizing</h2>
+                        <p>Because ground-mount systems are located further from the main utility service meter than rooftop systems, they require long underground trench runs. This introduces two critical engineering considerations:</p>
+                        <ul>
+                            <li><strong>NEC 300.5 Burial Depth:</strong> Circuits must run through underground conduits. Conduits under lawns must maintain a burial depth of at least 18 inches for PVC or 24 inches for direct-buried conductors.</li>
+                            <li><strong>Voltage Drop Calculations:</strong> Direct current (DC) running long distances suffers voltage drop, which reduces energy production. Engineers must upsize the copper or aluminum conductors to keep total voltage drop under 2-3%.</li>
+                        </ul>
+
+                        <h2 id="zoning-setbacks">4. Zoning Setbacks &amp; Property Boundary Clearances</h2>
+                        <p>Municipal zoning codes regulate ground-mount installations much more strictly than roof mounts. Local AHJ zoning codes define:</p>
+                        <ol>
+                            <li><strong>Property Line Setbacks:</strong> Canopies must remain a specified distance (typically 5 to 15 feet) from side and rear property lines.</li>
+                            <li><strong>Height Limitations:</strong> Most residential zoning boards limit ground array heights to 10–15 feet above grade to avoid blocking neighbor views.</li>
+                            <li><strong>Lot Coverage Limits:</strong> The surface area of the ground-mount canopy is factored into the property's maximum allowable accessory building coverage ratio.</li>
+                        </ol>
+
+                        <h2 id="engineering-decision">5. Picking the Right System Design</h2>
+                        <p>At Daniel Solar Engineering and Design, we handle the complete engineering lifecycle for both ground-mount and rooftop solar arrays. We prepare complete structural foundation diagrams, calculate DC/AC voltage drop wire parameters, and design code-compliant single-line layouts stamped by licensed civil and electrical P.E.s across all 50 U.S. states.</p>
+
+                        <div class="callout-box" style="background:var(--paper-alt); border-color:var(--amber-deep);">
+                            <h4>PLANNING A GROUND-MOUNT SOLAR INSTALLATION?</h4>
+                            <p>Contact <strong>Daniel Solar Engineering and Design</strong> today. Our engineering team prepares stamped structural foundation plan sets and trenching layout calculations for residential and commercial ground arrays.</p>
+                            <div style="margin-top:16px;">
+                                <a href="../contact.html" class="btn btn-amber btn-cad">Get Ground-Mount Design Quote</a>
+                                <a href="tel:+18584226880" class="btn btn-outline" style="margin-left:10px;">Call +1 (858) 422-6880</a>
+                            </div>
+                        </div>
+
+                    </article>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="brand">
+                        <div class="logo-ring-footer"><img class="logo-img-footer" src="../logo_ecard.png" alt="Daniel's Solar Logo" /></div>
+                        <span>Daniel's Solar Engineering and Design</span>
+                    </a>
+                    <p>Jurisdiction-ready solar permit design and engineering services stamped by licensed P.E.s across all 50 U.S. states. We deliver code-compliant plan sets, structural attachments, and electrical diagrams tailored to local AHJ and NEC standards.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../projects.html">Projects</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="../e-card.html">Digital Card</a></li>
+                        <li><a href="../locations.html">Service Areas Directory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services/design.html">PV System Design</a></li>
+                        <li><a href="../services/permitting.html">Permit Plan Sets</a></li>
+                        <li><a href="../services/electrical-design.html">Electrical Design</a></li>
+                        <li><a href="../services/commercial.html">Commercial &amp; Utility-Scale</a></li>
+                        <li><a href="../services/ev.html">EV Charging Design</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@danielsolared.com">info@danielsolared.com</a></li>
+                        <li><a href="tel:+18584226880">+1 (858) 422-6880</a></li>
+                        <li><span style="font-size:14px;">Licensed across 40+ regions</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Daniel's Solar Engineering and Design. All rights reserved. &middot; Located in Irvine, CA</span>
+                <span>DWG NO. 2026-001 · REV D</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tawk.to Chat -->
+        <script type="text/javascript">
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"),
+                    s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = "https://embed.tawk.to/6aa881879117af34473db177/1k2h3juq0";
+                s1.charset = "UTF-8";
+                s1.setAttribute("crossorigin", "*");
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>
+<script src="../script.js"></script>
+</body>
+</html>

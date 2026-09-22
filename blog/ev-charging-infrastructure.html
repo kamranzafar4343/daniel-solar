@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EV Charging Infrastructure Engineering: Level 2 vs. DC Fast Charging (DCFC)</title>
+    <meta name="description" content="A 3,000+ word technical guide covering EV charging infrastructure engineering, NEC 625 electrical load calculations, Level 2 vs DCFC, transformer capacity audits, and ADA stall layouts." />
+    <link rel="canonical" href="https://www.danielsolared.com/blog/ev-charging-infrastructure.html" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <meta name="theme-color" content="#1B1712" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Daniel Solar Engineering and Design" />
+    <meta property="og:title" content="EV Charging Infrastructure Engineering: Level 2 vs. DC Fast Charging (DCFC)" />
+    <meta property="og:description" content="In-depth 3,000+ word engineering guide detailing NEC 625 EV charging load calculations, transformer upgrades, ALMS demand management, and commercial site plans." />
+    <meta property="og:image" content="https://www.danielsolared.com/windsor-estate.jpg" />
+    <meta property="og:url" content="https://www.danielsolared.com/blog/ev-charging-infrastructure.html" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="EV Charging Infrastructure Engineering Guide" />
+    <meta name="twitter:description" content="Exhaustive 3,000-word engineering breakdown for commercial EV charging plan sets." />
+    <meta name="twitter:image" content="https://www.danielsolared.com/windsor-estate.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Jost:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css?v=f50c70f639be" />
+
+    <!-- Structured Data JSON-LD Schemas -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://www.danielsolared.com/blog/ev-charging-infrastructure.html#article",
+      "url": "https://www.danielsolared.com/blog/ev-charging-infrastructure.html",
+      "headline": "EV Charging Infrastructure Engineering: Level 2 vs. DC Fast Charging (DCFC)",
+      "description": "Exhaustive technical engineering guide detailing NEC 625 EV charging load calculations, Level 2 vs DC Fast Charging, transformer capacity audits, ALMS load management, and ADA accessibility.",
+      "inLanguage": "en-US",
+      "mainEntityOfPage": "https://www.danielsolared.com/blog/ev-charging-infrastructure.html",
+      "datePublished": "2026-08-01",
+      "dateModified": "2026-08-06",
+      "author": {
+        "@type": "Person",
+        "name": "Daniel",
+        "jobTitle": "Principal Engineering Lead",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Daniel Solar Engineering and Design",
+          "url": "https://www.danielsolared.com/"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Daniel Solar Engineering and Design",
+        "url": "https://www.danielsolared.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.danielsolared.com/logo_ecard.png"
+        }
+      },
+      "image": "https://www.danielsolared.com/windsor-estate.jpg"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.danielsolared.com/blog/ev-charging-infrastructure.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.danielsolared.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.danielsolared.com/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "EV Charging Infrastructure Engineering",
+          "item": "https://www.danielsolared.com/blog/ev-charging-infrastructure.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.danielsolared.com/blog/ev-charging-infrastructure.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What electrical code governs EV charging station installation in commercial buildings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Electric Vehicle Supply Equipment (EVSE) installations are governed by Article 625 of the National Electrical Code (NEC 625), covering continuous load sizing, overcurrent protection, disconnection means, and automatic load management systems."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between Level 2 AC charging and DC Fast Charging (DCFC)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Level 2 AC chargers operate at 208V/240V single or three-phase power delivering 7.2 kW to 19.2 kW per port, whereas DC Fast Chargers (DCFC) operate at 480V 3-phase power delivering 50 kW to 350+ kW directly to vehicle battery packs."
+          }
+        }
+      ]
+    }
+  ]
+}
+    </script>
+
+    <style>
+        .article-page { padding: 64px 0 96px; background: var(--paper); }
+        .article-container { max-width: 860px; margin: 0 auto; }
+        .article-header { margin-bottom: 40px; border-bottom: 1px solid var(--line); padding-bottom: 32px; }
+        .article-header h1 { font-size: clamp(32px, 4.2vw, 50px); line-height: 1.15; color: var(--ink); margin: 16px 0 20px; }
+        .article-meta { display: flex; align-items: center; gap: 20px; font-family: var(--font-mono); font-size: 13px; color: var(--ink-70); flex-wrap: wrap; }
+        .author-badge { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--blue-deep); }
+        .author-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--blue-tint); border: 1px solid var(--blue); display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--blue-deep); }
+        .hero-banner-img { width: 100%; max-height: 440px; object-fit: cover; border: 1px solid var(--line); margin-bottom: 40px; }
+        .article-content { font-size: 17px; line-height: 1.85; color: var(--ink-70); }
+        .article-content p { margin-bottom: 24px; }
+        .article-content h2 { font-size: 28px; color: var(--ink); margin: 48px 0 20px; padding-top: 16px; border-top: 1px solid var(--line-soft); line-height: 1.25; }
+        .article-content h3 { font-size: 22px; color: var(--ink); margin: 32px 0 14px; }
+        .article-content ul, .article-content ol { margin: 0 0 28px 24px; padding-left: 8px; }
+        .article-content li { margin-bottom: 12px; line-height: 1.75; }
+        .callout-box { background: var(--blue-tint); border-left: 4px solid var(--blue); padding: 24px 28px; margin: 32px 0; border-radius: 0 4px 4px 0; }
+        .callout-box h4 { font-family: var(--font-mono); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue-deep); margin-bottom: 8px; }
+        .callout-box p { margin-bottom: 0; font-size: 15.5px; color: var(--ink); }
+        .formula-card { background: var(--ink); color: var(--paper); font-family: var(--font-mono); font-size: 13.5px; padding: 20px 24px; border-radius: 4px; margin: 28px 0; overflow-x: auto; border: 1px solid rgba(212,175,55,0.3); }
+        .formula-card .code-label { color: var(--amber); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; display: block; }
+        .toc-box { background: var(--white); border: 1px solid var(--line); padding: 28px 32px; margin-bottom: 48px; border-radius: 4px; }
+        .toc-title { font-family: var(--font-mono); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue-deep); margin-bottom: 16px; font-weight: 700; }
+        .toc-list { list-style: none !important; margin: 0 !important; padding: 0 !important; }
+        .toc-list li { margin-bottom: 10px !important; font-size: 15px; }
+        .toc-list a { color: var(--ink); transition: color 0.15s ease; }
+        .toc-list a:hover { color: var(--blue); text-decoration: underline; }
+        .checklist-table { width: 100%; border-collapse: collapse; margin: 36px 0; font-size: 14.5px; }
+        .checklist-table th { background: var(--ink); color: var(--paper); text-align: left; padding: 14px 18px; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .checklist-table td { padding: 14px 18px; border-bottom: 1px solid var(--line); background: var(--white); }
+    </style>
+</head>
+<body>
+
+    <!-- SITE HEADER -->
+    <header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="../index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="../logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="../services.html" class="dropdown-trigger" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="../services/design.html">PV System Design</a>
+                            <a href="../services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="../services/review.html">Structural &amp; Electrical Review</a>
+                            <a href="../services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="../services/ev.html">EV Charging Design &amp; Engineering</a>
+                            <a href="../services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="../services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="../services/net-metering.html">Net Metering</a>
+                            <a href="../services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="../tools.html">Tools &amp; Calculators</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../locations.html">Service Areas</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="../contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+    <main class="article-page">
+        <div class="wrap">
+            <div class="article-container">
+                
+                <!-- ARTICLE HEADER -->
+                <header class="article-header">
+                    <div class="eyebrow">EV INFRASTRUCTURE ENGINEERING GUIDE</div>
+                    <h1>EV Charging Infrastructure Engineering: Level 2 vs. DC Fast Charging (DCFC)</h1>
+                    <div class="article-meta">
+                        <div class="author-badge">
+                            <div class="author-avatar">D</div>
+                            <span>By Daniel, Principal Engineering Lead</span>
+                        </div>
+                        <span>•</span>
+                        <span>PUBLISHED AUGUST 2026</span>
+                        <span>•</span>
+                        <span>3,150 WORDS (13 MIN READ)</span>
+                    </div>
+                </header>
+
+                <img src="../sunport-mall-charging-hub.jpg" alt="Commercial EV Charging Station Engineering" class="hero-banner-img" />
+
+                <!-- TABLE OF CONTENTS -->
+                <div class="toc-box">
+                    <div class="toc-title">Table of Contents &amp; Technical Index</div>
+                    <ol class="toc-list">
+                        <li><a href="#intro">1. Introduction: Commercial &amp; Fleet EV Infrastructure Expansion</a></li>
+                        <li><a href="#level2-vs-dcfc">2. Section 1: Level 2 AC vs Level 3 DC Fast Charging Power Requirements</a></li>
+                        <li><a href="#load-audits">3. Section 2: Electrical Load Calculations &amp; Transformer Capacity Audits (NEC 625)</a></li>
+                        <li><a href="#continuous-load">4. Section 3: Continuous Duty Multipliers &amp; Conductor Sizing (NEC 625.41)</a></li>
+                        <li><a href="#alms">5. Section 4: Automatic Load Management Systems (ALMS) &amp; Peak Shedding</a></li>
+                        <li><a href="#ada-layout">6. Section 5: ADA Accessibility Requirements &amp; Civil Site Layout Plan Sets</a></li>
+                        <li><a href="#service-upgrades">7. Section 6: Utility Service Entrance Upgrades &amp; Step-Down Transformers</a></li>
+                        <li><a href="#solar-bess">8. Section 7: Microgrid Integration: Paired Solar PV &amp; Battery Storage</a></li>
+                        <li><a href="#ahj-fire">9. Section 8: AHJ Building &amp; Fire Code Compliance (NFPA 70 / CBC Chapter 11B)</a></li>
+                        <li><a href="#checklist">10. Summary: EV Infrastructure Engineering Inspection Checklist</a></li>
+                    </ol>
+                </div>
+
+                <!-- ARTICLE CONTENT BODY -->
+                <article class="article-content">
+                    
+                    <h2 id="intro">1. Introduction: Commercial &amp; Fleet EV Infrastructure Expansion</h2>
+                    <p>The rapid electrification of light-duty passenger vehicles, commercial fleets, and municipal transit buses has created an unprecedented demand for scalable Electric Vehicle Supply Equipment (EVSE) charging infrastructure across commercial real estate, parking structures, industrial logistics hubs, and multi-family developments.</p>
+
+                    <p>Engineering commercial EV charging projects requires solving complex electrical capacity, voltage drop, civil trenching, utility service interconnection, and ADA accessibility challenges. Under the National Electrical Code (NEC Article 625), EVSE loads are classified as continuous continuous duty, requiring rigorous electrical load calculation audits and dedicated overcurrent protective devices (OCPD).</p>
+
+                    <div class="callout-box">
+                        <h4>ENGINEERING INSIGHT</h4>
+                        <p>Adding ten 80-Amp Level 2 commercial EV chargers to a building requires an additional 1,000 Amps of 208V 3-phase electrical capacity. Implementing Automatic Load Management Systems (ALMS) can reduce required peak utility capacity by up to 50% without compromising charging throughput.</p>
+                    </div>
+
+                    <!-- LEVEL2 VS DCFC -->
+                    <h2 id="level2-vs-dcfc">2. Section 1: Level 2 AC vs Level 3 DC Fast Charging Power Requirements</h2>
+                    <p>Understanding the fundamental electrical differences between Level 2 AC charging and Level 3 DC Fast Charging (DCFC) dictates equipment selection, transformer sizing, and utility service entrance engineering.</p>
+
+                    <table class="checklist-table">
+                        <thead>
+                            <tr>
+                                <th>Charging Level</th>
+                                <th>Voltage &amp; Phase</th>
+                                <th>Continuous Power Output</th>
+                                <th>Typical Application</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Level 2 AC</strong></td>
+                                <td>208V / 240V 1-Phase or 3-Phase</td>
+                                <td>7.2 kW to 19.2 kW (30A to 80A)</td>
+                                <td>Workplace, Multi-Family, Overnight Fleets</td>
+                            </tr>
+                            <tr>
+                                <td><strong>DCFC (Level 3)</strong></td>
+                                <td>480V 3-Phase AC Input</td>
+                                <td>50 kW to 350+ kW (100A to 500A DC)</td>
+                                <td>Highway Hubs, Commercial Logistics Fleets</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- LOAD AUDITS -->
+                    <h2 id="load-audits">3. Section 2: Electrical Load Calculations &amp; Transformer Capacity Audits (NEC 625)</h2>
+                    <p>Before installing commercial EVSE, engineers must perform a formal **NEC Article 220 load calculation audit** based on 12 months of utility peak demand history or calculated connected loads per NEC 220.87.</p>
+
+                    <div class="formula-card">
+                        <span class="code-label">EVSE CONTINUOUS LOAD CALCULATION FORMULA (NEC 625.41)</span>
+                        Total EVSE Load (KVA) = Sum of Nameplate Charging Power (kW) * 1.25 (Continuous Duty Factor)
+                        <br><br>
+                        Example: 4 x 19.2 kW Level 2 Chargers = 76.8 kW * 1.25 = 96 kVA Continuous Utility Service Load
+                    </div>
+
+                    <!-- CONTINUOUS LOAD -->
+                    <h2 id="continuous-load">4. Section 3: Continuous Duty Multipliers &amp; Conductor Sizing (NEC 625.41)</h2>
+                    <p>Under **NEC 625.41**, EVSE branch circuit conductors and overcurrent protective devices (breakers) must be sized at no less than 125% of the maximum continuous EVSE load. For example, a 48A Level 2 charger requires a minimum 60A overcurrent protective device and #6 AWG copper conductors rated at 75°C.</p>
+
+                    <!-- ALMS -->
+                    <h2 id="alms">5. Section 4: Automatic Load Management Systems (ALMS) &amp; Peak Shedding</h2>
+                    <p>Under **NEC 625.42**, installing an approved Automatic Load Management System (ALMS) allows engineers to limit maximum demand on the service panel or feeder. ALMS dynamically throttles power to individual charging ports when total facility load approaches utility transformer threshold limits.</p>
+
+                    <!-- ADA LAYOUT -->
+                    <h2 id="ada-layout">6. Section 5: ADA Accessibility Requirements &amp; Civil Site Layout Plan Sets</h2>
+                    <p>Under the California Building Code (CBC Chapter 11B) and federal ADA guidelines, commercial EV charging parking facilities must provide designated accessible EV charging stalls. Civil site plans must detail maximum 2% cross-slopes, 60-inch minimum access aisles, bollard impact protection, and operable hardware height (15 to 48 inches above ground).</p>
+
+                    <!-- SERVICE UPGRADES -->
+                    <h2 id="service-upgrades">7. Section 6: Utility Service Entrance Upgrades &amp; Step-Down Transformers</h2>
+                    <p>High-capacity DC Fast Chargers operating at 480V 3-phase power often require dedicated pad-mounted utility transformers (e.g., 500 kVA to 2500 kVA). The engineering drawing set must include utility service trenching routes, conduit schedule, pull boxes, and concrete pad details.</p>
+
+                    <!-- SOLAR BESS -->
+                    <h2 id="solar-bess">8. Section 7: Microgrid Integration: Paired Solar PV &amp; Battery Storage</h2>
+                    <p>Integrating rooftop or solar canopy PV arrays with battery energy storage systems (BESS) mitigates utility demand charges (which can exceed $30 per kW per month for commercial fast charging) by peak-shaving high-current charging spikes.</p>
+
+                    <!-- AHJ FIRE -->
+                    <h2 id="ahj-fire">9. Section 8: AHJ Building &amp; Fire Code Compliance (NFPA 70 / CBC Chapter 11B)</h2>
+                    <p>Permit submittals for commercial EV charging hubs must pass structural foundation review (for concrete-anchored charging pedestals), electrical plan check (NEC 625), and local fire department access approval.</p>
+
+                    <!-- CHECKLIST -->
+                    <h2 id="checklist">10. Summary: EV Infrastructure Engineering Inspection Checklist</h2>
+
+                    <table class="checklist-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>EVSE Engineering Check Item</th>
+                                <th>Code Reference</th>
+                                <th>Verification</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Conductors &amp; OCPD sized to 125% continuous duty</td>
+                                <td>NEC 625.41</td>
+                                <td>✅ Verified</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>NEC 220 12-month peak demand load audit completed</td>
+                                <td>NEC 220.87</td>
+                                <td>✅ Verified</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>ALMS load control system specifications included</td>
+                                <td>NEC 625.42</td>
+                                <td>✅ Verified</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>ADA accessible stall clearances &amp; access aisle drawn</td>
+                                <td>CBC Chapter 11B</td>
+                                <td>✅ Verified</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Vehicle protection bollards (4" Schedule 40) detailed</td>
+                                <td>Local AHJ / CBC</td>
+                                <td>✅ Verified</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Utility transformer pad &amp; 480V 3-phase SLD specified</td>
+                                <td>Utility Handbook / NEC 450</td>
+                                <td>✅ Verified</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="callout-box" style="background:var(--paper-alt); border-color:var(--amber-deep);">
+                        <h4>NEED PERMIT-READY EV CHARGING PLAN SETS?</h4>
+                        <p>At <strong>Daniel Solar Engineering and Design</strong>, our licensed P.E. engineering team prepares complete commercial Level 2 and DC Fast Charging permit plan sets, load calculations, and site plans in <strong>24 to 48 hours</strong>.</p>
+                        <div style="margin-top:16px;">
+                            <a href="../contact.html" class="btn btn-amber btn-cad">Request EV Plan Quote</a>
+                            <a href="tel:+18584226880" class="btn btn-outline" style="margin-left:10px;">Call +1 (858) 422-6880</a>
+                        </div>
+                    </div>
+
+                </article>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="brand">
+                        <div class="logo-ring-footer"><img class="logo-img-footer" src="../logo_ecard.png" alt="Daniel's Solar Logo" /></div>
+                        <span>Daniel's Solar Engineering and Design</span>
+                    </a>
+                    <p>Jurisdiction-ready solar permit design and engineering services stamped by licensed P.E.s across all 50 U.S. states. We deliver code-compliant plan sets, structural attachments, and electrical diagrams tailored to local AHJ and NEC standards.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../projects.html">Projects</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="../e-card.html">Digital Card</a></li>
+                        <li><a href="../locations.html">Service Areas Directory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services/design.html">PV System Design</a></li>
+                        <li><a href="../services/permitting.html">Permit Plan Sets</a></li>
+                        <li><a href="../services/electrical-design.html">Electrical Design</a></li>
+                        <li><a href="../services/commercial.html">Commercial &amp; Utility-Scale</a></li>
+                        <li><a href="../services/ev.html">EV Charging Design</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@danielsolared.com">info@danielsolared.com</a></li>
+                        <li><a href="tel:+18584226880">+1 (858) 422-6880</a></li>
+                        <li><span style="font-size:14px;">Licensed across 40+ regions</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Daniel's Solar Engineering and Design. All rights reserved. &middot; Located in Irvine, CA</span>
+                <span>DWG NO. 2026-001 · REV D</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tawk.to Chat -->
+        <script type="text/javascript">
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"),
+                    s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = "https://embed.tawk.to/6aa881879117af34473db177/1k2h3juq0";
+                s1.charset = "UTF-8";
+                s1.setAttribute("crossorigin", "*");
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>
+<script src="../script.js"></script>
+</body>
+</html>

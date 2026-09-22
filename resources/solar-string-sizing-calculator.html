@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Interactive Solar String Sizing Calculator | NEC 690 Voltage & Ampacity Tool</title>
+<meta name="description" content="Free interactive solar string sizing calculator. Calculate maximum system voltage, string current, conductor ampacity, and 120% busbar rule compliance per NEC 690."/>
+<link rel="canonical" href="https://www.danielsolared.com/resources/solar-string-sizing-calculator.html"/>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Jost:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../styles.css?v=f50c70f639be"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Solar String Sizing Calculator","description":"Free interactive solar string sizing calculator for NEC 690 voltage, conductor ampacity, and 120% busbar rule compliance.","url":"https://www.danielsolared.com/resources/solar-string-sizing-calculator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"Daniel's Solar Engineering and Design","url":"https://www.danielsolared.com"}}
+</script>
+<style>
+.calc-hero{background:linear-gradient(135deg,#1B1712 0%,#2C2318 100%);color:#fff;padding:72px 0 52px;text-align:center;}
+.calc-hero h1{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,42px);margin:12px 0;}
+.calc-hero p{font-size:17px;opacity:.85;max-width:600px;margin:0 auto;}
+.calc-wrapper{max-width:900px;margin:48px auto;padding:0 24px;}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+@media(max-width:680px){.calc-grid{grid-template-columns:1fr;}}
+.calc-card{background:#fff;border:1px solid #e8e0d4;border-radius:8px;padding:32px;box-shadow:0 2px 12px rgba(0,0,0,.06);}
+.calc-card h2{font-family:'Playfair Display',serif;font-size:20px;color:#1B1712;margin-bottom:20px;border-bottom:2px solid #D4A843;padding-bottom:10px;}
+.form-group{margin-bottom:18px;}
+.form-group label{display:block;font-size:13px;font-weight:600;color:#555;margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em;}
+.form-group input,.form-group select{width:100%;padding:10px 14px;border:1.5px solid #ddd;border-radius:4px;font-size:15px;font-family:'Jost',sans-serif;box-sizing:border-box;transition:border-color .2s;}
+.form-group input:focus,.form-group select:focus{border-color:#D4A843;outline:none;}
+.calc-btn{width:100%;background:#D4A843;color:#1B1712;font-weight:700;font-size:16px;padding:14px;border:none;border-radius:4px;cursor:pointer;margin-top:8px;font-family:'Jost',sans-serif;transition:background .2s;}
+.calc-btn:hover{background:#b8892e;}
+.result-box{background:#f9f6f2;border:1px solid #e8e0d4;border-radius:8px;padding:28px;}
+.result-box h2{font-family:'Playfair Display',serif;font-size:20px;color:#1B1712;margin-bottom:20px;}
+.result-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #e8e0d4;font-size:15px;}
+.result-row:last-child{border-bottom:none;}
+.result-label{color:#666;font-weight:500;}
+.result-value{font-family:'Space Mono',monospace;font-weight:700;color:#1B1712;font-size:16px;}
+.result-value.pass{color:#2e7d32;}
+.result-value.fail{color:#c62828;}
+.result-value.warn{color:#e65100;}
+.formula-section{margin-top:48px;}
+.formula-section h2{font-family:'Playfair Display',serif;font-size:24px;color:#1B1712;margin-bottom:24px;border-left:4px solid #D4A843;padding-left:16px;}
+.formula-block{background:#1B1712;color:#D4A843;border-radius:6px;padding:20px 24px;font-family:'Space Mono',monospace;font-size:14px;margin-bottom:16px;line-height:1.8;}
+.formula-note{font-size:14px;color:#666;margin-bottom:32px;}
+</style>
+</head>
+<body>
+<header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="../index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="../logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="../services.html" class="dropdown-trigger" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="../services/design.html">PV System Design</a>
+                            <a href="../services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="../services/review.html">Structural &amp; Electrical Review</a>
+                            <a href="../services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="../services/ev.html">EV Charging Design &amp; Engineering</a>
+                            <a href="../services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="../services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="../services/net-metering.html">Net Metering</a>
+                            <a href="../services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="../tools.html" class="active">Tools &amp; Calculators</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../locations.html">Service Areas</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="../contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+<main>
+  <div class="calc-hero">
+    <div class="wrap">
+      <span class="eyebrow" style="color:#D4A843;">FREE ENGINEERING TOOL</span>
+      <h1>Solar String Sizing Calculator</h1>
+      <p>Calculate NEC 690 maximum system voltage, conductor ampacity, and 120% busbar rule compliance instantly. Used by P.E. engineers and solar installers nationwide.</p>
+    </div>
+  </div>
+
+  <div class="calc-wrapper">
+    <div class="calc-grid">
+      <!-- INPUT CARD -->
+      <div class="calc-card">
+        <h2>📥 Enter Module &amp; System Data</h2>
+
+        <div class="form-group">
+          <label>Module Voc (Open Circuit Voltage)</label>
+          <input type="number" id="voc" placeholder="e.g. 49.8" step="0.1"/>
+        </div>
+        <div class="form-group">
+          <label>Module Isc (Short Circuit Current, A)</label>
+          <input type="number" id="isc" placeholder="e.g. 13.97" step="0.01"/>
+        </div>
+        <div class="form-group">
+          <label>Modules Per String</label>
+          <input type="number" id="modules" placeholder="e.g. 10" min="1"/>
+        </div>
+        <div class="form-group">
+          <label>Number of Strings in Parallel</label>
+          <input type="number" id="strings" placeholder="e.g. 2" min="1"/>
+        </div>
+        <div class="form-group">
+          <label>Lowest Design Temperature (°C)</label>
+          <input type="number" id="tempMin" placeholder="e.g. -10" step="1"/>
+        </div>
+        <div class="form-group">
+          <label>Temperature Coefficient of Voc (%/°C)</label>
+          <input type="number" id="tempCoeff" placeholder="e.g. -0.27" step="0.01"/>
+        </div>
+        <div class="form-group">
+          <label>Main Panel Bus Rating (A)</label>
+          <input type="number" id="busRating" placeholder="e.g. 200" step="5"/>
+        </div>
+        <div class="form-group">
+          <label>Main Breaker Size (A)</label>
+          <input type="number" id="mainBreaker" placeholder="e.g. 200" step="5"/>
+        </div>
+        <button class="calc-btn" onclick="calculate()">⚡ Calculate Now</button>
+      </div>
+
+      <!-- RESULT CARD -->
+      <div class="result-box">
+        <h2>📊 Engineering Results</h2>
+        <div class="result-row"><span class="result-label">Max System Voltage (NEC 690.7)</span><span class="result-value" id="res-maxV">—</span></div>
+        <div class="result-row"><span class="result-label">Total Array Isc</span><span class="result-value" id="res-totalIsc">—</span></div>
+        <div class="result-row"><span class="result-label">NEC 690.8 Continuous Current (×1.5625)</span><span class="result-value" id="res-contCurrent">—</span></div>
+        <div class="result-row"><span class="result-label">Minimum Conductor Ampacity</span><span class="result-value" id="res-conductor">—</span></div>
+        <div class="result-row"><span class="result-label">120% Busbar Rule — Max Solar Breaker</span><span class="result-value" id="res-busbar">—</span></div>
+        <div class="result-row"><span class="result-label">120% Busbar Rule</span><span class="result-value" id="res-busbarStatus">—</span></div>
+        <div class="result-row"><span class="result-label">DC System Voltage Class</span><span class="result-value" id="res-voltClass">—</span></div>
+        <div class="result-row"><span class="result-label">Recommended Inverter Input Voltage</span><span class="result-value" id="res-invertRec">—</span></div>
+      </div>
+    </div>
+
+    <!-- FORMULAS -->
+    <div class="formula-section">
+      <h2>Engineering Formulas Used</h2>
+
+      <div class="formula-block">
+        V_max = Voc × Modules_per_string × [1 + (Tc × (T_min − 25°C) / 100)]
+        <br/>(NEC 690.7 — Maximum System Voltage)
+      </div>
+      <p class="formula-note">Where Tc = temperature coefficient of Voc (%/°C), T_min = lowest expected ambient temperature.</p>
+
+      <div class="formula-block">
+        I_continuous = Isc × Strings × 1.5625
+        <br/>(NEC 690.8(A) — Continuous Duty Conductor Sizing)
+      </div>
+      <p class="formula-note">NEC 690.8 requires DC conductors to be sized at 125% of the maximum current, and because this is a continuous load, an additional 125% factor applies: 1.25 × 1.25 = 1.5625.</p>
+
+      <div class="formula-block">
+        Max_Solar_Breaker = (Bus_Rating × 1.20) − Main_Breaker
+        <br/>(NEC 705.12(B)(2)(3) — 120% Busbar Rule)
+      </div>
+      <p class="formula-note">The solar backfeed breaker may not exceed: (Panel bus rating × 120%) minus the main breaker size. If exceeded, a Main Panel Upgrade (MPU) is required.</p>
+    </div>
+
+    <div style="margin-top:48px;background:#1B1712;color:#fff;padding:40px;border-radius:8px;text-align:center;">
+      <h2 style="font-family:'Playfair Display',serif;margin-bottom:12px;">Need a P.E. to Stamp Your String Sizing Calculations?</h2>
+      <p style="opacity:.8;margin-bottom:24px;">Our licensed Electrical P.E.s review all system calculations, prepare NEC 690-compliant single-line diagrams, and stamp plan sets for AHJ submission in 24-48 hours.</p>
+      <a href="../contact.html" style="display:inline-block;background:#D4A843;color:#1B1712;font-weight:700;padding:14px 32px;border-radius:4px;text-decoration:none;">Start Your Project →</a>
+    </div>
+
+    <p style="margin-top:32px;color:#888;font-size:13px;">Related: <a href="../blog/solar-single-line-diagram-sld-requirements.html">SLD Requirements Guide</a> · <a href="../blog/how-to-calculate-dc-ac-derate-ratio.html">DC-to-AC Ratio Calculator</a> · <a href="solar-permit-checklist.html">Solar Permit Checklist</a></p>
+  </div>
+</main>
+
+<script>
+function calculate() {
+  const voc = parseFloat(document.getElementById('voc').value);
+  const isc = parseFloat(document.getElementById('isc').value);
+  const modules = parseInt(document.getElementById('modules').value);
+  const strings = parseInt(document.getElementById('strings').value);
+  const tempMin = parseFloat(document.getElementById('tempMin').value);
+  const tempCoeff = parseFloat(document.getElementById('tempCoeff').value);
+  const busRating = parseFloat(document.getElementById('busRating').value);
+  const mainBreaker = parseFloat(document.getElementById('mainBreaker').value);
+
+  if (isNaN(voc)||isNaN(isc)||isNaN(modules)||isNaN(strings)||isNaN(tempMin)||isNaN(tempCoeff)) {
+    alert('Please fill in all module and temperature fields.'); return;
+  }
+
+  // Max System Voltage (NEC 690.7)
+  const tempAdj = 1 + (tempCoeff * (tempMin - 25) / 100);
+  const maxV = voc * modules * tempAdj;
+
+  // Total Isc
+  const totalIsc = isc * strings;
+
+  // NEC 690.8 Continuous Current
+  const contCurrent = totalIsc * 1.5625;
+
+  // Conductor recommendation (standard sizes)
+  let conductor = '—';
+  if(contCurrent <= 30) conductor = '#10 AWG (30A)';
+  else if(contCurrent <= 40) conductor = '#8 AWG (40A)';
+  else if(contCurrent <= 55) conductor = '#6 AWG (55A)';
+  else if(contCurrent <= 70) conductor = '#4 AWG (70A)';
+  else if(contCurrent <= 95) conductor = '#2 AWG (95A)';
+  else if(contCurrent <= 130) conductor = '#1/0 AWG (130A)';
+  else conductor = '#2/0+ AWG — consult engineer';
+
+  // 120% Busbar Rule
+  let busbarResult = '—', busbarStatus = '—', busbarClass = '';
+  if(!isNaN(busRating) && !isNaN(mainBreaker)){
+    busbarResult = ((busRating * 1.2) - mainBreaker).toFixed(0) + 'A max solar breaker';
+    const maxSolar = (busRating * 1.2) - mainBreaker;
+    const neededBreaker = Math.ceil(contCurrent / 1.25 / 5) * 5;
+    if(maxSolar >= neededBreaker){
+      busbarStatus = '✅ PASS — No MPU Required';
+      busbarClass = 'pass';
+    } else {
+      busbarStatus = '⚠️ FAIL — MPU Required';
+      busbarClass = 'fail';
+    }
+  }
+
+  // Voltage Class
+  const voltClass = maxV <= 600 ? '600V Class (Residential)' : maxV <= 1000 ? '1000V Class (Commercial)' : '1500V Class (Utility)';
+
+  // Inverter recommendation
+  const invertRec = maxV <= 600 ? '600V input inverter (standard residential)' : maxV <= 1000 ? '1000V input inverter (commercial)' : '1500V input inverter (utility-scale)';
+
+  document.getElementById('res-maxV').textContent = maxV.toFixed(1) + 'V';
+  document.getElementById('res-maxV').className = 'result-value' + (maxV > 1000 ? ' warn' : '');
+  document.getElementById('res-totalIsc').textContent = totalIsc.toFixed(2) + 'A';
+  document.getElementById('res-contCurrent').textContent = contCurrent.toFixed(2) + 'A';
+  document.getElementById('res-conductor').textContent = conductor;
+  document.getElementById('res-busbar').textContent = busbarResult;
+  document.getElementById('res-busbarStatus').textContent = busbarStatus;
+  document.getElementById('res-busbarStatus').className = 'result-value ' + busbarClass;
+  document.getElementById('res-voltClass').textContent = voltClass;
+  document.getElementById('res-invertRec').textContent = invertRec;
+}
+</script>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="brand">
+          <div class="logo-ring-footer"><img class="logo-img-footer" src="../logo_ecard.png" alt="Daniel Solar Logo"/></div>
+          <span>Daniel's Solar Engineering and Design</span>
+        </a>
+        <p>P.E.-stamped solar permit plan sets across all 50 U.S. states.</p>
+      </div>
+      <div class="footer-col"><h4>Tools &amp; Resources</h4><ul><li><a href="solar-permit-checklist.html">AHJ Permit Checklist</a></li><li><a href="solar-string-sizing-calculator.html">String Sizing Calculator</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="../services/permitting.html">Permit Plan Sets</a></li><li><a href="../services/design.html">PV System Design</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Daniel's Solar Engineering and Design. All rights reserved.</span></div>
+  </div>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>

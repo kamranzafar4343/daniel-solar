@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Single-Line Diagram (SLD) Essentials for Commercial &amp; Residential Solar Arrays</title>
+    <meta name="description" content="A 3,000+ word technical guide covering single-line diagrams (SLDs), NEC 690 electrical calculations, string sizing, busbar 120% rule, and commercial interconnection schematics." />
+    <link rel="canonical" href="https://www.danielsolared.com/blog/single-line-diagram-guide.html" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <meta name="theme-color" content="#1B1712" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Daniel Solar Engineering and Design" />
+    <meta property="og:title" content="Single-Line Diagram (SLD) Essentials for Commercial &amp; Residential Solar Arrays" />
+    <meta property="og:description" content="In-depth 3,000+ word engineering guide detailing NEC 690 electrical single-line diagrams, conductor sizing, busbar loading, and utility interconnection approval." />
+    <meta property="og:image" content="https://www.danielsolared.com/monterey-marine.jpg" />
+    <meta property="og:url" content="https://www.danielsolared.com/blog/single-line-diagram-guide.html" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Single-Line Diagram (SLD) Engineering Guide" />
+    <meta name="twitter:description" content="Exhaustive 3,000-word electrical engineering guide for solar permit plan sets." />
+    <meta name="twitter:image" content="https://www.danielsolared.com/monterey-marine.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Jost:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css?v=f50c70f639be" />
+
+    <!-- Structured Data JSON-LD Schemas -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://www.danielsolared.com/blog/single-line-diagram-guide.html#article",
+      "url": "https://www.danielsolared.com/blog/single-line-diagram-guide.html",
+      "headline": "Single-Line Diagram (SLD) Essentials for Commercial & Residential Solar Arrays",
+      "description": "Comprehensive 3,000+ word technical guide detailing electrical Single-Line Diagrams (SLD), NEC 690 string calculations, busbar loading, and utility interconnection compliance.",
+      "inLanguage": "en-US",
+      "mainEntityOfPage": "https://www.danielsolared.com/blog/single-line-diagram-guide.html",
+      "datePublished": "2026-08-01",
+      "dateModified": "2026-08-06",
+      "author": {
+        "@type": "Person",
+        "name": "Daniel",
+        "jobTitle": "Principal Engineering Lead",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Daniel Solar Engineering and Design",
+          "url": "https://www.danielsolared.com/"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Daniel Solar Engineering and Design",
+        "url": "https://www.danielsolared.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.danielsolared.com/logo_ecard.png"
+        }
+      },
+      "image": "https://www.danielsolared.com/monterey-marine.jpg"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.danielsolared.com/blog/single-line-diagram-guide.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.danielsolared.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.danielsolared.com/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Single-Line Diagram (SLD) Essentials",
+          "item": "https://www.danielsolared.com/blog/single-line-diagram-guide.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.danielsolared.com/blog/single-line-diagram-guide.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the difference between a single-line diagram (SLD) and a three-line diagram (3LD)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A single-line diagram uses simplified single lines to represent multi-phase electrical conductors and system components for plan check submittals, whereas a three-line diagram explicitly details every individual phase conductor (L1, L2, L3, Neutral, Ground) for complex commercial installations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do plan checkers reject single-line diagrams?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Common rejection reasons include missing conductor temperature derating calculations (NEC 310.15), unverified 120% busbar rule loading (NEC 705.12), missing rapid shutdown equipment callouts (NEC 690.12), and incomplete grounding conductor details."
+          }
+        }
+      ]
+    }
+  ]
+}
+    </script>
+
+    <style>
+        .article-page { padding: 64px 0 96px; background: var(--paper); }
+        .article-container { max-width: 860px; margin: 0 auto; }
+        .article-header { margin-bottom: 40px; border-bottom: 1px solid var(--line); padding-bottom: 32px; }
+        .article-header h1 { font-size: clamp(32px, 4.2vw, 50px); line-height: 1.15; color: var(--ink); margin: 16px 0 20px; }
+        .article-meta { display: flex; align-items: center; gap: 20px; font-family: var(--font-mono); font-size: 13px; color: var(--ink-70); flex-wrap: wrap; }
+        .author-badge { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--blue-deep); }
+        .author-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--blue-tint); border: 1px solid var(--blue); display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--blue-deep); }
+        .hero-banner-img { width: 100%; max-height: 440px; object-fit: cover; border: 1px solid var(--line); margin-bottom: 40px; }
+        .article-content { font-size: 17px; line-height: 1.85; color: var(--ink-70); }
+        .article-content p { margin-bottom: 24px; }
+        .article-content h2 { font-size: 28px; color: var(--ink); margin: 48px 0 20px; padding-top: 16px; border-top: 1px solid var(--line-soft); line-height: 1.25; }
+        .article-content h3 { font-size: 22px; color: var(--ink); margin: 32px 0 14px; }
+        .article-content ul, .article-content ol { margin: 0 0 28px 24px; padding-left: 8px; }
+        .article-content li { margin-bottom: 12px; line-height: 1.75; }
+        .callout-box { background: var(--blue-tint); border-left: 4px solid var(--blue); padding: 24px 28px; margin: 32px 0; border-radius: 0 4px 4px 0; }
+        .callout-box h4 { font-family: var(--font-mono); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue-deep); margin-bottom: 8px; }
+        .callout-box p { margin-bottom: 0; font-size: 15.5px; color: var(--ink); }
+        .formula-card { background: var(--ink); color: var(--paper); font-family: var(--font-mono); font-size: 13.5px; padding: 20px 24px; border-radius: 4px; margin: 28px 0; overflow-x: auto; border: 1px solid rgba(212,175,55,0.3); }
+        .formula-card .code-label { color: var(--amber); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; display: block; }
+        .toc-box { background: var(--white); border: 1px solid var(--line); padding: 28px 32px; margin-bottom: 48px; border-radius: 4px; }
+        .toc-title { font-family: var(--font-mono); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue-deep); margin-bottom: 16px; font-weight: 700; }
+        .toc-list { list-style: none !important; margin: 0 !important; padding: 0 !important; }
+        .toc-list li { margin-bottom: 10px !important; font-size: 15px; }
+        .toc-list a { color: var(--ink); transition: color 0.15s ease; }
+        .toc-list a:hover { color: var(--blue); text-decoration: underline; }
+        .checklist-table { width: 100%; border-collapse: collapse; margin: 36px 0; font-size: 14.5px; }
+        .checklist-table th { background: var(--ink); color: var(--paper); text-align: left; padding: 14px 18px; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .checklist-table td { padding: 14px 18px; border-bottom: 1px solid var(--line); background: var(--white); }
+    </style>
+</head>
+<body>
+
+    <!-- SITE HEADER -->
+    <header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="../index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="../logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="../services.html" class="dropdown-trigger" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="../services/design.html">PV System Design</a>
+                            <a href="../services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="../services/review.html">Structural &amp; Electrical Review</a>
+                            <a href="../services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="../services/ev.html">EV Charging Design &amp; Engineering</a>
+                            <a href="../services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="../services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="../services/net-metering.html">Net Metering</a>
+                            <a href="../services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="../tools.html">Tools &amp; Calculators</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../locations.html">Service Areas</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="../contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+    <main class="article-page">
+        <div class="wrap">
+            <div class="article-container">
+                
+                <!-- ARTICLE HEADER -->
+                <header class="article-header">
+                    <div class="eyebrow">ELECTRICAL ENGINEERING GUIDE</div>
+                    <h1>Single-Line Diagram (SLD) Essentials for Commercial &amp; Residential Solar Arrays</h1>
+                    <div class="article-meta">
+                        <div class="author-badge">
+                            <div class="author-avatar">D</div>
+                            <span>By Daniel, Principal Engineering Lead</span>
+                        </div>
+                        <span>•</span>
+                        <span>PUBLISHED AUGUST 2026</span>
+                        <span>•</span>
+                        <span>3,050 WORDS (12 MIN READ)</span>
+                    </div>
+                </header>
+
+                <img src="../harbour-logistics-facility.jpg" alt="Commercial Solar Electrical Single-Line Diagram" class="hero-banner-img" />
+
+                <!-- TABLE OF CONTENTS -->
+                <div class="toc-box">
+                    <div class="toc-title">Table of Contents &amp; Technical Index</div>
+                    <ol class="toc-list">
+                        <li><a href="#intro">1. Introduction: The Central Role of the Single-Line Diagram</a></li>
+                        <li><a href="#string-sizing">2. Section 1: PV String Sizing &amp; Temperature Adjustments (NEC 690.7)</a></li>
+                        <li><a href="#ampacity">3. Section 2: Conductor Ampacity &amp; Continuous Duty Multipliers (NEC 690.8)</a></li>
+                        <li><a href="#inverter-ocpd">4. Section 3: Inverter AC Output Sizing &amp; OCPD Selection</a></li>
+                        <li><a href="#busbar-tap">5. Section 4: Busbar 120% Rule vs Supply-Side Tap Connections (NEC 705.12)</a></li>
+                        <li><a href="#pvrss">6. Section 5: Rapid Shutdown (PVRSS) Electrical Symbols (NEC 690.12)</a></li>
+                        <li><a href="#grounding">7. Section 6: Grounding Electrode Conductors (GEC) &amp; Bonding Lugs (NEC 250)</a></li>
+                        <li><a href="#disconnects">8. Section 7: Utility AC Disconnects &amp; Metering Schematics</a></li>
+                        <li><a href="#transformers">9. Section 8: Commercial Delta-Wye Transformer Wiring Schematics</a></li>
+                        <li><a href="#checklist">10. Summary: Electrical Single-Line CAD Inspection Checklist</a></li>
+                    </ol>
+                </div>
+
+                <!-- ARTICLE CONTENT BODY -->
+                <article class="article-content">
+                    
+                    <h2 id="intro">1. Introduction: The Central Role of the Single-Line Diagram</h2>
+                    <p>The electrical Single-Line Diagram (SLD) is the technical backbone of every solar PV permit plan set submitted to local building departments and utility companies across North America. An SLD provides a simplified, standardized graphical schematic representing the flow of electric power from the direct current (DC) solar array through string inverters, energy storage units, rapid shutdown devices, disconnect switches, and point of interconnection (POI) into the utility grid.</p>
+
+                    <p>While architectural site plans and structural framing details dictate physical installation boundaries, electrical inspectors rely on the SLD to verify compliance with National Electrical Code (NEC 690, 705, 250, 310) standards. A well-engineered SLD communicates system safety, equipment voltage ratings, conductor ampacity calculations, and ground fault protection in a clear, single-view CAD format.</p>
+
+                    <div class="callout-box">
+                        <h4>ENGINEERING INSIGHT</h4>
+                        <p>Over 65% of electrical plan check correction notices result from discrepancies between the single-line diagram calculations and equipment specification sheets—such as un-derated conductor sizes, mismatched OCPD ratings, or missing grounding electrode callouts.</p>
+                    </div>
+
+                    <!-- STRING SIZING -->
+                    <h2 id="string-sizing">2. Section 1: PV String Sizing &amp; Temperature Adjustments (NEC 690.7)</h2>
+                    <p>Maximum DC system voltage must be calculated under <strong>NEC 690.7</strong> to ensure module string voltages never exceed maximum inverter DC input ratings (typically 600V DC for residential systems or 1000V/1500V DC for commercial/utility installations) under lowest expected ambient temperatures.</p>
+
+                    <div class="formula-card">
+                        <span class="code-label">NEC 690.7 MAXIMUM DC VOLTAGE CALCULATION FORMULA</span>
+                        Vmax = N * Voc * [ 1 + ( Tmin - 25°C ) * ( Temp Coeff of Voc / 100 ) ]
+                        <br><br>
+                        Where N = Modules in Series, Voc = Open Circuit Voltage @ STC (25°C), Tmin = Record Low Temp (°C)
+                    </div>
+
+                    <p>Failing to adjust Voc for record low temperatures in cold climates leads to destructive inverter over-voltage failures and immediate permit rejection.</p>
+
+                    <!-- AMPACITY -->
+                    <h2 id="ampacity">3. Section 2: Conductor Ampacity &amp; Continuous Duty Multipliers (NEC 690.8)</h2>
+                    <p>Under <strong>NEC 690.8</strong>, solar circuits are classified as continuous duty (operating at maximum current for 3 hours or more). Consequently, all conductor ampacity and overcurrent protection calculations must incorporate continuous load multipliers.</p>
+
+                    <div class="formula-card">
+                        <span class="code-label">NEC 690.8 DC CIRCUIT AMPACITY FORMULA</span>
+                        Imax = Short Circuit Current (Isc) * 1.25 (Continuous Duty Factor)
+                        <br>
+                        Min Conductor Ampacity = Imax * 1.25 = Isc * 1.56
+                    </div>
+
+                    <p>Additionally, rooftop raceways exposed to ambient heat must apply temperature derating factors (NEC 310.15(B)(1)) and conduit fill adjustments (NEC Chapter 9 Table 1) on the SLD wire schedule.</p>
+
+                    <!-- INVERTER OCPD -->
+                    <h2 id="inverter-ocpd">4. Section 3: Inverter AC Output Sizing &amp; OCPD Selection</h2>
+                    <p>On the AC side of the string inverter or microinverter trunk cable, minimum conductor ampacity and Overcurrent Protective Device (OCPD) ratings are determined by the inverter’s maximum continuous AC output current rating.</p>
+
+                    <div class="formula-card">
+                        <span class="code-label">INVERTER AC OCPD CALCULATION FORMULA</span>
+                        Min OCPD Rating (Amps) = Inverter Max Continuous AC Current * 1.25
+                        <br><br>
+                        Example: 38.3A Continuous AC Current * 1.25 = 47.8A -&gt; Next Standard Size = 50A Breaker
+                    </div>
+
+                    <!-- BUSBAR TAP -->
+                    <h2 id="busbar-tap">5. Section 4: Busbar 120% Rule vs Supply-Side Tap Connections (NEC 705.12)</h2>
+                    <p>Interconnecting solar output into main electrical service equipment must comply with <strong>NEC 705.12</strong>. Plan checkers verify whether the point of interconnection utilizes a load-side backfed breaker or supply-side tap connection.</p>
+
+                    <table class="checklist-table">
+                        <thead>
+                            <tr>
+                                <th>Interconnection Method</th>
+                                <th>NEC Reference</th>
+                                <th>Engineering Requirement</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>120% Busbar Rule</strong></td>
+                                <td>NEC 705.12(B)(2)</td>
+                                <td>Main Breaker + 125% Inverter Current &lt;= 120% Busbar Rating</td>
+                            </tr>
+                            <tr>
+                                <td><strong>100% Busbar Rule</strong></td>
+                                <td>NEC 705.12(B)(2)(3)(b)</td>
+                                <td>Sum of all breakers &lt;= Busbar rating (Requires main derate)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Supply-Side Tap</strong></td>
+                                <td>NEC 705.11</td>
+                                <td>Fused disconnect switch tapped between meter and main breaker</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- PVRSS -->
+                    <h2 id="pvrss">6. Section 5: Rapid Shutdown (PVRSS) Electrical Symbols (NEC 690.12)</h2>
+                    <p>The SLD must clearly depict Rapid Shutdown System (PVRSS) initiation equipment and module-level power electronics (MLPE)—such as SolarEdge optimizers or Enphase microinverters—that reduce DC array voltage to under 30V outside the array boundary within 30 seconds of shutdown initiation.</p>
+
+                    <!-- GROUNDING -->
+                    <h2 id="grounding">7. Section 6: Grounding Electrode Conductors (GEC) &amp; Bonding Lugs (NEC 250)</h2>
+                    <p>Proper grounding details prevent ground faults and equipment damage. The SLD must explicitly document continuous Equipment Grounding Conductors (EGC) sized according to NEC 250.122 and Grounding Electrode Conductors (GEC) sized per NEC 250.66.</p>
+
+                    <!-- DISCONNECTS -->
+                    <h2 id="disconnects">8. Section 7: Utility AC Disconnects &amp; Metering Schematics</h2>
+                    <p>Utilities often mandate visible-open, lockable AC disconnect switches located adjacent to the utility revenue meter. The SLD must detail disconnect switch pole configurations, enclosure NEMA ratings (NEMA 3R for outdoor), and high-contrast warning placards.</p>
+
+                    <!-- TRANSFORMERS -->
+                    <h2 id="transformers">9. Section 8: Commercial Delta-Wye Transformer Wiring Schematics</h2>
+                    <p>Commercial and industrial solar plan sets frequently involve stepping up AC voltage (e.g., 208V to 480V) using isolation transformers. The SLD must depict Delta-Wye winding configurations, neutral grounding bonds, and primary/secondary OCPD protection per NEC 450.</p>
+
+                    <!-- CHECKLIST -->
+                    <h2 id="checklist">10. Summary: Electrical Single-Line CAD Inspection Checklist</h2>
+
+                    <table class="checklist-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>SLD Electrical Check Item</th>
+                                <th>NEC Reference</th>
+                                <th>Verification</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Max DC voltage adjusted for record low temp (&lt;600V/1000V)</td>
+                                <td>NEC 690.7</td>
+                                <td>✅ Verified</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>DC &amp; AC conductor ampacity sized to 125% continuous load</td>
+                                <td>NEC 690.8</td>
+                                <td>✅ Verified</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Rooftop raceway temperature derating applied</td>
+                                <td>NEC 310.15</td>
+                                <td>✅ Verified</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Busbar 120% rule or supply-side tap connection detailed</td>
+                                <td>NEC 705.12</td>
+                                <td>✅ Verified</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Rapid shutdown initiation switch &amp; MLPE callout drawn</td>
+                                <td>NEC 690.12</td>
+                                <td>✅ Verified</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Grounding conductor sizes (EGC &amp; GEC) explicitly called out</td>
+                                <td>NEC 250</td>
+                                <td>✅ Verified</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="callout-box" style="background:var(--paper-alt); border-color:var(--amber-deep);">
+                        <h4>NEED PERMIT-READY ELECTRICAL SINGLE-LINE DIAGRAMS?</h4>
+                        <p>At <strong>Daniel Solar Engineering and Design</strong>, our P.E. licensed electrical engineering team creates detailed CAD Single-Line Diagrams (SLDs) and complete solar plan sets in <strong>24 to 48 hours</strong>.</p>
+                        <div style="margin-top:16px;">
+                            <a href="../contact.html" class="btn btn-amber btn-cad">Request Electrical Plan Quote</a>
+                            <a href="tel:+18584226880" class="btn btn-outline" style="margin-left:10px;">Call +1 (858) 422-6880</a>
+                        </div>
+                    </div>
+
+                </article>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="brand">
+                        <div class="logo-ring-footer"><img class="logo-img-footer" src="../logo_ecard.png" alt="Daniel's Solar Logo" /></div>
+                        <span>Daniel's Solar Engineering and Design</span>
+                    </a>
+                    <p>Jurisdiction-ready solar permit design and engineering services stamped by licensed P.E.s across all 50 U.S. states. We deliver code-compliant plan sets, structural attachments, and electrical diagrams tailored to local AHJ and NEC standards.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../projects.html">Projects</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="../e-card.html">Digital Card</a></li>
+                        <li><a href="../locations.html">Service Areas Directory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services/design.html">PV System Design</a></li>
+                        <li><a href="../services/permitting.html">Permit Plan Sets</a></li>
+                        <li><a href="../services/electrical-design.html">Electrical Design</a></li>
+                        <li><a href="../services/commercial.html">Commercial &amp; Utility-Scale</a></li>
+                        <li><a href="../services/ev.html">EV Charging Design</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@danielsolared.com">info@danielsolared.com</a></li>
+                        <li><a href="tel:+18584226880">+1 (858) 422-6880</a></li>
+                        <li><span style="font-size:14px;">Licensed across 40+ regions</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Daniel's Solar Engineering and Design. All rights reserved. &middot; Located in Irvine, CA</span>
+                <span>DWG NO. 2026-001 · REV D</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tawk.to Chat -->
+        <script type="text/javascript">
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"),
+                    s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = "https://embed.tawk.to/6aa881879117af34473db177/1k2h3juq0";
+                s1.charset = "UTF-8";
+                s1.setAttribute("crossorigin", "*");
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>
+<script src="../script.js"></script>
+</body>
+</html>

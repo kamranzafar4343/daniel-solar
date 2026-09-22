@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EV Charging Design & Engineering — Daniel Solar Engineering and Design</title>
+<meta name="description" content="EV charging design and engineering: load studies, panel upgrade design, and permit-ready plan sets for Level 2 and DC fast-charging installations.">
+<link rel="canonical" href="https://danielsolared.com/services/ev.html" target="_blank" rel="noopener">
+
+<!-- Favicons -->
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#1B1712">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Daniel Solar Engineering and Design">
+<meta property="og:title" content="EV Charging Design & Engineering — Daniel Solar Engineering and Design">
+<meta property="og:description" content="EV charging design and engineering: load studies, panel upgrade design, and permit-ready plan sets for Level 2 and DC fast-charging installations.">
+<meta property="og:image" content="https://danielsolared.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://danielsolared.com/services/ev.html">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EV Charging Design & Engineering — Daniel Solar Engineering and Design">
+<meta name="twitter:description" content="EV charging design and engineering: load studies, panel upgrade design, and permit-ready plan sets for Level 2 and DC fast-charging installations.">
+<meta name="twitter:image" content="https://danielsolared.com/assets/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Jost:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css?v=f50c70f639be">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.danielsolared.com/services/ev.html#webpage",
+      "url": "https://www.danielsolared.com/services/ev.html",
+      "name": "EV Charging Design & Engineering — Daniel Solar Engineering",
+      "description": "Electrical load calculations, panel upgrade design, and complete plan sets for Level 2 and Level 3 DC Fast-Charging (DCFC) infrastructure."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.danielsolared.com/services/ev.html#service",
+      "name": "EV Charging Design & Engineering",
+      "serviceType": "Electric Vehicle Supply Equipment (EVSE) Engineering",
+      "provider": {
+        "@type": "Organization",
+        "name": "Daniel Solar Engineering and Design",
+        "url": "https://www.danielsolared.com/"
+      },
+      "description": "Electrical load calculations, panel upgrade design, and complete civil/electrical engineering plan sets for commercial Level 2 and Level 3 DC Fast-Charging (DCFC) infrastructure.",
+      "areaServed": "United States"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.danielsolared.com/services/ev.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.danielsolared.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.danielsolared.com/services.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "EV Charging Design & Engineering",
+          "item": "https://www.danielsolared.com/services/ev.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- EVSE compliance section styling (scoped, self-contained) -->
+<style>
+  .compliance-section .section-head p { max-width: 700px; }
+  .compliance-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 36px;
+  }
+  .compliance-card {
+    position: relative;
+    background: var(--bg-dark, #1B1712);
+    border: 1px solid rgba(212,175,55,0.25);
+    border-radius: 4px;
+    padding: 28px 26px 26px;
+    overflow: hidden;
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  .compliance-card:hover {
+    border-color: rgba(212,175,55,0.6);
+    transform: translateY(-2px);
+  }
+  .compliance-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 2px;
+    background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+    opacity: .7;
+  }
+  .compliance-card .compliance-tag {
+    font-family: "Space Mono", monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+    color: #A9812A;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .compliance-card .compliance-tag::before {
+    content: "";
+    width: 6px; height: 6px;
+    background: #D4AF37;
+    border-radius: 50%;
+    flex: none;
+    box-shadow: 0 0 6px rgba(212,175,55,0.8);
+  }
+  .compliance-card h4 {
+    font-family: "Playfair Display", serif;
+    font-size: 18.5px;
+    font-weight: 600;
+    color: #F5EEDA;
+    margin: 0 0 10px;
+  }
+  .compliance-card p {
+    font-family: "Jost", sans-serif;
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: rgba(245,238,218,0.68);
+    margin: 0;
+  }
+  @media (max-width: 720px) {
+    .compliance-grid { grid-template-columns: 1fr; }
+  }
+</style>
+	<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "EV Charging Design & Engineering",
+  "name": "EV Charging Design & Engineering",
+  "description": "Electrical load calculations, panel upgrade design, and civil/electrical engineering plan sets for commercial Level 2 and Level 3 DC Fast-Charging infrastructure.",
+  "provider": { "@type": "ProfessionalService", "name": "Daniel Solar Engineering and Design", "url": "https://www.danielsolared.com/" },
+  "areaServed": { "@type": "Country", "name": "United States" },
+  "url": "https://www.danielsolared.com/services/ev.html"
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="../index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="../logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="../services.html" class="dropdown-trigger active" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="../services/design.html">PV System Design</a>
+                            <a href="../services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="../services/review.html">Structural &amp; Electrical Review</a>
+                            <a href="../services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="../services/ev.html" class="active" aria-current="page">EV Charging Design &amp; Engineering</a>
+                            <a href="../services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="../services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="../services/net-metering.html">Net Metering</a>
+                            <a href="../services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="../tools.html">Tools &amp; Calculators</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../locations.html">Service Areas</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="../contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow">EV CHARGING</div>
+      <h1>EV Charging Design &amp; Engineering</h1>
+      <p>Engineering comprehensive EVSE infrastructure plan sets, structural mounting designs, and dedicated electrical load studies for Level 2 and DC Fast Charging (DCFC) networks nationwide. From our core market in Southern California to utility grids across the country, we optimize system architecture to interface seamlessly with co-located commercial solar arrays, maximizing existing service busbar capacity without grid overload.  </p>
+      <div class="cta-actions" style="margin-top:28px;">
+        <a href="../contact.html" class="btn btn-amber btn-cad">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="ev-why">
+    <div class="wrap">
+      <div class="eyebrow">WHY EV CHARGING ENGINEERING MATTERS</div>
+      <h2 style="margin-top:16px; font-size:30px;">Avoid tripping breakers and failed inspections</h2>
+      <p style="margin-top:16px; color:var(--ink-70); font-size:15.5px; line-height:1.75; max-width:760px;">Deploying scalable Electric Vehicle Supply Equipment (EVSE) requires strict alignment with NEC Article 625 standards and California Electrical Code (CEC) infrastructure mandates. Our engineering team executes precise main service panelboard calculations and dynamic demand-response load management designs to prevent system distribution failures—eliminating complex local building department plan-check redlines and field installation delays across all jurisdictions.</p>
+      <div class="grid-2" style="margin-top:32px; gap:32px;">
+        <div class="reveal" style="background:transparent;">
+          <ul style="list-style:none; padding:0;">
+            <li style="padding:12px 0; border-bottom:1px solid var(--border-light); display:flex; align-items:center; gap:12px;">
+              <span style="color:var(--gold); font-size:20px;">✓</span> <strong>NEC & CEC Load Analysis</strong> – Comprehensive 12-month billing data reviews and continuous load calculation sheets to evaluate upstream transformer and switchgear capacities safely.
+            </li>
+            <li style="padding:12px 0; border-bottom:1px solid var(--border-light); display:flex; align-items:center; gap:12px;">
+              <span style="color:var(--gold); font-size:20px;">✓</span> <strong>Complete Plan Sets</strong> – Scalable site plans, detailed electrical single-line diagrams (SLDs), underground conduit/trenching pathways, and comprehensive equipment scheduling.
+            </li>
+          </ul>
+        </div>
+        <div class="reveal" style="background:transparent;">
+          <ul style="list-style:none; padding:0;">
+            <li style="padding:12px 0; border-bottom:1px solid var(--border-light); display:flex; align-items:center; gap:12px;">
+              <span style="color:var(--gold); font-size:20px;">✓</span> <strong>Fleet & Public EVSE</strong> – Specialized electrical schematics tailored for commercial Level 2 clusters, workplace charging stations, industrial fleet vehicle depots, and high-kilowatt DCFC hubs nationwide.
+            </li>
+            <li style="padding:12px 0; border-bottom:1px solid var(--border-light); display:flex; align-items:center; gap:12px;">
+              <span style="color:var(--gold); font-size:20px;">✓</span> <strong>DER Sync & Microgrids</strong> – Intelligent engineering strategies coordinating heavy EV charging loads alongside active solar PV networks, automated energy management systems (EMS), and battery storage.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="ev-process">
+    <div class="wrap">
+      <div class="eyebrow">OUR EV DESIGN PROCESS</div>
+      <h2 style="margin-top:16px; font-size:30px;">From load analysis to installation-ready plans</h2>
+      <div class="process-line reveal" style="margin-top:32px;">
+        <div class="process-step">
+          <div class="process-tick">01</div>
+          <h4>Site assessment</h4>
+          <p>We review existing service capacity, panel space, and intended charger location.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-tick">02</div>
+          <h4>Load calculation</h4>
+          <p>We perform a detailed load study to determine if a service upgrade is necessary.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-tick">03</div>
+          <h4>System design</h4>
+          <p>We select appropriate equipment, wire sizing, and protection devices, and draft plans.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-tick">04</div>
+          <h4>Permit package</h4>
+          <p>We deliver stamped drawings, load study, and equipment list for your permit application.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="ev-faq">
+<div class="wrap">
+<div class="eyebrow">FAQs</div>
+<h2 style="margin-top:16px; font-size:26px;">Common questions about EV charging design</h2>
+<div class="faq-stack">
+<details class="faq-item"><summary>Do I need a panel upgrade for a Level 2 charger?</summary><div class="faq-answer"><p>Often yes, but not always. We'll determine this based on your existing load and the charger's power requirements.</p></div></details>
+<details class="faq-item"><summary>Can you design for commercial fleet charging?</summary><div class="faq-answer"><p>Absolutely. We handle multi-port Level 2 and DC fast-charging sites, including load management and demand-response capabilities.</p></div></details>
+<details class="faq-item"><summary>How long does the design take?</summary><div class="faq-answer"><p>Typically 48–72 hours for a residential system; commercial projects vary by complexity.</p></div></details>
+<details class="faq-item"><summary>Do you include utility coordination?</summary><div class="faq-answer"><p>Yes – we can prepare the utility interconnection application for your EV charger if needed.</p></div></details>
+</div>
+</div>
+</section>
+
+  <!-- Nationwide EVSE Code Compliance & Grid Integration -->
+  <section class="section section-alt compliance-section" id="ev-compliance">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">NATIONWIDE COMPLIANCE</div>
+        <h2 style="margin-top:16px; font-size:26px;">Nationwide EVSE Code Compliance &amp; Grid Integration</h2>
+        <p style="margin-top:16px; color:var(--ink-70); font-size:15.5px; line-height:1.75;">Our electrical infrastructure plan sets are engineered to cross-examine hardware configurations against evolving regional power metrics, strict public utility constraints, and localized green building updates across the country.</p>
+      </div>
+
+      <div class="compliance-grid reveal">
+        <div class="compliance-card">
+          <div class="compliance-tag">California · CEC &amp; CALGreen</div>
+          <h4>Title 24 &amp; ALMS Compliance</h4>
+          <p>Engineered to execute complete compliance documentation for the rigorous 2026 CALGreen Title 24 mandates, optimizing Automated Load Management Systems (ALMS) to satisfy the 100% EV-ready/receptacle frameworks for multi-family, non-residential, and commercial parking expansions.</p>
+        </div>
+        <div class="compliance-card">
+          <div class="compliance-tag">Nationwide · NEC Article 625</div>
+          <h4>National Code Alignment</h4>
+          <p>Precise calculation of continuous electrical loads, overcurrent protection device (OCPD) thresholds, and specialized feeder/branch circuit ampacities to support massive multi-port configurations.</p>
+        </div>
+        <div class="compliance-card">
+          <div class="compliance-tag">Connector Standards</div>
+          <h4>Hardware Interface Architecture</h4>
+          <p>Open ecosystem blueprints mapping layout criteria seamlessly for standard SAE J1772 connectors as well as the newly standardized SAE J3400 (NACS) hardware networks.</p>
+        </div>
+        <div class="compliance-card">
+          <div class="compliance-tag">Utility Coordination</div>
+          <h4>Upstream Grid Integration</h4>
+          <p>Comprehensive support compiling engineering packages and processing grid-interconnection requests with major nationwide utility providers when high-kilowatt DC Fast Charging hubs necessitate complex transformer upgrades.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="ev-related">
+    <div class="wrap">
+      <div class="eyebrow">RELATED SERVICES</div>
+      <h2 style="margin-top:16px; font-size:26px;">Combine with other services</h2>
+      <div class="grid-3" style="margin-top:32px; gap:24px;">
+        <div class="card" style="background:var(--bg-dark); border:1px solid var(--gold);">
+          <h3>PV System Design</h3>
+          <p>Add solar to offset the charging load and reduce your operational costs.</p>
+          <a href="design.html" class="card-link">Learn more →</a>
+        </div>
+        <div class="card" style="background:var(--bg-dark); border:1px solid var(--gold);">
+          <h3>Permit Plan Sets</h3>
+          <p>We can include the EV charger in your overall permit package.</p>
+          <a href="permitting.html" class="card-link">Learn more →</a>
+        </div>
+        <div class="card" style="background:var(--bg-dark); border:1px solid var(--gold);">
+          <h3>Structural &amp; Electrical Review</h3>
+          <p>Get a full check of your EV charger installation for safety and compliance.</p>
+          <a href="review.html" class="card-link">Learn more →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <h2>Ready to install an EV charger?</h2>
+        <p style="margin-top:8px;">Send us your site details – we'll design the system and prepare your permit package in 48 hours.</p>
+        <div class="cta-actions">
+          <a href="../contact.html" class="btn btn-amber btn-cad">Get Started</a>
+          <a href="tel:+18584226880" class="btn btn-outline">+1 (858) 422-6880</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <!-- same footer -->
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="brand">
+          <div class="logo-ring-footer"><img class="logo-img-footer" src="../logo_ecard.png" alt="Daniel's Solar Logo" /></div>
+          <span>Daniel's Solar Engineering and Design</span>
+        </a>
+        <p>Jurisdiction-ready solar permit design and engineering services stamped by licensed P.E.s across all 50 U.S. states. We deliver code-compliant plan sets, structural attachments, and electrical diagrams tailored to local AHJ and NEC standards.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../projects.html">Projects</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="../e-card.html">Digital Card</a></li>
+                        <li><a href="../locations.html">Service Areas Directory</a></li>
+                    </ul>
+                </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="design.html">PV System Design</a></li>
+          <li><a href="permitting.html">Permit Plan Sets</a></li>
+          <li><a href="commercial.html">Commercial &amp; Utility-Scale</a></li>
+          <li><a href="net-metering.html">Net Metering</a></li>
+          <li><a href="ev.html">EV Charging Design</a></li>
+          <li><a href="california-mandates.html">California Energy Mandates</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@danielsolared.com">info@danielsolared.com</a></li>
+          <li><a href="tel:+18584226880">+1 (858) 422-6880</a></li>
+          <li><span style="font-size:14px;">Licensed across 40+ regions</span></li>
+        </ul>
+      </div>
+    </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Daniel's Solar Engineering and Design. All rights reserved. &middot; Located in Irvine, CA</span>
+      <span>DWG NO. 2026-002 &middot; REV D</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+    <!-- Tawk.to Chat -->
+        <script type="text/javascript">
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"),
+                    s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = "https://embed.tawk.to/6aa881879117af34473db177/1k2h3juq0";
+                s1.charset = "UTF-8";
+                s1.setAttribute("crossorigin", "*");
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>
+</body>
+</html>

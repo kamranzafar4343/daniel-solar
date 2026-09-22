@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Commercial Solar ROI & Payback Calculator | Financial Modeling Tool</title>
+    <meta name="description" content="Free commercial solar ROI and payback period calculator. Model 30% Federal ITC tax credits, MACRS 5-year depreciation, annual utility savings, and 25-year IRR." />
+    <link rel="canonical" href="https://www.danielsolared.com/resources/commercial-solar-roi-payback-calculator.html" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <meta name="theme-color" content="#1B1712" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Jost:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css?v=f50c70f639be" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Commercial Solar ROI & Payback Calculator",
+      "description": "Free financial modeling calculator for commercial solar ROI, simple payback period, 30% Federal ITC, and MACRS depreciation.",
+      "url": "https://www.danielsolared.com/resources/commercial-solar-roi-payback-calculator.html",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": {
+        "@type": "Organization",
+        "name": "Daniel's Solar Engineering and Design",
+        "url": "https://www.danielsolared.com"
+      }
+    }
+    </script>
+
+    <style>
+        .calc-hero { background: linear-gradient(135deg, #1B1712 0%, #2C2318 100%); color: #fff; padding: 72px 0 52px; text-align: center; }
+        .calc-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3.5vw, 42px); margin: 12px 0; }
+        .calc-hero p { font-size: 17px; opacity: .85; max-width: 640px; margin: 0 auto; }
+        .calc-wrapper { max-width: 980px; margin: 48px auto; padding: 0 24px; }
+        .calc-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; }
+        @media(max-width: 760px){ .calc-grid { grid-template-columns: 1fr; } }
+        .calc-card { background: #fff; border: 1px solid #e8e0d4; border-radius: 8px; padding: 32px; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+        .calc-card h2 { font-family: 'Playfair Display', serif; font-size: 20px; color: #1B1712; margin-bottom: 20px; border-bottom: 2px solid #D4A843; padding-bottom: 10px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+        @media(max-width: 480px){ .form-row { grid-template-columns: 1fr; } }
+        .form-group { margin-bottom: 16px; }
+        .form-group label { display: block; font-size: 13px; font-weight: 600; color: #555; margin-bottom: 6px; text-transform: uppercase; letter-spacing: .04em; }
+        .form-group input, .form-group select { width: 100%; padding: 10px 14px; border: 1.5px solid #ddd; border-radius: 4px; font-size: 15px; font-family: 'Jost', sans-serif; box-sizing: border-box; transition: border-color .2s; }
+        .form-group input:focus, .form-group select:focus { border-color: #D4A843; outline: none; }
+        .calc-btn { width: 100%; background: #D4A843; color: #1B1712; font-weight: 700; font-size: 16px; padding: 14px; border: none; border-radius: 4px; cursor: pointer; margin-top: 12px; font-family: 'Jost', sans-serif; transition: background .2s; }
+        .calc-btn:hover { background: #b8892e; }
+        .result-box { background: #f9f6f2; border: 1px solid #e8e0d4; border-radius: 8px; padding: 28px; }
+        .result-box h2 { font-family: 'Playfair Display', serif; font-size: 20px; color: #1B1712; margin-bottom: 20px; }
+        .result-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #e8e0d4; font-size: 15px; }
+        .result-row:last-child { border-bottom: none; }
+        .result-label { color: #666; font-weight: 500; }
+        .result-value { font-family: 'Space Mono', monospace; font-weight: 700; color: #1B1712; font-size: 16px; }
+        .result-value.highlight { color: #2e7d32; font-size: 18px; }
+        .cashflow-table { width: 100%; border-collapse: collapse; margin-top: 32px; font-size: 14px; }
+        .cashflow-table th { background: #1B1712; color: #D4A843; padding: 10px 12px; text-align: left; }
+        .cashflow-table td { padding: 8px 12px; border-bottom: 1px solid #ece7df; font-family: 'Space Mono', monospace; }
+        .cashflow-table tr:nth-child(even) { background: #fdfaf6; }
+    </style>
+</head>
+<body>
+
+    <!-- SITE HEADER -->
+    <header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="../index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="../logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="../services.html" class="dropdown-trigger" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="../services/design.html">PV System Design</a>
+                            <a href="../services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="../services/review.html">Structural &amp; Electrical Review</a>
+                            <a href="../services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="../services/ev.html">EV Charging Design &amp; Engineering</a>
+                            <a href="../services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="../services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="../services/net-metering.html">Net Metering</a>
+                            <a href="../services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="../tools.html" class="active">Tools &amp; Calculators</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../locations.html">Service Areas</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="../contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+    <main>
+        <div class="calc-hero">
+            <div class="wrap">
+                <span class="eyebrow" style="color: #D4A843;">COMMERCIAL FINANCIAL MODELING TOOL</span>
+                <h1>Commercial Solar ROI &amp; Payback Calculator</h1>
+                <p>Calculate 30% Federal ITC tax credits, MACRS 5-year accelerated depreciation, electricity offset savings, and simple payback period for commercial solar projects.</p>
+            </div>
+        </div>
+
+        <div class="calc-wrapper">
+            <div class="calc-grid">
+                
+                <!-- INPUT CARD -->
+                <div class="calc-card">
+                    <h2>🏢 Project Financial Inputs</h2>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>System Size (kW DC)</label>
+                            <input type="number" id="sysSize" value="150" step="5" min="10" />
+                        </div>
+                        <div class="form-group">
+                            <label>Turnkey Cost ($/Watt)</label>
+                            <input type="number" id="costPerWatt" value="2.10" step="0.05" min="0.5" />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Current Electric Rate ($/kWh)</label>
+                            <input type="number" id="elecRate" value="0.22" step="0.01" min="0.05" />
+                        </div>
+                        <div class="form-group">
+                            <label>Annual Utility Escalation Rate (%)</label>
+                            <input type="number" id="escRate" value="4.0" step="0.5" min="0" />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Federal Tax Credit (ITC %)</label>
+                            <select id="itcPct">
+                                <option value="0.30" selected>30% (Standard Base ITC)</option>
+                                <option value="0.40">40% (ITC + 10% Domestic Content Adder)</option>
+                                <option value="0.50">50% (ITC + Energy Community Adder)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Corporate Income Tax Rate (%)</label>
+                            <input type="number" id="taxRate" value="25" step="1" min="0" max="40" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Specific Yield (kWh/kWp/year)</label>
+                        <select id="yield">
+                            <option value="1600" selected>1,600 kWh/kWp (California / Southwest High Sun)</option>
+                            <option value="1450">1,450 kWh/kWp (Texas / Southeast Average Sun)</option>
+                            <option value="1250">1,250 kWh/kWp (Northeast / Midwest Moderate Sun)</option>
+                        </select>
+                    </div>
+
+                    <button class="calc-btn" onclick="calculateROI()">📊 Calculate Financial ROI</button>
+                </div>
+
+                <!-- RESULT CARD -->
+                <div class="result-box">
+                    <h2>📈 Financial Return Metrics</h2>
+                    <div class="result-row">
+                        <span class="result-label">Gross Turnkey Project Cost</span>
+                        <span class="result-value" id="res-grossCost">—</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label">Federal ITC Tax Credit (Direct Credit)</span>
+                        <span class="result-value" id="res-itc">—</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label">MACRS 5-Yr Depreciation Tax Shield</span>
+                        <span class="result-value" id="res-macrs">—</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label"><strong>Net Effective Upfront Cost</strong></span>
+                        <span class="result-value highlight" id="res-netCost">—</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label">Year 1 Electricity Bill Savings</span>
+                        <span class="result-value" id="res-yr1Sav">—</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label"><strong>Simple Payback Period</strong></span>
+                        <span class="result-value highlight" id="res-payback">—</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label">25-Year Cumulative Net Savings</span>
+                        <span class="result-value highlight" id="res-25yrSav">—</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label">Levelized Cost of Energy (LCOE)</span>
+                        <span class="result-value" id="res-lcoe">—</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 5-YEAR CASHFLOW SCHEDULE -->
+            <div style="margin-top: 48px;">
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #1B1712; border-left: 4px solid #D4A843; padding-left: 16px; margin-bottom: 20px;">Cumulative 10-Year Cash Flow Projection</h2>
+                <div style="overflow-x: auto;">
+                    <table class="cashflow-table" id="cashflowTable">
+                        <thead>
+                            <tr>
+                                <th>Year</th>
+                                <th>Solar Generation (kWh)</th>
+                                <th>Utility Rate ($/kWh)</th>
+                                <th>Annual Savings ($)</th>
+                                <th>Cumulative Net Cash Flow ($)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cashflowBody">
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- CTA BANNER -->
+            <div style="margin-top: 48px; background: #1B1712; color: #fff; padding: 40px; border-radius: 8px; text-align: center;">
+                <h2 style="font-family: 'Playfair Display', serif; margin-bottom: 12px;">Need Commercial P.E. Stamped Drawings &amp; Interconnection Filings?</h2>
+                <p style="opacity: .8; margin-bottom: 24px;">Our engineering team delivers full commercial solar permit plan sets, single-line diagrams, and utility Rule 21 applications across all 50 states.</p>
+                <a href="../contact.html" style="display: inline-block; background: #D4A843; color: #1B1712; font-weight: 700; padding: 14px 32px; border-radius: 4px; text-decoration: none;">Request a Commercial Plan Set &rarr;</a>
+            </div>
+
+            <p style="margin-top: 32px; color: #888; font-size: 13px;">Related Resources: <a href="../blog/commercial-solar-carport-permits.html">Commercial Solar Carports</a> &middot; <a href="../blog/commercial-solar-interconnection-study-process.html">Interconnection Process</a> &middot; <a href="solar-voltage-drop-calculator.html">Voltage Drop Calculator</a></p>
+
+        </div>
+    </main>
+
+    <script>
+    function calculateROI() {
+        const sysKw = parseFloat(document.getElementById('sysSize').value);
+        const costW = parseFloat(document.getElementById('costPerWatt').value);
+        const rate = parseFloat(document.getElementById('elecRate').value);
+        const escRate = parseFloat(document.getElementById('escRate').value) / 100;
+        const itcFrac = parseFloat(document.getElementById('itcPct').value);
+        const taxRate = parseFloat(document.getElementById('taxRate').value) / 100;
+        const specYield = parseFloat(document.getElementById('yield').value);
+
+        if (isNaN(sysKw) || isNaN(costW) || isNaN(rate) || sysKw <= 0 || costW <= 0 || rate <= 0) {
+            alert('Please enter valid positive values.');
+            return;
+        }
+
+        const grossCost = sysKw * 1000 * costW;
+        const itcAmount = grossCost * itcFrac;
+        
+        // MACRS: 85% of gross cost is depreciable basis (100% - 50% of 30% ITC)
+        const depreciableBasis = grossCost * (1 - (itcFrac / 2));
+        const macrsTaxSavings = depreciableBasis * taxRate;
+        const netCost = grossCost - itcAmount - macrsTaxSavings;
+
+        const yr1Gen = sysKw * specYield;
+        const yr1Savings = yr1Gen * rate;
+        const simplePayback = Math.max(0.1, netCost / yr1Savings);
+
+        // 25-Year Cumulative Model (0.5% annual degradation)
+        let totalGen25 = 0;
+        let cumulativeSavings25 = 0;
+        let tableHtml = '';
+        let runningCashFlow = -netCost;
+
+        for (let yr = 1; yr <= 10; yr++) {
+            const yrGen = yr1Gen * Math.pow(1 - 0.005, yr - 1);
+            const yrRate = rate * Math.pow(1 + escRate, yr - 1);
+            const yrSav = yrGen * yrRate;
+            runningCashFlow += yrSav;
+
+            tableHtml += `<tr>
+                <td>Year ${yr}</td>
+                <td>${Math.round(yrGen).toLocaleString()} kWh</td>
+                <td>$${yrRate.toFixed(3)}/kWh</td>
+                <td>$${Math.round(yrSav).toLocaleString()}</td>
+                <td style="color: ${runningCashFlow >= 0 ? '#2e7d32' : '#c62828'}; font-weight: bold;">
+                    ${runningCashFlow >= 0 ? '+' : ''}$${Math.round(runningCashFlow).toLocaleString()}
+                </td>
+            </tr>`;
+        }
+
+        for (let yr = 1; yr <= 25; yr++) {
+            const yrGen = yr1Gen * Math.pow(1 - 0.005, yr - 1);
+            const yrRate = rate * Math.pow(1 + escRate, yr - 1);
+            totalGen25 += yrGen;
+            cumulativeSavings25 += (yrGen * yrRate);
+        }
+
+        const net25YrProfit = cumulativeSavings25 - netCost;
+        const lcoe = netCost / totalGen25;
+
+        document.getElementById('res-grossCost').textContent = '$' + Math.round(grossCost).toLocaleString();
+        document.getElementById('res-itc').textContent = '-$' + Math.round(itcAmount).toLocaleString() + ` (${Math.round(itcFrac*100)}%)`;
+        document.getElementById('res-macrs').textContent = '-$' + Math.round(macrsTaxSavings).toLocaleString();
+        document.getElementById('res-netCost').textContent = '$' + Math.round(netCost).toLocaleString();
+        document.getElementById('res-yr1Sav').textContent = '$' + Math.round(yr1Savings).toLocaleString() + ' / year';
+        document.getElementById('res-payback').textContent = simplePayback.toFixed(1) + ' Years';
+        document.getElementById('res-25yrSav').textContent = '+$' + Math.round(net25YrProfit).toLocaleString();
+        document.getElementById('res-lcoe').textContent = '$' + lcoe.toFixed(3) + ' / kWh';
+
+        document.getElementById('cashflowBody').innerHTML = tableHtml;
+    }
+
+    // Run calculation on load
+    document.addEventListener('DOMContentLoaded', calculateROI);
+    </script>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="brand">
+                        <div class="logo-ring-footer"><img class="logo-img-footer" src="../logo_ecard.png" alt="Daniel Solar Logo" /></div>
+                        <span>Daniel's Solar Engineering and Design</span>
+                    </a>
+                    <p>P.E.-stamped solar permit plan sets across all 50 U.S. states.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Tools</h4>
+                    <ul>
+                        <li><a href="commercial-solar-roi-payback-calculator.html">Solar ROI Calculator</a></li>
+                        <li><a href="solar-voltage-drop-calculator.html">Voltage Drop Calculator</a></li>
+                        <li><a href="solar-string-sizing-calculator.html">String Sizing Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services/commercial.html">Commercial Solar Design</a></li>
+                        <li><a href="../services/permitting.html">Permit Plan Sets</a></li>
+                        <li><a href="../services/electrical-design.html">Electrical Design</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Daniel's Solar Engineering and Design. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

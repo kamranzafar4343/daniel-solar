@@ -1,0 +1,7 @@
+Options -Indexes
+DirectoryIndex index.php
+<FilesMatch "\.(json|md|ps1|tmp)$">
+Require all denied
+</FilesMatch>
+RewriteEngine On
+RewriteRule ^(lib|cli|tests|deploy|private)(/|$) - [F,L]

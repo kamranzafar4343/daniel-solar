@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SolarEdge Energy Hub & Backup Interface (BUI) Design & Permitting Guide (NEC 705.12)</title>
+    <meta name="description" content="Technical solar engineering guide for SolarEdge Home Hub inverters and Backup Interface (BUI): Single-Line Diagrams, 200A whole-home backup, NEC 705.12 120% rule compliance, and AHJ plan sets." />
+    <link rel="canonical" href="https://www.danielsolared.com/blog/solaredge-energy-hub-inverter-backup-interface-design.html" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <meta name="theme-color" content="#1B1712" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Daniel Solar Engineering and Design" />
+    <meta property="og:title" content="SolarEdge Energy Hub & Backup Interface Permitting Guide" />
+    <meta property="og:description" content="Master SolarEdge Home Hub inverter SLD drafting, Backup Interface wiring, 200A microgrid isolation, and NEC 705 busbar rules." />
+    <meta property="og:image" content="https://www.danielsolared.com/og-image.jpg" />
+    <meta property="og:url" content="https://www.danielsolared.com/blog/solaredge-energy-hub-inverter-backup-interface-design.html" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SolarEdge Energy Hub & Backup Interface SLD Guide" />
+    <meta name="twitter:description" content="Technical guide for SolarEdge Home Hub inverters, Backup Interface, and whole-home microgrid design." />
+    <meta name="twitter:image" content="https://www.danielsolared.com/og-image.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Jost:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css?v=f50c70f639be" />
+
+    <!-- Structured Data JSON-LD Schemas -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://www.danielsolared.com/blog/solaredge-energy-hub-inverter-backup-interface-design.html#article",
+      "url": "https://www.danielsolared.com/blog/solaredge-energy-hub-inverter-backup-interface-design.html",
+      "headline": "SolarEdge Home Hub Inverter & Backup Interface (BUI) Electrical Engineering Guide (NEC 705.12 & Microgrid Interconnection)",
+      "description": "Comprehensive engineering guide for solar permit plan sets featuring SolarEdge Energy Hub inverters, Backup Interface (BUI) automatic transfer switches, DC-coupled battery storage, and NEC 705.12 load side busbar calculations.",
+      "inLanguage": "en-US",
+      "datePublished": "2026-09-10",
+      "dateModified": "2026-09-10",
+      "author": {
+        "@type": "Person",
+        "name": "Daniel",
+        "jobTitle": "Principal Engineering Lead",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Daniel Solar Engineering and Design",
+          "url": "https://www.danielsolared.com/"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Daniel Solar Engineering and Design",
+        "url": "https://www.danielsolared.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.danielsolared.com/logo_ecard.png"
+        }
+      },
+      "image": "https://www.danielsolared.com/og-image.jpg"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.danielsolared.com/blog/solaredge-energy-hub-inverter-backup-interface-design.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.danielsolared.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.danielsolared.com/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SolarEdge Energy Hub & Backup Interface Guide",
+          "item": "https://www.danielsolared.com/blog/solaredge-energy-hub-inverter-backup-interface-design.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.danielsolared.com/blog/solaredge-energy-hub-inverter-backup-interface-design.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the SolarEdge Backup Interface (BUI) handle whole-home microgrid isolation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The SolarEdge Backup Interface (BUI) contains an integrated 200A utility microgrid isolation contactor (MID). Upon grid loss, it automatically disconnects the home from the utility grid in under 100 milliseconds and signals the Energy Hub inverters to create an intentional islanded AC voltage source."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you calculate NEC 705.12 busbar compliance when connecting SolarEdge inverters to the Backup Interface?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When connecting to the internal 200A busbar of the SolarEdge Backup Interface, the 120% rule (NEC 705.12(B)(2)(3)(b)) allows up to 40A of inverter breaker capacity (200A Bus rating x 1.2 - 200A Main Breaker = 40A). For larger multi-inverter systems up to 64A or 80A, the main service breaker inside the BUI can be derated to 150A or 175A, or a sum-of-breakers calculation under NEC 705.12(B)(2)(3)(c) can be applied."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can SolarEdge DC-coupled Home Batteries black-start during an outage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. SolarEdge Energy Hub inverters feature native 400V DC-coupled battery architecture with autonomous black-start capabilities. If the battery is completely depleted overnight during an extended grid outage, the inverter remains dormant until morning solar irradiance energizes the DC optimizers, awakening the system to recharge the battery."
+          }
+        }
+      ]
+    }
+  ]
+}
+    </script>
+
+    <style>
+        .article-page { padding: 64px 0 96px; background: var(--paper); }
+        .article-container { max-width: 860px; margin: 0 auto; }
+        .article-header { margin-bottom: 40px; text-align: center; }
+        .article-header h1 { font-family: var(--font-heading); font-size: clamp(28px, 4vw, 42px); color: var(--ink); line-height: 1.25; margin: 16px 0; }
+        .article-meta { font-family: var(--font-mono); font-size: 13px; color: var(--ink-60); text-transform: uppercase; letter-spacing: 0.05em; }
+        .article-body { font-size: 16.5px; line-height: 1.8; color: var(--ink); }
+        .article-body h2 { font-family: var(--font-heading); font-size: 26px; color: var(--ink); margin: 44px 0 18px; padding-bottom: 10px; border-bottom: 2px solid var(--gold); }
+        .article-body h3 { font-size: 20px; color: var(--ink); margin: 28px 0 12px; }
+        .article-body p { margin-bottom: 20px; }
+        .article-body ul, .article-body ol { margin-bottom: 24px; padding-left: 24px; }
+        .article-body li { margin-bottom: 8px; }
+        .callout-box { background: #FAF8F5; border-left: 4px solid var(--gold); padding: 24px 28px; margin: 32px 0; border-radius: 4px; border: 1px solid var(--line); }
+        .callout-box h4 { font-size: 17px; margin-bottom: 8px; color: var(--ink); }
+        .callout-box p { margin-bottom: 0; font-size: 15px; color: var(--ink-70); }
+        .calc-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14.5px; }
+        .calc-table th, .calc-table td { border: 1px solid var(--line); padding: 12px 16px; text-align: left; }
+        .calc-table th { background: #F5EEDA; color: var(--ink); font-family: var(--font-mono); font-weight: 700; }
+        .calc-table tr:nth-child(even) { background: #FAF8F5; }
+        .faq-section { margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--line); }
+        .faq-item { margin-bottom: 16px; border: 1px solid var(--line); border-radius: 6px; background: #FFF; overflow: hidden; }
+        .faq-item summary { padding: 18px 24px; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--ink); }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after { content: "+"; font-size: 20px; color: var(--gold); font-weight: bold; }
+        .faq-item[open] summary::after { content: "-"; }
+        .faq-item .faq-answer { padding: 0 24px 20px; color: var(--ink-70); font-size: 15px; line-height: 1.7; }
+    </style>
+</head>
+<body>
+
+    <!-- SITE HEADER -->
+    <header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="../index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="../logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="../services.html" class="dropdown-trigger" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="../services/design.html">PV System Design</a>
+                            <a href="../services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="../services/review.html">Structural &amp; Electrical Review</a>
+                            <a href="../services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="../services/ev.html">EV Charging Design &amp; Engineering</a>
+                            <a href="../services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="../services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="../services/net-metering.html">Net Metering</a>
+                            <a href="../services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="../tools.html">Tools &amp; Calculators</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../locations.html">Service Areas</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="../contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+    <main class="article-page">
+        <div class="wrap">
+            <div class="article-container">
+                <article>
+                    <div class="article-header">
+                        <div class="article-meta">Engineering Guide â€¢ Electrical Plan Sets â€¢ NEC 705.12</div>
+                        <h1>SolarEdge Home Hub Inverter &amp; Backup Interface (BUI) Electrical Engineering Guide</h1>
+                        <p style="color: var(--ink-60); font-size: 16px;">Comprehensive drafting standards, Single-Line Diagrams (SLD), 200A microgrid isolation, and NEC busbar calculations for permit approval.</p>
+                    </div>
+
+                    <div class="article-body">
+                        <p>The <strong>SolarEdge Home Hub Inverter</strong> paired with the <strong>SolarEdge Backup Interface (BI-EU/BI-US)</strong> represents one of the most flexible residential energy architectures in the United States. Combining high-efficiency DC power optimizers with DC-coupled 400V battery storage and a smart microgrid interconnect device (MID), this platform provides seamless whole-home backup, smart EV charging, and automated generator integration.</p>
+
+                        <p>However, plan submittals featuring the SolarEdge Backup Interface frequently encounter plan-check corrections at municipal building departments (AHJs) due to misunderstandings regarding utility service disconnect ratings, busbar derating, Rapid Shutdown (RSD) signaling, and system grounding configurations. This engineering guide details the exact electrical calculations and Single-Line Diagram drafting requirements needed to secure one-touch permit approval across all 50 states.</p>
+
+                        <h2>1. System Architecture: Whole-Home vs. Partial-Home Backup Configurations</h2>
+                        <p>The SolarEdge Backup Interface acts as the central electrical nexus between the utility revenue meter, the primary distribution panel, the Energy Hub inverters, and auxiliary generators. Designing the system correctly requires choosing the right topological configuration:</p>
+
+                        <h3>Configuration A: Whole-Home Service Entrance Backup (200A Service)</h3>
+                        <p>In a whole-home backup configuration, the Backup Interface is installed directly between the utility meter and the existing 200A main service panel. The integrated 200A main circuit breaker inside the BUI serves as the building's new primary service disconnect. All loads downstream in the main service panel are backed up during grid outages without the need for a separate critical loads subpanel.</p>
+
+                        <h3>Configuration B: Partial-Home / Backup Loads Subpanel</h3>
+                        <p>When the main electrical service is rated at 400A (or when only essential loads such as refrigeration, lighting, internet, and medical equipment are to be supported by a single 7.6kW or 10kW inverter), the BUI is fed from a dedicated feeder breaker in the main service panel and powers a newly installed protected loads subpanel.</p>
+
+                        <table class="calc-table">
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Whole-Home Backup (200A BUI)</th>
+                                    <th>Partial-Home Backup Subpanel</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Interconnection Location</strong></td>
+                                    <td>Service entrance (Meter &rarr; BUI &rarr; Main Panel)</td>
+                                    <td>Feeder from Main Panel &rarr; BUI &rarr; Backup Panel</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Service Disconnect</strong></td>
+                                    <td>200A Breaker in BUI (UL 869A Listed)</td>
+                                    <td>Existing Main Breaker at Main Panel</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Neutral-Ground Bond</strong></td>
+                                    <td>Bonded ONLY inside BUI; Main panel bond removed</td>
+                                    <td>Bonded at Main Panel; BUI neutral floated</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Max Inverter Input</strong></td>
+                                    <td>Up to 3x Energy Hub Inverters (up to 80A total)</td>
+                                    <td>1x to 2x Inverters based on subpanel rating</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2>2. NEC 705.12 Busbar Calculations &amp; Derate Strategies</h2>
+                        <p>Under <strong>NEC Article 705.12(B)</strong>, power source connections to load side busbars must adhere to strict overcurrent protection formulas to prevent busbar overheating. The SolarEdge Backup Interface has an internal busbar rating of <strong>200A</strong> and comes factory-equipped with a 200A main circuit breaker.</p>
+
+                        <div class="callout-box">
+                            <h4>The 120% Rule Formula (NEC 705.12(B)(2)(3)(b)):</h4>
+                            <p><strong>(Busbar Rating &times; 120%) &minus; Main OCPD Rating = Maximum Allowable PV/Inverter Breaker Rating</strong><br />
+                            (200A &times; 1.20) &minus; 200A = <strong>40A Maximum Combined Inverter Breakers</strong></p>
+                        </div>
+
+                        <p>If a project utilizes a single <strong>SolarEdge SE7600H-US</strong> (32A continuous output &times; 125% = 40A OCPD), the system complies directly with the 120% rule without requiring any service panel modification. However, if multiple inverters or larger models are installed (such as an SE10000H-US requiring a 50A breaker or dual SE7600H inverters requiring 80A of breakers), the following engineering solutions must be detailed on Sheet E-01:</p>
+
+                        <ul>
+                            <li><strong>Main Breaker Derate:</strong> Replace the 200A main breaker inside the BUI with a 150A or 175A listed breaker, allowing up to 90A or 65A of inverter backfeed respectively (subject to NEC 220 service load calculation compliance).</li>
+                            <li><strong>Sum of Breakers Rule (NEC 705.12(B)(2)(3)(c)):</strong> Verify that the total sum of all load breakers plus power source breakers does not exceed the ampacity rating of the busbar.</li>
+                            <li><strong>Supply-Side Connection (NEC 705.11):</strong> Utilize a listed tap connection ahead of the main service disconnect where local utility tariffs permit.</li>
+                        </ul>
+
+                        <h2>3. Rapid Shutdown (NEC 690.12) &amp; DC-Coupled Battery Wiring</h2>
+                        <p>SolarEdge systems achieve native module-level <strong>NEC 690.12 Rapid Shutdown</strong> compliance through DC power optimizers (S-Series / P-Series). When AC utility power is cut or the external emergency Rapid Shutdown initiator is pressed:</p>
+                        <ol>
+                            <li>The Energy Hub inverter stops modulating AC power within 100 milliseconds.</li>
+                            <li>The optimizers automatically reduce DC array output voltage to 1 Volt per module within 30 seconds.</li>
+                            <li>In an array of 24 modules, the maximum string voltage in shutdown mode is strictly 24V DC, well below the 30V NEC threshold inside the array boundary.</li>
+                        </ol>
+
+                        <h2>4. Municipal AHJ Plan Set Requirements Checklist</h2>
+                        <p>To avoid plan-check rejections when submitting SolarEdge Backup Interface designs, ensure your engineering permit package contains the following essential drafting details:</p>
+                        <ul>
+                            <li><strong>Complete Single-Line Diagram (SLD):</strong> Clear conductor sizing (AWG/kcmil), insulation ratings (THHN/XHHW-2), conduit types (EMT/PVC), OCPD ratings, and disconnect locations.</li>
+                            <li><strong>Three-Line Communication Schematics:</strong> RS485 communication daisy chain between Inverters, Backup Interface, Energy Net Wireless transceiver, and SolarEdge Energy Bank batteries.</li>
+                            <li><strong>NEC 110.22 &amp; 705.10 Directory Placards:</strong> Complete warning label schedule including "CAUTION: MULTIPLE SOURCES OF POWER" and emergency microgrid isolation instructions.</li>
+                            <li><strong>Structural Attachment Drawings:</strong> Roof layout details with fire setbacks under IFC 1205/NFPA 1 for solar modules, plus wall-mount clearance elevations for inverters and batteries under NFPA 855.</li>
+                        </ul>
+
+                        <div class="callout-box" style="border-left-color: var(--ink); background: #FAF8F5;">
+                            <h4>Need PE-Stamped SolarEdge Permit Plan Sets?</h4>
+                            <p>Daniel Solar Engineering provides complete, permit-ready AutoCAD plan sets and PE-stamped drawings in all 50 states within 24â€“48 hours. <a href="../contact.html" style="color: var(--gold); font-weight: 700; text-decoration: underline;">Request a Project Quote &rarr;</a></p>
+                        </div>
+
+                        <!-- FAQ SECTION -->
+                        <div class="faq-section faq-stack">
+                            <h2 style="border-bottom: none; margin-bottom: 24px;">Frequently Asked Questions (FAQ)</h2>
+
+                            <details class="faq-item">
+                                <summary>How does the SolarEdge Backup Interface (BUI) handle whole-home microgrid isolation?</summary>
+                                <div class="faq-answer">
+                                    <p>The SolarEdge Backup Interface (BUI) contains an integrated 200A utility microgrid isolation contactor (MID). Upon grid loss, it automatically disconnects the home from the utility grid in under 100 milliseconds and signals the Energy Hub inverters to create an intentional islanded AC voltage source.</p>
+                                </div>
+                            </details>
+
+                            <details class="faq-item">
+                                <summary>How do you calculate NEC 705.12 busbar compliance when connecting SolarEdge inverters to the Backup Interface?</summary>
+                                <div class="faq-answer">
+                                    <p>When connecting to the internal 200A busbar of the SolarEdge Backup Interface, the 120% rule (NEC 705.12(B)(2)(3)(b)) allows up to 40A of inverter breaker capacity (200A Bus rating x 1.2 - 200A Main Breaker = 40A). For larger multi-inverter systems up to 64A or 80A, the main service breaker inside the BUI can be derated to 150A or 175A, or a sum-of-breakers calculation under NEC 705.12(B)(2)(3)(c) can be applied.</p>
+                                </div>
+                            </details>
+
+                            <details class="faq-item">
+                                <summary>Can SolarEdge DC-coupled Home Batteries black-start during an outage?</summary>
+                                <div class="faq-answer">
+                                    <p>Yes. SolarEdge Energy Hub inverters feature native 400V DC-coupled battery architecture with autonomous black-start capabilities. If the battery is completely depleted overnight during an extended grid outage, the inverter remains dormant until morning solar irradiance energizes the DC optimizers, awakening the system to recharge the battery.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- SITE FOOTER -->
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="brand-footer">
+                        <div class="logo-ring-footer"><img class="logo-img-header" src="../logo_ecard.png" alt="Daniel Solar Logo" /></div>
+                        <span>Daniel's Solar <span class="name-sub">Engineering &amp; Design</span></span>
+                    </div>
+                    <p style="margin-top: 14px; font-size: 14px; color: var(--ink-60);">Nationwide permit-ready solar PV engineering, PE stamping, structural load analysis, and electrical design for residential and commercial contractors.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../services.html">Our Services</a></li>
+                        <li><a href="../tools.html">Engineering Tools</a></li>
+                        <li><a href="../projects.html">Featured Projects</a></li>
+                        <li><a href="../blog.html">Technical Blog</a></li>
+                        <li><a href="../contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <p style="font-size: 14px; line-height: 1.8; color: var(--ink-60);">
+                        <strong>Daniel Solar Engineering and Design</strong><br />
+                        San Diego, CA 92101<br />
+                        Phone: <a href="tel:+18584226880" style="color: var(--gold);">+1-858-422-6880</a><br />
+                        Email: <a href="mailto:info@danielsolared.com" style="color: var(--gold);">info@danielsolared.com</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Daniel Solar Engineering and Design LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <!-- Tawk.to Chat -->
+        <script type="text/javascript">
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"),
+                    s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = "https://embed.tawk.to/6aa881879117af34473db177/1k2h3juq0";
+                s1.charset = "UTF-8";
+                s1.setAttribute("crossorigin", "*");
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>
+</body>
+</html>

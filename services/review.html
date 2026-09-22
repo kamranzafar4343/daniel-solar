@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Structural & Electrical Review — Daniel Solar Engineering and Design
+    </title>
+    <meta
+      name="description"
+      content="Independent structural and electrical review: load calculations, conductor sizing, overcurrent protection, and rapid-shutdown compliance, stamped and defensible."
+    />
+    <link
+      rel="canonical"
+      href="https://danielsolared.com/services/review.html" target="_blank" rel="noopener"
+    />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/favicon-16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="../site.webmanifest" />
+    <meta name="theme-color" content="#1B1712" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:site_name"
+      content="Daniel Solar Engineering and Design"
+    />
+    <meta
+      property="og:title"
+      content="Structural & Electrical Review — Daniel Solar Engineering and Design"
+    />
+    <meta
+      property="og:description"
+      content="Independent structural and electrical review: load calculations, conductor sizing, overcurrent protection, and rapid-shutdown compliance, stamped and defensible."
+    />
+    <meta
+      property="og:image"
+      content="https://danielsolared.com/assets/og-image.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:url"
+      content="https://danielsolared.com/services/review.html"
+    />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Structural & Electrical Review — Daniel Solar Engineering and Design"
+    />
+    <meta
+      name="twitter:description"
+      content="Independent structural and electrical review: load calculations, conductor sizing, overcurrent protection, and rapid-shutdown compliance, stamped and defensible."
+    />
+    <meta
+      name="twitter:image"
+      content="https://danielsolared.com/assets/og-image.jpg"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Jost:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css?v=f50c70f639be" />
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.danielsolared.com/services/review.html#webpage",
+      "url": "https://www.danielsolared.com/services/review.html",
+      "name": "Structural & Electrical Review — Daniel Solar Engineering",
+      "description": "Rigorous engineering evaluation verifying load calculations, conductor ampacity sizing, voltage drop, and single-line/three-line diagrams built to pass AHJ scrutiny."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.danielsolared.com/services/review.html#service",
+      "name": "Structural & Electrical Review",
+      "serviceType": "Structural & Electrical Engineering Review",
+      "provider": {
+        "@type": "Organization",
+        "name": "Daniel Solar Engineering and Design",
+        "url": "https://www.danielsolared.com/"
+      },
+      "description": "Independent structural and electrical engineering review with PE stamp validation.",
+      "areaServed": "United States"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.danielsolared.com/services/review.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.danielsolared.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.danielsolared.com/services.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Structural & Electrical Review",
+          "item": "https://www.danielsolared.com/services/review.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+    <!-- Regional coverage section styling (scoped, self-contained) -->
+    <style>
+      .regions-section .section-head p {
+        max-width: 680px;
+      }
+      .regions-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: 36px;
+      }
+      .region-card {
+        position: relative;
+        background: var(--bg-dark, #1b1712);
+        border: 1px solid rgba(212, 175, 55, 0.25);
+        border-radius: 4px;
+        padding: 28px 26px 26px;
+        overflow: hidden;
+        transition:
+          border-color 0.2s ease,
+          transform 0.2s ease;
+      }
+      .region-card:hover {
+        border-color: rgba(212, 175, 55, 0.6);
+        transform: translateY(-2px);
+      }
+      .region-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #d4af37, transparent);
+        opacity: 0.7;
+      }
+      .region-card .region-tag {
+        font-family: "Space Mono", monospace;
+        font-size: 11.5px;
+        letter-spacing: 0.08em;
+        color: #a9812a;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 14px;
+      }
+      .region-card .region-tag::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        background: #d4af37;
+        border-radius: 50%;
+        flex: none;
+        box-shadow: 0 0 6px rgba(212, 175, 55, 0.8);
+      }
+      .region-card h4 {
+        font-family: "Playfair Display", serif;
+        font-size: 19px;
+        font-weight: 600;
+        color: #f5eeda;
+        margin: 0 0 10px;
+      }
+      .region-card p {
+        font-family: "Jost", sans-serif;
+        font-size: 14.5px;
+        line-height: 1.7;
+        color: rgba(245, 238, 218, 0.68);
+        margin: 0;
+      }
+      @media (max-width: 720px) {
+        .regions-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Structural & Electrical Review",
+        "name": "Structural & Electrical Review",
+        "description": "Engineering evaluation verifying dead/live/wind load calculations, conductor ampacity sizing, voltage drop mitigation, and single-line/three-line diagrams built to pass local AHJ scrutiny.",
+        "provider": {
+          "@type": "ProfessionalService",
+          "name": "Daniel Solar Engineering and Design",
+          "url": "https://www.danielsolared.com/"
+        },
+        "areaServed": { "@type": "Country", "name": "United States" },
+        "url": "https://www.danielsolared.com/services/review.html"
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="../index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="../logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="../services.html" class="dropdown-trigger active" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="../services/design.html">PV System Design</a>
+                            <a href="../services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="../services/review.html" class="active" aria-current="page">Structural &amp; Electrical Review</a>
+                            <a href="../services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="../services/ev.html">EV Charging Design &amp; Engineering</a>
+                            <a href="../services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="../services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="../services/net-metering.html">Net Metering</a>
+                            <a href="../services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="../tools.html">Tools &amp; Calculators</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../locations.html">Service Areas</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="../contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="wrap">
+          <div class="eyebrow">REVIEW & COMPLIANCE</div>
+          <h1>Structural &amp; Electrical Review</h1>
+          <p>
+            Our independent structural and electrical engineering reviews
+            evaluate your existing project documentation against strict
+            municipal compliance and utility criteria. We audit conductor
+            ampacity pathways, overcurrent protection parameters, and
+            rapid-shutdown layouts. If required by your local building
+            department, targeted structural load calculation analysis for roof
+            attachments, ballasted arrays, and ground-mount foundations can be
+            integrated to address specific local AHJ redlines.
+          </p>
+          <div class="cta-actions" style="margin-top: 28px">
+            <a href="../contact.html" class="btn btn-amber btn-cad">Get Started</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="review-why">
+        <div class="wrap">
+          <div class="eyebrow">WHY INDEPENDENT REVIEW MATTERS</div>
+          <h2 style="margin-top: 16px; font-size: 30px">
+            Catch issues before they become costly change orders
+          </h2>
+          <p
+            style="
+              margin-top: 16px;
+              color: var(--ink-70);
+              font-size: 15.5px;
+              line-height: 1.75;
+              max-width: 760px;
+            "
+          >
+            An independent structural and electrical design audit cross-checks
+            your system documentation against rigid municipal safety thresholds.
+            We verify that critical electrical components are accurately sized
+            for field deployment, helping B2B solar installers avoid field
+            installation delays and plan-check corrections.
+          </p>
+          <div class="grid-2" style="margin-top: 32px; gap: 32px">
+            <div class="reveal" style="background: transparent">
+              <ul style="list-style: none; padding: 0">
+                <li
+                  style="
+                    padding: 12px 0;
+                    border-bottom: 1px solid var(--border-light);
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                  "
+                >
+                  <span style="color: var(--gold); font-size: 20px">✓</span>
+                  <strong>Structural Audits</strong> –Verification of attachment
+                  points, racking layouts, ballast maps, and foundation designs,
+                  with advanced structural load calculations available as
+                  needed.
+                </li>
+                <li
+                  style="
+                    padding: 12px 0;
+                    border-bottom: 1px solid var(--border-light);
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                  "
+                >
+                  <span style="color: var(--gold); font-size: 20px">✓</span>
+                  <strong>Code Compliance </strong> – Verification of conductor
+                  ampacity sizing, overcurrent protection devices (OCPD), and
+                  rapid-shutdown system safety.
+                </li>
+              </ul>
+            </div>
+            <div class="reveal" style="background: transparent">
+              <ul style="list-style: none; padding: 0">
+                <li
+                  style="
+                    padding: 12px 0;
+                    border-bottom: 1px solid var(--border-light);
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                  "
+                >
+                  <span style="color: var(--gold); font-size: 20px">✓</span>
+                  <strong>Code References</strong> – Continuous design alignment
+                  matching the latest active adoptions of the National
+                  Electrical Code (NEC 2020/2023), IBC, and ASCE 7 structural
+                  standards.
+                </li>
+                <li
+                  style="
+                    padding: 12px 0;
+                    border-bottom: 1px solid var(--border-light);
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                  "
+                >
+                  <span style="color: var(--gold); font-size: 20px">✓</span>
+                  <strong>PE Stamping Options</strong> – Certification solutions
+                  providing formal review documentation and active,
+                  state-specific U.S. Professional Engineer (P.E.) stamps upon
+                  request.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="review-process">
+        <div class="wrap">
+          <div class="eyebrow">OUR REVIEW PROCESS</div>
+          <h2 style="margin-top: 16px; font-size: 30px">
+            From document intake to engineering verification
+          </h2>
+          <div class="process-line reveal" style="margin-top: 32px">
+            <div class="process-step">
+              <div class="process-tick">01</div>
+              <h4>Submit design documents</h4>
+              <p>
+                Supply your initial AutoCAD layouts, detailed hardware bills of
+                material (BOM), and site structural photographs.
+              </p>
+            </div>
+            <div class="process-step">
+              <div class="process-tick">02</div>
+              <h4>Structural evaluation</h4>
+              <p>
+                We audit your structural configuration against local weather
+                arrays. If required by your AHJ, specialized point-load and
+                wind-drag calculations can be performed.
+              </p>
+            </div>
+            <div class="process-step">
+              <div class="process-tick">03</div>
+              <h4>Electrical verification</h4>
+              <p>
+                We cross-reference your electrical schematics, checking
+                conductor ampacity correction factors, main breaker OCPD sizes,
+                and NEC-compliant rapid-shutdown layouts.
+              </p>
+            </div>
+            <div class="process-step">
+              <div class="process-tick">04</div>
+              <h4>Final delivery &amp; optional stamp</h4>
+              <p>
+                Receive your finalized engineering data package and review
+                documentation. Active state-specific P.E. stamps can be appended
+                to your final files upon request.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="review-faq">
+<div class="wrap">
+<div class="eyebrow">FAQs</div>
+<h2 style="margin-top: 16px; font-size: 26px">
+            Common questions about structural &amp; electrical review
+          </h2>
+<div class="faq-stack">
+<details class="faq-item"><summary>Do you evaluate ground-mount array foundations during a
+                structural review?</summary><div class="faq-answer"><p>
+                Yes. Our engineering team reviews ground-mount configurations
+                against site-specific layouts and local soil profile
+                requirements. If your local AHJ explicitly requires soil-bearing
+                capacity data or localized wind drag math, targeted structural
+                load calculations can be integrated into your review package
+                upon request.
+              </p></div></details>
+<details class="faq-item"><summary>Which National Electrical Code (NEC) editions do your reviews
+                cover?</summary><div class="faq-answer"><p>
+                Our design audits cross-reference configurations against the
+                National Electrical Code (NEC) 2017, 2020, and 2023 frameworks
+                (NFPA 70). We systematically evaluate state-specific municipal
+                amendments, main breaker overcurrent protection device (OCPD)
+                sizing, and strict rapid-shutdown system compliance.
+              </p></div></details>
+<details class="faq-item"><summary>What is the typical engineering turnaround window for an
+                independent review?</summary><div class="faq-answer"><p>
+                Standard residential structural and electrical design reviews
+                are finalized within a reliable 48–72 hour pipeline. Complex
+                Commercial &amp; Industrial (C&amp;I) solar deployments or multi-phase
+                electrical distribution systems typically require up to 5
+                business days for comprehensive technical validation.
+              </p></div></details>
+<details class="faq-item"><summary>Can you provide structural or electrical P.E. stamps for the
+                reviewed plan sets?</summary><div class="faq-answer"><p>
+                Yes. While our independent engineering reviews assess code
+                alignment natively, we offer formal certification additions. If
+                your local building official or utility network mandates
+                certified validation, an active Professional Engineer (P.E.)
+                registered in your project's specific state can apply a
+                structural or electrical stamp to your drawings upon request.
+              </p></div></details>
+</div>
+</div>
+</section>
+
+      <!-- Nationwide Regional Coverage -->
+      <section class="section section-alt regions-section" id="review-regions">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="eyebrow">NATIONWIDE COVERAGE</div>
+            <h2 style="margin-top: 16px; font-size: 26px">
+              Nationwide Review Coverage &amp; Regional Compliance
+            </h2>
+            <p
+              style="
+                margin-top: 16px;
+                color: var(--ink-70);
+                font-size: 15.5px;
+                line-height: 1.75;
+              "
+            >
+              Our independent engineering review pipeline evaluates project
+              files across diverse regional climates and localized grid
+              standards. We actively align layouts with individual state rules,
+              utility company interconnection requirements, and specific climate
+              load variables.
+            </p>
+          </div>
+
+          <div class="regions-grid reveal">
+            <div class="region-card">
+              <div class="region-tag">West Coast &amp; Pacific</div>
+              <h4>Seismic &amp; Wildfire Zones</h4>
+              <p>
+                Built for strict seismic zone requirements, localized wildfire
+                mitigation criteria, and Western utility integration rules.
+              </p>
+            </div>
+            <div class="region-card">
+              <div class="region-tag">Southwest &amp; Desert</div>
+              <h4>High-Heat &amp; Wind Exposure</h4>
+              <p>
+                Optimized for high-temperature electrical derating metrics,
+                exposure category wind forces, and advanced utility
+                rapid-shutdown mandates.
+              </p>
+            </div>
+            <div class="region-card">
+              <div class="region-tag">Midwest &amp; Northeast</div>
+              <h4>Snow &amp; Frost Load Design</h4>
+              <p>
+                Engineered to evaluate extreme snow load pressures, frost line
+                depth variations for ground-mounts, and heavy structural
+                live/dead load calculations.
+              </p>
+            </div>
+            <div class="region-card">
+              <div class="region-tag">East Coast &amp; Atlantic</div>
+              <h4>Hurricane &amp; Coastal Wind</h4>
+              <p>
+                Focused on coastal high-velocity hurricane zones (HVHZ),
+                wind-borne debris criteria, and specialized structural wind drag
+                thresholds.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="review-related">
+        <div class="wrap">
+          <div class="eyebrow">RELATED SERVICES</div>
+          <h2 style="margin-top: 16px; font-size: 26px">
+            Combine with other engineering services
+          </h2>
+          <div class="grid-3" style="margin-top: 32px; gap: 24px">
+            <div
+              class="card"
+              style="background: var(--bg-dark); border: 1px solid var(--gold)"
+            >
+              <h3>PV System Design</h3>
+              <p>
+                We can design the system and then review it internally – a
+                seamless workflow.
+              </p>
+              <a href="design.html" class="card-link">Learn more →</a>
+            </div>
+            <div
+              class="card"
+              style="background: var(--bg-dark); border: 1px solid var(--gold)"
+            >
+              <h3>Permit Plan Sets &amp; PE Stamps</h3>
+              <p>
+                Get your entire plan set stamped after we've verified every
+                detail.
+              </p>
+              <a href="permitting.html" class="card-link">Learn more →</a>
+            </div>
+            <div
+              class="card"
+              style="background: var(--bg-dark); border: 1px solid var(--gold)"
+            >
+              <h3>Commercial &amp; Utility-Scale</h3>
+              <p>
+                Large projects often require rigorous structural and electrical
+                sign-off.
+              </p>
+              <a href="commercial.html" class="card-link">Learn more →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-tight">
+        <div class="wrap">
+          <div class="cta-band reveal">
+            <h2>Ready for an independent review?</h2>
+            <p style="margin-top: 8px">
+              Send us your design and specifications – we'll deliver a stamped
+              review within 48 hours.
+            </p>
+            <div class="cta-actions">
+              <a href="../contact.html" class="btn btn-amber btn-cad">Get Started</a
+              >
+              <a href="tel:+18584226880" class="btn btn-outline"
+                >+1 (858) 422-6880</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <!-- same footer as others -->
+      <div class="wrap">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="../index.html" class="brand">
+              <div class="logo-ring-footer"><img class="logo-img-footer" src="../logo_ecard.png" alt="Daniel's Solar Logo" /></div>
+              <span>Daniel's Solar Engineering and Design</span>
+            </a>
+            <p>
+              Jurisdiction-ready solar permit design and engineering services
+              stamped by licensed P.E.s across all 50 U.S. states. We deliver
+              code-compliant plan sets, structural attachments, and electrical
+              diagrams tailored to local AHJ and NEC standards.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="../about.html">About</a></li>
+              <li><a href="../projects.html">Projects</a></li>
+              <li><a href="../contact.html">Contact</a></li>
+              <li><a href="../e-card.html">Digital Card</a></li>
+                        <li><a href="../locations.html">Service Areas Directory</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="design.html">PV System Design</a></li>
+              <li><a href="permitting.html">Permit Plan Sets</a></li>
+              <li>
+                <a href="commercial.html">Commercial &amp; Utility-Scale</a>
+              </li>
+              <li><a href="net-metering.html">Net Metering</a></li>
+              <li><a href="ev.html">EV Charging Design</a></li>
+              <li>
+                <a href="california-mandates.html">California Energy Mandates</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul>
+              <li>
+                <a href="mailto:info@danielsolared.com"
+                  >info@danielsolared.com</a
+                >
+              </li>
+              <li><a href="tel:+18584226880">+1 (858) 422-6880</a></li>
+              <li>
+                <span style="font-size: 14px">Licensed across 40+ regions</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+            <div class="footer-bottom">
+          <span
+            >&copy; 2026 Daniel's Solar Engineering and Design. All rights
+            reserved.</span
+          >
+          <span>DWG NO. 2026-002 &middot; REV D</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+      <!-- Tawk.to Chat -->
+        <script type="text/javascript">
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"),
+                    s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = "https://embed.tawk.to/6aa881879117af34473db177/1k2h3juq0";
+                s1.charset = "UTF-8";
+                s1.setAttribute("crossorigin", "*");
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>
+</body>
+</html>

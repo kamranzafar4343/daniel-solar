@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Commercial EV Fleet Depot Electrical Engineering & 3-Phase Solar Canopy Integration</title>
+    <meta name="description" content="Complete engineering guide for commercial electric vehicle (EV) fleet charging depots: utility transformer sizing, 480V switchgear, peak demand management, and solar canopy integration." />
+    <link rel="canonical" href="https://www.danielsolared.com/blog/commercial-ev-fleet-depot-electrical-engineering.html" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <meta name="theme-color" content="#1B1712" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Daniel Solar Engineering and Design" />
+    <meta property="og:title" content="Commercial EV Fleet Depot Electrical Engineering Guide" />
+    <meta property="og:description" content="Master commercial EV fleet charging electrical design, utility transformer sizing, and solar canopy engineering." />
+    <meta property="og:image" content="https://www.danielsolared.com/meridian-business-park.jpg" />
+    <meta property="og:url" content="https://www.danielsolared.com/blog/commercial-ev-fleet-depot-electrical-engineering.html" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Commercial EV Fleet Depot Engineering" />
+    <meta name="twitter:description" content="Commercial fleet electrification and solar canopy engineering." />
+    <meta name="twitter:image" content="https://www.danielsolared.com/meridian-business-park.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Jost:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css?v=f50c70f639be" />
+
+    <!-- Structured Data JSON-LD Schemas -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://www.danielsolared.com/blog/commercial-ev-fleet-depot-electrical-engineering.html#article",
+      "url": "https://www.danielsolared.com/blog/commercial-ev-fleet-depot-electrical-engineering.html",
+      "headline": "Commercial EV Fleet Depot Electrical Engineering & 3-Phase Solar Canopy Integration",
+      "description": "Comprehensive engineering guide for commercial electric vehicle fleet depots detailing medium-voltage utility transformer sizing, 480V 3-phase switchgear architectures, automated charge management, and PE stamped permit packages.",
+      "inLanguage": "en-US",
+      "mainEntityOfPage": "https://www.danielsolared.com/blog/commercial-ev-fleet-depot-electrical-engineering.html",
+      "datePublished": "2026-09-03",
+      "dateModified": "2026-09-03",
+      "author": {
+        "@type": "Person",
+        "name": "Daniel",
+        "jobTitle": "Principal Engineering Lead",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Daniel Solar Engineering and Design",
+          "url": "https://www.danielsolared.com/"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Daniel Solar Engineering and Design",
+        "url": "https://www.danielsolared.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.danielsolared.com/logo_ecard.png"
+        }
+      },
+      "image": "https://www.danielsolared.com/meridian-business-park.jpg"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.danielsolared.com/blog/commercial-ev-fleet-depot-electrical-engineering.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.danielsolared.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.danielsolared.com/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Commercial EV Fleet Depot Guide",
+          "item": "https://www.danielsolared.com/blog/commercial-ev-fleet-depot-electrical-engineering.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.danielsolared.com/blog/commercial-ev-fleet-depot-electrical-engineering.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is continuous electrical load calculated for commercial EV charging depots under NEC 625?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NEC Section 625.42 mandates that electric vehicle charging equipment be treated as a continuous load (125% factor) unless managed by an automated Energy Management System (EMS / ALMS) that dynamically throttles charger draw."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why are solar parking canopies paired with commercial EV fleet charging hubs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Solar canopies offset expensive peak demand utility charges (demand ratchet tariffs), generate clean on-site generation, and provide weather protection for commercial logistics delivery vehicles."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What utility service voltage is standard for commercial DC Fast Charging (DCFC) depots?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Commercial fleet charging depots typically require 480V 3-phase, 4-wire utility service fed by a dedicated pad-mounted utility transformer ranging from 500 kVA to 2,500 kVA."
+          }
+        }
+      ]
+    }
+  ]
+}
+    </script>
+
+    <style>
+        .article-page { padding: 64px 0 96px; background: var(--paper); }
+        .article-container { max-width: 860px; margin: 0 auto; }
+        .article-header { margin-bottom: 40px; text-align: center; }
+        .article-header h1 { font-family: var(--font-heading); font-size: clamp(30px, 4vw, 44px); color: var(--ink); line-height: 1.25; margin: 16px 0; }
+        .article-body { font-size: 16.5px; line-height: 1.8; color: var(--ink); }
+        .article-body h2 { font-family: var(--font-heading); font-size: 26px; color: var(--ink); margin: 44px 0 18px; padding-bottom: 10px; border-bottom: 2px solid var(--gold); }
+        .article-body h3 { font-size: 20px; color: var(--ink); margin: 28px 0 12px; }
+        .article-body p { margin-bottom: 20px; }
+        .article-body ul, .article-body ol { margin-bottom: 24px; padding-left: 24px; }
+        .article-body li { margin-bottom: 8px; }
+        .callout-box { background: #FAF8F5; border-left: 4px solid var(--gold); padding: 24px 28px; margin: 32px 0; border-radius: 4px; border: 1px solid var(--line); }
+        .callout-box h4 { font-size: 17px; margin-bottom: 8px; color: var(--ink); }
+        .callout-box p { margin-bottom: 0; font-size: 15px; color: var(--ink-70); }
+    </style>
+</head>
+<body>
+
+    <!-- SITE HEADER -->
+    <header class="site-header">
+        <div class="wrap">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+            <a href="../index.html" class="brand">
+                <div class="logo-ring-header"><img class="logo-img-header" src="../logo_ecard.png" alt="Daniel Solar's Logo" width="46" height="46" style="max-width:46px; max-height:46px;" /></div>
+                <span>Daniel's Solar
+                    <span class="name-sub">Engineering &amp; Design</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="has-dropdown" id="services-nav-item">
+                        <input type="checkbox" id="services-toggle" class="dropdown-toggle-checkbox" />
+                        <div class="nav-item-row">
+                            <a href="../services.html" class="dropdown-trigger" id="services-nav-link">Services</a>
+                            <label for="services-toggle" class="dropdown-caret" aria-label="Toggle services submenu"><span></span></label>
+                        </div>
+                        <div class="services-dropdown">
+                            <a href="../services/design.html">PV System Design</a>
+                            <a href="../services/permitting.html">Permit Plan Sets &amp; PE Stamps</a>
+                            <a href="../services/review.html">Structural &amp; Electrical Review</a>
+                            <a href="../services/interconnection.html">Interconnection &amp; Utility Applications</a>
+                            <a href="../services/ev.html">EV Charging Design &amp; Engineering</a>
+                            <a href="../services/electrical-design.html">Electrical Design, MPU &amp; ADU Plans</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="../services/commercial.html">Commercial &amp; Utility-Scale Design</a>
+                            <a href="../services/net-metering.html">Net Metering</a>
+                            <a href="../services/california-mandates.html">California Energy Mandates</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="../tools.html">Tools &amp; Calculators</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../locations.html">Service Areas</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="../contact.html" class="btn btn-primary btn-cad">Start a Project</a>
+                </div>
+            </nav>
+
+            <label for="nav-toggle" class="menu-toggle" aria-label="Toggle menu"><span></span></label>
+        </div>
+    </header>
+
+    <main class="article-page">
+        <div class="wrap">
+            <article class="article-container">
+                
+                <header class="article-header">
+                    <div class="meta-strip" style="justify-content:center;">
+                        <span class="meta-tag">EV FLEET &middot; 480V SWITCHGEAR</span>
+                        <span>SEPTEMBER 2026 &middot; 11 MIN READ</span>
+                    </div>
+                    <h1>Commercial EV Fleet Depot Electrical Engineering &amp; 3-Phase Solar Canopy Integration</h1>
+                    <p style="font-size:18px; color:var(--ink-70); max-width:720px; margin:0 auto;">A complete electrical engineering roadmap covering utility transformer sizing, 480V 3-phase switchgear architectures, automated load management systems (ALMS), and solar canopy interconnection.</p>
+                </header>
+
+                <div class="article-body">
+                    <p>Electrifying commercial delivery fleets, municipal transit buses, and corporate logistics hubs requires massive electrical power infrastructure. Deploying dozens of <strong>Level 2 chargers (19.2 kW each)</strong> alongside <strong>DC Fast Chargers (150 kW to 350 kW each)</strong> creates instantaneous peak power demands measured in megawatts.</p>
+
+                    <p>Designing a permit-ready commercial fleet charging depot requires deep expertise in <strong>utility service coordination (SCE, PG&amp;E, SDG&amp;E)</strong>, <strong>480V three-phase switchgear layout</strong>, <strong>Automated Load Management Systems (ALMS per NEC 625.42)</strong>, and <strong>on-site solar canopy generation</strong>.</p>
+
+                    <h2>1. Utility Transformer &amp; Service Entrance Sizing</h2>
+                    <p>Electric utilities size dedicated pad-mounted transformers based on connected continuous charging loads:</p>
+                    <p>$$ \text{Service Amperes (480V 3}\phi\text{)} = \frac{\text{Total Fleet Charging Load (kVA)} \times 1000}{\sqrt{3} \times 480\text{V}} $$</p>
+
+                    <ul>
+                        <li><strong>10-Vehicle Delivery Van Depot:</strong> $10 \times 19.2\text{ kW} \times 1.25 = \mathbf{240\text{ kVA}}$ (Requires 400A 480V 3-phase service).</li>
+                        <li><strong>50-Vehicle Mixed Fleet Depot (Level 2 + DCFC):</strong> $\approx \mathbf{1,500\text{ kVA}}$ (Requires dedicated 2,000A 480V switchgear).</li>
+                    </ul>
+
+                    <div class="callout-box">
+                        <h4>⚡ Engineering Insight: Automated Load Management Systems (ALMS)</h4>
+                        <p>Under NEC 625.42, implementing an active ALMS software controller allows electrical engineers to apply diversity factors to total service calculations, reducing required utility transformer size and saving hundreds of thousands of dollars in utility upgrade fees.</p>
+                    </div>
+
+                    <h2>2. 480V Switchgear &amp; Substation Design</h2>
+                    <p>Commercial depot single-line diagrams must incorporate:</p>
+                    <ol>
+                        <li><strong>Main-Tie-Main (MTM) Switchgear:</strong> Dual utility feeds with automatic transfer switches (ATS) for critical emergency operations.</li>
+                        <li><strong>Transient Voltage Surge Suppression (TVSS):</strong> Protecting sensitive DC fast charging electronics against utility grid surges.</li>
+                    </ol>
+
+                    <h2>3. Solar Canopy &amp; BESS Peak Shaving Integration</h2>
+                    <p>Coupling overhead solar carport canopies with stationary battery energy storage systems (BESS) creates a closed-loop microgrid that charges commercial vehicles during high solar generation hours while shaving utility demand ratchets during evening peak rates.</p>
+
+                    <div class="cta-band" style="margin-top:48px;">
+                        <h2>Planning a Commercial EV Fleet Depot Project?</h2>
+                        <p style="color:rgba(255,255,255,0.7); margin-top:8px;">Our licensed Professional Engineers produce complete jurisdiction-ready EV fleet infrastructure and solar canopy permit sets in 24 to 48 hours nationwide.</p>
+                        <div class="cta-actions" style="margin-top:20px;">
+                            <a href="../contact.html" class="btn btn-primary btn-cad">Get an EV Infrastructure Quote &rarr;</a>
+                            <a href="../projects.html" class="btn btn-secondary">View Sample Commercial Plan Sets</a>
+                        </div>
+                    </div>
+
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- SITE FOOTER -->
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="brand">
+                        <div class="logo-ring-footer"><img class="logo-img-footer" src="../logo_ecard.png" alt="Daniel Solar Logo" /></div>
+                        <span>Daniel's Solar Engineering and Design</span>
+                    </a>
+                    <p>Jurisdiction-ready solar permit design and engineering services stamped by licensed P.E.s across all 50 U.S. states.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../projects.html">Projects</a></li>
+                        <li><a href="../tools.html">Tools &amp; Calculators</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Engineering Tools</h4>
+                    <ul>
+                        <li><a href="../resources/solar-voltage-drop-calculator.html">Voltage Drop Calculator</a></li>
+                        <li><a href="../resources/commercial-solar-roi-payback-calculator.html">Solar ROI Calculator</a></li>
+                        <li><a href="../resources/solar-permit-checklist.html">AHJ Permit Checklist</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@danielsolared.com">info@danielsolared.com</a></li>
+                        <li><a href="tel:+18584226880">+1 (858) 422-6880</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Daniel's Solar Engineering and Design. All rights reserved. &middot; Irvine, CA</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tawk.to Chat -->
+        <script type="text/javascript">
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"),
+                    s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = "https://embed.tawk.to/6aa881879117af34473db177/1k2h3juq0";
+                s1.charset = "UTF-8";
+                s1.setAttribute("crossorigin", "*");
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>
+<script src="../script.js"></script>
+</body>
+</html>
