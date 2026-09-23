@@ -480,6 +480,22 @@
             .home-footer .footer-links a { font-size: 13px; }
             .home-footer .footer-base { display: grid; gap: 9px; }
         }
+        /* Classic animated hero sun */
+        .hero-classic-sun {
+            transform-box: view-box;
+            transform-origin: 452px 90px;
+        }
+        .hero-classic-sun-core {
+            filter: drop-shadow(0 0 6px rgba(212, 175, 55, .48));
+        }
+        .hero-classic-rays { opacity: .92; }
+        .hero-classic-beam {
+            stroke: #d4af37;
+            stroke-width: 2.2;
+            stroke-linecap: round;
+            stroke-dasharray: 25 8;
+            filter: drop-shadow(0 0 4px rgba(212, 175, 55, .55));
+        }
     </style>
 </head>
 <body id="top">
@@ -565,38 +581,11 @@
                                     <stop offset="0.55" stop-color="#17324B" />
                                     <stop offset="1" stop-color="#0B2034" />
                                 </linearGradient>
-                                <radialGradient id="hero-sun-halo">
-                                    <stop offset="0" stop-color="#FFF5B8" stop-opacity=".88" />
-                                    <stop offset=".34" stop-color="#FFCA5B" stop-opacity=".52" />
-                                    <stop offset=".68" stop-color="#FF923D" stop-opacity=".2" />
-                                    <stop offset="1" stop-color="#F26A2C" stop-opacity="0" />
-                                </radialGradient>
-                                <radialGradient id="hero-sun-corona">
-                                    <stop offset="0" stop-color="#FFF5B7" stop-opacity=".62" />
-                                    <stop offset=".58" stop-color="#FFA243" stop-opacity=".36" />
-                                    <stop offset="1" stop-color="#F36D2F" stop-opacity="0" />
-                                </radialGradient>
-                                <linearGradient id="hero-sun-soft-ray" x1="452" y1="58" x2="452" y2="23" gradientUnits="userSpaceOnUse">
-                                    <stop offset="0" stop-color="#FFE491" stop-opacity=".9" />
-                                    <stop offset=".55" stop-color="#FFB54B" stop-opacity=".7" />
-                                    <stop offset="1" stop-color="#FF9B3A" stop-opacity="0" />
-                                </linearGradient>
-                                <radialGradient id="hero-sun-core-fill" cx=".37" cy=".3" r=".75">
-                                    <stop offset="0" stop-color="#FFFDF0" />
-                                    <stop offset=".28" stop-color="#FFF2AF" />
-                                    <stop offset=".57" stop-color="#FFD06C" />
-                                    <stop offset=".82" stop-color="#FF9A3B" />
-                                    <stop offset="1" stop-color="#D86329" />
-                                </radialGradient>
-                                <clipPath id="hero-sun-disc-clip"><circle cx="452" cy="90" r="32" /></clipPath>
-                                <filter id="hero-sun-surface-soften"><feGaussianBlur stdDeviation="1.2" /></filter>
-                                <filter id="hero-sun-ray-soften" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="1.2" /></filter>
                             </defs>
 
-                            <!-- one animated ray travels from the sun to the panels -->
-                            <g class="hero-sunlight" aria-hidden="true">
-                                <line class="hero-light-ray" x1="438" y1="103" x2="323" y2="182" />
-                                <circle class="hero-light-particle" cx="438" cy="103" r="3" />
+                            <!-- One animated sunlight beam from the sun to the array -->
+                            <g aria-hidden="true">
+                                <line class="hero-classic-beam" x1="432" y1="109" x2="323" y2="182" />
                             </g>
 
                             <!-- ground line -->
@@ -626,26 +615,20 @@
                                     <polygon points="276,214 295,209 320,227 300,232" />
                                     <polygon points="295,209 314,204 340,222 320,227" />
                                 </g>
-                                <polygon class="hero-panel-glow" points="205,158 235,150 340,222 300,232" fill="#F8E2A0" opacity="0" />
                             </g>
 
-                            <!-- a luminous solar disc with a soft, shifting corona -->
-                            <circle class="hero-sun-halo" cx="452" cy="90" r="80" fill="url(#hero-sun-halo)" aria-hidden="true" />
-                            <circle class="hero-sun-corona" cx="452" cy="90" r="54" fill="url(#hero-sun-corona)" aria-hidden="true" />
-                            <g class="hero-sun-soft-rays" stroke="url(#hero-sun-soft-ray)" stroke-width="6" stroke-linecap="round" filter="url(#hero-sun-ray-soften)" aria-hidden="true">
-                                <line x1="452" y1="58" x2="452" y2="23" />
-                                <line x1="452" y1="58" x2="452" y2="23" transform="rotate(76 452 90)" />
-                                <line x1="452" y1="58" x2="452" y2="23" transform="rotate(152 452 90)" />
-                                <line x1="452" y1="58" x2="452" y2="23" transform="rotate(228 452 90)" />
-                                <line x1="452" y1="58" x2="452" y2="23" transform="rotate(304 452 90)" />
-                            </g>
-                            <g class="hero-sun" aria-hidden="true">
-                                <circle class="hero-sun-core" cx="452" cy="90" r="32" fill="url(#hero-sun-core-fill)" />
-                                <g class="hero-sun-surface" clip-path="url(#hero-sun-disc-clip)" filter="url(#hero-sun-surface-soften)">
-                                    <ellipse cx="443" cy="79" rx="11" ry="5" fill="#FFFBE0" opacity=".44" transform="rotate(-24 443 79)" />
-                                    <ellipse cx="466" cy="85" rx="9" ry="5" fill="#E9722E" opacity=".18" transform="rotate(35 466 85)" />
-                                    <ellipse cx="449" cy="105" rx="15" ry="4" fill="#E96827" opacity=".16" transform="rotate(-17 449 105)" />
-                                    <ellipse cx="455" cy="93" rx="7" ry="3" fill="#FFF8C4" opacity=".3" transform="rotate(28 455 93)" />
+                            <!-- Classic round sun with simple rotating rays -->
+                            <g class="hero-classic-sun" aria-hidden="true" fill="none" stroke="#A9812A" stroke-linecap="round">
+                                <circle class="hero-classic-sun-core" cx="452" cy="90" r="23" fill="#FFF8DE" stroke-width="1.7" />
+                                <g class="hero-classic-rays" stroke="#D4AF37" stroke-width="2.2">
+                                    <line x1="452" y1="58" x2="452" y2="43" />
+                                    <line x1="475" y1="67" x2="486" y2="56" />
+                                    <line x1="484" y1="90" x2="499" y2="90" />
+                                    <line x1="475" y1="113" x2="486" y2="124" />
+                                    <line x1="452" y1="122" x2="452" y2="137" />
+                                    <line x1="429" y1="113" x2="418" y2="124" />
+                                    <line x1="420" y1="90" x2="405" y2="90" />
+                                    <line x1="429" y1="67" x2="418" y2="56" />
                                 </g>
                             </g>
 
