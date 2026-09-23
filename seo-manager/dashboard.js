@@ -153,7 +153,7 @@ $('probe').addEventListener('click', () => task(async () => { const result = awa
 $('page-search').addEventListener('input', renderPages);
 $('text-search').addEventListener('input', filterText);
 $('add-link').addEventListener('change', toggleLink);
-$('new-page').addEventListener('click', () => { if (!mayLeave()) return; mode = 'new'; current = {meta: {}, fields: []}; $('slug').value = ''; $('heading').value = ''; $('body-copy').value = ''; renderEditor(); setDirty(true); $('slug').focus(); });
+$('new-page')?.addEventListener('click', () => { if (!mayLeave()) return; mode = 'new'; current = {meta: {}, fields: []}; $('slug').value = ''; $('heading').value = ''; $('body-copy').value = ''; renderEditor(); setDirty(true); $('slug').focus(); });
 $('reload').addEventListener('click', () => { if (mayLeave()) task(() => openPage(current.path)); });
 $('editor').addEventListener('input', event => { if (event.target.id === 'text-search') return; setDirty(); updateSearch(); });
 $('editor').addEventListener('change', event => { if (event.target.id !== 'text-search') setDirty(); });
