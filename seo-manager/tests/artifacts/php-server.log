@@ -1,203 +1,203 @@
-[Wed Sep 23 04:44:22 2026] PHP 8.2.31 Development Server (http://127.0.0.1:52123) started
-[Wed Sep 23 04:44:22 2026] 127.0.0.1:52124 Accepted
-[Wed Sep 23 04:44:22 2026] 127.0.0.1:52124 [200]: GET /seo-manager/
-[Wed Sep 23 04:44:22 2026] 127.0.0.1:52124 Closing
-[Wed Sep 23 04:44:23 2026] 127.0.0.1:52564 Accepted
-[Wed Sep 23 04:44:23 2026] 127.0.0.1:52564 [200]: GET /seo-manager/
-[Wed Sep 23 04:44:23 2026] 127.0.0.1:52564 Closing
-[Wed Sep 23 04:44:23 2026] 127.0.0.1:53233 Accepted
-[Wed Sep 23 04:44:23 2026] 127.0.0.1:53233 [200]: GET /seo-manager/dashboard.css?v=1
-[Wed Sep 23 04:44:23 2026] 127.0.0.1:58768 Accepted
-[Wed Sep 23 04:44:23 2026] 127.0.0.1:52356 Accepted
-[Wed Sep 23 04:44:23 2026] 127.0.0.1:58768 [200]: GET /seo-manager/dashboard.js?v=1
-[Wed Sep 23 04:44:23 2026] 127.0.0.1:52356 [200]: GET /favicon.svg
-[Wed Sep 23 04:44:23 2026] 127.0.0.1:53233 Closing
-[Wed Sep 23 04:44:23 2026] 127.0.0.1:58768 Closing
-[Wed Sep 23 04:44:23 2026] 127.0.0.1:52356 Closing
-[Wed Sep 23 04:44:24 2026] 127.0.0.1:56817 Accepted
-[Wed Sep 23 04:44:24 2026] 127.0.0.1:56817 [200]: GET /seo-manager/api.php?action=session
-[Wed Sep 23 04:44:24 2026] 127.0.0.1:56817 Closing
-[Wed Sep 23 04:44:24 2026] 127.0.0.1:60468 Accepted
-[Wed Sep 23 04:44:24 2026] 127.0.0.1:60468 [200]: GET /favicon.svg
-[Wed Sep 23 04:44:24 2026] 127.0.0.1:60468 Closing
-[Wed Sep 23 04:44:24 2026] 127.0.0.1:55173 Accepted
-[Wed Sep 23 04:44:24 2026] 127.0.0.1:55173 [200]: GET /seo-manager/api.php?action=session
-[Wed Sep 23 04:44:24 2026] 127.0.0.1:55173 Closing
-[Wed Sep 23 04:44:24 2026] 127.0.0.1:55174 Accepted
-[Wed Sep 23 04:44:24 2026] 127.0.0.1:55174 [401]: GET /seo-manager/api.php?action=pages
-[Wed Sep 23 04:44:24 2026] 127.0.0.1:55174 Closing
-[Wed Sep 23 04:44:24 2026] 127.0.0.1:55175 Accepted
-[Wed Sep 23 04:44:24 2026] 127.0.0.1:55175 [403]: POST /seo-manager/api.php?action=login
-[Wed Sep 23 04:44:24 2026] 127.0.0.1:55175 Closing
-[Wed Sep 23 04:44:24 2026] 127.0.0.1:55176 Accepted
-[Wed Sep 23 04:44:24 2026] 127.0.0.1:55176 [403]: POST /seo-manager/api.php?action=login
-[Wed Sep 23 04:44:24 2026] 127.0.0.1:55176 Closing
-[Wed Sep 23 04:44:24 2026] 127.0.0.1:63063 Accepted
-[Wed Sep 23 04:44:24 2026] 127.0.0.1:63063 [401]: POST /seo-manager/api.php?action=login
-[Wed Sep 23 04:44:24 2026] 127.0.0.1:63063 Closing
-[Wed Sep 23 04:44:25 2026] 127.0.0.1:60471 Accepted
-[Wed Sep 23 04:44:25 2026] 127.0.0.1:60471 [200]: POST /seo-manager/api.php?action=login
-[Wed Sep 23 04:44:25 2026] 127.0.0.1:60471 Closing
-[Wed Sep 23 04:44:25 2026] 127.0.0.1:49777 Accepted
-[Wed Sep 23 04:44:29 2026] 127.0.0.1:49777 [200]: GET /seo-manager/api.php?action=pages
-[Wed Sep 23 04:44:29 2026] 127.0.0.1:49777 Closing
-[Wed Sep 23 04:44:29 2026] 127.0.0.1:51543 Accepted
-[Wed Sep 23 04:44:29 2026] 127.0.0.1:51543 [200]: GET /seo-manager/api.php?action=session
-[Wed Sep 23 04:44:29 2026] 127.0.0.1:51543 Closing
-[Wed Sep 23 04:44:29 2026] 127.0.0.1:60281 Accepted
-[Wed Sep 23 04:44:29 2026] 127.0.0.1:60281 [200]: POST /seo-manager/api.php?action=probe
-[Wed Sep 23 04:44:29 2026] 127.0.0.1:60281 Closing
-[Wed Sep 23 04:44:30 2026] 127.0.0.1:51689 Accepted
-[Wed Sep 23 04:44:30 2026] 127.0.0.1:51689 [200]: GET /seo-manager/api.php?action=page&path=about.html
-[Wed Sep 23 04:44:30 2026] 127.0.0.1:51689 Closing
-[Wed Sep 23 04:44:30 2026] 127.0.0.1:56280 Accepted
-[Wed Sep 23 04:44:30 2026] 127.0.0.1:56280 [200]: POST /seo-manager/api.php?action=preview
-[Wed Sep 23 04:44:30 2026] 127.0.0.1:56280 Closing
-[Wed Sep 23 04:44:30 2026] 127.0.0.1:49275 Accepted
-[Wed Sep 23 04:44:30 2026] 127.0.0.1:49275 [200]: GET /seo-manager/api.php?action=preview-document&id=f3d9efbe3b94d812ac6d9d7ddacac3ab7deac9f4c541a129
-[Wed Sep 23 04:44:30 2026] 127.0.0.1:49275 Closing
-[Wed Sep 23 04:44:30 2026] 127.0.0.1:60004 Accepted
-[Wed Sep 23 04:44:30 2026] 127.0.0.1:58399 Accepted
-[Wed Sep 23 04:44:30 2026] 127.0.0.1:60109 Accepted
-[Wed Sep 23 04:44:30 2026] 127.0.0.1:60004 [200]: GET /styles.css?v=f50c70f639be
-[Wed Sep 23 04:44:30 2026] 127.0.0.1:58399 [200]: GET /script.js
-[Wed Sep 23 04:44:30 2026] 127.0.0.1:60109 [200]: GET /logo_ecard.png
-[Wed Sep 23 04:44:30 2026] 127.0.0.1:60004 Closing
-[Wed Sep 23 04:44:30 2026] 127.0.0.1:58399 Closing
-[Wed Sep 23 04:44:30 2026] 127.0.0.1:60109 Closing
-[Wed Sep 23 04:44:31 2026] 127.0.0.1:51867 Accepted
-[Wed Sep 23 04:44:31 2026] 127.0.0.1:51867 [200]: POST /seo-manager/api.php?action=save
-[Wed Sep 23 04:44:31 2026] 127.0.0.1:51867 Closing
-[Wed Sep 23 04:44:31 2026] 127.0.0.1:64245 Accepted
-[Wed Sep 23 04:44:31 2026] 127.0.0.1:64245 [200]: GET /seo-manager/api.php?action=pages
-[Wed Sep 23 04:44:31 2026] 127.0.0.1:64245 Closing
-[Wed Sep 23 04:44:31 2026] 127.0.0.1:64246 Accepted
-[Wed Sep 23 04:44:31 2026] 127.0.0.1:64246 [200]: GET /seo-manager/api.php?action=page&path=about.html
-[Wed Sep 23 04:44:31 2026] 127.0.0.1:64246 Closing
-[Wed Sep 23 04:44:31 2026] 127.0.0.1:64247 Accepted
-[Wed Sep 23 04:44:31 2026] 127.0.0.1:64247 [200]: GET /about.html?v=9c9d5636117d07b056eb0399e67a2ae5cbc3cc43abf160e8eb5b8105aef9a167
-[Wed Sep 23 04:44:31 2026] 127.0.0.1:64247 Closing
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:49793 Accepted
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:49793 [409]: POST /seo-manager/api.php?action=save
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:49793 Closing
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:50708 Accepted
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:50708 [200]: GET /seo-manager/api.php?action=page&path=about.html
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:50708 Closing
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:62847 Accepted
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:62847 [200]: POST /seo-manager/api.php?action=preview
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:62847 Closing
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:56081 Accepted
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:56081 [200]: GET /seo-manager/api.php?action=preview-document&id=8b787cee16340220a8ced8616ad276ec388ba46e39142b0d
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:56081 Closing
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:53717 Accepted
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:50588 Accepted
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:52393 Accepted
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:53717 [200]: GET /styles.css?v=seo-page-1
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:50588 [200]: GET /script.js
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:52393 [200]: GET /logo_ecard.png
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:53717 Closing
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:50588 Closing
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:52393 Closing
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:54322 Accepted
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:54322 [200]: POST /seo-manager/api.php?action=create
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:54322 Closing
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:64831 Accepted
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:64831 [200]: GET /seo-manager/api.php?action=pages
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:64831 Closing
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:65324 Accepted
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:65324 [200]: GET /seo-manager/api.php?action=page&path=about.html
-[Wed Sep 23 04:44:32 2026] 127.0.0.1:65324 Closing
-[Wed Sep 23 04:44:33 2026] 127.0.0.1:57549 Accepted
-[Wed Sep 23 04:44:33 2026] 127.0.0.1:57549 [200]: POST /seo-manager/api.php?action=preview
-[Wed Sep 23 04:44:33 2026] 127.0.0.1:57549 Closing
-[Wed Sep 23 04:44:33 2026] 127.0.0.1:53059 Accepted
-[Wed Sep 23 04:44:33 2026] 127.0.0.1:53059 [200]: GET /seo-manager/api.php?action=preview-document&id=95e2453d525d78913015e0df94a9be70b49e5de9adc1a0cf
-[Wed Sep 23 04:44:33 2026] 127.0.0.1:53059 Closing
-[Wed Sep 23 04:44:33 2026] 127.0.0.1:52443 Accepted
-[Wed Sep 23 04:44:33 2026] 127.0.0.1:54568 Accepted
-[Wed Sep 23 04:44:33 2026] 127.0.0.1:52443 [200]: GET /styles.css?v=f50c70f639be
-[Wed Sep 23 04:44:33 2026] 127.0.0.1:54568 [200]: GET /logo_ecard.png
-[Wed Sep 23 04:44:33 2026] 127.0.0.1:52443 Closing
-[Wed Sep 23 04:44:33 2026] 127.0.0.1:59827 Accepted
-[Wed Sep 23 04:44:33 2026] 127.0.0.1:54568 Closing
-[Wed Sep 23 04:44:33 2026] 127.0.0.1:59827 [200]: GET /script.js
-[Wed Sep 23 04:44:33 2026] 127.0.0.1:59827 Closing
-[Wed Sep 23 04:44:33 2026] 127.0.0.1:59803 Accepted
-[Wed Sep 23 04:44:33 2026] 127.0.0.1:59803 [200]: POST /seo-manager/api.php?action=save
-[Wed Sep 23 04:44:33 2026] 127.0.0.1:59803 Closing
-[Wed Sep 23 04:44:33 2026] 127.0.0.1:53380 Accepted
-[Wed Sep 23 04:44:33 2026] 127.0.0.1:53380 [200]: GET /seo-manager/api.php?action=pages
-[Wed Sep 23 04:44:33 2026] 127.0.0.1:53380 Closing
-[Wed Sep 23 04:44:33 2026] 127.0.0.1:54497 Accepted
-[Wed Sep 23 04:44:33 2026] 127.0.0.1:54497 [401]: POST /seo-manager/api.php?action=save
-[Wed Sep 23 04:44:33 2026] 127.0.0.1:54497 Closing
-[Wed Sep 23 04:44:33 2026] 127.0.0.1:50442 Accepted
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:50442 [200]: POST /seo-manager/api.php?action=login
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:50442 Closing
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:53699 Accepted
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:53699 [200]: GET /seo-manager/api.php?action=pages
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:53699 Closing
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:53700 Accepted
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:53700 [200]: GET /seo-manager/api.php?action=session
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:53700 Closing
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:63509 Accepted
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:63509 [200]: POST /seo-manager/api.php?action=save
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:63509 Closing
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:56494 Accepted
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:56494 [200]: GET /seo-manager/api.php?action=pages
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:56494 Closing
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:56495 Accepted
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:56495 [405]: GET /seo-manager/api.php?action=save
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:56495 Closing
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:56496 Accepted
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:56496 [404]: GET /seo-manager/api.php?action=page&path=../web.config
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:56496 Closing
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:56497 Accepted
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:56497 Closing
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:56498 Accepted
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:56498 Closing
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:56499 Accepted
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:56499 Closing
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:56500 Accepted
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:56500 Closing
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:56501 Accepted
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:56501 Closing
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:56502 Accepted
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:56502 [422]: POST /seo-manager/api.php?action=create
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:56502 Closing
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:51285 Accepted
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:51285 [200]: POST /seo-manager/api.php?action=logout
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:51285 Closing
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:51286 Accepted
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:51286 [401]: GET /seo-manager/api.php?action=pages
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:51286 Closing
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:51287 Accepted
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:51287 [200]: GET /seo-manager/api.php?action=session
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:51287 Closing
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:51288 Accepted
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:51288 [401]: POST /seo-manager/api.php?action=login
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:51288 Closing
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:51289 Accepted
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:51289 [401]: POST /seo-manager/api.php?action=login
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:51289 Closing
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:51290 Accepted
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:51290 [401]: POST /seo-manager/api.php?action=login
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:51290 Closing
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:51291 Accepted
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:51291 [401]: POST /seo-manager/api.php?action=login
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:51291 Closing
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:51292 Accepted
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:51292 [401]: POST /seo-manager/api.php?action=login
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:51292 Closing
-[Wed Sep 23 04:44:34 2026] 127.0.0.1:51293 Accepted
-[Wed Sep 23 04:44:35 2026] 127.0.0.1:51293 [401]: POST /seo-manager/api.php?action=login
-[Wed Sep 23 04:44:35 2026] 127.0.0.1:51293 Closing
-[Wed Sep 23 04:44:35 2026] 127.0.0.1:51294 Accepted
-[Wed Sep 23 04:44:35 2026] 127.0.0.1:51294 [401]: POST /seo-manager/api.php?action=login
-[Wed Sep 23 04:44:35 2026] 127.0.0.1:51294 Closing
-[Wed Sep 23 04:44:35 2026] 127.0.0.1:51295 Accepted
-[Wed Sep 23 04:44:35 2026] 127.0.0.1:51295 [401]: POST /seo-manager/api.php?action=login
-[Wed Sep 23 04:44:35 2026] 127.0.0.1:51295 Closing
-[Wed Sep 23 04:44:35 2026] 127.0.0.1:51296 Accepted
-[Wed Sep 23 04:44:35 2026] 127.0.0.1:51296 [429]: POST /seo-manager/api.php?action=login
-[Wed Sep 23 04:44:35 2026] 127.0.0.1:51296 Closing
+[Wed Sep 23 04:55:00 2026] PHP 8.2.31 Development Server (http://127.0.0.1:49669) started
+[Wed Sep 23 04:55:00 2026] 127.0.0.1:49770 Accepted
+[Wed Sep 23 04:55:00 2026] 127.0.0.1:49770 [200]: GET /seo-manager/
+[Wed Sep 23 04:55:00 2026] 127.0.0.1:49770 Closing
+[Wed Sep 23 04:55:01 2026] 127.0.0.1:58062 Accepted
+[Wed Sep 23 04:55:01 2026] 127.0.0.1:58062 [200]: GET /seo-manager/
+[Wed Sep 23 04:55:01 2026] 127.0.0.1:58062 Closing
+[Wed Sep 23 04:55:01 2026] 127.0.0.1:57500 Accepted
+[Wed Sep 23 04:55:01 2026] 127.0.0.1:57500 [200]: GET /seo-manager/dashboard.css?v=1
+[Wed Sep 23 04:55:01 2026] 127.0.0.1:63371 Accepted
+[Wed Sep 23 04:55:01 2026] 127.0.0.1:57723 Accepted
+[Wed Sep 23 04:55:01 2026] 127.0.0.1:63371 [200]: GET /seo-manager/dashboard.js?v=1
+[Wed Sep 23 04:55:01 2026] 127.0.0.1:57723 [200]: GET /favicon.svg
+[Wed Sep 23 04:55:01 2026] 127.0.0.1:57500 Closing
+[Wed Sep 23 04:55:01 2026] 127.0.0.1:63371 Closing
+[Wed Sep 23 04:55:01 2026] 127.0.0.1:57723 Closing
+[Wed Sep 23 04:55:02 2026] 127.0.0.1:58468 Accepted
+[Wed Sep 23 04:55:02 2026] 127.0.0.1:58468 [200]: GET /seo-manager/api.php?action=session
+[Wed Sep 23 04:55:02 2026] 127.0.0.1:58468 Closing
+[Wed Sep 23 04:55:02 2026] 127.0.0.1:55479 Accepted
+[Wed Sep 23 04:55:02 2026] 127.0.0.1:55479 [200]: GET /favicon.svg
+[Wed Sep 23 04:55:02 2026] 127.0.0.1:55479 Closing
+[Wed Sep 23 04:55:03 2026] 127.0.0.1:55480 Accepted
+[Wed Sep 23 04:55:03 2026] 127.0.0.1:55480 [200]: GET /seo-manager/api.php?action=session
+[Wed Sep 23 04:55:03 2026] 127.0.0.1:55480 Closing
+[Wed Sep 23 04:55:03 2026] 127.0.0.1:55481 Accepted
+[Wed Sep 23 04:55:03 2026] 127.0.0.1:55481 [401]: GET /seo-manager/api.php?action=pages
+[Wed Sep 23 04:55:03 2026] 127.0.0.1:55481 Closing
+[Wed Sep 23 04:55:03 2026] 127.0.0.1:55482 Accepted
+[Wed Sep 23 04:55:03 2026] 127.0.0.1:55482 [403]: POST /seo-manager/api.php?action=login
+[Wed Sep 23 04:55:03 2026] 127.0.0.1:55482 Closing
+[Wed Sep 23 04:55:03 2026] 127.0.0.1:55483 Accepted
+[Wed Sep 23 04:55:03 2026] 127.0.0.1:55483 [403]: POST /seo-manager/api.php?action=login
+[Wed Sep 23 04:55:03 2026] 127.0.0.1:55483 Closing
+[Wed Sep 23 04:55:03 2026] 127.0.0.1:52617 Accepted
+[Wed Sep 23 04:55:03 2026] 127.0.0.1:52617 [401]: POST /seo-manager/api.php?action=login
+[Wed Sep 23 04:55:03 2026] 127.0.0.1:52617 Closing
+[Wed Sep 23 04:55:03 2026] 127.0.0.1:56718 Accepted
+[Wed Sep 23 04:55:03 2026] 127.0.0.1:56718 [200]: POST /seo-manager/api.php?action=login
+[Wed Sep 23 04:55:03 2026] 127.0.0.1:56718 Closing
+[Wed Sep 23 04:55:03 2026] 127.0.0.1:61110 Accepted
+[Wed Sep 23 04:55:09 2026] 127.0.0.1:61110 [200]: GET /seo-manager/api.php?action=pages
+[Wed Sep 23 04:55:09 2026] 127.0.0.1:61110 Closing
+[Wed Sep 23 04:55:09 2026] 127.0.0.1:55868 Accepted
+[Wed Sep 23 04:55:09 2026] 127.0.0.1:55868 [200]: GET /seo-manager/api.php?action=session
+[Wed Sep 23 04:55:09 2026] 127.0.0.1:55868 Closing
+[Wed Sep 23 04:55:09 2026] 127.0.0.1:58529 Accepted
+[Wed Sep 23 04:55:09 2026] 127.0.0.1:58529 [200]: POST /seo-manager/api.php?action=probe
+[Wed Sep 23 04:55:09 2026] 127.0.0.1:58529 Closing
+[Wed Sep 23 04:55:09 2026] 127.0.0.1:62408 Accepted
+[Wed Sep 23 04:55:09 2026] 127.0.0.1:62408 [200]: GET /seo-manager/api.php?action=page&path=about.html
+[Wed Sep 23 04:55:09 2026] 127.0.0.1:62408 Closing
+[Wed Sep 23 04:55:10 2026] 127.0.0.1:56448 Accepted
+[Wed Sep 23 04:55:10 2026] 127.0.0.1:56448 [200]: POST /seo-manager/api.php?action=preview
+[Wed Sep 23 04:55:10 2026] 127.0.0.1:56448 Closing
+[Wed Sep 23 04:55:10 2026] 127.0.0.1:53435 Accepted
+[Wed Sep 23 04:55:10 2026] 127.0.0.1:53435 [200]: GET /seo-manager/api.php?action=preview-document&id=0933a32374e4c7130b8009f8c5803648cd70910cc9c4b7a9
+[Wed Sep 23 04:55:10 2026] 127.0.0.1:53435 Closing
+[Wed Sep 23 04:55:10 2026] 127.0.0.1:64167 Accepted
+[Wed Sep 23 04:55:10 2026] 127.0.0.1:51502 Accepted
+[Wed Sep 23 04:55:10 2026] 127.0.0.1:55642 Accepted
+[Wed Sep 23 04:55:10 2026] 127.0.0.1:64167 [200]: GET /styles.css?v=f50c70f639be
+[Wed Sep 23 04:55:10 2026] 127.0.0.1:51502 [200]: GET /script.js
+[Wed Sep 23 04:55:10 2026] 127.0.0.1:55642 [200]: GET /logo_ecard.png
+[Wed Sep 23 04:55:10 2026] 127.0.0.1:64167 Closing
+[Wed Sep 23 04:55:10 2026] 127.0.0.1:51502 Closing
+[Wed Sep 23 04:55:10 2026] 127.0.0.1:55642 Closing
+[Wed Sep 23 04:55:11 2026] 127.0.0.1:57967 Accepted
+[Wed Sep 23 04:55:12 2026] 127.0.0.1:57967 [200]: POST /seo-manager/api.php?action=save
+[Wed Sep 23 04:55:12 2026] 127.0.0.1:57967 Closing
+[Wed Sep 23 04:55:12 2026] 127.0.0.1:61098 Accepted
+[Wed Sep 23 04:55:12 2026] 127.0.0.1:61098 [200]: GET /seo-manager/api.php?action=pages
+[Wed Sep 23 04:55:12 2026] 127.0.0.1:61098 Closing
+[Wed Sep 23 04:55:12 2026] 127.0.0.1:61099 Accepted
+[Wed Sep 23 04:55:12 2026] 127.0.0.1:61099 [200]: GET /seo-manager/api.php?action=page&path=about.html
+[Wed Sep 23 04:55:12 2026] 127.0.0.1:61099 Closing
+[Wed Sep 23 04:55:12 2026] 127.0.0.1:61100 Accepted
+[Wed Sep 23 04:55:12 2026] 127.0.0.1:61100 [200]: GET /about.html?v=9c9d5636117d07b056eb0399e67a2ae5cbc3cc43abf160e8eb5b8105aef9a167
+[Wed Sep 23 04:55:12 2026] 127.0.0.1:61100 Closing
+[Wed Sep 23 04:55:12 2026] 127.0.0.1:58649 Accepted
+[Wed Sep 23 04:55:12 2026] 127.0.0.1:58649 [409]: POST /seo-manager/api.php?action=save
+[Wed Sep 23 04:55:12 2026] 127.0.0.1:58649 Closing
+[Wed Sep 23 04:55:12 2026] 127.0.0.1:51843 Accepted
+[Wed Sep 23 04:55:12 2026] 127.0.0.1:51843 [200]: GET /seo-manager/api.php?action=page&path=about.html
+[Wed Sep 23 04:55:12 2026] 127.0.0.1:51843 Closing
+[Wed Sep 23 04:55:13 2026] 127.0.0.1:64641 Accepted
+[Wed Sep 23 04:55:13 2026] 127.0.0.1:64641 [200]: POST /seo-manager/api.php?action=preview
+[Wed Sep 23 04:55:13 2026] 127.0.0.1:64641 Closing
+[Wed Sep 23 04:55:13 2026] 127.0.0.1:61988 Accepted
+[Wed Sep 23 04:55:13 2026] 127.0.0.1:61988 [200]: GET /seo-manager/api.php?action=preview-document&id=c74c987e5e40e81b5a84618fde3d8a20d69a188cb14dbb40
+[Wed Sep 23 04:55:13 2026] 127.0.0.1:61988 Closing
+[Wed Sep 23 04:55:13 2026] 127.0.0.1:59705 Accepted
+[Wed Sep 23 04:55:13 2026] 127.0.0.1:63074 Accepted
+[Wed Sep 23 04:55:13 2026] 127.0.0.1:52701 Accepted
+[Wed Sep 23 04:55:13 2026] 127.0.0.1:59705 [200]: GET /styles.css?v=seo-page-1
+[Wed Sep 23 04:55:13 2026] 127.0.0.1:63074 [200]: GET /script.js
+[Wed Sep 23 04:55:13 2026] 127.0.0.1:52701 [200]: GET /logo_ecard.png
+[Wed Sep 23 04:55:13 2026] 127.0.0.1:59705 Closing
+[Wed Sep 23 04:55:13 2026] 127.0.0.1:63074 Closing
+[Wed Sep 23 04:55:13 2026] 127.0.0.1:52701 Closing
+[Wed Sep 23 04:55:13 2026] 127.0.0.1:59942 Accepted
+[Wed Sep 23 04:55:13 2026] 127.0.0.1:59942 [200]: POST /seo-manager/api.php?action=create
+[Wed Sep 23 04:55:13 2026] 127.0.0.1:59942 Closing
+[Wed Sep 23 04:55:13 2026] 127.0.0.1:57541 Accepted
+[Wed Sep 23 04:55:13 2026] 127.0.0.1:57541 [200]: GET /seo-manager/api.php?action=pages
+[Wed Sep 23 04:55:13 2026] 127.0.0.1:57541 Closing
+[Wed Sep 23 04:55:13 2026] 127.0.0.1:54762 Accepted
+[Wed Sep 23 04:55:13 2026] 127.0.0.1:54762 [200]: GET /seo-manager/api.php?action=page&path=about.html
+[Wed Sep 23 04:55:13 2026] 127.0.0.1:54762 Closing
+[Wed Sep 23 04:55:14 2026] 127.0.0.1:64585 Accepted
+[Wed Sep 23 04:55:14 2026] 127.0.0.1:64585 [200]: POST /seo-manager/api.php?action=preview
+[Wed Sep 23 04:55:14 2026] 127.0.0.1:64585 Closing
+[Wed Sep 23 04:55:14 2026] 127.0.0.1:55708 Accepted
+[Wed Sep 23 04:55:14 2026] 127.0.0.1:55708 [200]: GET /seo-manager/api.php?action=preview-document&id=a838c32f11fb79a81c942b2da254a15f8a59b021aa9d22e9
+[Wed Sep 23 04:55:14 2026] 127.0.0.1:55708 Closing
+[Wed Sep 23 04:55:14 2026] 127.0.0.1:51314 Accepted
+[Wed Sep 23 04:55:14 2026] 127.0.0.1:55997 Accepted
+[Wed Sep 23 04:55:14 2026] 127.0.0.1:51314 [200]: GET /styles.css?v=f50c70f639be
+[Wed Sep 23 04:55:14 2026] 127.0.0.1:55997 [200]: GET /logo_ecard.png
+[Wed Sep 23 04:55:14 2026] 127.0.0.1:51314 Closing
+[Wed Sep 23 04:55:14 2026] 127.0.0.1:63035 Accepted
+[Wed Sep 23 04:55:14 2026] 127.0.0.1:55997 Closing
+[Wed Sep 23 04:55:14 2026] 127.0.0.1:63035 [200]: GET /script.js
+[Wed Sep 23 04:55:14 2026] 127.0.0.1:63035 Closing
+[Wed Sep 23 04:55:14 2026] 127.0.0.1:54847 Accepted
+[Wed Sep 23 04:55:14 2026] 127.0.0.1:54847 [200]: POST /seo-manager/api.php?action=save
+[Wed Sep 23 04:55:14 2026] 127.0.0.1:54847 Closing
+[Wed Sep 23 04:55:14 2026] 127.0.0.1:49941 Accepted
+[Wed Sep 23 04:55:14 2026] 127.0.0.1:49941 [200]: GET /seo-manager/api.php?action=pages
+[Wed Sep 23 04:55:14 2026] 127.0.0.1:49941 Closing
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:60482 Accepted
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:60482 [401]: POST /seo-manager/api.php?action=save
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:60482 Closing
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:60148 Accepted
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:60148 [200]: POST /seo-manager/api.php?action=login
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:60148 Closing
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:55467 Accepted
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:55467 [200]: GET /seo-manager/api.php?action=pages
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:55467 Closing
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:55468 Accepted
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:55468 [200]: GET /seo-manager/api.php?action=session
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:55468 Closing
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:63772 Accepted
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:63772 [200]: POST /seo-manager/api.php?action=save
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:63772 Closing
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:65396 Accepted
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:65396 [200]: GET /seo-manager/api.php?action=pages
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:65396 Closing
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:65397 Accepted
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:65397 [405]: GET /seo-manager/api.php?action=save
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:65397 Closing
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:65398 Accepted
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:65398 [404]: GET /seo-manager/api.php?action=page&path=../web.config
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:65398 Closing
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:60245 Accepted
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:60245 Closing
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:60246 Accepted
+[Wed Sep 23 04:55:15 2026] 127.0.0.1:60246 Closing
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:60247 Accepted
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:60247 Closing
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:60248 Accepted
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:60248 Closing
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:60249 Accepted
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:60249 Closing
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:60250 Accepted
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:60250 [422]: POST /seo-manager/api.php?action=create
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:60250 Closing
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:64321 Accepted
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:64321 [200]: POST /seo-manager/api.php?action=logout
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:64321 Closing
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:64322 Accepted
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:64322 [401]: GET /seo-manager/api.php?action=pages
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:64322 Closing
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:64323 Accepted
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:64323 [200]: GET /seo-manager/api.php?action=session
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:64323 Closing
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:64324 Accepted
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:64324 [401]: POST /seo-manager/api.php?action=login
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:64324 Closing
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:52961 Accepted
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:52961 [401]: POST /seo-manager/api.php?action=login
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:52961 Closing
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:52962 Accepted
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:52962 [401]: POST /seo-manager/api.php?action=login
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:52962 Closing
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:52963 Accepted
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:52963 [401]: POST /seo-manager/api.php?action=login
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:52963 Closing
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:61207 Accepted
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:61207 [401]: POST /seo-manager/api.php?action=login
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:61207 Closing
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:61208 Accepted
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:61208 [401]: POST /seo-manager/api.php?action=login
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:61208 Closing
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:61209 Accepted
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:61209 [401]: POST /seo-manager/api.php?action=login
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:61209 Closing
+[Wed Sep 23 04:55:16 2026] 127.0.0.1:61210 Accepted
+[Wed Sep 23 04:55:17 2026] 127.0.0.1:61210 [401]: POST /seo-manager/api.php?action=login
+[Wed Sep 23 04:55:17 2026] 127.0.0.1:61210 Closing
+[Wed Sep 23 04:55:17 2026] 127.0.0.1:61211 Accepted
+[Wed Sep 23 04:55:17 2026] 127.0.0.1:61211 [429]: POST /seo-manager/api.php?action=login
+[Wed Sep 23 04:55:17 2026] 127.0.0.1:61211 Closing

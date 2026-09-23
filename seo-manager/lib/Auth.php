@@ -9,14 +9,15 @@ final class Auth
         $secure = strtolower(parse_url($app->config['origin'], PHP_URL_SCHEME) ?? '') === 'https';
         if (!$secure && !(($app->config['development'] ?? false) && in_array($_SERVER['REMOTE_ADDR'] ?? '', ['127.0.0.1','::1']))) throw new Problem(503, 'HTTPS is required for the SEO login.');
         $sessions = $app->private . '/sessions';
-        if (!is_dir($sessions) && !@mkdir($sessions, 0700)) throw new Problem(503, 'Private session storage is not writable.');
+        if (!is_dir($sessions) && !@mkdir($sessions, 0700) && !is_dir($sessions)) throw new Problem(503, 'Hosting permissions prevent sign-in: PHP cannot create seo-manager/private/sessions. In Plesk, give the website PHP worker Modify permission on seo-manager/private, including its files and subfolders.');
+        if (!is_writable($sessions)) throw new Problem(503, 'Hosting permissions prevent sign-in: seo-manager/private/sessions is read-only for PHP. In Plesk, apply Modify permission to seo-manager/private and its files and subfolders.');
         ini_set('session.use_strict_mode', '1');
         ini_set('session.use_only_cookies', '1');
         ini_set('session.gc_maxlifetime', '1800');
         session_save_path($sessions);
         session_name('DANIEL_SOLAR_SEO');
         session_set_cookie_params(['lifetime' => 0, 'path' => '/seo-manager/', 'secure' => $secure, 'httponly' => true, 'samesite' => 'Strict']);
-        if (!session_start()) throw new Problem(503, 'The server could not start an SEO session.');
+        if (!@session_start()) throw new Problem(503, 'The server cannot write the SEO login session. Check PHP worker Modify permission on seo-manager/private/sessions and available disk space.');
         $_SESSION['csrf'] ??= bin2hex(random_bytes(32));
     }
 

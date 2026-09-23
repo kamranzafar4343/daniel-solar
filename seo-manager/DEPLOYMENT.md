@@ -61,6 +61,12 @@ Official GoDaddy instructions: [PHP version settings](https://www.godaddy.com/en
 
 ## Caching
 
+### If login reports private session storage is not writable
+
+This error happens before password verification. PHP could not create `seo-manager/private/sessions`; changing the password will not fix it. In Plesk File Manager, open `danielsolared.com/seo-manager`, select the `private` folder's menu and choose **Change Permissions**. Grant the identity running this site's PHP worker **Modify**, including Read/Write, applied to files and subfolders. This identity may be labelled Application pool group; ask the host to identify it if unclear. Do not grant Everyone access or remove the HTTP-blocking `web.config` files. If necessary create the `sessions` subfolder in File Manager, but it still requires write permission and the parent `private` folder must allow login rate-limit and lock files to be written. Reload the dashboard after applying permissions. If the hosting panel cannot grant these permissions, send GoDaddy support: “Please grant my domain's PHP worker Modify access to danielsolared.com/seo-manager/private and all child files/directories. PHP mkdir for private/sessions is failing.”
+
+The updated `lib/Auth.php` gives the actionable folder-specific error and the deployment now includes the sessions directory. Uploading source files alone cannot change Windows filesystem ACL permissions.
+
 The root `web.config` replaces the previous 30-day static cache with revalidation and disables IIS output/kernel caching. Static assets also revalidate under this simple policy. SEO APIs/previews send `Cache-Control: no-store, private, max-age=0`.
 
 In Cloudflare, bypass edge caching for `/seo-manager/*`, `/`, and `.html` URLs; remove conflicting Cache Everything rules, respect origin/browser cache headers, and purge old cached HTML once after installation. Other assets may remain edge-cacheable. Never cache authenticated dashboard/API responses.
